@@ -28,7 +28,7 @@ print(Y_excess.tail(3))
 #==========================================
 
 # prepare an empty dataframe with the tickers and size and value columns.
-X_raw = pd.DataFrame(index=tickers, columns=['Size', 'Value', 'Momentum', 'Volatility', 'AI_Sentiment'])
+X_raw = pd.DataFrame(index=tickers, columns=['Size', 'Value'])
 
 for t in tickers:
     ticker_obj = yf.Ticker(t)
