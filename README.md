@@ -49,7 +49,12 @@ pip install yfinance pandas numpy scikit-learn
 Edit `config.py`:
 
 ```python
-TICKERS = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META"]
+# 50 large-cap S&P 500 names (see config.py for full list)
+TICKERS = [
+    "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "BRK-B", "AVGO", "TSLA",
+    "WMT", "LLY", "JPM", "V", "UNH", "XOM", "MA", "ORCL", "COST", "HD", "PG",
+    # ... 30 more tickers
+]
 BENCHMARK = "SPY"
 
 START_DATE = "2020-01-01"
@@ -66,7 +71,7 @@ FORWARD_DAYS = 5     # label: cumulative excess return over next N days
 TRAIN_RATIO = 0.8    # time-based split: first 80% of dates for training
 ```
 
-You need at least as many stocks as factors (ideally more) for WLS to be well-conditioned.
+You need at least as many stocks as factors (ideally more) for WLS to be well-conditioned. The default universe is **50 liquid S&P 500 names** — large enough for stable cross-sectional IC, small enough for a learning demo.
 
 ## Run
 
@@ -87,6 +92,8 @@ python barra_panel.py
 ```bash
 python ml_predict.py
 ```
+
+> First run with 50 tickers may take several minutes: `yf.download` for 51 symbols plus per-ticker `yfinance` info calls in `compute_value`.
 
 ## `barra.py` vs `barra_panel.py` vs `ml_predict.py`
 
@@ -158,26 +165,29 @@ Computed per trading day on the test set, then averaged:
 | **Mean IC** | Pearson correlation of predictions vs actual returns (cross-sectional, per day) |
 | **Mean Rank IC** | Spearman rank correlation (per day) — primary metric for stock ranking |
 
-### Example output
+### Example output (50-ticker universe)
 
 ```
 --- ML dataset ---
-Rows: 5800 | Features: ['Size', 'Value', 'Momentum', 'Volatility']
+Rows: 74496 | Features: ['Size', 'Value', 'Momentum', 'Volatility']
 Label:  forward 5-day excess return
-Train:  4640 rows (through 2025-03-15)
-Test:   1160 rows (from 2025-03-16)
+Train:  59568 rows (through 2025-03-12)
+Test:   14928 rows (from 2025-03-13)
 
 --- Ridge (4 factors) ---
-MSE:          0.001234
-Mean IC:      0.0523
-Mean Rank IC: 0.0612
+MSE:          0.002262
+Mean IC:      0.0951
+Mean Rank IC: 0.0767
 
 --- Model comparison (test set) ---
-                              mean_ic  mean_rank_ic
-RandomForest (4 factors)       0.0612        0.0745
-Ridge (4 factors)              0.0523        0.0612
-...
+                          mean_ic  mean_rank_ic
+Ridge (4 factors)          0.0951        0.0767
+RandomForest (4 factors)   0.0470        0.0652
+Momentum only (OLS)        0.0601        0.0507
+Baseline (predict 0)          NaN           NaN
 ```
+
+Ridge (4-factor linear model) typically wins on Rank IC. IC values are lower but more credible than a 6-stock universe, where small cross-sections inflate correlation estimates.
 
 ## Output (`barra_panel.py`)
 
@@ -204,12 +214,13 @@ Volatility_Return: ...
 
 This is a learning demo, not production Barra:
 
-- Small stock universe — illustrative only.
+- 50-stock subset of the S&P 500 — better than 6 names, but not a full index.
 - `barra.py` uses static `yfinance` snapshots for Size/Value.
-- `features.py` Value uses a simplified B/P proxy (not quarterly fundamentals forward-filled).
+- `features.py` Value uses a simplified B/P proxy (not quarterly fundamentals forward-filled); `compute_value` calls `yf.Ticker(t).info` once per ticker.
 - Size in the panel uses `ln(price)` as a market-cap proxy.
 - WLS weights use `ln(market cap)` (real Barra uses sqrt market cap).
 - ML label uses arithmetic sum of daily excess returns (not compounded).
+- Single train/test split — no walk-forward validation or portfolio backtest yet.
 - No industry factors, neutralization, or specific risk model.
 
 ## License

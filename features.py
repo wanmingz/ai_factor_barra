@@ -8,6 +8,7 @@ from config import (
 )
 ########################################################
 #define the functions for the factors
+#build the factor panel and zscore the cross-section
 ########################################################
 
 def compute_momentum(returns: pd.DataFrame) -> pd.DataFrame:
@@ -17,9 +18,9 @@ def compute_momentum(returns: pd.DataFrame) -> pd.DataFrame:
         r = returns[t]
         for i in range(LOOKBACK_MOM, len(r)):
             date = r.index[i]
-            hist = r.iloc[: i + 1] #daily returns up to the current date
-            mom_window = hist.iloc[-LOOKBACK_MOM:-SKIP_RECENT] 
-            mom = (1 + mom_window).prod() - 1 
+            hist = r.iloc[: i + 1]
+            mom_window = hist.iloc[-LOOKBACK_MOM:-SKIP_RECENT]
+            mom = (1 + mom_window).prod() - 1
             rows.append((date, t, mom))
     df = pd.DataFrame(rows, columns=["date", "ticker", "Momentum"])
     return df.set_index(["date", "ticker"])

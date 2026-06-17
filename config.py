@@ -1,4 +1,10 @@
-TICKERS = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META"]
+TICKERS = [
+    "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "BRK-B", "AVGO", "TSLA",
+    "WMT", "LLY", "JPM", "V", "UNH", "XOM", "MA", "ORCL", "COST", "HD", "PG",
+    "JNJ", "NFLX", "BAC", "ABBV", "CRM", "KO", "AMD", "MRK", "PEP", "TMO",
+    "CSCO", "ACN", "LIN", "MCD", "ADBE", "WFC", "DIS", "GE", "TXN", "INTU",
+    "AMAT", "QCOM", "IBM", "CAT", "VZ", "CMCSA", "AMGN", "PFE", "NOW", "MU",
+]
 BENCHMARK = "SPY"
 
 START_DATE = "2020-01-01"
