@@ -2,13 +2,16 @@
 
 A small Barra-style factor demo that downloads market data, builds factor exposures, and estimates factor returns via weighted least squares (WLS).
 
+Two entry points:
+
+- **`barra.py`** — static cross-section demo (snapshot factor exposures on the latest day)
+- **`barra_panel.py`** — daily rolling factor panel via `features.py` (for time-series factor returns and ML)
+
 ## What it does
 
-The pipeline has three steps:
-
-1. **Prepare Y (excess returns)** — Download daily prices from Yahoo Finance, compute returns, and subtract the benchmark (`SPY`) to get excess returns.
-2. **Prepare X (factor exposures)** — Build a cross-sectional factor matrix with four Barra-style style factors (`Size`, `Value`, `Momentum`, `Volatility`), then Z-score normalize.
-3. **Estimate factor returns** — Run a WLS regression on the latest trading day to solve for factor returns:
+1. **Prepare Y (excess returns)** — Download daily prices from Yahoo Finance, compute returns, and subtract the benchmark (`SPY`).
+2. **Prepare X (factor exposures)** — Build a cross-sectional factor matrix with four style factors (`Size`, `Value`, `Momentum`, `Volatility`), then Z-score normalize.
+3. **Estimate factor returns** — Run WLS on a single trading day:
 
    `beta = (X^T W X)^(-1) X^T W y`
 
@@ -16,8 +19,10 @@ The pipeline has three steps:
 
 ```
 portfolio_analytics/
-├── config.py    # Tickers, benchmark, date range, factor settings
-├── barra.py     # Data pipeline and WLS regression
+├── config.py       # Tickers, benchmark, date range, factor settings
+├── features.py     # Daily rolling factor computation (panel data)
+├── barra.py        # Static cross-section WLS demo
+├── barra_panel.py  # Daily rolling exposures + WLS on latest day
 └── README.md
 ```
 
@@ -28,84 +33,122 @@ portfolio_analytics/
 - `pandas`
 - `numpy`
 
-Install dependencies:
-
 ```bash
 pip install yfinance pandas numpy
 ```
 
 ## Configuration
 
-Edit `config.py` to change the universe, date range, and factor parameters:
+Edit `config.py`:
 
 ```python
 TICKERS = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META"]
 BENCHMARK = "SPY"
 
-START_DATE = "2024-01-01"
+START_DATE = "2020-01-01"
 END_DATE = "2026-01-01"
 
-LOOKBACK_MOM = 252   # ~12 months for momentum
-SKIP_RECENT = 21     # skip last month (Barra 12M-1M convention)
-LOOKBACK_VOL = 60    # ~3 months for volatility
+LOOKBACK_MOM = 63    # ~3 months momentum (shorter window for more ML samples)
+SKIP_RECENT = 5      # skip ~1 week
+LOOKBACK_VOL = 20    # ~1 month volatility
 
 FACTOR_NAMES = ['Size', 'Value', 'Momentum', 'Volatility']
 ```
 
-**Note:** You need at least as many stocks as factors (ideally more) for the WLS regression to be well-conditioned.
+You need at least as many stocks as factors (ideally more) for WLS to be well-conditioned.
 
 ## Run
 
+**Static demo** (single-day snapshot exposures):
+
 ```bash
-cd portfolio_analytics
 python barra.py
 ```
 
-## Output
+**Daily rolling panel** (uses `features.py`):
 
-Example output:
-
-```
---- the dependent variable Y (excess returns) is aligned successfully ---
-Ticker          AAPL      MSFT      NVDA     GOOGL      AMZN      META
-Date
-2025-12-31  0.002941 -0.000509  0.001864  0.004701  0.000055 -0.001391
-
---- the independent variable X (Barra style factor exposure matrix) is aligned successfully ---
-           Size     Value  Momentum  Volatility
-AAPL   0.665218 -1.327353 -0.475431   -1.294973
-MSFT  -0.235059  0.572073 -0.359180   -1.191009
-NVDA   0.960927 -1.090309  0.413741    1.066147
-...
-
---- the factor returns are estimated successfully ---
-Size_Return: 0.000691
-Value_Return: -0.000524
-Momentum_Return: 0.001343
-Volatility_Return: -0.000288
+```bash
+python barra_panel.py
 ```
 
-- **Y** — Each stock's daily return minus the benchmark return.
-- **X** — Standardized factor exposures (see table below).
-- **Factor returns** — How much each style factor contributed on the latest day.
+## `barra.py` vs `barra_panel.py`
+
+| | `barra.py` | `barra_panel.py` |
+|---|-----------|------------------|
+| Factor exposures | Static snapshot (`yfinance` info) | Daily rolling (`features.py`) |
+| X shape | `(N stocks, M factors)` | `(date, ticker) × M factors` |
+| Use case | Quick Barra WLS demo | Factor time series, ML feature panel |
 
 ## Factors
+
+### `barra.py` (static)
 
 | Factor | Definition | Data source |
 |--------|------------|-------------|
 | Size | `ln(market cap)` | `yfinance` ticker info |
 | Value | `1 / price-to-book` | `yfinance` ticker info |
-| Momentum | Cumulative return over past 252 trading days, excluding the most recent 21 days | Historical prices |
-| Volatility | Standard deviation of daily returns over the past 60 trading days | Historical prices |
+| Momentum | Cumulative return over lookback, excluding recent days | Historical prices |
+| Volatility | Std of daily returns over lookback | Historical prices |
+
+### `features.py` / `barra_panel.py` (daily rolling)
+
+| Factor | Definition | Data source |
+|--------|------------|-------------|
+| Size | `ln(price)` proxy | Daily close prices |
+| Value | `book_per_share / price` (B/P proxy) | Daily close + `priceToBook` |
+| Momentum | `(1 + r).prod() - 1` over `LOOKBACK_MOM`, skip `SKIP_RECENT` | Daily returns |
+| Volatility | Std of returns over `LOOKBACK_VOL` | Daily returns |
+
+`features.py` functions:
+
+- `compute_momentum(returns)` / `compute_volatility(returns)` — price-based rolling factors
+- `compute_size(close)` / `compute_value(close)` — size and value proxies
+- `build_factor_panel(returns, close)` — merge all factors into a `(date, ticker)` panel
+- `zscore_cross_section(panel)` — cross-sectional Z-Score per day
+
+## Output
+
+`barra_panel.py` example:
+
+```
+--- X panel (daily rolling exposures) ---
+                         Size     Value  Momentum  Volatility
+date       ticker
+2025-12-31 AAPL          ...
+           MSFT          ...
+           ...
+
+--- Factor returns on 2025-12-31 ---
+Size_Return: ...
+Value_Return: ...
+Momentum_Return: ...
+Volatility_Return: ...
+```
+
+- **Y** — Each stock's daily return minus the benchmark return.
+- **X** — Standardized factor exposures per stock per day.
+- **Factor returns** — How much each style factor contributed on the chosen day.
+
+## ML-ready panel
+
+`barra_panel.py` produces a daily `(date, ticker)` feature panel. To build a training set:
+
+```python
+y = Y_excess.stack().rename("excess_return")
+ml_df = X_panel.join(y, how="inner")
+```
+
+Each row is one stock on one day with factor exposures and same-day excess return. Add a forward-return label for prediction tasks (use time-based train/test splits, not random shuffle).
 
 ## Limitations
 
 This is a learning demo, not production Barra:
 
-- Small stock universe — results improve with more names, but remain illustrative.
-- `Size` and `Value` exposures use a **current snapshot** from `yfinance`, not historical daily values.
-- `Momentum` and `Volatility` are computed from price history as of the latest date, but are not rolled forward daily in this script.
-- WLS weights use `ln(market cap)` as a simplified stand-in (real Barra uses sqrt market cap).
+- Small stock universe — illustrative only.
+- `barra.py` uses static `yfinance` snapshots for Size/Value.
+- `features.py` Value uses a simplified B/P proxy (not quarterly fundamentals forward-filled).
+- Size in the panel uses `ln(price)` as a market-cap proxy.
+- WLS weights use `ln(market cap)` (real Barra uses sqrt market cap).
 - No industry factors, neutralization, or specific risk model.
 
 ## License
