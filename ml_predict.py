@@ -11,7 +11,11 @@ from config import (
 )
 from features import build_factor_panel, zscore_cross_section
 
+########################################################
 #define the functions for the ml
+########################################################
+
+#load the market data
 
 def load_market_data():
     all_assets = TICKERS + [BENCHMARK]
@@ -21,16 +25,22 @@ def load_market_data():
     y_excess = returns[TICKERS].sub(returns[BENCHMARK], axis=0)
     return close, returns, y_excess
 
+#define the function for the forward excess return
+
 def forward_excess_return(y_excess: pd.DataFrame, horizon: int) -> pd.Series:
     """Cumulative excess return from t+1 to t+horizon."""
     fwd = sum(y_excess.shift(-k) for k in range(1, horizon + 1))
-    target = fwd.stack()
+    target = fwd.stack() # switch the ticker and date to the columns
     target.index = target.index.set_names(["date", "ticker"])
     return target.rename(f"target_{horizon}d")
+
+#define the function for the ml dataset
 
 def build_ml_dataset(x_panel: pd.DataFrame, y_excess: pd.DataFrame, horizon: int) -> pd.DataFrame:
     target = forward_excess_return(y_excess, horizon)
     return x_panel.join(target, how="inner").dropna()
+
+#define the function for the time split
 
 def time_split(df: pd.DataFrame, train_ratio: float):
     dates = df.index.get_level_values("date").unique().sort_values()
@@ -41,8 +51,15 @@ def time_split(df: pd.DataFrame, train_ratio: float):
     test = df[df.index.get_level_values("date").isin(test_dates)]
     return train, test, train_dates[-1], test_dates[0]
 
+#define the function for the rank ic
+
 def rank_ic(y_true: pd.Series, y_pred: pd.Series) -> float:
     return y_true.corr(y_pred, method="spearman")
+
+    #ic is the correlation between the true and predicted returns
+
+
+#define the function for the evaluate predictions
 
 def evaluate_predictions(test: pd.DataFrame, pred: np.ndarray, target_col: str, label: str):
     test = test.copy()
@@ -53,14 +70,16 @@ def evaluate_predictions(test: pd.DataFrame, pred: np.ndarray, target_col: str, 
             continue
         daily_ics.append(group["pred"].corr(group[target_col]))
         daily_rank_ics.append(rank_ic(group[target_col], group["pred"]))
-    mse = mean_squared_error(test[target_col], pred)
-    mean_ic = float(np.nanmean(daily_ics))
-    mean_rank_ic = float(np.nanmean(daily_rank_ics))
+    mse = mean_squared_error(test[target_col], pred) #mean squared error is the average of the squared differences between the true and predicted returns
+    mean_ic = float(np.nanmean(daily_ics)) #mean ic is the average of the ic over the days
+    mean_rank_ic = float(np.nanmean(daily_rank_ics)) #mean rank ic is the average of the rank ic over the days
     print(f"\n--- {label} ---")
     print(f"MSE:          {mse:.6f}")
     print(f"Mean IC:      {mean_ic:.4f}")
     print(f"Mean Rank IC: {mean_rank_ic:.4f}")
     return mean_ic, mean_rank_ic
+
+#define the main function
 
 def main():
     target_col = f"target_{FORWARD_DAYS}d"
@@ -89,6 +108,7 @@ def main():
         ),
     }
 
+#define the function for the model comparison
     results = []
     for name, model in models.items():
         if model is None:

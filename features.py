@@ -6,7 +6,9 @@ from config import (
     FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE,
     LOOKBACK_MOM, SKIP_RECENT, LOOKBACK_VOL,
 )
+########################################################
 #define the functions for the factors
+########################################################
 
 def compute_momentum(returns: pd.DataFrame) -> pd.DataFrame:
     """compute the momentum for each ticker"""
