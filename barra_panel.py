@@ -5,34 +5,41 @@ import numpy as np
 from config import FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE
 from features import build_factor_panel, zscore_cross_section
 
-# 1. 下载数据
+# 1. download the data
 all_assets = TICKERS + [BENCHMARK]
 data = yf.download(all_assets, start=START_DATE, end=END_DATE)
 
 close = data["Close"]
 returns = close.pct_change().dropna()
 
-# 2. 超额收益 Y（date × ticker）
-Y_excess = returns[TICKERS].sub(returns[BENCHMARK], axis=0)
+# 2. excess return Y (date × ticker)
+Y_excess = returns[TICKERS].sub(returns[BENCHMARK], axis=0) #every column in the TICKERS dataframe is subtracted by the benchmark returns
 
-# 3. 每日滚动因子暴露 X（date, ticker）× factors
+# 3. daily rolling factor exposure X (date, ticker)× factors
 X_panel = build_factor_panel(returns, close)
 X_panel = zscore_cross_section(X_panel)
 
 print("--- X panel (daily rolling exposures) ---")
-print(X_panel.tail(12))   # 最后一天 6 只股票
+print(X_panel.tail(12))   # the last 12 days
 
-# 4. 选一天做 WLS（默认最后一天）
-date = Y_excess.index[-1]
-y_t = Y_excess.loc[date].values.reshape(-1, 1)
-X_t = X_panel.loc[date][FACTOR_NAMES].values.astype(float)
+# 4. select one day to do WLS (default the last day)
+date = Y_excess.index[-1] #the last day
+X_day = X_panel.loc[date][FACTOR_NAMES].dropna() #drop the rows with missing values
+tickers_t = X_day.index.tolist()
 
-weights = [np.log(yf.Ticker(t).info.get("marketCap")) for t in TICKERS]
+y_t = Y_excess.loc[date, tickers_t].values.reshape(-1, 1) #the excess returns of the selected day
+X_t = X_day.values.astype(float)
+
+weights = [
+    np.log(mc) if (mc := yf.Ticker(t).info.get("marketCap")) else 0.0
+    for t in tickers_t
+]
 W_t = np.diag(weights)
 
 X_T_W = X_t.T @ W_t
 beta = np.linalg.inv(X_T_W @ X_t) @ X_T_W @ y_t
 
 print(f"\n--- Factor returns on {date.date()} ---")
+
 for i, factor in enumerate(FACTOR_NAMES):
     print(f"{factor}_Return: {beta[i][0]:.6f}")

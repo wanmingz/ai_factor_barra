@@ -7,8 +7,9 @@ from sklearn.metrics import mean_squared_error
 
 from config import (
     FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE,
-    FORWARD_DAYS, TRAIN_RATIO,
+    FORWARD_DAYS, TRAIN_RATIO, TOP_PCT, COST_BPS, REBALANCE_FREQ,
 )
+from backtest import next_day_excess, long_short_backtest, summarize_backtest
 from features import build_factor_panel, zscore_cross_section
 
 ########################################################
@@ -61,7 +62,16 @@ def rank_ic(y_true: pd.Series, y_pred: pd.Series) -> float:
 
 #define the function for the evaluate predictions
 
-def evaluate_predictions(test: pd.DataFrame, pred: np.ndarray, target_col: str, label: str):
+def evaluate_predictions(
+    test: pd.DataFrame,
+    pred: np.ndarray,
+    target_col: str,
+    label: str,
+    ret_1d: pd.Series | None = None,
+    top_pct: float = TOP_PCT,
+    cost_bps: float = COST_BPS,
+    rebalance_freq: str = REBALANCE_FREQ,
+):
     test = test.copy()
     test["pred"] = pred
     daily_ics, daily_rank_ics = [], []
@@ -70,14 +80,25 @@ def evaluate_predictions(test: pd.DataFrame, pred: np.ndarray, target_col: str, 
             continue
         daily_ics.append(group["pred"].corr(group[target_col]))
         daily_rank_ics.append(rank_ic(group[target_col], group["pred"]))
-    mse = mean_squared_error(test[target_col], pred) #mean squared error is the average of the squared differences between the true and predicted returns
-    mean_ic = float(np.nanmean(daily_ics)) #mean ic is the average of the ic over the days
-    mean_rank_ic = float(np.nanmean(daily_rank_ics)) #mean rank ic is the average of the rank ic over the days
+    mse = mean_squared_error(test[target_col], pred)
+    mean_ic = float(np.nanmean(daily_ics))
+    mean_rank_ic = float(np.nanmean(daily_rank_ics))
     print(f"\n--- {label} ---")
     print(f"MSE:          {mse:.6f}")
     print(f"Mean IC:      {mean_ic:.4f}")
     print(f"Mean Rank IC: {mean_rank_ic:.4f}")
-    return mean_ic, mean_rank_ic
+
+    bt_stats = {}
+    if ret_1d is not None:
+        bt_stats = summarize_backtest(
+            long_short_backtest(test, pred, ret_1d, top_pct, cost_bps, rebalance_freq)
+        )
+        print(f"Ann Return:   {bt_stats['ann_return']:.2%}")
+        print(f"Sharpe:       {bt_stats['sharpe']:.2f}")
+        print(f"Max Drawdown: {bt_stats['max_drawdown']:.2%}")
+        print(f"Hit Rate:     {bt_stats['hit_rate']:.2%}")
+
+    return mean_ic, mean_rank_ic, bt_stats
 
 #define the main function
 
@@ -85,6 +106,7 @@ def main():
     target_col = f"target_{FORWARD_DAYS}d"
     print("Loading market data and building factor panel...")
     close, returns, y_excess = load_market_data()
+    ret_1d = next_day_excess(y_excess)
     x_panel = zscore_cross_section(build_factor_panel(returns, close))
     ml_df = build_ml_dataset(x_panel, y_excess, FORWARD_DAYS)
 
@@ -95,10 +117,13 @@ def main():
     print(f"Train:  {len(train)} rows (through {last_train_date.date()})")
     print(f"Test:   {len(test)} rows (from {first_test_date.date()})")
 
+#split the data into train and test
+
     x_train = train[FACTOR_NAMES].values
     y_train = train[target_col].values
     x_test = test[FACTOR_NAMES].values
 
+#define the models
     models = {
         "Baseline (predict 0)": None,
         "Momentum only (OLS)": "momentum",
@@ -114,15 +139,18 @@ def main():
         if model is None:
             pred = np.zeros(len(x_test))
         elif model == "momentum":
+            #for momentum only, fit the model and predict the test set
             mom_train = train[["Momentum"]].values
             mom_test = test[["Momentum"]].values
             coef = np.linalg.lstsq(mom_train, y_train, rcond=None)[0]
             pred = mom_test @ coef
-        else:
+        else: #for ridge and random forest, fit the model and predict the test set
             model.fit(x_train, y_train)
             pred = model.predict(x_test)
-        mean_ic, mean_rank_ic = evaluate_predictions(test, pred, target_col, name)
-        results.append({"model": name, "mean_ic": mean_ic, "mean_rank_ic": mean_rank_ic})
+        mean_ic, mean_rank_ic, bt_stats = evaluate_predictions(
+            test, pred, target_col, name, ret_1d=ret_1d
+        )
+        results.append({"model": name, "mean_ic": mean_ic, "mean_rank_ic": mean_rank_ic, **bt_stats})
 
     print("\n--- Model comparison (test set) ---")
     summary = pd.DataFrame(results).set_index("model")

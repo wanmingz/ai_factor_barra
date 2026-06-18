@@ -32,7 +32,7 @@ BENCHMARK = "SPY"
 
 # START_DATE / END_DATE: Historical data download window (Yahoo Finance)
 # Used in: yf.download(..., start=START_DATE, end=END_DATE)
-START_DATE = "2020-01-01"
+START_DATE = "2016-01-01"
 END_DATE = "2026-06-16"
 
 # -----------------------------------------------------------------------------
@@ -66,3 +66,19 @@ FORWARD_DAYS = 5
 # TRAIN_RATIO: Time-based train/test split (first N% of dates = train)
 # Used in: ml_predict.time_split() — no random shuffle (avoids look-ahead bias)
 TRAIN_RATIO = 0.8
+
+# -----------------------------------------------------------------------------
+# 5. Backtesting
+# -----------------------------------------------------------------------------
+
+# TOP_PCT: Long top & short bottom percentile by prediction at each rebalance
+# Used in: backtest.long_short_backtest()
+TOP_PCT = 0.2
+
+# COST_BPS: One-way transaction cost in basis points (0 = ignore costs)
+# Used in: backtest.long_short_backtest() — charged only on rebalance days
+COST_BPS = 0
+
+# REBALANCE_FREQ: "monthly" (first trading day of month) or "daily"
+# Used in: backtest.long_short_backtest()
+REBALANCE_FREQ = "monthly"

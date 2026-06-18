@@ -26,7 +26,8 @@ equity_factor_ml/
 ├── features.py     # Daily rolling factor computation (panel data)
 ├── barra.py        # Static cross-section WLS demo
 ├── barra_panel.py  # Daily rolling exposures + WLS on latest day
-├── ml_predict.py   # ML training & evaluation pipeline
+├── ml_predict.py   # ML training, evaluation & long-short backtest
+├── backtest.py     # Daily long-short portfolio backtest
 └── README.md
 ```
 
@@ -62,6 +63,9 @@ All scripts read parameters from `config.py`. The file is organized into four se
 | `FACTOR_NAMES` | Factor engineering | Factor column names (order matches X matrix) | Factor panel, z-score, ML features, WLS |
 | `FORWARD_DAYS` | Machine learning | ML label: cumulative excess return over next N days | `forward_excess_return`, `build_ml_dataset` |
 | `TRAIN_RATIO` | Machine learning | Time-based train/test split (no random shuffle) | `ml_predict.time_split()` |
+| `TOP_PCT` | Backtesting | Long/short leg size at each rebalance | `backtest.long_short_backtest()` |
+| `COST_BPS` | Backtesting | One-way transaction cost in bps (`0` = no costs), on rebalance days only | `backtest.long_short_backtest()` |
+| `REBALANCE_FREQ` | Backtesting | `"monthly"` or `"daily"` rebalance schedule | `backtest.long_short_backtest()` |
 
 ### Example (`config.py`)
 
@@ -83,6 +87,11 @@ FACTOR_NAMES = ["Size", "Value", "Momentum", "Volatility"]
 # 4. Machine Learning
 FORWARD_DAYS = 5
 TRAIN_RATIO = 0.8
+
+# 5. Backtesting
+TOP_PCT = 0.2
+COST_BPS = 0   # 0 = ignore transaction costs
+REBALANCE_FREQ = "monthly"
 ```
 
 You need at least as many stocks as factors (ideally more) for WLS to be well-conditioned. The default universe is **50 liquid S&P 500 names** — large enough for stable cross-sectional IC, small enough for a learning demo.
@@ -151,14 +160,16 @@ python ml_predict.py
 
 ```
 load_market_data()          → close, returns, y_excess
+next_day_excess()           → ret_1d (next-day excess, for backtest PnL)
 build_factor_panel()        → raw factor panel
 zscore_cross_section()      → x_panel (features X)
 forward_excess_return()     → target_Nd (label y)
 build_ml_dataset()          → ml_df (X + y joined)
 time_split()                → train / test (by date, no shuffle)
+long_short_backtest()       → daily LS returns on test set
 ```
 
-Each row in `ml_df` is one stock on one day: four factor exposures (X) and the cumulative excess return over the next `FORWARD_DAYS` trading days (y).
+ML labels use forward `FORWARD_DAYS`-day excess return; the backtest uses **next-day** excess return (`ret_1d`) with **monthly rebalancing** (first trading day of each month; set `REBALANCE_FREQ = "daily"` to restore daily rebalance).
 
 ### Models compared
 
@@ -178,6 +189,10 @@ Computed per trading day on the test set, then averaged:
 | **MSE** | Mean squared error between predicted and actual returns |
 | **Mean IC** | Pearson correlation of predictions vs actual returns (cross-sectional, per day) |
 | **Mean Rank IC** | Spearman rank correlation (per day) — primary metric for stock ranking |
+| **Ann Return** | Annualized long-short portfolio return (top/bottom `TOP_PCT`, no transaction costs by default) |
+| **Sharpe** | Annualized Sharpe ratio of daily LS returns |
+| **Max Drawdown** | Maximum peak-to-trough drawdown of cumulative LS returns |
+| **Hit Rate** | Fraction of days with positive LS return |
 
 ### Example output (50-ticker universe)
 
@@ -192,16 +207,19 @@ Test:   14928 rows (from 2025-03-13)
 MSE:          0.002262
 Mean IC:      0.0951
 Mean Rank IC: 0.0767
+Ann Return:   72.65%
+Sharpe:       2.37
+Max Drawdown: -13.44%
+Hit Rate:     58.52%
 
 --- Model comparison (test set) ---
-                          mean_ic  mean_rank_ic
-Ridge (4 factors)          0.0951        0.0767
-RandomForest (4 factors)   0.0470        0.0652
-Momentum only (OLS)        0.0601        0.0507
-Baseline (predict 0)          NaN           NaN
+                          mean_ic  mean_rank_ic  ann_return  sharpe  max_drawdown  hit_rate
+Ridge (4 factors)          0.0951        0.0767      0.7265  2.3686       -0.1344    0.5852
+RandomForest (4 factors)   0.0471        0.0653      0.6506  2.5085       -0.1009    0.5788
+...
 ```
 
-Ridge (4-factor linear model) typically wins on Rank IC. IC values are lower but more credible than a 6-stock universe, where small cross-sections inflate correlation estimates.
+Ridge wins on Rank IC; RandomForest can show higher Sharpe. Backtest returns are gross of costs (`COST_BPS = 0`) — treat as illustrative, not live-trading estimates.
 
 ## Output (`barra_panel.py`)
 
@@ -234,7 +252,8 @@ This is a learning demo, not production Barra:
 - Size in the panel uses `ln(price)` as a market-cap proxy.
 - WLS weights use `ln(market cap)` (real Barra uses sqrt market cap).
 - ML label uses arithmetic sum of daily excess returns (not compounded).
-- Single train/test split — no walk-forward validation or portfolio backtest yet.
+- Single train/test split — no walk-forward validation yet.
+- Long-short backtest rebalances monthly by default (`REBALANCE_FREQ = "monthly"`); no transaction costs (`COST_BPS = 0`).
 - No industry factors, neutralization, or specific risk model.
 
 ## License
