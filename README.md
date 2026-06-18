@@ -16,7 +16,7 @@ Three entry points:
 
    `beta = (X^T W X)^(-1) X^T W y`
 
-4. **Predict forward returns (ML)** — Use today's factor exposures to predict cumulative excess return over the next N trading days; evaluate with IC and Rank IC.
+4. **Predict forward returns (ML)** — Use today's factor exposures to predict cumulative excess return over the next N trading days; evaluate with IC, Rank IC, and a long-short backtest.
 
 ## Project structure
 
@@ -27,7 +27,7 @@ equity_factor_ml/
 ├── barra.py        # Static cross-section WLS demo
 ├── barra_panel.py  # Daily rolling exposures + WLS on latest day
 ├── ml_predict.py   # ML training, evaluation & long-short backtest
-├── backtest.py     # Daily long-short portfolio backtest
+├── backtest.py     # Long-short backtest + rebalance holdings log
 └── README.md
 ```
 
@@ -47,7 +47,7 @@ pip install yfinance pandas numpy scikit-learn
 
 ## Configuration
 
-All scripts read parameters from `config.py`. The file is organized into four sections; each variable is documented inline with what it defines and which modules use it.
+All scripts read parameters from `config.py`. The file is organized into five sections; each variable is documented inline with what it defines and which modules use it.
 
 ### Config reference
 
@@ -75,7 +75,7 @@ TICKERS = ["AAPL", "MSFT", "NVDA", ...]  # 50 names — see config.py for full l
 BENCHMARK = "SPY"
 
 # 2. Data Range
-START_DATE = "2020-01-01"
+START_DATE = "2016-01-01"
 END_DATE = "2026-06-16"
 
 # 3. Factor Engineering
@@ -166,10 +166,30 @@ zscore_cross_section()      → x_panel (features X)
 forward_excess_return()     → target_Nd (label y)
 build_ml_dataset()          → ml_df (X + y joined)
 time_split()                → train / test (by date, no shuffle)
-long_short_backtest()       → daily LS returns on test set
+long_short_backtest()       → daily LS returns + holdings DataFrame
 ```
 
-ML labels use forward `FORWARD_DAYS`-day excess return; the backtest uses **next-day** excess return (`ret_1d`) with **monthly rebalancing** (first trading day of each month; set `REBALANCE_FREQ = "daily"` to restore daily rebalance).
+ML labels use forward `FORWARD_DAYS`-day excess return. The backtest uses **next-day** excess return (`ret_1d`) with **monthly rebalancing** on the first trading day of each month (`REBALANCE_FREQ = "monthly"`). Set `REBALANCE_FREQ = "daily"` for daily rebalance.
+
+### Long-short backtest (`backtest.py`)
+
+Each rebalance day:
+
+1. Rank stocks in the test set by model prediction `pred`
+2. **Long** top `TOP_PCT` (default 20%) — e.g. 10 of 50 names
+3. **Short** bottom `TOP_PCT`
+4. Hold until the next rebalance; compute daily PnL from held names' `ret_1d`
+
+`long_short_backtest()` returns `(daily_ls, holdings_df)`. `holdings_df` logs every rebalance:
+
+| Column | Meaning |
+|--------|---------|
+| `date` | Rebalance date |
+| `side` | `"long"` or `"short"` |
+| `ticker` | Stock symbol |
+| `pred` | Model score used for ranking |
+
+`ml_predict.py` prints the **last rebalance** holdings after each model's evaluation.
 
 ### Models compared
 
@@ -194,32 +214,37 @@ Computed per trading day on the test set, then averaged:
 | **Max Drawdown** | Maximum peak-to-trough drawdown of cumulative LS returns |
 | **Hit Rate** | Fraction of days with positive LS return |
 
-### Example output (50-ticker universe)
+### Example output (`START_DATE = "2016-01-01"`, 50 tickers)
 
 ```
 --- ML dataset ---
-Rows: 74496 | Features: ['Size', 'Value', 'Momentum', 'Volatility']
+Rows: 122784 | Features: ['Size', 'Value', 'Momentum', 'Volatility']
 Label:  forward 5-day excess return
-Train:  59568 rows (through 2025-03-12)
-Test:   14928 rows (from 2025-03-13)
+Train:  98208 rows (through 2024-05-21)
+Test:   24576 rows (from 2024-05-22)
 
 --- Ridge (4 factors) ---
-MSE:          0.002262
-Mean IC:      0.0951
-Mean Rank IC: 0.0767
-Ann Return:   72.65%
-Sharpe:       2.37
-Max Drawdown: -13.44%
-Hit Rate:     58.52%
+Mean Rank IC: 0.0546
+Ann Return:   57.87%
+Sharpe:       1.95
+Max Drawdown: -20.23%
+Hit Rate:     55.86%
+Holdings on last rebalance (2026-06-01):
+      date  side ticker     pred
+2026-06-01  long    AMD 0.013234
+2026-06-01  long  CMCSA 0.006855
+...
+2026-06-01 short  BRK-B 0.000711
 
 --- Model comparison (test set) ---
                           mean_ic  mean_rank_ic  ann_return  sharpe  max_drawdown  hit_rate
-Ridge (4 factors)          0.0951        0.0767      0.7265  2.3686       -0.1344    0.5852
-RandomForest (4 factors)   0.0471        0.0653      0.6506  2.5085       -0.1009    0.5788
-...
+Ridge (4 factors)          0.0730        0.0546      0.5787  1.9521       -0.2023    0.5586
+RandomForest (4 factors)   0.0197        0.0373      0.3174  1.4142       -0.1906    0.5430
+Momentum only (OLS)        0.0246        0.0216      0.2193  0.8045       -0.2722    0.5391
+Baseline (predict 0)          NaN           NaN     -0.2166 -1.8575       -0.4113    0.4531
 ```
 
-Ridge wins on Rank IC; RandomForest can show higher Sharpe. Backtest returns are gross of costs (`COST_BPS = 0`) — treat as illustrative, not live-trading estimates.
+Rank IC is the primary signal metric. Backtest returns are gross of costs (`COST_BPS = 0`) and can look high on a short test window — treat as illustrative, not live-trading estimates.
 
 ## Output (`barra_panel.py`)
 
@@ -246,7 +271,8 @@ Volatility_Return: ...
 
 This is a learning demo, not production Barra:
 
-- 50-stock subset of the S&P 500 — better than 6 names, but not a full index.
+- 50-stock subset of the S&P 500 — better than 6 names, but not a full index; current list is a survivorship-biased snapshot.
+- `barra_panel.py` aligns `X` and `y` to the same tickers on the chosen WLS day (not all names may have Value factor data).
 - `barra.py` uses static `yfinance` snapshots for Size/Value.
 - `features.py` Value uses a simplified B/P proxy (not quarterly fundamentals forward-filled); `compute_value` calls `yf.Ticker(t).info` once per ticker.
 - Size in the panel uses `ln(price)` as a market-cap proxy.
