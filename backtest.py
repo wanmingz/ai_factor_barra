@@ -22,8 +22,10 @@ def long_short_backtest(
     top_pct: float = 0.2,
     cost_bps: float = 0.0,
     rebalance_freq: str = "monthly",
-) -> pd.Series:
+) -> tuple[pd.Series, pd.DataFrame]:
     """Long-short excess return: long top_pct, short bottom_pct, equal-weighted.
+
+    Returns daily LS returns and a holdings log (one row per ticker per rebalance day).
 
     rebalance_freq: "monthly" — rebalance on the first trading day of each month;
                     "daily" — rebalance every day.
@@ -38,7 +40,7 @@ def long_short_backtest(
     )
 
     long_tickers, short_tickers = None, None
-    daily_ls, dates = [], []
+    daily_ls, dates, holdings = [], [], []
 
     for date in all_dates:
         group = df.xs(date, level="date")
@@ -49,6 +51,16 @@ def long_short_backtest(
             ranked = group.sort_values("pred", ascending=False)
             long_tickers = ranked.head(k).index.tolist()
             short_tickers = ranked.tail(k).index.tolist()
+            for ticker in long_tickers:
+                holdings.append({
+                    "date": date, "side": "long", "ticker": ticker,
+                    "pred": group.loc[ticker, "pred"],
+                })
+            for ticker in short_tickers:
+                holdings.append({
+                    "date": date, "side": "short", "ticker": ticker,
+                    "pred": group.loc[ticker, "pred"],
+                })
             cost = (4 * k / n) * (cost_bps / 10_000) if cost_bps > 0 else 0.0
         else:
             cost = 0.0
@@ -58,7 +70,9 @@ def long_short_backtest(
         daily_ls.append(long_ret - short_ret - cost)
         dates.append(date)
 
-    return pd.Series(daily_ls, index=dates, name="ls_return")
+    holdings_df = pd.DataFrame(holdings)
+    daily_ls_series = pd.Series(daily_ls, index=dates, name="ls_return")
+    return daily_ls_series, holdings_df
 
 
 def summarize_backtest(daily_ls: pd.Series) -> dict:

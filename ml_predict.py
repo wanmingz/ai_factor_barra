@@ -81,22 +81,28 @@ def evaluate_predictions(
         daily_ics.append(group["pred"].corr(group[target_col]))
         daily_rank_ics.append(rank_ic(group[target_col], group["pred"]))
     mse = mean_squared_error(test[target_col], pred)
-    mean_ic = float(np.nanmean(daily_ics))
-    mean_rank_ic = float(np.nanmean(daily_rank_ics))
+    mean_ic = float(np.nanmean(daily_ics)) if daily_ics else float("nan")
+    mean_rank_ic = float(np.nanmean(daily_rank_ics)) if daily_rank_ics else float("nan")
     print(f"\n--- {label} ---")
     print(f"MSE:          {mse:.6f}")
     print(f"Mean IC:      {mean_ic:.4f}")
     print(f"Mean Rank IC: {mean_rank_ic:.4f}")
 
     bt_stats = {}
+    holdings_df = pd.DataFrame()
     if ret_1d is not None:
-        bt_stats = summarize_backtest(
-            long_short_backtest(test, pred, ret_1d, top_pct, cost_bps, rebalance_freq)
+        daily_ls, holdings_df = long_short_backtest(
+            test, pred, ret_1d, top_pct, cost_bps, rebalance_freq
         )
+        bt_stats = summarize_backtest(daily_ls)
         print(f"Ann Return:   {bt_stats['ann_return']:.2%}")
         print(f"Sharpe:       {bt_stats['sharpe']:.2f}")
         print(f"Max Drawdown: {bt_stats['max_drawdown']:.2%}")
         print(f"Hit Rate:     {bt_stats['hit_rate']:.2%}")
+        if not holdings_df.empty:
+            last_date = holdings_df["date"].max()
+            print(f"Holdings on last rebalance ({pd.Timestamp(last_date).date()}):")
+            print(holdings_df[holdings_df["date"] == last_date].to_string(index=False))
 
     return mean_ic, mean_rank_ic, bt_stats
 
