@@ -22,7 +22,7 @@ Three entry points:
 
 ```
 equity_factor_ml/
-├── config.py       # Tickers, benchmark, date range, factor & ML settings
+├── config.py       # Global settings (universe, dates, factors, ML) — documented inline
 ├── features.py     # Daily rolling factor computation (panel data)
 ├── barra.py        # Static cross-section WLS demo
 ├── barra_panel.py  # Daily rolling exposures + WLS on latest day
@@ -46,29 +46,43 @@ pip install yfinance pandas numpy scikit-learn
 
 ## Configuration
 
-Edit `config.py`:
+All scripts read parameters from `config.py`. The file is organized into four sections; each variable is documented inline with what it defines and which modules use it.
+
+### Config reference
+
+| Variable | Section | Defines | Used by |
+|----------|---------|---------|---------|
+| `TICKERS` | Universe | Stock universe (50 liquid S&P 500 names, yfinance symbols) | `features.py`, `ml_predict.py`, `barra.py`, `barra_panel.py` |
+| `BENCHMARK` | Universe | Benchmark ETF for excess returns (`y_excess = stock − benchmark`) | `load_market_data`, `barra.py`, `barra_panel.py` |
+| `START_DATE` | Data range | Historical data start date | All `yf.download` calls |
+| `END_DATE` | Data range | Historical data end date | All `yf.download` calls |
+| `LOOKBACK_MOM` | Factor engineering | Momentum lookback in trading days (~3 months) | `features.compute_momentum()` |
+| `SKIP_RECENT` | Factor engineering | Days skipped at the end of the momentum window | `features.compute_momentum()` |
+| `LOOKBACK_VOL` | Factor engineering | Volatility lookback window (~1 month) | `features.compute_volatility()` |
+| `FACTOR_NAMES` | Factor engineering | Factor column names (order matches X matrix) | Factor panel, z-score, ML features, WLS |
+| `FORWARD_DAYS` | Machine learning | ML label: cumulative excess return over next N days | `forward_excess_return`, `build_ml_dataset` |
+| `TRAIN_RATIO` | Machine learning | Time-based train/test split (no random shuffle) | `ml_predict.time_split()` |
+
+### Example (`config.py`)
 
 ```python
-# 50 large-cap S&P 500 names (see config.py for full list)
-TICKERS = [
-    "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "BRK-B", "AVGO", "TSLA",
-    "WMT", "LLY", "JPM", "V", "UNH", "XOM", "MA", "ORCL", "COST", "HD", "PG",
-    # ... 30 more tickers
-]
+# 1. Universe & Benchmark
+TICKERS = ["AAPL", "MSFT", "NVDA", ...]  # 50 names — see config.py for full list
 BENCHMARK = "SPY"
 
+# 2. Data Range
 START_DATE = "2020-01-01"
 END_DATE = "2026-06-16"
 
-LOOKBACK_MOM = 63    # ~3 months momentum
-SKIP_RECENT = 5      # skip ~1 week
-LOOKBACK_VOL = 20    # ~1 month volatility
+# 3. Factor Engineering
+LOOKBACK_MOM = 63
+SKIP_RECENT = 5
+LOOKBACK_VOL = 20
+FACTOR_NAMES = ["Size", "Value", "Momentum", "Volatility"]
 
-FACTOR_NAMES = ['Size', 'Value', 'Momentum', 'Volatility']
-
-# ML settings
-FORWARD_DAYS = 5     # label: cumulative excess return over next N days
-TRAIN_RATIO = 0.8    # time-based split: first 80% of dates for training
+# 4. Machine Learning
+FORWARD_DAYS = 5
+TRAIN_RATIO = 0.8
 ```
 
 You need at least as many stocks as factors (ideally more) for WLS to be well-conditioned. The default universe is **50 liquid S&P 500 names** — large enough for stable cross-sectional IC, small enough for a learning demo.
