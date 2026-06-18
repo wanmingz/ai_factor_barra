@@ -1,220 +1,168 @@
 # Equity Factor ML
 
-A small Barra-style factor demo that downloads market data, builds factor exposures, estimates factor returns via weighted least squares (WLS), and trains ML models to predict forward excess returns.
+**A cross-sectional factor research pipeline**: Barra-style style factors → WLS factor return estimation → machine-learning alpha prediction → information coefficient (IC) evaluation and long-short backtesting.
 
-Three entry points:
+Built as a **research sandbox** for exploring how classical factor exposures can be combined with ML to forecast forward excess returns — the kind of end-to-end workflow common in systematic equity research.
 
-- **`barra.py`** — static cross-section demo (snapshot factor exposures on the latest day)
-- **`barra_panel.py`** — daily rolling factor panel via `features.py` (time-series factor returns)
-- **`ml_predict.py`** — ML pipeline: factor panel → forward-return label → time-based train/test → model comparison
+> **Scope**: Educational / portfolio project. Not a production risk model. Limitations are documented explicitly below.
 
-## What it does
+> **Roadmap**: An **AI factor** (5th style factor from ML predictions, fed back into WLS) is planned but **not yet implemented**. See [Planned: AI Factor](#planned-ai-factor) below.
 
-1. **Prepare Y (excess returns)** — Download daily prices from Yahoo Finance, compute returns, and subtract the benchmark (`SPY`).
-2. **Prepare X (factor exposures)** — Build a cross-sectional factor matrix with four style factors (`Size`, `Value`, `Momentum`, `Volatility`), then Z-score normalize.
-3. **Estimate factor returns** — Run WLS on a single trading day:
+---
 
-   `beta = (X^T W X)^(-1) X^T W y`
+## Research Question
 
-4. **Predict forward returns (ML)** — Use today's factor exposures to predict cumulative excess return over the next N trading days; evaluate with IC, Rank IC, and a long-short backtest.
+> *Can standardized style-factor exposures predict forward cross-sectional excess returns, and does a simple ML layer improve stock-ranking ability over a single-factor baseline?*
 
-## Project structure
+The pipeline answers this in three stages:
+
+1. **Factor model** — Estimate daily factor premia via weighted least squares (WLS).
+2. **Alpha model** — Train regressors on factor exposures to predict N-day forward excess return.
+3. **Portfolio test** — Translate predictions into a dollar-neutral long-short book and measure IC, Rank IC, and PnL statistics out-of-sample.
+
+A fourth stage — treating the ML signal as a tradable **AI factor** inside the Barra framework — is the intended next step (not built yet).
+
+---
+
+## Architecture
+
+```mermaid
+flowchart TB
+    subgraph ingest [Data Ingestion]
+        YF[Yahoo Finance] --> PX[Prices & Returns]
+        PX --> Y["Excess returns Y<br/>r_i − r_SPY"]
+    end
+
+    subgraph feat [Feature Engineering]
+        PX --> RAW[Raw factor panel]
+        RAW --> ZS["Cross-sectional z-score<br/>(date, ticker) × 4 factors"]
+    end
+
+    subgraph est [Estimation]
+        ZS --> WLS["WLS: β = (X'WX)⁻¹X'Wy"]
+        ZS --> ML["ML: f(X) → ŷ_{t→t+N}"]
+    end
+
+    subgraph eval [Evaluation]
+        ML --> IC["Daily IC / Rank IC"]
+        ML --> LS["Long-short backtest<br/>top 20% / bottom 20%"]
+    end
+```
+
+### Entry points (increasing complexity)
+
+| Script | Role | Target variable |
+|--------|------|-----------------|
+| `barra.py` | Static cross-section WLS demo | Same-day excess return |
+| `barra_panel.py` | Daily rolling factor panel + WLS on last day | Same-day excess return |
+| `ml_predict.py` | Full ML pipeline + model comparison + backtest | Forward N-day excess return |
+
+---
+
+## Project Structure
 
 ```
 equity_factor_ml/
-├── config.py       # Global settings (universe, dates, factors, ML) — documented inline
-├── features.py     # Daily rolling factor computation (panel data)
-├── barra.py        # Static cross-section WLS demo
-├── barra_panel.py  # Daily rolling exposures + WLS on latest day
-├── ml_predict.py   # ML training, evaluation & long-short backtest
-├── backtest.py     # Long-short backtest + rebalance holdings log
+├── config.py        # Universe, dates, factor windows, ML & backtest params
+├── features.py      # Rolling factor computation + cross-sectional z-score
+├── barra.py         # Snapshot WLS (quick Barra mechanics demo)
+├── barra_panel.py   # Time-series factor panel + WLS
+├── ml_predict.py    # Dataset build, train/test split, model comparison
+├── backtest.py      # Long-short portfolio simulation + rebalance log
 └── README.md
 ```
 
-## Requirements
+---
 
-- Python 3.11+
-- `yfinance`
-- `pandas`
-- `numpy`
-- `scikit-learn`
+## Methodology
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install yfinance pandas numpy scikit-learn
-```
+### Universe & returns
 
-## Configuration
+- **Universe**: 50 liquid large-cap names (S&P 500 subset), configurable in `config.py`
+- **Benchmark**: `SPY`
+- **Excess return**: `y_excess(t,i) = r_stock(t,i) − r_SPY(t)`
+- **Sample period**: 2016-01-01 → 2026-06-16 (default)
 
-All scripts read parameters from `config.py`. The file is organized into five sections; each variable is documented inline with what it defines and which modules use it.
+### Style factors (4)
 
-### Config reference
+Daily rolling exposures in `features.py`, z-scored cross-sectionally each day:
 
-| Variable | Section | Defines | Used by |
-|----------|---------|---------|---------|
-| `TICKERS` | Universe | Stock universe (50 liquid S&P 500 names, yfinance symbols) | `features.py`, `ml_predict.py`, `barra.py`, `barra_panel.py` |
-| `BENCHMARK` | Universe | Benchmark ETF for excess returns (`y_excess = stock − benchmark`) | `load_market_data`, `barra.py`, `barra_panel.py` |
-| `START_DATE` | Data range | Historical data start date | All `yf.download` calls |
-| `END_DATE` | Data range | Historical data end date | All `yf.download` calls |
-| `LOOKBACK_MOM` | Factor engineering | Momentum lookback in trading days (~3 months) | `features.compute_momentum()` |
-| `SKIP_RECENT` | Factor engineering | Days skipped at the end of the momentum window | `features.compute_momentum()` |
-| `LOOKBACK_VOL` | Factor engineering | Volatility lookback window (~1 month) | `features.compute_volatility()` |
-| `FACTOR_NAMES` | Factor engineering | Factor column names (order matches X matrix) | Factor panel, z-score, ML features, WLS |
-| `FORWARD_DAYS` | Machine learning | ML label: cumulative excess return over next N days | `forward_excess_return`, `build_ml_dataset` |
-| `TRAIN_RATIO` | Machine learning | Time-based train/test split (no random shuffle) | `ml_predict.time_split()` |
-| `TOP_PCT` | Backtesting | Long/short leg size at each rebalance | `backtest.long_short_backtest()` |
-| `COST_BPS` | Backtesting | One-way transaction cost in bps (`0` = no costs), on rebalance days only | `backtest.long_short_backtest()` |
-| `REBALANCE_FREQ` | Backtesting | `"monthly"` or `"daily"` rebalance schedule | `backtest.long_short_backtest()` |
+| Factor | Construction | Notes |
+|--------|--------------|-------|
+| **Size** | `ln(price)` | Price proxy for market cap in panel mode |
+| **Value** | `book_per_share / price` | B/P proxy from current P/B × daily price |
+| **Momentum** | Cumulative return over 63d, skip last 5d | Classic 12-1 style window |
+| **Volatility** | 20d rolling std of daily returns | Low-vol anomaly exposure |
 
-### Example (`config.py`)
+`barra.py` uses point-in-time `yfinance` snapshots for Size/Value (`ln(marketCap)`, `1/PB`) — useful for understanding WLS mechanics, not for production alpha.
 
-```python
-# 1. Universe & Benchmark
-TICKERS = ["AAPL", "MSFT", "NVDA", ...]  # 50 names — see config.py for full list
-BENCHMARK = "SPY"
+### WLS factor return estimation
 
-# 2. Data Range
-START_DATE = "2016-01-01"
-END_DATE = "2026-06-16"
-
-# 3. Factor Engineering
-LOOKBACK_MOM = 63
-SKIP_RECENT = 5
-LOOKBACK_VOL = 20
-FACTOR_NAMES = ["Size", "Value", "Momentum", "Volatility"]
-
-# 4. Machine Learning
-FORWARD_DAYS = 5
-TRAIN_RATIO = 0.8
-
-# 5. Backtesting
-TOP_PCT = 0.2
-COST_BPS = 0   # 0 = ignore transaction costs
-REBALANCE_FREQ = "monthly"
-```
-
-You need at least as many stocks as factors (ideally more) for WLS to be well-conditioned. The default universe is **50 liquid S&P 500 names** — large enough for stable cross-sectional IC, small enough for a learning demo.
-
-## Run
-
-**Static demo** (single-day snapshot exposures):
-
-```bash
-python barra.py
-```
-
-**Daily rolling panel** (uses `features.py`):
-
-```bash
-python barra_panel.py
-```
-
-**ML prediction** (factor panel → forward return → model comparison):
-
-```bash
-python ml_predict.py
-```
-
-> First run with 50 tickers may take several minutes: `yf.download` for 51 symbols plus per-ticker `yfinance` info calls in `compute_value`.
-
-## `barra.py` vs `barra_panel.py` vs `ml_predict.py`
-
-| | `barra.py` | `barra_panel.py` | `ml_predict.py` |
-|---|-----------|------------------|-----------------|
-| Factor exposures | Static snapshot (`yfinance` info) | Daily rolling (`features.py`) | Daily rolling (`features.py`) |
-| X shape | `(N stocks, M factors)` | `(date, ticker) × M factors` | `(date, ticker) × M factors` |
-| Label | Same-day excess return | Same-day excess return | Forward N-day cumulative excess return |
-| Use case | Quick Barra WLS demo | Factor time series | Predict & rank stocks |
-
-## Factors
-
-### `barra.py` (static)
-
-| Factor | Definition | Data source |
-|--------|------------|-------------|
-| Size | `ln(market cap)` | `yfinance` ticker info |
-| Value | `1 / price-to-book` | `yfinance` ticker info |
-| Momentum | Cumulative return over lookback, excluding recent days | Historical prices |
-| Volatility | Std of daily returns over lookback | Historical prices |
-
-### `features.py` / `barra_panel.py` / `ml_predict.py` (daily rolling)
-
-| Factor | Definition | Data source |
-|--------|------------|-------------|
-| Size | `ln(price)` proxy | Daily close prices |
-| Value | `book_per_share / price` (B/P proxy) | Daily close + `priceToBook` |
-| Momentum | `(1 + r).prod() - 1` over `LOOKBACK_MOM`, skip `SKIP_RECENT` | Daily returns |
-| Volatility | Std of returns over `LOOKBACK_VOL` | Daily returns |
-
-`features.py` functions:
-
-- `compute_momentum(returns)` / `compute_volatility(returns)` — price-based rolling factors
-- `compute_size(close)` / `compute_value(close)` — size and value proxies
-- `build_factor_panel(returns, close)` — merge all factors into a `(date, ticker)` panel
-- `zscore_cross_section(panel)` — cross-sectional Z-Score per day
-
-## ML pipeline (`ml_predict.py`)
-
-### Data flow
+On a chosen date `t`, solve the cross-sectional regression:
 
 ```
-load_market_data()          → close, returns, y_excess
-next_day_excess()           → ret_1d (next-day excess, for backtest PnL)
-build_factor_panel()        → raw factor panel
-zscore_cross_section()      → x_panel (features X)
-forward_excess_return()     → target_Nd (label y)
-build_ml_dataset()          → ml_df (X + y joined)
-time_split()                → train / test (by date, no shuffle)
-long_short_backtest()       → daily LS returns + holdings DataFrame
+β = (Xᵀ W X)⁻¹ Xᵀ W y
 ```
 
-ML labels use forward `FORWARD_DAYS`-day excess return. The backtest uses **next-day** excess return (`ret_1d`) with **monthly rebalancing** on the first trading day of each month (`REBALANCE_FREQ = "monthly"`). Set `REBALANCE_FREQ = "daily"` for daily rebalance.
+- `X ∈ ℝ^{N×M}`: standardized factor exposures
+- `y ∈ ℝ^N`: excess returns
+- `W = diag(ln(marketCap))`: capitalization weights (simplified; institutional Barra models typically use √cap)
+
+`barra_panel.py` aligns `X` and `y` to the same ticker set before regression — some names drop out when Value data is missing.
+
+### ML alpha model
+
+**Features**: z-scored factor panel at date `t`  
+**Label**: arithmetic sum of forward excess returns over `FORWARD_DAYS` (default 5):
+
+```
+target_{N}d(t,i) = Σ_{k=1}^{N} y_excess(t+k, i)
+```
+
+**Train/test split**: chronological, 80/20 by trading date — no random shuffle (avoids look-ahead bias).
+
+**Models compared**:
+
+| Model | Purpose |
+|-------|---------|
+| Baseline (ŷ = 0) | Null ranking benchmark |
+| Momentum OLS | Single-factor linear baseline |
+| Ridge (4 factors) | Regularized multi-factor linear model |
+| RandomForest (4 factors) | Non-linear ensemble (`max_depth=3`) |
+
+### Evaluation framework
+
+**Primary metric — Mean Rank IC** (Spearman correlation between predictions and realized forward returns, averaged across test-set dates). Rank IC is the standard cross-sectional alpha metric in systematic equity research because it measures *ordering* ability, not level forecasting accuracy.
+
+**Secondary metrics**:
+
+| Metric | Definition |
+|--------|------------|
+| Mean IC | Daily Pearson(pred, actual), time-averaged |
+| MSE | Global mean squared error on test set |
+| Ann Return | Annualized long-short return |
+| Sharpe | Annualized Sharpe on daily LS returns |
+| Max Drawdown | Peak-to-trough on cumulative LS equity |
+| Hit Rate | Fraction of days with positive LS PnL |
 
 ### Long-short backtest (`backtest.py`)
 
-Each rebalance day:
+Portfolio construction on the **test set only**:
 
-1. Rank stocks in the test set by model prediction `pred`
-2. **Long** top `TOP_PCT` (default 20%) — e.g. 10 of 50 names
-3. **Short** bottom `TOP_PCT`
-4. Hold until the next rebalance; compute daily PnL from held names' `ret_1d`
+1. At each rebalance date, rank stocks by model prediction `pred`
+2. **Long** top `TOP_PCT` (20%), **short** bottom 20%, equal-weighted
+3. Hold until next rebalance; daily PnL = mean(long `ret_1d`) − mean(short `ret_1d`) − costs
+4. Default: monthly rebalance (first trading day of month); `COST_BPS = 0`
 
-`long_short_backtest()` returns `(daily_ls, holdings_df)`. `holdings_df` logs every rebalance:
+**Design note**: ML label uses a 5-day forward horizon; backtest PnL uses next-day excess return (`ret_1d`) with monthly rebalancing. This is a deliberate simplification — in production, label horizon, holding period, and rebalance frequency should be aligned.
 
-| Column | Meaning |
-|--------|---------|
-| `date` | Rebalance date |
-| `side` | `"long"` or `"short"` |
-| `ticker` | Stock symbol |
-| `pred` | Model score used for ranking |
+`long_short_backtest()` returns `(daily_ls, holdings_df)` with per-rebalance position logs (`date`, `side`, `ticker`, `pred`).
 
-`ml_predict.py` prints the **last rebalance** holdings after each model's evaluation.
+---
 
-### Models compared
+## Results (default config, out-of-sample test set)
 
-| Model | Description |
-|-------|-------------|
-| Baseline (predict 0) | Always predict zero |
-| Momentum only (OLS) | Single-factor linear regression on Momentum |
-| Ridge (4 factors) | L2-regularized linear model on all factors |
-| RandomForest (4 factors) | Tree ensemble on all factors |
-
-### Evaluation metrics
-
-Computed per trading day on the test set, then averaged:
-
-| Metric | Meaning |
-|--------|---------|
-| **MSE** | Mean squared error between predicted and actual returns |
-| **Mean IC** | Pearson correlation of predictions vs actual returns (cross-sectional, per day) |
-| **Mean Rank IC** | Spearman rank correlation (per day) — primary metric for stock ranking |
-| **Ann Return** | Annualized long-short portfolio return (top/bottom `TOP_PCT`, no transaction costs by default) |
-| **Sharpe** | Annualized Sharpe ratio of daily LS returns |
-| **Max Drawdown** | Maximum peak-to-trough drawdown of cumulative LS returns |
-| **Hit Rate** | Fraction of days with positive LS return |
-
-### Example output (`START_DATE = "2016-01-01"`, 50 tickers)
+`START_DATE = 2016-01-01`, 50 tickers, monthly rebalance, zero transaction costs:
 
 ```
 --- ML dataset ---
@@ -222,19 +170,6 @@ Rows: 122784 | Features: ['Size', 'Value', 'Momentum', 'Volatility']
 Label:  forward 5-day excess return
 Train:  98208 rows (through 2024-05-21)
 Test:   24576 rows (from 2024-05-22)
-
---- Ridge (4 factors) ---
-Mean Rank IC: 0.0546
-Ann Return:   57.87%
-Sharpe:       1.95
-Max Drawdown: -20.23%
-Hit Rate:     55.86%
-Holdings on last rebalance (2026-06-01):
-      date  side ticker     pred
-2026-06-01  long    AMD 0.013234
-2026-06-01  long  CMCSA 0.006855
-...
-2026-06-01 short  BRK-B 0.000711
 
 --- Model comparison (test set) ---
                           mean_ic  mean_rank_ic  ann_return  sharpe  max_drawdown  hit_rate
@@ -244,43 +179,154 @@ Momentum only (OLS)        0.0246        0.0216      0.2193  0.8045       -0.272
 Baseline (predict 0)          NaN           NaN     -0.2166 -1.8575       -0.4113    0.4531
 ```
 
-Rank IC is the primary signal metric. Backtest returns are gross of costs (`COST_BPS = 0`) and can look high on a short test window — treat as illustrative, not live-trading estimates.
+**How to read this**:
 
-## Output (`barra_panel.py`)
+- Ridge achieves **Rank IC ≈ 0.055** — modest but directionally meaningful for a 50-stock universe with free data and no neutralization.
+- Linear multi-factor model beats single-factor Momentum and non-linear RandomForest on Rank IC — suggests signal is largely linear in these features, or RF is underfit/overfit relative to sample size.
+- Backtest returns are **gross of costs** on a small, survivorship-biased universe over a short OOS window — treat PnL as illustrative, not investable.
+
+---
+
+## Setup & Run
+
+**Requirements**: Python 3.11+, `yfinance`, `pandas`, `numpy`, `scikit-learn`
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install yfinance pandas numpy scikit-learn
+
+python barra.py          # WLS demo (~seconds)
+python barra_panel.py    # Factor panel + WLS
+python ml_predict.py     # Full pipeline (~minutes on first run)
+```
+
+First run with 50 tickers is slow: bulk price download plus per-ticker `yfinance` info calls for the Value factor.
+
+---
+
+## Configuration (`config.py`)
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `TICKERS` | 50 large caps | Stock universe |
+| `BENCHMARK` | `SPY` | Excess return benchmark |
+| `START_DATE` / `END_DATE` | 2016 → 2026 | Data window |
+| `LOOKBACK_MOM` / `SKIP_RECENT` | 63 / 5 | Momentum window |
+| `LOOKBACK_VOL` | 20 | Volatility window |
+| `FORWARD_DAYS` | 5 | ML label horizon |
+| `TRAIN_RATIO` | 0.8 | Chronological train fraction |
+| `TOP_PCT` | 0.2 | Long/short leg size |
+| `COST_BPS` | 0 | One-way cost on rebalance days |
+| `REBALANCE_FREQ` | `monthly` | `monthly` or `daily` |
+
+---
+
+## Planned: AI Factor
+
+**Status: not implemented.** The current codebase stops at standalone ML alpha (`ml_predict.py`). The AI factor layer is the main item on the roadmap.
+
+### Concept
+
+In institutional quant research, ML output is often embedded into a multi-factor risk/return framework rather than traded in isolation. The planned **AI factor** would be:
 
 ```
---- X panel (daily rolling exposures) ---
-                         Size     Value  Momentum  Volatility
-date       ticker
-2025-12-31 AAPL          ...
-           MSFT          ...
-           ...
-
---- Factor returns on 2025-12-31 ---
-Size_Return: ...
-Value_Return: ...
-Momentum_Return: ...
-Volatility_Return: ...
+AI_Exposure(t, i) = z-score_cross_section( ŷ(t, i) )
 ```
 
-- **Y** — Each stock's daily return minus the benchmark return.
-- **X** — Standardized factor exposures per stock per day.
-- **Factor returns** — How much each style factor contributed on the chosen day.
+where `ŷ(t, i)` is the out-of-sample ML prediction of forward excess return for stock `i` on date `t`. After cross-sectional standardization, this exposure joins the existing four style factors as a **5th column in X**, and WLS estimates its daily factor premium:
 
-## Limitations
+```
+r_i − r_SPY ≈ β_Size·X_Size + … + β_AI·X_AI + ε_i
+```
 
-This is a learning demo, not production Barra:
+### Intended workflow
 
-- 50-stock subset of the S&P 500 — better than 6 names, but not a full index; current list is a survivorship-biased snapshot.
-- `barra_panel.py` aligns `X` and `y` to the same tickers on the chosen WLS day (not all names may have Value factor data).
-- `barra.py` uses static `yfinance` snapshots for Size/Value.
-- `features.py` Value uses a simplified B/P proxy (not quarterly fundamentals forward-filled); `compute_value` calls `yf.Ticker(t).info` once per ticker.
-- Size in the panel uses `ln(price)` as a market-cap proxy.
-- WLS weights use `ln(market cap)` (real Barra uses sqrt market cap).
-- ML label uses arithmetic sum of daily excess returns (not compounded).
-- Single train/test split — no walk-forward validation yet.
-- Long-short backtest rebalances monthly by default (`REBALANCE_FREQ = "monthly"`); no transaction costs (`COST_BPS = 0`).
-- No industry factors, neutralization, or specific risk model.
+```mermaid
+flowchart LR
+    subgraph current [Implemented]
+        F4["4 style factors"] --> ML["ML regressor"]
+        ML --> IC["IC / Rank IC"]
+        ML --> BT["Long-short backtest"]
+    end
+
+    subgraph planned [Planned — AI Factor]
+        ML --> ZS["Cross-sectional z-score"]
+        ZS --> X5["X panel: 5 factors"]
+        F4 --> X5
+        X5 --> WLS2["WLS → β_AI and other premia"]
+        WLS2 --> CMP["Compare: 4-factor vs 5-factor R² / IC"]
+    end
+```
+
+### Implementation sketch (where it would live)
+
+| Step | Module | Change |
+|------|--------|--------|
+| Walk-forward ML predictions | `ml_predict.py` or new `ai_factor.py` | Generate OOS `ŷ(t,i)` per date — no full-sample fit |
+| Build AI exposure panel | `features.py` | `compute_ai_factor(predictions)` → z-scored column |
+| Extend factor universe | `config.py` | `FACTOR_NAMES` → add `"AI"` |
+| WLS with 5 factors | `barra_panel.py` | Regress on extended `X`; report `AI_Return` |
+| Evaluation | new or `ml_predict.py` | Incremental Rank IC, factor correlation with Momentum/Value, subperiod stability |
+
+### Research questions the AI factor would answer
+
+- Does `β_AI` have a stable positive premium out-of-sample?
+- Is the AI signal orthogonal to classical factors, or does it overlap with Momentum?
+- Does adding AI to WLS improve cross-sectional R² beyond the 4-factor model?
+- Does walk-forward AI exposure improve long-short Sharpe vs. direct prediction ranking?
+
+### Why it's not in the repo yet
+
+- Requires **walk-forward** prediction (a single train/test split would leak future model state into earlier WLS dates).
+- Need to decide: same model as `ml_predict.py` (Ridge), or a dedicated model for factor embedding?
+- Factor correlation and turnover need to be checked before treating AI as a style exposure.
+
+This is deliberately documented as planned work — useful to discuss in interviews as *"here's what I built, here's what I'd add next, and here's why the sequencing matters."*
+
+---
+
+## Known Limitations (and what I'd fix next)
+
+Demonstrates research judgment — important for quant interviews:
+
+| Issue | Impact | Production fix |
+|-------|--------|----------------|
+| Survivorship-biased 50-stock snapshot | Inflates backtest | Point-in-time index membership (CRSP/Compustat) |
+| Value from static P/B, not quarterly fundamentals | Look-ahead / stale B/P | Forward-filled quarterly book equity |
+| Size = `ln(price)` in panel | Imperfect cap proxy | Shares outstanding × price |
+| Single train/test split | Overfit risk to one regime | Walk-forward / purged cross-validation |
+| No sector neutralization | Factor crowding in tech, etc. | Industry constraints or orthogonalization |
+| Label horizon ≠ backtest holding period | PnL not tied to prediction horizon | Align N-day label with N-day hold or overlap-adjusted IC |
+| Zero transaction costs | Overstates net alpha | Realistic bps + market impact model |
+| No specific risk / covariance | Can't size positions optimally | Barra USE4-style risk model |
+
+---
+
+## Research Extensions
+
+Beyond the [AI factor](#planned-ai-factor) (primary planned work):
+
+1. **Walk-forward validation** — Prerequisite for AI factor; rolling train/refit windows with decay-weighted samples
+2. **Neutralized alpha** — Regress predictions on industry dummies; trade residual signal
+3. **Alternative labels** — Rank-transformed returns, volatility-scaled targets, quintile classification
+4. **Feature expansion** — Interaction terms, rolling IC of factors, macro regime indicators
+5. **Robustness** — Subperiod analysis, turnover-adjusted Sharpe, deflated Sharpe ratio
+
+---
+
+## Interview Talking Points
+
+Questions this repo is designed to support:
+
+- **Why Rank IC over MSE?** Cross-sectional strategies care about relative ordering, not absolute return levels. A model with low MSE but random ranks has no alpha.
+- **Why chronological split?** Random splits leak future information into training — a common failure mode in quant ML.
+- **Why does Ridge beat RandomForest here?** Limited non-linearity in linear style factors, small feature space, and regularization helping with multicollinearity among Size/Value/Momentum.
+- **Why are backtest returns so high?** Small universe, no costs, survivorship bias, and a favorable OOS window — I report them with caveats, not as live estimates.
+- **How would you productionize this?** Point-in-time data, walk-forward, neutralization, risk model integration, and realistic execution simulation.
+- **What's the AI factor and why isn't it built yet?** ML predictions z-scored and added as a 5th WLS factor to measure incremental premium and orthogonality to style factors. Requires walk-forward OOS predictions first — a single split would contaminate the factor return history.
+
+---
 
 ## License
 
