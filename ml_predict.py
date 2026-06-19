@@ -54,10 +54,11 @@ def time_split(df: pd.DataFrame, train_ratio: float):
 
 #define the function for the rank ic
 
-def rank_ic(y_true: pd.Series, y_pred: pd.Series) -> float:
-    return y_true.corr(y_pred, method="spearman")
+def rank_ic(y_true: pd.Series, y_pred: pd.Series) -> float: 
+    return y_true.corr(y_pred, method="spearman") 
 
     #ic is the correlation between the true and predicted returns
+    #spearman correlation is the correlation between the true and predicted returns rank
 
 
 #define the function for the evaluate predictions
@@ -78,10 +79,10 @@ def evaluate_predictions(
     for _, group in test.groupby(level="date"):
         if len(group) < 3:
             continue
-        daily_ics.append(group["pred"].corr(group[target_col]))
+        daily_ics.append(group["pred"].corr(group[target_col])) #correlation between the predicted and true returns pearson correlation
         daily_rank_ics.append(rank_ic(group[target_col], group["pred"]))
     mse = mean_squared_error(test[target_col], pred)
-    mean_ic = float(np.nanmean(daily_ics)) if daily_ics else float("nan")
+    mean_ic = float(np.nanmean(daily_ics)) if daily_ics else float("nan") #mean of the daily ic
     mean_rank_ic = float(np.nanmean(daily_rank_ics)) if daily_rank_ics else float("nan")
     print(f"\n--- {label} ---")
     print(f"MSE:          {mse:.6f}")
@@ -148,10 +149,10 @@ def main():
             #for momentum only, fit the model and predict the test set
             mom_train = train[["Momentum"]].values
             mom_test = test[["Momentum"]].values
-            coef = np.linalg.lstsq(mom_train, y_train, rcond=None)[0]
-            pred = mom_test @ coef
+            coef = np.linalg.lstsq(mom_train, y_train, rcond=None)[0] #least squares solution
+            pred = mom_test @ coef #predict the test set target_5d ≈ β × Momentum
         else: #for ridge and random forest, fit the model and predict the test set
-            model.fit(x_train, y_train)
+            model.fit(x_train, y_train) #fit the model on the train set target_5d ≈ w1·Size + w2·Value + w3·Momentum + w4·Volatility + b
             pred = model.predict(x_test)
         mean_ic, mean_rank_ic, bt_stats = evaluate_predictions(
             test, pred, target_col, name, ret_1d=ret_1d
