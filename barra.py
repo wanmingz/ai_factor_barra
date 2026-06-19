@@ -1,10 +1,11 @@
 import yfinance as yf
 import pandas as pd
 import numpy as np
+from ai_factor import snapshot_exposure
 
 from config import (
     FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE,
-    LOOKBACK_MOM, SKIP_RECENT, LOOKBACK_VOL,
+    LOOKBACK_MOM, SKIP_RECENT, LOOKBACK_VOL, AI_SCORE_MODE
 )
 
 #==========================================
@@ -53,6 +54,10 @@ for t in TICKERS:
     # Volatility: past 60 days return standard deviation
     vol_window = r.iloc[-LOOKBACK_VOL:]
     X_raw.loc[t, 'Volatility'] = vol_window.std() if len(vol_window) > 1 else np.nan
+
+as_of = returns.index[-1].strftime("%Y-%m-%d")
+ai_exposure = snapshot_exposure(as_of, mode=AI_SCORE_MODE)
+X_raw["AI"] = ai_exposure.reindex(TICKERS)
 
 # z-score standardization
 X_normalized = X_raw.apply(lambda x: (x - x.mean()) / x.std(), axis=0).fillna(0)
