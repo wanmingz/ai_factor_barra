@@ -6,7 +6,7 @@ Built as a **research sandbox** for exploring how classical factor exposures can
 
 > **Scope**: Educational / portfolio project. Not a production risk model. Limitations are documented explicitly below.
 
-> **Roadmap**: An **AI factor** (5th style factor from ML predictions, fed back into WLS) is planned but **not yet implemented**. See [Planned: AI Factor](#planned-ai-factor) below.
+> **Roadmap**: A **Gemini theme agent** scores investment themes daily (`theme_agent.py`); stock-level **AI factor** exposure (theme scores × `themes.csv` weights → 5th WLS factor) is the next integration step. See [AI Theme Agent](#ai-theme-agent) and [Planned: AI Factor](#planned-ai-factor).
 
 ---
 
@@ -20,7 +20,7 @@ The pipeline answers this in three stages:
 2. **Alpha model** — Train regressors on factor exposures to predict N-day forward excess return.
 3. **Portfolio test** — Translate predictions into a dollar-neutral long-short book and measure IC, Rank IC, and PnL statistics out-of-sample.
 
-A fourth stage — treating the ML signal as a tradable **AI factor** inside the Barra framework — is the intended next step (not built yet).
+A fourth stage — mapping **AI theme scores** to stock exposures and embedding them as a **5th factor** in the Barra WLS framework — is in progress (theme agent done; `ai_factor.py` integration pending).
 
 ---
 
@@ -38,9 +38,19 @@ flowchart TB
         RAW --> ZS["Cross-sectional z-score<br/>(date, ticker) × 4 factors"]
     end
 
+    subgraph ai [AI Theme Layer]
+        CSV[themes.csv] --> MAP[Stock-theme weights]
+        ETF[Theme ETF proxies] --> CTX[Market context]
+        CTX --> GEM[Gemini agent]
+        GEM --> TS[Theme scores -1 to +1]
+        MAP --> AIF[AI exposure panel]
+        TS --> AIF
+    end
+
     subgraph est [Estimation]
         ZS --> WLS["WLS: β = (X'WX)⁻¹X'Wy"]
         ZS --> ML["ML: f(X) → ŷ_{t→t+N}"]
+        AIF -.-> WLS
     end
 
     subgraph eval [Evaluation]
@@ -56,19 +66,26 @@ flowchart TB
 | `barra.py` | Static cross-section WLS demo | Same-day excess return |
 | `barra_panel.py` | Daily rolling factor panel + WLS on last day | Same-day excess return |
 | `ml_predict.py` | Full ML pipeline + model comparison + backtest | Forward N-day excess return |
+| `theme_agent.py` | Gemini agent scores investment themes | Theme attractiveness ∈ [-1, 1] |
 
 ---
 
 ## Project Structure
 
 ```
-equity_factor_ml/
+ai_factor_barra/
 ├── config.py        # Universe, dates, factor windows, ML & backtest params
 ├── features.py      # Rolling factor computation + cross-sectional z-score
 ├── barra.py         # Snapshot WLS (quick Barra mechanics demo)
 ├── barra_panel.py   # Time-series factor panel + WLS
 ├── ml_predict.py    # Dataset build, train/test split, model comparison
 ├── backtest.py      # Long-short portfolio simulation + rebalance log
+├── themes.csv       # Stock-to-theme mapping (ticker, theme, weight)
+├── theme_agent.py   # Gemini agent: score themes using ETF context
+├── env_loader.py    # Load GEMINI_API_KEY from .env
+├── .env.example     # API key template (copy to .env)
+├── theme_scores/    # Saved daily theme score JSON files
+├── requirements.txt
 └── README.md
 ```
 
@@ -189,19 +206,27 @@ Baseline (predict 0)          NaN           NaN     -0.2166 -1.8575       -0.411
 
 ## Setup & Run
 
-**Requirements**: Python 3.11+, `yfinance`, `pandas`, `numpy`, `scikit-learn`
+**Requirements**: Python 3.11+, see `requirements.txt` (`yfinance`, `pandas`, `numpy`, `scikit-learn`, `google-genai`)
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install yfinance pandas numpy scikit-learn
+pip install -r requirements.txt
+
+# Optional: Gemini theme agent (copy template, add your key)
+cp .env.example .env
+# Edit .env → GEMINI_API_KEY=...
 
 python barra.py          # WLS demo (~seconds)
 python barra_panel.py    # Factor panel + WLS
 python ml_predict.py     # Full pipeline (~minutes on first run)
+python theme_agent.py    # Score themes via Gemini
+python theme_agent.py --mock   # ETF-momentum proxy, no API key
 ```
 
 First run with 50 tickers is slow: bulk price download plus per-ticker `yfinance` info calls for the Value factor.
+
+**Gemini API key**: Get one at [Google AI Studio](https://aistudio.google.com/apikey). Store it in `.env` (gitignored). Use the API model ID in `config.py` (e.g. `gemini-2.5-flash-lite`), not the display name from the UI.
 
 ---
 
@@ -219,22 +244,116 @@ First run with 50 tickers is slow: bulk price download plus per-ticker `yfinance
 | `TOP_PCT` | 0.2 | Long/short leg size |
 | `COST_BPS` | 0 | One-way cost on rebalance days |
 | `REBALANCE_FREQ` | `monthly` | `monthly` or `daily` |
+| `THEMES_FILE` | `themes.csv` | Stock-theme mapping |
+| `GEMINI_MODEL` | `gemini-2.5-flash-lite` | Gemini model ID for theme scoring |
+| `THEME_SCORES_DIR` | `theme_scores` | Output directory for daily scores |
+| `ENV_FILE` | `.env` | Local API key file (gitignored) |
+
+---
+
+## AI Theme Agent
+
+**Status: implemented** (`theme_agent.py`, `themes.csv`).
+
+### Concept
+
+Instead of treating ML predictions directly as the AI factor, this layer uses a **thematic investing** approach:
+
+1. Each stock maps to one or more **themes** with weights (`themes.csv`).
+2. A **Gemini agent** scores each theme's near-term attractiveness on a scale of **[-1, +1]**, grounded in recent ETF proxy returns.
+3. Stock-level AI exposure (planned in `ai_factor.py`):
+
+```
+AI_Exposure(t, i) = Σ_theme  weight(i, theme) × ThemeScore(t, theme)
+```
+
+After cross-sectional z-scoring, this becomes the **5th column in X** for WLS.
+
+### Themes & mapping
+
+10 themes across the 50-stock universe: `AI`, `Cloud`, `Consumer`, `Energy`, `Financials`, `Healthcare`, `Industrials`, `Media`, `Semiconductors`, `Software`.
+
+Example from `themes.csv`:
+
+```csv
+ticker,theme,weight
+NVDA,AI,0.55
+NVDA,Semiconductors,0.45
+TSLA,Industrials,0.45
+TSLA,Energy,0.3
+TSLA,AI,0.25
+```
+
+### How the agent works
+
+```mermaid
+flowchart LR
+    CSV[themes.csv] --> THEMES[10 themes]
+    ETF[Theme ETF proxies] --> CTX[1m / 3m returns]
+    CTX --> GEM[Gemini agent]
+    THEMES --> GEM
+    GEM --> JSON[theme_scores/YYYY-MM-DD.json]
+```
+
+For each theme, `theme_agent.py` fetches a sector ETF proxy (e.g. AI → `BOTZ`, Semiconductors → `SMH`) and passes recent momentum to Gemini along with a structured prompt. The agent returns JSON scores, saved to `theme_scores/`.
+
+| Theme | ETF proxy |
+|-------|-----------|
+| AI | BOTZ |
+| Cloud | WCLD |
+| Semiconductors | SMH |
+| Healthcare | XLV |
+| Financials | XLF |
+| Consumer | XLY |
+| Energy | XLE |
+| Media | XLC |
+| Industrials | XLI |
+| Software | IGV |
+
+### CLI
+
+```bash
+python theme_agent.py                  # Gemini (reads .env)
+python theme_agent.py --date 2026-06-19
+python theme_agent.py --mock           # ETF z-score proxy, no API key
+python theme_agent.py --no-save        # print only
+```
+
+Example output (`theme_scores/2026-06-19.json`):
+
+```json
+{
+  "as_of": "2026-06-19",
+  "source": "gemini",
+  "scores": {
+    "Semiconductors": 0.9,
+    "Financials": 0.7,
+    "Energy": -0.8
+  }
+}
+```
+
+### Limitations
+
+- Theme mapping is **static** (does not evolve as business models change).
+- Gemini scores are **point-in-time** — serious backtesting needs historical score snapshots or a reproducible proxy (`--mock`).
+- Theme scores may correlate with **Momentum**; orthogonality should be checked before WLS embedding.
 
 ---
 
 ## Planned: AI Factor
 
-**Status: not implemented.** The current codebase stops at standalone ML alpha (`ml_predict.py`). The AI factor layer is the main item on the roadmap.
+**Status: partially implemented.** Theme scoring is live (`theme_agent.py`); stock-level exposure panel and 5-factor WLS integration are next.
 
 ### Concept
 
-In institutional quant research, ML output is often embedded into a multi-factor risk/return framework rather than traded in isolation. The planned **AI factor** would be:
+Embed the AI thematic signal into the multi-factor risk/return framework:
 
 ```
-AI_Exposure(t, i) = z-score_cross_section( ŷ(t, i) )
+AI_Exposure(t, i) = z-score_cross_section( Σ_theme weight(i,theme) × ThemeScore(t,theme) )
 ```
 
-where `ŷ(t, i)` is the out-of-sample ML prediction of forward excess return for stock `i` on date `t`. After cross-sectional standardization, this exposure joins the existing four style factors as a **5th column in X**, and WLS estimates its daily factor premium:
+This exposure joins the four style factors as a **5th column in X**, and WLS estimates its daily factor premium:
 
 ```
 r_i − r_SPY ≈ β_Size·X_Size + … + β_AI·X_AI + ε_i
@@ -244,45 +363,43 @@ r_i − r_SPY ≈ β_Size·X_Size + … + β_AI·X_AI + ε_i
 
 ```mermaid
 flowchart LR
-    subgraph current [Implemented]
-        F4["4 style factors"] --> ML["ML regressor"]
-        ML --> IC["IC / Rank IC"]
-        ML --> BT["Long-short backtest"]
+    subgraph done [Implemented]
+        CSV[themes.csv] --> AGENT[Gemini theme agent]
+        AGENT --> SCORES[theme_scores JSON]
     end
 
-    subgraph planned [Planned — AI Factor]
-        ML --> ZS["Cross-sectional z-score"]
+    subgraph next [Next — ai_factor.py]
+        SCORES --> EXP[Stock AI exposure panel]
+        CSV --> EXP
+        EXP --> ZS[Cross-sectional z-score]
         ZS --> X5["X panel: 5 factors"]
-        F4 --> X5
+        F4["4 style factors"] --> X5
         X5 --> WLS2["WLS → β_AI and other premia"]
-        WLS2 --> CMP["Compare: 4-factor vs 5-factor R² / IC"]
+        WLS2 --> CMP["Compare: 4-factor vs 5-factor IC / R²"]
     end
 ```
 
-### Implementation sketch (where it would live)
+### Remaining implementation
 
 | Step | Module | Change |
 |------|--------|--------|
-| Walk-forward ML predictions | `ml_predict.py` or new `ai_factor.py` | Generate OOS `ŷ(t,i)` per date — no full-sample fit |
-| Build AI exposure panel | `features.py` | `compute_ai_factor(predictions)` → z-scored column |
+| Map theme scores → stock exposure | `ai_factor.py` (new) | `build_ai_exposure(scores, theme_map)` |
+| Merge into factor panel | `features.py` | Join AI column in `build_factor_panel()` |
 | Extend factor universe | `config.py` | `FACTOR_NAMES` → add `"AI"` |
 | WLS with 5 factors | `barra_panel.py` | Regress on extended `X`; report `AI_Return` |
-| Evaluation | new or `ml_predict.py` | Incremental Rank IC, factor correlation with Momentum/Value, subperiod stability |
+| Evaluation | `ml_predict.py` | Incremental Rank IC, factor correlation with Momentum |
 
 ### Research questions the AI factor would answer
 
 - Does `β_AI` have a stable positive premium out-of-sample?
-- Is the AI signal orthogonal to classical factors, or does it overlap with Momentum?
+- Is the AI theme signal orthogonal to classical factors, or does it overlap with Momentum?
 - Does adding AI to WLS improve cross-sectional R² beyond the 4-factor model?
-- Does walk-forward AI exposure improve long-short Sharpe vs. direct prediction ranking?
+- Does Gemini-based theme scoring add information beyond raw ETF momentum (`--mock` baseline)?
 
-### Why it's not in the repo yet
+### Why full integration isn't done yet
 
-- Requires **walk-forward** prediction (a single train/test split would leak future model state into earlier WLS dates).
-- Need to decide: same model as `ml_predict.py` (Ridge), or a dedicated model for factor embedding?
+- Need **historical theme score panels** for walk-forward WLS (daily Gemini calls are expensive; mock proxy or cached JSON for backtest).
 - Factor correlation and turnover need to be checked before treating AI as a style exposure.
-
-This is deliberately documented as planned work — useful to discuss in interviews as *"here's what I built, here's what I'd add next, and here's why the sequencing matters."*
 
 ---
 
@@ -300,17 +417,19 @@ Demonstrates research judgment — important for quant interviews:
 | Label horizon ≠ backtest holding period | PnL not tied to prediction horizon | Align N-day label with N-day hold or overlap-adjusted IC |
 | Zero transaction costs | Overstates net alpha | Realistic bps + market impact model |
 | No specific risk / covariance | Can't size positions optimally | Barra USE4-style risk model |
+| Static theme mapping | Misclassifies evolving businesses | Point-in-time sector/thematic tags |
+| Gemini scores not historical | Can't backtest AI factor rigorously | Cached daily scores or ETF proxy baseline |
 
 ---
 
 ## Research Extensions
 
-Beyond the [AI factor](#planned-ai-factor) (primary planned work):
+Beyond the [AI factor integration](#planned-ai-factor):
 
-1. **Walk-forward validation** — Prerequisite for AI factor; rolling train/refit windows with decay-weighted samples
-2. **Neutralized alpha** — Regress predictions on industry dummies; trade residual signal
-3. **Alternative labels** — Rank-transformed returns, volatility-scaled targets, quintile classification
-4. **Feature expansion** — Interaction terms, rolling IC of factors, macro regime indicators
+1. **`ai_factor.py`** — Map theme scores to stock exposures; merge into WLS / ML pipeline
+2. **Walk-forward validation** — Rolling train/refit windows with decay-weighted samples
+3. **Neutralized alpha** — Regress predictions on industry dummies; trade residual signal
+4. **Alternative labels** — Rank-transformed returns, volatility-scaled targets, quintile classification
 5. **Robustness** — Subperiod analysis, turnover-adjusted Sharpe, deflated Sharpe ratio
 
 ---
@@ -324,7 +443,8 @@ Questions this repo is designed to support:
 - **Why does Ridge beat RandomForest here?** Limited non-linearity in linear style factors, small feature space, and regularization helping with multicollinearity among Size/Value/Momentum.
 - **Why are backtest returns so high?** Small universe, no costs, survivorship bias, and a favorable OOS window — I report them with caveats, not as live estimates.
 - **How would you productionize this?** Point-in-time data, walk-forward, neutralization, risk model integration, and realistic execution simulation.
-- **What's the AI factor and why isn't it built yet?** ML predictions z-scored and added as a 5th WLS factor to measure incremental premium and orthogonality to style factors. Requires walk-forward OOS predictions first — a single split would contaminate the factor return history.
+- **What's the AI factor?** Gemini scores investment themes; stock exposure is a weighted sum of theme scores from `themes.csv`, z-scored and embedded as a 5th WLS factor. Theme agent is built; `ai_factor.py` integration is next.
+- **How do you backtest LLM-based signals?** Point-in-time snapshots in `theme_scores/`, or a reproducible ETF-momentum baseline (`--mock`) for comparison against Gemini.
 
 ---
 
