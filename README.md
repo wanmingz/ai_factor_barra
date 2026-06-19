@@ -117,7 +117,7 @@ flowchart TB
 | Gemini scoring + RAG in prompt | ✅ Done | `theme_agent.py` |
 | ETF-momentum baseline (`--mock`) | ✅ Done | `theme_agent.py` |
 | Daily score + news citation persistence | ✅ Done | `theme_scores/*.json` |
-| Stock AI exposure panel | 🔲 Next | `ai_factor.py` |
+| Stock AI exposure panel |  ✅ Done | `ai_factor.py` |
 | 5-factor WLS (β_AI, ΔR²) | 🔲 Next | `barra_panel.py` |
 | 5-factor ML (incremental Rank IC) | 🔲 Next | `ml_predict.py` |
 | Historical theme score panel (mock batch) | 🔲 Next | `ai_factor.py` |
