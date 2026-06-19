@@ -82,3 +82,38 @@ COST_BPS = 0
 # REBALANCE_FREQ: "monthly" (first trading day of month) or "daily"
 # Used in: backtest.long_short_backtest()
 REBALANCE_FREQ = "monthly"
+
+# -----------------------------------------------------------------------------
+# 6. AI Theme Agent
+# -----------------------------------------------------------------------------
+
+# THEMES_FILE: Stock-to-theme mapping (ticker, theme, weight)
+# Used in: theme_agent.load_theme_map()
+THEMES_FILE = "themes.csv"
+
+# THEME_ETF_PROXY: ETF used as market context for each theme (recent momentum)
+# Used in: theme_agent.fetch_theme_context()
+THEME_ETF_PROXY = {
+    "AI": "BOTZ",
+    "Cloud": "WCLD",
+    "Semiconductors": "SMH",
+    "Healthcare": "XLV",
+    "Financials": "XLF",
+    "Consumer": "XLY",
+    "Energy": "XLE",
+    "Media": "XLC",
+    "Industrials": "XLI",
+    "Software": "IGV",
+}
+
+# THEME_CONTEXT_LOOKBACK: Trading days of ETF return history fed to the agent
+THEME_CONTEXT_LOOKBACK = 63
+
+# GEMINI_MODEL: Gemini model for theme scoring (requires GEMINI_API_KEY env var)
+GEMINI_MODEL = "gemini-2.5-flash-lite"
+
+# THEME_SCORES_DIR: Where daily theme scores are saved as JSON
+THEME_SCORES_DIR = "theme_scores"
+
+# ENV_FILE: Local file for API keys (gitignored; copy from .env.example)
+ENV_FILE = ".env"
