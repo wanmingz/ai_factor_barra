@@ -283,22 +283,74 @@ Once `ai_factor.py` is integrated:
 
 ```
 ai_factor_barra/
-├── themes.csv              # Stock → theme weights
-├── theme_agent.py          # Gemini agent + RAG integration
-├── theme_scores/           # Daily scores + news_sources JSON
-├── news/
-│   ├── ingest.py           # yfinance news per theme
-│   └── rag.py              # Local embedding retrieval
-├── data/news_index/        # Cached RAG vectors (gitignored)
-├── ai_factor.py            # [next] theme scores → stock AI panel
-├── features.py             # Style factors + z-score
-├── barra_panel.py          # WLS factor returns
-├── ml_predict.py           # ML alpha + Rank IC
-├── backtest.py             # Long-short simulation
-├── config.py               # Universe, agent, RAG params
-├── env_loader.py           # Load GEMINI_API_KEY from .env
-├── .env.example
-└── requirements.txt
+│
+├── config.py                 # Global settings: universe, dates, factor names, RAG/agent params
+├── env_loader.py             # Load GEMINI_API_KEY from .env
+├── .env.example              # API key template (copy to .env)
+├── requirements.txt
+├── .gitignore
+│
+├── themes.csv                # Stock → theme exposure weights (50 stocks × 10 themes)
+│
+├── theme_agent.py            # Gemini + RAG + ETF → daily theme scores
+├── theme_scores/             # Persisted theme score JSON (scores, context, news_sources)
+│   └── YYYY-MM-DD.json
+│
+├── news/                     # Free local news RAG (no paid embedding API)
+│   ├── __init__.py
+│   ├── ingest.py             # Fetch yfinance headlines per theme
+│   └── rag.py                # sentence-transformers embed + cosine retrieval
+│
+├── ai_factor.py              # Theme scores → stock-level AI exposure panel
+├── features.py               # Style factors (Size/Value/Mom/Vol) + cross-section z-score
+│
+├── barra.py                  # Single-day 5-factor WLS demo (static X from yfinance info)
+├── barra_panel.py            # Rolling daily factor panel + 5-factor WLS
+├── ml_predict.py             # Ridge/RF models, Rank IC, long-short backtest
+├── backtest.py               # Long-short portfolio simulation (used by ml_predict)
+│
+└── data/                     # Generated caches (gitignored)
+    ├── news_index/           # RAG embeddings per as-of date
+    │   └── YYYY-MM-DD/
+    │       ├── meta.json
+    │       ├── AI.json / AI.npy
+    │       └── …             # one JSON + .npy per theme
+    └── ai_exposure_panel.parquet   # (date, ticker) × AI raw exposure panel
+```
+
+### Module roles
+
+| Path | Role |
+|------|------|
+| `themes.csv` | Static stock–theme weights; input to AI exposure mapping |
+| `theme_agent.py` | **Signal layer** — LLM theme scores with RAG + ETF context |
+| `theme_scores/` | Auditable archive of daily Gemini/mock scores |
+| `news/ingest.py` | Pull and normalize yfinance news by theme |
+| `news/rag.py` | Local embedding index + top-k retrieval per theme |
+| `ai_factor.py` | Map theme scores → per-stock `Raw_AI`; cache parquet panel |
+| `features.py` | Build 4 style factors; merge AI panel; z-score cross-section |
+| `barra.py` | Quick single-date WLS including `AI_Return` |
+| `barra_panel.py` | Full-history factor panel + WLS factor returns |
+| `ml_predict.py` | ML alpha test: Ridge(4) vs Ridge(5), Rank IC, backtest |
+| `backtest.py` | Monthly long-short simulation helpers |
+| `config.py` | `FACTOR_NAMES`, dates, `AI_SCORE_MODE`, RAG params |
+| `data/news_index/` | Cached RAG vectors (rebuilt by `theme_agent` or `news/rag.py`) |
+| `data/ai_exposure_panel.parquet` | Cached AI panel for `barra_panel` / `ml_predict` |
+
+### Recommended run order
+
+```bash
+# 1. Theme scoring (optional — skip if using --mode mock)
+python theme_agent.py --date YYYY-MM-DD
+
+# 2. Build AI exposure panel
+python ai_factor.py --mode auto --rebuild    # Gemini JSON where available, else mock
+# python ai_factor.py --mode mock --rebuild  # full-history mock baseline
+
+# 3. Factor research (any order)
+python barra.py          # single-day WLS snapshot
+python barra_panel.py    # rolling panel + WLS
+python ml_predict.py     # ML comparison + Rank IC
 ```
 
 ---
