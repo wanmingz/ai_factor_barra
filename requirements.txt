@@ -30,3 +30,4 @@ urllib3==2.7.0
 websockets==16.0
 yfinance==1.4.1
 google-genai>=1.0.0
+sentence-transformers>=2.2.0

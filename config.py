@@ -117,3 +117,22 @@ THEME_SCORES_DIR = "theme_scores"
 
 # ENV_FILE: Local file for API keys (gitignored; copy from .env.example)
 ENV_FILE = ".env"
+
+# -----------------------------------------------------------------------------
+# 7. News RAG (local embedding — no paid API)
+# -----------------------------------------------------------------------------
+
+# NEWS_LOOKBACK_DAYS: Only include news published within this window before as_of
+NEWS_LOOKBACK_DAYS = 7
+
+# NEWS_MAX_PER_TICKER: Max headlines fetched per stock from yfinance
+NEWS_MAX_PER_TICKER = 10
+
+# NEWS_RAG_TOP_K: Top articles retrieved per theme for the agent prompt
+NEWS_RAG_TOP_K = 5
+
+# NEWS_INDEX_DIR: Cached news docs + embedding vectors by date
+NEWS_INDEX_DIR = "data/news_index"
+
+# EMBEDDING_MODEL: Local sentence-transformers model (free, runs offline after download)
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"
