@@ -6,11 +6,12 @@ from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 
 from config import (
-    FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE,
+    FACTOR_NAMES, STYLE_FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE,
     FORWARD_DAYS, TRAIN_RATIO, TOP_PCT, COST_BPS, REBALANCE_FREQ,
 )
 from backtest import next_day_excess, long_short_backtest, summarize_backtest
 from features import build_factor_panel, zscore_cross_section
+from ai_factor import build_ai_panel
 
 ########################################################
 #define the functions for the ml
@@ -114,7 +115,8 @@ def main():
     print("Loading market data and building factor panel...")
     close, returns, y_excess = load_market_data()
     ret_1d = next_day_excess(y_excess)
-    x_panel = zscore_cross_section(build_factor_panel(returns, close))
+    ai_panel = build_ai_panel(dates=returns.index)
+    x_panel = zscore_cross_section(build_factor_panel(returns, close, ai_panel=ai_panel))
     ml_df = build_ml_dataset(x_panel, y_excess, FORWARD_DAYS)
 
     train, test, last_train_date, first_test_date = time_split(ml_df, TRAIN_RATIO)
@@ -126,17 +128,17 @@ def main():
 
 #split the data into train and test
 
-    x_train = train[FACTOR_NAMES].values
     y_train = train[target_col].values
-    x_test = test[FACTOR_NAMES].values
 
 #define the models
     models = {
         "Baseline (predict 0)": None,
         "Momentum only (OLS)": "momentum",
-        "Ridge (4 factors)": Ridge(alpha=1.0),
-        "RandomForest (4 factors)": RandomForestRegressor(
-            n_estimators=100, max_depth=3, random_state=42
+        "Ridge (4 factors)": ("ridge4", Ridge(alpha=1.0)),
+        "Ridge (5 factors)": ("ridge5", Ridge(alpha=1.0)),
+        "RandomForest (5 factors)": (
+            "rf5",
+            RandomForestRegressor(n_estimators=100, max_depth=3, random_state=42),
         ),
     }
 
@@ -144,16 +146,17 @@ def main():
     results = []
     for name, model in models.items():
         if model is None:
-            pred = np.zeros(len(x_test))
+            pred = np.zeros(len(test))
         elif model == "momentum":
-            #for momentum only, fit the model and predict the test set
             mom_train = train[["Momentum"]].values
             mom_test = test[["Momentum"]].values
-            coef = np.linalg.lstsq(mom_train, y_train, rcond=None)[0] #least squares solution
-            pred = mom_test @ coef #predict the test set target_5d ≈ β × Momentum
-        else: #for ridge and random forest, fit the model and predict the test set
-            model.fit(x_train, y_train) #fit the model on the train set target_5d ≈ w1·Size + w2·Value + w3·Momentum + w4·Volatility + b
-            pred = model.predict(x_test)
+            coef = np.linalg.lstsq(mom_train, y_train, rcond=None)[0]
+            pred = mom_test @ coef
+        else:
+            kind, est = model
+            feat_cols = STYLE_FACTOR_NAMES if kind == "ridge4" else FACTOR_NAMES
+            est.fit(train[feat_cols].values, y_train)
+            pred = est.predict(test[feat_cols].values)
         mean_ic, mean_rank_ic, bt_stats = evaluate_predictions(
             test, pred, target_col, name, ret_1d=ret_1d
         )

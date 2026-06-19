@@ -2,8 +2,9 @@ import yfinance as yf
 import pandas as pd
 import numpy as np
 
-from config import FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE
+from config import FACTOR_NAMES, STYLE_FACTOR_NAMES, TICKERS, BENCHMARK, START_DATE, END_DATE
 from features import build_factor_panel, zscore_cross_section
+from ai_factor import build_ai_panel
 
 # 1. download the data
 all_assets = TICKERS + [BENCHMARK]
@@ -15,8 +16,9 @@ returns = close.pct_change().dropna()
 # 2. excess return Y (date × ticker)
 Y_excess = returns[TICKERS].sub(returns[BENCHMARK], axis=0) #every column in the TICKERS dataframe is subtracted by the benchmark returns
 
-# 3. daily rolling factor exposure X (date, ticker)× factors
-X_panel = build_factor_panel(returns, close)
+# 3. daily rolling factor exposure X (date, ticker)× factors (incl. AI)
+ai_panel = build_ai_panel(dates=returns.index)
+X_panel = build_factor_panel(returns, close, ai_panel=ai_panel)
 X_panel = zscore_cross_section(X_panel)
 
 print("--- X panel (daily rolling exposures) ---")

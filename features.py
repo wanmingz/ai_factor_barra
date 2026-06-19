@@ -75,13 +75,20 @@ def compute_value(close: pd.DataFrame) -> pd.DataFrame:
 
 #this is the B/P proxy for free data; in production, we will use the quarterly reports forward-filled.
 
-def build_factor_panel(returns: pd.DataFrame, close: pd.DataFrame) -> pd.DataFrame:
-        """merge all the price-related factors"""
+def build_factor_panel(
+    returns: pd.DataFrame,
+    close: pd.DataFrame,
+    ai_panel: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+        """Merge price-related style factors and optional AI exposure panel."""
         mom = compute_momentum(returns)
         vol = compute_volatility(returns)
         size = compute_size(close)
         value = compute_value(close)
-        return mom.join(vol, how="inner").join(size, how="inner").join(value, how="inner")
+        panel = mom.join(vol, how="inner").join(size, how="inner").join(value, how="inner")
+        if ai_panel is not None:
+            panel = panel.join(ai_panel, how="inner")
+        return panel
 
 
 def zscore_cross_section(panel: pd.DataFrame) -> pd.DataFrame:

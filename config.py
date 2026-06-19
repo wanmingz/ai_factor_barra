@@ -53,7 +53,14 @@ LOOKBACK_VOL = 20
 
 # FACTOR_NAMES: Factor column names (order matches X matrix columns)
 # Used in: factor panel, z-score, ML features, WLS regression
-FACTOR_NAMES = ["Size", "Value", "Momentum", "Volatility"]
+STYLE_FACTOR_NAMES = ["Size", "Value", "Momentum", "Volatility"]
+FACTOR_NAMES = STYLE_FACTOR_NAMES + ["AI"]
+
+# AI_FACTOR_CACHE: Cached (date, ticker) raw AI exposure panel
+AI_FACTOR_CACHE = "data/ai_exposure_panel.parquet"
+
+# AI_SCORE_MODE: "auto" = use theme_scores JSON if present else mock; "mock" = ETF proxy only
+AI_SCORE_MODE = "auto"
 
 # -----------------------------------------------------------------------------
 # 4. Machine Learning
