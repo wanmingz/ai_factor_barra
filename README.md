@@ -1,8 +1,8 @@
 # AI Theme Factor Research
 
-**Can LLM-generated thematic views improve cross-sectional equity return explanation and stock ranking, beyond classical Barra style factors?**
+**Can LLM + RAG-enhanced thematic views improve cross-sectional equity return explanation and stock ranking, beyond classical Barra style factors?**
 
-This repo is a **research sandbox** for studying the **AI Theme Factor** — a 5th factor derived from Gemini theme scores and stock-theme mappings, embedded into a Barra-style multi-factor framework alongside Size, Value, Momentum, and Volatility.
+This repo is a **research sandbox** for studying the **AI Theme Factor** — a 5th factor derived from Gemini theme scores (grounded in ETF momentum and RAG-retrieved news) and stock-theme mappings, embedded into a Barra-style multi-factor framework alongside Size, Value, Momentum, and Volatility.
 
 The classical factor pipeline (WLS → ML → IC → long-short backtest) provides the **measurement infrastructure**. The research contribution is testing whether **AI-driven thematic signals** add incremental explanatory and predictive power.
 
@@ -12,7 +12,7 @@ The classical factor pipeline (WLS → ML → IC → long-short backtest) provid
 
 ## Core Research Question
 
-> *When an LLM agent scores investment themes (AI, Semiconductors, Energy, …), does mapping those scores to individual stocks — via thematic exposure weights — produce a tradable factor that (a) earns a positive risk premium in WLS, (b) is orthogonal to Momentum, and (c) improves out-of-sample Rank IC when added to a 4-factor model?*
+> *When an LLM agent scores investment themes (AI, Semiconductors, Energy, …) using ETF context and RAG-retrieved news, does mapping those scores to individual stocks — via thematic exposure weights — produce a factor that (a) earns a positive risk premium in WLS, (b) is orthogonal to Momentum, and (c) improves out-of-sample Rank IC when added to a 4-factor model?*
 
 ### Sub-questions
 
@@ -22,7 +22,7 @@ The classical factor pipeline (WLS → ML → IC → long-short backtest) provid
 | H2 | Is it **orthogonal** to classical factors? | Factor exposure correlation matrix; especially vs. Momentum |
 | H3 | Does it add **incremental R²** over 4 factors? | Compare cross-sectional R²: 4-factor vs. 5-factor WLS |
 | H4 | Does it improve **stock ranking** (Rank IC)? | Ridge 4-factor vs. Ridge 5-factor on forward excess return |
-| H5 | Does **Gemini** beat a naive **ETF-momentum** baseline? | Compare `theme_agent.py` vs. `--mock` scores |
+| H5 | Does **Gemini + RAG** beat a naive **ETF-momentum** baseline? | Compare `theme_agent.py` vs. `--mock` scores |
 
 ---
 
@@ -33,7 +33,7 @@ The classical factor pipeline (WLS → ML → IC → long-short backtest) provid
 **Step 1 — Theme scores** (daily, cross-sectional view on themes):
 
 ```
-ThemeScore(t, k) ∈ [-1, +1]     # Gemini agent or ETF-momentum proxy
+ThemeScore(t, k) ∈ [-1, +1]     # Gemini + RAG + ETF context, or --mock proxy
 ```
 
 **Step 2 — Stock thematic exposure** (from `themes.csv`):
@@ -56,16 +56,18 @@ AI_Exposure(t, i) = z-score_i( Raw_AI(t, ·) )
 r_i − r_SPY ≈ β_Size·X_Size + β_Value·X_Value + β_Mom·X_Mom + β_Vol·X_Vol + β_AI·X_AI + ε_i
 ```
 
-A positive, stable **β_AI** means high-AI-exposure stocks earn excess returns beyond what the four style factors explain — the thematic signal carries incremental premium.
+A positive, stable **β_AI** means high-AI-exposure stocks earn excess returns beyond what the four style factors explain.
 
-### Why themes + LLM, not raw ML predictions?
+### Why themes + LLM + RAG?
 
-| Approach | Interpretability | Research story |
-|----------|------------------|----------------|
-| ML ŷ as 5th factor | Low (black box) | "Does the model embed in Barra?" |
-| **Theme scores → exposure** | High (which themes drive exposure) | "Can LLM thematic views add alpha in a factor framework?" |
+| Layer | Role |
+|-------|------|
+| **RAG (local)** | Retrieve theme-relevant news headlines — free, no embedding API |
+| **Gemini** | Synthesize ETF momentum + news into theme scores |
+| **`themes.csv`** | Map theme views to stock exposures |
+| **Barra WLS / ML** | Measure incremental premium and Rank IC |
 
-The theme layer separates **view generation** (Gemini scores macro/industry themes) from **position mapping** (static weights in `themes.csv`) from **factor estimation** (WLS). Each step is auditable — important for quant research interviews.
+The pipeline separates **information retrieval** (RAG), **view generation** (Gemini), **position mapping** (weights), and **factor estimation** (WLS) — each step is auditable.
 
 ---
 
@@ -73,36 +75,36 @@ The theme layer separates **view generation** (Gemini scores macro/industry them
 
 ```mermaid
 flowchart TB
-    subgraph hypothesis [Research Focus]
-        Q["Does AI Theme Factor<br/>add incremental alpha?"]
+    subgraph rag [News RAG — free local]
+        YFNews[yfinance news] --> Ingest[news/ingest.py]
+        Ingest --> Embed["sentence-transformers<br/>all-MiniLM-L6-v2"]
+        Embed --> Index[data/news_index]
+        Index --> TopK[top-k per theme]
     end
 
-    subgraph signal [Signal Construction]
-        CSV[themes.csv] --> MAP["Stock-theme weights"]
-        ETF[Theme ETF proxies] --> CTX[1m / 3m momentum]
-        CTX --> GEM[Gemini agent]
+    subgraph agent [Theme Agent]
+        ETF[ETF 1m/3m returns] --> GEM[Gemini]
+        TopK --> GEM
         GEM --> TS["ThemeScore(t,k)"]
-        MAP --> RAW["Raw_AI(t,i)"]
-        TS --> RAW
-        RAW --> ZS["AI_Exposure(t,i)"]
     end
 
-    subgraph baseline [Baseline — 4 Style Factors]
-        PX[Prices] --> F4["Size, Value, Mom, Vol"]
-        F4 --> ZS4[Cross-sectional z-score]
+    subgraph factor [AI Factor — next]
+        CSV[themes.csv] --> RAW["Raw_AI(t,i)"]
+        TS --> RAW
+        RAW --> ZS[AI_Exposure z-score]
+    end
+
+    subgraph baseline [4 Style Factors]
+        PX[Prices] --> F4[Size Value Mom Vol]
+        F4 --> X4[z-score]
     end
 
     subgraph test [Impact Measurement]
-        ZS --> X5["X: 5 factors"]
-        ZS4 --> X5
-        X5 --> WLS["WLS → β_AI, ΔR²"]
-        X5 --> ML["ML → Rank IC"]
-        ML --> LS["Long-short backtest"]
+        ZS --> X5[5-factor X panel]
+        X4 --> X5
+        X5 --> WLS["WLS → β_AI"]
+        X5 --> ML[Rank IC + backtest]
     end
-
-    Q --> signal
-    Q --> test
-    baseline --> test
 ```
 
 ### Implementation status
@@ -110,66 +112,110 @@ flowchart TB
 | Component | Status | Module |
 |-----------|--------|--------|
 | Stock-theme mapping (50 stocks × 10 themes) | ✅ Done | `themes.csv` |
-| Gemini theme scoring + ETF context | ✅ Done | `theme_agent.py` |
+| yfinance news ingest per theme | ✅ Done | `news/ingest.py` |
+| Local RAG (free embedding + retrieval) | ✅ Done | `news/rag.py` |
+| Gemini scoring + RAG in prompt | ✅ Done | `theme_agent.py` |
 | ETF-momentum baseline (`--mock`) | ✅ Done | `theme_agent.py` |
-| Daily score persistence | ✅ Done | `theme_scores/*.json` |
+| Daily score + news citation persistence | ✅ Done | `theme_scores/*.json` |
 | Stock AI exposure panel | 🔲 Next | `ai_factor.py` |
 | 5-factor WLS (β_AI, ΔR²) | 🔲 Next | `barra_panel.py` |
 | 5-factor ML (incremental Rank IC) | 🔲 Next | `ml_predict.py` |
-| Historical theme score panel | 🔲 Next | batch `--mock` or cached Gemini |
+| Historical theme score panel (mock batch) | 🔲 Next | `ai_factor.py` |
+
+---
+
+## News RAG Pipeline (free — no paid embedding API)
+
+### `news/ingest.py` — collect headlines
+
+1. Look up tickers per theme from `themes.csv` (e.g. AI → NVDA, MSFT, AMD…)
+2. Fetch recent headlines via `yfinance.Ticker(t).news`
+3. Deduplicate by title; filter to `NEWS_LOOKBACK_DAYS` (default 7) before `as_of`
+
+### `news/rag.py` — retrieve top-k per theme
+
+1. Embed headlines with **local** `sentence-transformers` (`all-MiniLM-L6-v2`)
+2. Query each theme: `"{theme} sector investment outlook stock market news"`
+3. Cosine similarity → top-`NEWS_RAG_TOP_K` (default 5) articles per theme
+4. Cache index under `data/news_index/YYYY-MM-DD/` (JSON + `.npy` vectors)
+
+```bash
+python news/ingest.py    # smoke test: fetch headlines
+python news/rag.py       # build index + print retrieval results
+```
+
+**Cost**: embedding runs locally after first model download — no OpenAI/Gemini embedding API.
+
+**Limitation**: yfinance news has no full historical archive; RAG is for **live / recent** scoring. Historical backtests use `--mock` ETF proxy scores.
 
 ---
 
 ## Theme Agent (`theme_agent.py`)
 
-The agent is the **view-generation layer** for the AI Theme Factor.
+Combines **ETF context**, **RAG news**, and **Gemini** to produce daily theme scores.
 
 ### Workflow
 
-1. Load 10 themes from `themes.csv`
-2. Fetch ETF proxy returns (1m / 3m) as grounding context
-3. Prompt Gemini to score each theme ∈ [-1, +1]
-4. Save structured JSON to `theme_scores/YYYY-MM-DD.json`
-
 ```mermaid
 flowchart LR
-    THEMES[10 themes] --> GEM[Gemini]
-    ETF[BOTZ, SMH, XLE, …] --> GEM
-    GEM --> JSON[theme_scores/]
+    CSV[themes.csv] --> Ingest
+    YF[yfinance news] --> Ingest[ingest + RAG]
+    Ingest --> Prompt[Gemini prompt]
+    ETF[BOTZ SMH XLE …] --> Prompt
+    Prompt --> JSON["theme_scores/*.json"]
 ```
 
-### Theme → ETF proxies
-
-| Theme | ETF | Theme | ETF |
-|-------|-----|-------|-----|
-| AI | BOTZ | Healthcare | XLV |
-| Cloud | WCLD | Financials | XLF |
-| Semiconductors | SMH | Consumer | XLY |
-| Software | IGV | Energy | XLE |
-| Media | XLC | Industrials | XLI |
-
-### Example: Gemini scores (2026-06-19)
-
-| Theme | Score | ETF 3m return | Interpretation |
-|-------|-------|---------------|----------------|
-| Semiconductors | **+0.90** | +58.0% | Strongest bullish view |
-| Energy | **−0.80** | −7.3% | Bearish, aligned with weak XLE |
-| Financials | +0.70 | +10.9% | Bullish |
-| AI | +0.50 | +7.8% | Moderately bullish |
-
-Gemini differentiates themes beyond raw momentum (e.g. Software +0.1 despite +5.6% ETF return) — the research question is whether this differentiation improves stock-level factor quality.
+1. Fetch ETF proxy returns (1m / 3m) per theme
+2. Build or load cached RAG index; retrieve top-k news per theme
+3. Prompt Gemini with ETF data + headlines
+4. Save JSON with `scores`, `context`, and `news_sources`
 
 ### CLI
 
 ```bash
-python theme_agent.py                  # Gemini (reads .env)
+python theme_agent.py                  # Gemini + RAG + ETF (default)
 python theme_agent.py --date 2026-06-19
-python theme_agent.py --mock           # reproducible ETF proxy baseline
+python theme_agent.py --no-news        # Gemini + ETF only (A/B vs RAG)
+python theme_agent.py --rebuild-news   # force rebuild news index
+python theme_agent.py --mock           # ETF proxy baseline, no API key
 ```
+
+Requires `GEMINI_API_KEY` in `.env` (see `.env.example`). Use API model ID in `config.py` (e.g. `gemini-2.5-flash-lite`), not the UI display name.
+
+### Example output (`theme_scores/2026-06-19.json`, source: `gemini_rag`)
+
+| Theme | Score | Notes |
+|-------|-------|-------|
+| Semiconductors | **+0.80** | Bullish; strong SMH momentum |
+| Industrials | +0.60 | |
+| Energy | **−0.60** | Bearish; weak XLE |
+| Media | −0.40 | |
+| Software | 0.00 | Neutral despite positive ETF — Gemini ≠ pure momentum |
+
+JSON also includes `news_sources` with cited headlines per theme for interview demos.
 
 ### Baseline for H5
 
-`--mock` z-scores ETF 3-month returns across themes → [-1, +1]. This is the **null hypothesis** for the LLM: if Gemini cannot beat mock on Rank IC or β_AI stability, the agent adds no value over naive momentum.
+`--mock` z-scores ETF 3-month returns across themes → [-1, +1]. If Gemini+RAG cannot beat mock on Rank IC or β_AI stability, the LLM layer adds no value over naive theme momentum.
+
+---
+
+## Getting AI Factor into Barra (next step)
+
+Theme scores exist; **`ai_factor.py` is not yet implemented**. The intended integration:
+
+```python
+# 1. Load theme scores for date t
+scores = load_theme_scores("2026-06-19")
+
+# 2. Map to stocks via themes.csv
+Raw_AI(i) = Σ weight(i, theme) × scores[theme]
+
+# 3. Merge with 4 style factors, z-score, WLS
+FACTOR_NAMES = ["Size", "Value", "Momentum", "Volatility", "AI"]
+```
+
+See [`barra_panel.py`](barra_panel.py): once `X_panel` has 5 columns, WLS automatically reports `AI_Return` as the 5th β.
 
 ---
 
@@ -203,14 +249,16 @@ Momentum only (OLS)        0.0246        0.0216    0.80
 Baseline (predict 0)          NaN           NaN   -1.86
 ```
 
-**This is the bar the 5-factor model must beat.** Adding AI Theme Factor is meaningful only if Ridge (5 factors) improves Rank IC over Ridge (4 factors), and β_AI is positive and not fully explained by Momentum correlation.
+**This is the bar the 5-factor model must beat.**
 
 ### Entry points
 
 | Script | Role |
 |--------|------|
-| `theme_agent.py` | **AI Theme Factor signal** — score themes |
-| `barra_panel.py` | Factor panel + WLS (will extend to 5 factors) |
+| `news/ingest.py` | Fetch yfinance news per theme |
+| `news/rag.py` | Local embedding RAG index + retrieval |
+| `theme_agent.py` | **Signal** — Gemini + RAG theme scores |
+| `barra_panel.py` | Factor panel + WLS (4 factors today) |
 | `ml_predict.py` | ML comparison + Rank IC + backtest |
 | `barra.py` | Static WLS demo |
 | `backtest.py` | Long-short portfolio simulation |
@@ -219,41 +267,15 @@ Baseline (predict 0)          NaN           NaN   -1.86
 
 ## How We Measure AI Theme Factor Impact
 
-Once `ai_factor.py` is integrated, the evaluation protocol:
+Once `ai_factor.py` is integrated:
 
-### 1. Factor premium (H1)
-
-Run 5-factor WLS daily; track **β_AI** time series.
-
-- Mean β_AI > 0?
-- Stable across subperiods?
-
-### 2. Orthogonality (H2)
-
-```
-corr(AI_Exposure, Momentum)   ← key risk: theme factor ≈ momentum in disguise
-corr(AI_Exposure, Size/Value/Vol)
-```
-
-If corr(AI, Momentum) > 0.7, residualize AI against Momentum before WLS.
-
-### 3. Incremental explanatory power (H3)
-
-```
-ΔR² = R²(5-factor WLS) − R²(4-factor WLS)     per cross-section date, then average
-```
-
-### 4. Incremental predictive power (H4)
-
-```
-Rank IC( Ridge 5-factor )  vs.  Rank IC( Ridge 4-factor )     on test set
-```
-
-### 5. LLM value-add (H5)
-
-```
-Rank IC( Gemini scores )  vs.  Rank IC( --mock scores )
-```
+| Test | Metric |
+|------|--------|
+| H1 Factor premium | Mean **β_AI** from daily 5-factor WLS |
+| H2 Orthogonality | `corr(AI_Exposure, Momentum)` |
+| H3 Incremental R² | `R²(5-factor) − R²(4-factor)` per date |
+| H4 Predictive power | Rank IC: Ridge(5) vs Ridge(4) on test set |
+| H5 LLM value-add | Gemini+RAG vs `--mock` on sample dates |
 
 ---
 
@@ -261,16 +283,20 @@ Rank IC( Gemini scores )  vs.  Rank IC( --mock scores )
 
 ```
 ai_factor_barra/
-├── themes.csv           # Stock → theme weights (input to AI exposure)
-├── theme_agent.py       # Gemini agent: theme scores
-├── theme_scores/        # Daily score snapshots
-├── ai_factor.py         # [next] theme scores → stock AI exposure panel
-├── features.py          # 4 style factors + z-score
-├── barra_panel.py       # WLS factor return estimation
-├── ml_predict.py        # ML alpha + Rank IC + backtest
-├── backtest.py          # Long-short simulation
-├── config.py            # Universe, windows, Gemini model
-├── env_loader.py        # Load GEMINI_API_KEY from .env
+├── themes.csv              # Stock → theme weights
+├── theme_agent.py          # Gemini agent + RAG integration
+├── theme_scores/           # Daily scores + news_sources JSON
+├── news/
+│   ├── ingest.py           # yfinance news per theme
+│   └── rag.py              # Local embedding retrieval
+├── data/news_index/        # Cached RAG vectors (gitignored)
+├── ai_factor.py            # [next] theme scores → stock AI panel
+├── features.py             # Style factors + z-score
+├── barra_panel.py          # WLS factor returns
+├── ml_predict.py           # ML alpha + Rank IC
+├── backtest.py             # Long-short simulation
+├── config.py               # Universe, agent, RAG params
+├── env_loader.py           # Load GEMINI_API_KEY from .env
 ├── .env.example
 └── requirements.txt
 ```
@@ -284,40 +310,49 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 cp .env.example .env
-# Add GEMINI_API_KEY=...  (https://aistudio.google.com/apikey)
-# Use API model ID in config.py, e.g. gemini-2.5-flash-lite
+# GEMINI_API_KEY=...  https://aistudio.google.com/apikey
 
-python theme_agent.py              # generate today's theme scores
-python theme_agent.py --mock       # ETF baseline, no API key
-python barra_panel.py              # 4-factor WLS (baseline)
-python ml_predict.py               # 4-factor ML (baseline)
+# --- AI Theme signal ---
+python news/rag.py                 # build local RAG index (optional standalone test)
+python theme_agent.py              # Gemini + RAG + ETF → theme_scores/
+python theme_agent.py --mock       # reproducible baseline, no API key
+
+# --- Baseline factor research ---
+python barra_panel.py              # 4-factor WLS
+python ml_predict.py               # 4-factor ML + Rank IC
 ```
+
+First run downloads `all-MiniLM-L6-v2` (~80 MB) for local embedding. `ml_predict.py` first run is slow (50 tickers × yfinance info for Value factor).
 
 ---
 
 ## Configuration
 
-| Parameter | Default | Role in AI Theme research |
-|-----------|---------|---------------------------|
+| Parameter | Default | Role |
+|-----------|---------|------|
 | `THEMES_FILE` | `themes.csv` | Stock-theme exposure weights |
 | `GEMINI_MODEL` | `gemini-2.5-flash-lite` | LLM for theme scoring |
-| `THEME_ETF_PROXY` | BOTZ, SMH, … | Grounding context for agent |
-| `THEME_SCORES_DIR` | `theme_scores` | Point-in-time score archive |
-| `FACTOR_NAMES` | 4 style factors | Will add `"AI"` after integration |
-| `TICKERS` | 50 large caps | Research universe |
-| `FORWARD_DAYS` | 5 | ML label horizon for Rank IC test |
+| `THEME_ETF_PROXY` | BOTZ, SMH, … | ETF context in agent prompt |
+| `THEME_SCORES_DIR` | `theme_scores` | Daily score archive |
+| `NEWS_LOOKBACK_DAYS` | 7 | News date filter |
+| `NEWS_RAG_TOP_K` | 5 | Headlines per theme in prompt |
+| `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | Local RAG embedding (free) |
+| `NEWS_INDEX_DIR` | `data/news_index` | RAG cache |
+| `FACTOR_NAMES` | 4 style factors | Will add `"AI"` after `ai_factor.py` |
+| `FORWARD_DAYS` | 5 | ML label horizon |
 
 ---
 
 ## Known Limitations
 
-| Issue | Impact on AI Theme research | Mitigation |
-|-------|----------------------------|------------|
-| Static `themes.csv` | NVDA always "AI" — no business model drift | Point-in-time thematic tags in production |
-| Point-in-time Gemini scores only | Cannot backtest β_AI history yet | Batch `--mock` for reproducible panel; cache Gemini daily |
-| Theme ↔ Momentum overlap | AI factor may duplicate Mom | Report correlation; residualize if needed |
-| 50-stock universe | Small cross-section, noisy β_AI | Acknowledge; focus on methodology not PnL |
-| No transaction costs | Overstates LS returns | Report gross; discuss net in interview |
+| Issue | Impact | Mitigation |
+|-------|--------|------------|
+| Static `themes.csv` | Business models don't evolve in data | Point-in-time tags in production |
+| yfinance news not historical | RAG only for recent/live dates | `--mock` for backtest panel |
+| Generic headlines in RAG | "Stocks rally" hits many themes | Theme-specific tickers + semantic query |
+| Theme ↔ Momentum overlap | AI factor may duplicate Mom | Report correlation; residualize |
+| `ai_factor.py` not built | Cannot run 5-factor WLS yet | Next implementation step |
+| 50-stock universe | Noisy β_AI | Focus on methodology in interviews |
 | Single ML train/test split | One-regime OOS | Walk-forward as extension |
 
 ---
@@ -326,15 +361,15 @@ python ml_predict.py               # 4-factor ML (baseline)
 
 **Elevator pitch (30 sec):**
 
-> I built a Barra-style factor research pipeline to test whether LLM-generated thematic views add incremental alpha. A Gemini agent scores 10 investment themes daily; stock AI exposure is a weighted sum of those scores. I measure impact via β_AI in WLS, orthogonality to Momentum, ΔR², and incremental Rank IC over a 4-factor baseline.
+> I built a Barra-style research pipeline to test whether LLM thematic views add incremental alpha. A free local RAG layer retrieves theme-relevant news; Gemini scores 10 themes using news + ETF context; stock AI exposure is a weighted sum from `themes.csv`. I measure impact via β_AI, orthogonality to Momentum, ΔR², and incremental Rank IC over a 4-factor baseline.
 
 **Expected questions:**
 
-- **What is the AI Theme Factor?** Not a black-box ML prediction — it's `Σ weight(i,theme) × GeminiScore(theme)`, z-scored cross-sectionally, embedded as a 5th Barra factor.
-- **How do you backtest an LLM signal?** Gemini for live views; `--mock` ETF proxy for reproducible historical panels. Compare both.
-- **What if AI factor correlates with Momentum?** Expected for AI/Semiconductor themes in 2024–25. I'd report correlation, residualize, and check if β_AI survives.
-- **Why themes instead of direct LLM stock picks?** Themes are more stable, interpretable, and map cleanly to a factor exposure framework — closer to how systematic shops embed alternative data.
-- **What's not built yet?** `ai_factor.py` integration and historical score panel — the measurement protocol is defined, implementation is next.
+- **What is the AI Theme Factor?** `Σ weight(i,theme) × ThemeScore(theme)`, z-scored, embedded as a 5th Barra factor — not a black-box stock picker.
+- **How does RAG work here?** yfinance headlines → local MiniLM embedding → cosine retrieval per theme → top headlines in Gemini prompt. No paid embedding API.
+- **How do you backtest LLM signals?** Live: Gemini+RAG daily snapshots in `theme_scores/`. History: `--mock` ETF proxy batch for reproducible panels.
+- **What if AI correlates with Momentum?** Report factor correlation matrix; residualize AI against Momentum if needed.
+- **What's next?** `ai_factor.py` to map scores → stock panel, then 5-factor WLS and Ridge(5) vs Ridge(4) Rank IC.
 
 ---
 

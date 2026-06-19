@@ -1,23 +1,23 @@
 {
   "as_of": "2026-06-19",
-  "source": "gemini",
+  "source": "gemini_rag",
   "scores": {
-    "AI": 0.5,
-    "Cloud": 0.3,
-    "Consumer": 0.4,
-    "Energy": -0.8,
-    "Financials": 0.7,
-    "Healthcare": 0.2,
+    "AI": 0.3,
+    "Cloud": 0.1,
+    "Consumer": 0.2,
+    "Energy": -0.6,
+    "Financials": 0.5,
+    "Healthcare": 0.3,
     "Industrials": 0.6,
-    "Media": -0.5,
-    "Semiconductors": 0.9,
-    "Software": 0.1
+    "Media": -0.4,
+    "Semiconductors": 0.8,
+    "Software": 0.0
   },
   "context": {
     "AI": {
       "etf": "BOTZ",
-      "return_1m": -0.0334,
-      "return_3m": 0.0777
+      "return_1m": -0.0224,
+      "return_3m": 0.142
     },
     "Cloud": {
       "etf": "WCLD",
@@ -31,23 +31,23 @@
     },
     "Energy": {
       "etf": "XLE",
-      "return_1m": -0.108,
-      "return_3m": -0.073
+      "return_1m": -0.1008,
+      "return_3m": -0.0875
     },
     "Financials": {
       "etf": "XLF",
-      "return_1m": 0.0577,
-      "return_3m": 0.109
+      "return_1m": 0.037,
+      "return_3m": 0.0971
     },
     "Healthcare": {
       "etf": "XLV",
-      "return_1m": 0.023,
+      "return_1m": 0.0154,
       "return_3m": 0.0322
     },
     "Industrials": {
       "etf": "XLI",
-      "return_1m": 0.0644,
-      "return_3m": 0.0978
+      "return_1m": 0.0596,
+      "return_3m": 0.1222
     },
     "Media": {
       "etf": "XLC",
@@ -56,13 +56,485 @@
     },
     "Semiconductors": {
       "etf": "SMH",
-      "return_1m": 0.1471,
-      "return_3m": 0.58
+      "return_1m": 0.1686,
+      "return_3m": 0.7151
     },
     "Software": {
       "etf": "IGV",
-      "return_1m": -0.0302,
-      "return_3m": 0.0558
+      "return_1m": -0.0451,
+      "return_3m": 0.0737
     }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Stocks Supported as Geopolitical Risks Recede",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-supported-geopolitical-risks-recede-151709682.html",
+        "published_at": null,
+        "similarity": 0.5399697422981262
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Stocks Rally on Middle East Peace, Apple-Intel Deal: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-rally-middle-east-peace-201038395.html",
+        "published_at": null,
+        "similarity": 0.5048257112503052
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "3 AI Stocks to Buy on the Recent Tech Dip",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/technology/ai/articles/3-ai-stocks-buy-recent-102500779.html",
+        "published_at": null,
+        "similarity": 0.48207446932792664
+      },
+      {
+        "theme": "AI",
+        "ticker": "NVDA",
+        "title": "3 Things to Watch in the Stock Market Next Week",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-things-watch-stock-market-215100379.html",
+        "published_at": null,
+        "similarity": 0.4813014268875122
+      },
+      {
+        "theme": "AI",
+        "ticker": "TSLA",
+        "title": "Trump Handed Intel Stock a 10% Pop, but Markets Are Hedging",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/trump-handed-intel-stock-10-125742833.html",
+        "published_at": null,
+        "similarity": 0.4811412990093231
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Stocks Supported as Geopolitical Risks Recede",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-supported-geopolitical-risks-recede-151709682.html",
+        "published_at": null,
+        "similarity": 0.5766395330429077
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Stocks to Watch Recap: Intel, Accenture, Apple, SpaceX",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-18-2026/card/stocks-to-watch-intel-apple-smith-wesson-CPWrDsktYLV7juQ6yYSl?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5670989155769348
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Stocks Rally on Middle East Peace, Apple-Intel Deal: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-rally-middle-east-peace-201038395.html",
+        "published_at": null,
+        "similarity": 0.5580065846443176
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Zacks Investment Ideas feature highlights: Dell and Cisco",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-061100086.html",
+        "published_at": null,
+        "similarity": 0.47862160205841064
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Tech Weekly: A blockbuster IPO, a sweeping online block",
+        "publisher": "Reuters Videos",
+        "link": "https://finance.yahoo.com/video/tech-weekly-blockbuster-ipo-sweeping-123343495.html",
+        "published_at": null,
+        "similarity": 0.4714818596839905
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "If You Think The Market Will Ever Fall, Buy This",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/think-market-ever-fall-buy-140108656.html",
+        "published_at": null,
+        "similarity": 0.5278282165527344
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Is Coca-Cola (KO) Stock Outpacing Its Consumer Staples Peers This Year?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-stock-outpacing-134002128.html",
+        "published_at": null,
+        "similarity": 0.4437159299850464
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "Dow Falls as Fed Chair Warsh Speaks of Price Stability: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-falls-fed-chair-warsh-200759001.html",
+        "published_at": null,
+        "similarity": 0.4388520419597626
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "1 Consumer Stock with Solid Fundamentals and 2 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-consumer-stock-solid-fundamentals-160458335.html",
+        "published_at": null,
+        "similarity": 0.4249688982963562
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "2 S&P 500 Stocks for Long-Term Investors and 1 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-p-500-stocks-long-185704924.html",
+        "published_at": null,
+        "similarity": 0.41865861415863037
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Stocks Supported as Geopolitical Risks Recede",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-supported-geopolitical-risks-recede-151709682.html",
+        "published_at": null,
+        "similarity": 0.574408769607544
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "ExxonMobil Has Its Sights on Its Next Megamerger. Here's the Oil Stock It Should Buy.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/energy/articles/exxonmobil-sights-next-megamerger-heres-112500640.html",
+        "published_at": null,
+        "similarity": 0.5215408802032471
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "ExxonMobil and Occidental Petroleum Stocks Trade Down, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/energy/articles/exxonmobil-occidental-petroleum-stocks-trade-194128116.html",
+        "published_at": null,
+        "similarity": 0.48964470624923706
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Trump Handed Intel Stock a 10% Pop, but Markets Are Hedging",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/trump-handed-intel-stock-10-125742833.html",
+        "published_at": null,
+        "similarity": 0.4815095067024231
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "Oil\u2019s 5.7% Weekly Drop Opens the Door for Jets, Materials, and Infrastructure ETFs",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/oil-5-7-weekly-drop-014347407.html",
+        "published_at": null,
+        "similarity": 0.45448410511016846
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Chart of the Day: JPMorgan\u2019s Bull Market May Be Far From Over",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/chart-of-the-day-jpmorgans-bull-market-6759fa20?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5492234826087952
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Sector Update: Financial Stocks Lower Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-lower-afternoon-195237481.html",
+        "published_at": null,
+        "similarity": 0.5458670854568481
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "What Does Berkshire Hathaway See in This Housing Stock?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/real-estate/articles/does-berkshire-hathaway-see-housing-144300654.html",
+        "published_at": null,
+        "similarity": 0.5044556856155396
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Wells Fargo (WFC) Rises As Market Takes a Dip: Key Facts",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-rises-market-214501407.html",
+        "published_at": null,
+        "similarity": 0.47976940870285034
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "3 Rate-Ready Stocks for the New Fed Chair\u2019s First Big Test",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-rate-ready-stocks-fed-172500202.html",
+        "published_at": null,
+        "similarity": 0.46601399779319763
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Sector Update: Healthcare Stocks Decline Thursday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-thursday-173458941.html",
+        "published_at": null,
+        "similarity": 0.6563097834587097
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Healthcare Added 35,200 Jobs\u20143 Stocks Positioned to Benefit",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/healthcare/articles/healthcare-added-35-200-jobs-135000043.html",
+        "published_at": null,
+        "similarity": 0.5418187975883484
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Stock Gets a Target Price Increase. Wall Street Likes the Turnaround So Far.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/unitedhealth-stock-price-buy-rating-b0508382?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5401867032051086
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Stock Market Today, June 18: Pfizer Falls as CFO Transition Tests Confidence in 2026 Outlook",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-june-18-232909999.html",
+        "published_at": null,
+        "similarity": 0.5193523168563843
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "If You Think The Market Will Ever Fall, Buy This",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/think-market-ever-fall-buy-140108656.html",
+        "published_at": null,
+        "similarity": 0.5164327025413513
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Stocks Supported as Geopolitical Risks Recede",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-supported-geopolitical-risks-recede-151709682.html",
+        "published_at": null,
+        "similarity": 0.5455582141876221
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "3 Hidden AI Revolution Stocks to Buy Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-hidden-ai-revolution-stocks-194600239.html",
+        "published_at": null,
+        "similarity": 0.49667203426361084
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "1 Mooning  Stock with Impressive Fundamentals and 2 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-mooning-stock-impressive-fundamentals-120458858.html",
+        "published_at": null,
+        "similarity": 0.48658233880996704
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "These 3 Stocks Just Raised Their Dividends",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-just-raised-dividends-160500016.html",
+        "published_at": null,
+        "similarity": 0.4800412058830261
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Trump Handed Intel Stock a 10% Pop, but Markets Are Hedging",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/trump-handed-intel-stock-10-125742833.html",
+        "published_at": null,
+        "similarity": 0.47706538438796997
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Donald Trump\u2019s Under-The-Radar Tech Stock Pick Everyone\u2019s Ignoring",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/donald-trump-under-radar-tech-153404937.html",
+        "published_at": null,
+        "similarity": 0.49886947870254517
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "1 Consumer Stock with Solid Fundamentals and 2 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-consumer-stock-solid-fundamentals-160458335.html",
+        "published_at": null,
+        "similarity": 0.4875434339046478
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast (CMCSA) Stock Falls Amid Market Uptick: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-cmcsa-stock-falls-amid-215003046.html",
+        "published_at": null,
+        "similarity": 0.476626455783844
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Stock Market Today, June 18: Netflix Edges Higher as Investors Weigh Pricing Upside Before Earnings",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-june-18-220336204.html",
+        "published_at": null,
+        "similarity": 0.4758369028568268
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "Dow Falls as Fed Chair Warsh Speaks of Price Stability: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-falls-fed-chair-warsh-200759001.html",
+        "published_at": null,
+        "similarity": 0.4664258062839508
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Stocks Supported as Geopolitical Risks Recede",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-supported-geopolitical-risks-recede-151709682.html",
+        "published_at": null,
+        "similarity": 0.6436052918434143
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "3 Semiconductor Stocks We\u2019re Skeptical Of",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-semiconductor-stocks-skeptical-130858651.html",
+        "published_at": null,
+        "similarity": 0.6197043657302856
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "NVDA",
+        "title": "Beyond the Trillion-Dollar Club: 3 High-Growth Tech Stocks to Buy Right Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/beyond-trillion-dollar-club-3-214100039.html",
+        "published_at": null,
+        "similarity": 0.6086272597312927
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "3 Semiconductor Stocks We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-semiconductor-stocks-risky-150858497.html",
+        "published_at": null,
+        "similarity": 0.6081825494766235
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Zacks Investment Ideas feature highlights: Dell and Cisco",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-061100086.html",
+        "published_at": null,
+        "similarity": 0.5858931541442871
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Stocks Supported as Geopolitical Risks Recede",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-supported-geopolitical-risks-recede-151709682.html",
+        "published_at": null,
+        "similarity": 0.5331733226776123
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Stocks to Watch Recap: Intel, Accenture, Apple, SpaceX",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-18-2026/card/stocks-to-watch-intel-apple-smith-wesson-CPWrDsktYLV7juQ6yYSl?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5300008058547974
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Stocks Rally on Middle East Peace, Apple-Intel Deal: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-rally-middle-east-peace-201038395.html",
+        "published_at": null,
+        "similarity": 0.5065268278121948
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Donald Trump\u2019s Under-The-Radar Tech Stock Pick Everyone\u2019s Ignoring",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/donald-trump-under-radar-tech-153404937.html",
+        "published_at": null,
+        "similarity": 0.48225557804107666
+      },
+      {
+        "theme": "Software",
+        "ticker": "ACN",
+        "title": "ACN Q2 Deep Dive: Market Reacts to Cautious Outlook, AI and Security Initiatives in Focus",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/acn-q2-deep-dive-market-082058384.html",
+        "published_at": null,
+        "similarity": 0.4656490683555603
+      }
+    ]
   }
 }
