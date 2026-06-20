@@ -70,6 +70,7 @@ AI_SCORE_MODE = "auto"
 # Used in: forward_excess_return(), build_ml_dataset(), column target_{N}d
 FORWARD_DAYS = 5
 
+
 # TRAIN_RATIO: Time-based train/test split (first N% of dates = train)
 # Used in: ml_predict.time_split() — no random shuffle (avoids look-ahead bias)
 TRAIN_RATIO = 0.8

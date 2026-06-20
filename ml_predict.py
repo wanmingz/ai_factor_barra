@@ -35,7 +35,7 @@ def forward_excess_return(y_excess: pd.DataFrame, horizon: int) -> pd.Series:
     target = fwd.stack() # switch the ticker and date to the columns
     target.index = target.index.set_names(["date", "ticker"])
     return target.rename(f"target_{horizon}d")
-
+#horizon is the number of days to predict the excess return
 #define the function for the ml dataset
 
 def build_ml_dataset(x_panel: pd.DataFrame, y_excess: pd.DataFrame, horizon: int) -> pd.DataFrame:
@@ -111,7 +111,7 @@ def evaluate_predictions(
 #define the main function
 
 def main():
-    target_col = f"target_{FORWARD_DAYS}d"
+    target_col = f"target_{FORWARD_DAYS}d" #the target column is the forward excess return
     print("Loading market data and building factor panel...")
     close, returns, y_excess = load_market_data()
     ret_1d = next_day_excess(y_excess)
