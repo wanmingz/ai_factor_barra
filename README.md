@@ -18,11 +18,97 @@ The classical factor pipeline (WLS → ML → IC → long-short backtest) provid
 
 | # | Question | How we test it |
 |---|----------|----------------|
-| H1 | Does the AI Theme Factor have a positive **factor premium** (β_AI)? | 5-factor WLS: `r_i − r_SPY = X·β + ε` |
-| H2 | Is it **orthogonal** to classical factors? | Factor exposure correlation matrix; especially vs. Momentum |
-| H3 | Does it add **incremental R²** over 4 factors? | Compare cross-sectional R²: 4-factor vs. 5-factor WLS |
+| H1 | Does the AI Theme Factor have a positive **factor premium** (β_AI)? | **Monthly** 5-factor WLS on long mock sample: `r_i − r_SPY = X·β + ε` |
+| H2 | Is it **orthogonal** to classical factors? | Exposure corr matrix; **`AI_orth`** residualized vs. Size/Value/Mom/Vol |
+| H3 | Does it add **incremental R²** over 4 factors? | Monthly cross-sectional R²: 4-factor vs. 5-factor WLS |
 | H4 | Does it improve **stock ranking** (Rank IC)? | Ridge 4-factor vs. Ridge 5-factor on forward excess return |
 | H5 | Does **Gemini + RAG** beat a naive **ETF-momentum** baseline? | Compare `theme_agent.py` vs. `--mock` scores |
+
+---
+
+## Research Roadmap (current plan)
+
+We **cannot obtain ~10 years of real LLM theme scores** (yfinance news has no historical archive; Gemini+RAG is live/recent only). The plan is to run **monthly Barra WLS** on a long sample with a reproducible proxy, **orthogonalize AI against classical style factors** to isolate incremental impact, and keep a separate short sample for true Gemini scores.
+
+### Two-sample design
+
+| Track | Period | AI signal | Purpose |
+|-------|--------|-----------|---------|
+| **Long sample** | 2016–2026 | `ai_factor.py --mode mock` (ETF 3m theme proxy) | Stable **β_AI** time series, orthogonality, ΔR² over many months |
+| **Short sample** | Recent dates w/ `theme_scores/*.json` | `ai_factor.py --mode auto` (Gemini+RAG where available) | H5: does LLM beat mock on Rank IC / β_AI on the same dates? |
+
+Do **not** label mock long-sample results as “10-year LLM alpha” — they validate the **thematic exposure + Barra framework**; Gemini value-add is tested only where JSON scores exist.
+
+### Monthly Barra (`barra_monthly.py` — planned)
+
+Keep [`barra.py`](barra.py) as a **single-day static WLS demo**. Add a new script **`barra_monthly.py`** for the main factor-premium study:
+
+| Choice | Definition |
+|--------|------------|
+| Rebalance dates | **First trading day of each month** (aligned with `backtest.py` `REBALANCE_FREQ = "monthly"`) |
+| **Y** | **Next month** cumulative excess return vs. SPY (compound daily excess over that month) |
+| **X** | Size, Value, Momentum, Volatility at rebalance date `t`; AI from `build_ai_panel` subsampled to month-starts |
+| Estimation | Cross-sectional WLS per month: `β = (Xᵀ W X)⁻¹ Xᵀ W y`, `W = diag(ln(marketCap))` |
+| Output | Monthly factor return series → mean(β_AI), t-stat, ΔR² vs. 4-factor |
+
+Reuse [`features.py`](features.py) for style factors, [`ai_factor.py`](ai_factor.py) for the AI panel, and the WLS formula from [`barra.py`](barra.py).
+
+### AI orthogonalization (planned)
+
+Theme scores (mock or Gemini) overlap **Momentum** and other style factors. Before monthly WLS, residualize AI on each rebalance cross-section:
+
+```
+AI_orth(i,t) = AI(i,t) − α(t) − γ(t)ᵀ · [Size, Value, Momentum, Volatility](i,t)
+```
+
+Then z-score `AI_orth` cross-sectionally and use it as the 5th column of **X** (replacing raw AI).
+
+| Step | Action |
+|------|--------|
+| 1 | Build raw style factors + raw AI exposure at month-start `t` |
+| 2 | Cross-sectional z-score all columns |
+| 3 | OLS: `AI ~ Size + Value + Momentum + Volatility` (with intercept) → residuals |
+| 4 | Z-score residuals → `AI_orth` |
+| 5 | WLS with `[Size, Value, Momentum, Volatility, AI_orth]` |
+
+**Why:** Multivariate WLS already gives a partial β_AI, but correlated exposures make estimates unstable. Orthogonalization makes **H2** explicit (`corr(AI_orth, Momentum) ≈ 0`) and clarifies that β_AI is **incremental to style**, not a momentum re-label.
+
+Report both: (a) exposure correlation matrix **before** orthogonalization, (b) WLS results **after** `AI_orth`.
+
+### End-to-end workflow (target)
+
+```mermaid
+flowchart LR
+    subgraph long [Long sample — mock]
+        Mock[ai_factor --mode mock] --> Panel[AI exposure panel]
+        Panel --> Sub[Month-start subsample]
+    end
+
+    subgraph orth [Orthogonalization]
+        Sub --> ZS[z-score X]
+        ZS --> Resid["AI_orth = resid(AI | style)"]
+    end
+
+    subgraph barra [Monthly Barra]
+        Resid --> WLS[Monthly WLS]
+        Ynext[Next-month excess return] --> WLS
+        WLS --> Beta["β_AI(t) series"]
+    end
+
+    subgraph ml [ML — optional]
+        Resid --> Ridge[Ridge 4 vs 5]
+        Ridge --> IC[Test Rank IC]
+    end
+```
+
+### Script roles (after roadmap)
+
+| Script | Role |
+|--------|------|
+| `barra.py` | Unchanged — single-day WLS snapshot / teaching demo |
+| `barra_panel.py` | Daily factor panel + single-date WLS |
+| **`barra_monthly.py`** | **Planned** — monthly WLS loop, AI orthogonalization, β time series |
+| `ml_predict.py` | OOS Rank IC; optionally swap in `AI_orth` for Ridge(5) |
 
 ---
 
@@ -50,13 +136,19 @@ Each stock can map to multiple themes with weights summing to 1. Example: NVDA �
 AI_Exposure(t, i) = z-score_i( Raw_AI(t, ·) )
 ```
 
+**Step 3b — Orthogonalization** (monthly Barra plan; optional in daily ML):
+
+```
+AI_orth(t, i) = AI_Exposure(t, i) − projection onto [Size, Value, Momentum, Volatility] at t
+```
+
 **Step 4 — Embed in Barra WLS** as the 5th column of X:
 
 ```
-r_i − r_SPY ≈ β_Size·X_Size + β_Value·X_Value + β_Mom·X_Mom + β_Vol·X_Vol + β_AI·X_AI + ε_i
+r_i − r_SPY ≈ β_Size·X_Size + β_Value·X_Value + β_Mom·X_Mom + β_Vol·X_Vol + β_AI·X_AI_orth + ε_i
 ```
 
-A positive, stable **β_AI** means high-AI-exposure stocks earn excess returns beyond what the four style factors explain.
+A positive, stable **β_AI** on **AI_orth** means thematic exposure earns excess returns **after removing overlap with classical style factors**.
 
 ### Why themes + LLM + RAG?
 
@@ -88,10 +180,11 @@ flowchart TB
         GEM --> TS["ThemeScore(t,k)"]
     end
 
-    subgraph factor [AI Factor — next]
+    subgraph factor [AI Factor]
         CSV[themes.csv] --> RAW["Raw_AI(t,i)"]
         TS --> RAW
         RAW --> ZS[AI_Exposure z-score]
+        ZS --> ORTH["AI_orth (residualize vs style)"]
     end
 
     subgraph baseline [4 Style Factors]
@@ -100,9 +193,9 @@ flowchart TB
     end
 
     subgraph test [Impact Measurement]
-        ZS --> X5[5-factor X panel]
+        ORTH --> X5[5-factor X panel]
         X4 --> X5
-        X5 --> WLS["WLS → β_AI"]
+        X5 --> WLS["Monthly WLS → β_AI"]
         X5 --> ML[Rank IC + backtest]
     end
 ```
@@ -117,10 +210,14 @@ flowchart TB
 | Gemini scoring + RAG in prompt | ✅ Done | `theme_agent.py` |
 | ETF-momentum baseline (`--mock`) | ✅ Done | `theme_agent.py` |
 | Daily score + news citation persistence | ✅ Done | `theme_scores/*.json` |
-| Stock AI exposure panel |  ✅ Done | `ai_factor.py` |
-| 5-factor WLS (β_AI, ΔR²) | 🔲 Next | `barra_panel.py` |
-| 5-factor ML (incremental Rank IC) | 🔲 Next | `ml_predict.py` |
-| Historical theme score panel (mock batch) | 🔲 Next | `ai_factor.py` |
+| Stock AI exposure panel | ✅ Done | `ai_factor.py` |
+| Mock theme score panel (full history) | ✅ Done | `ai_factor.py` (`--mode mock`) |
+| Daily 5-factor WLS snapshot | ✅ Done | `barra.py` |
+| Daily factor panel + WLS | ✅ Done | `barra_panel.py` |
+| 5-factor ML + Rank IC | ✅ Done | `ml_predict.py` |
+| **Monthly Barra WLS + β_AI time series** | 🔲 Planned | `barra_monthly.py` |
+| **AI orthogonalization vs style factors** | 🔲 Planned | `barra_monthly.py` / `features.py` |
+| Ridge(5) with `AI_orth` (incremental Rank IC) | 🔲 Planned | `ml_predict.py` |
 
 ---
 
@@ -200,22 +297,23 @@ JSON also includes `news_sources` with cited headlines per theme for interview d
 
 ---
 
-## Getting AI Factor into Barra (next step)
+## AI Factor in Barra (integrated)
 
-Theme scores exist; **`ai_factor.py` is not yet implemented**. The intended integration:
+Theme scores map to stocks via [`ai_factor.py`](ai_factor.py) and merge with style factors in [`features.py`](features.py):
 
 ```python
-# 1. Load theme scores for date t
-scores = load_theme_scores("2026-06-19")
+# Long history: mock ETF proxy
+python ai_factor.py --mode mock --rebuild
 
-# 2. Map to stocks via themes.csv
-Raw_AI(i) = Σ weight(i, theme) × scores[theme]
+# Recent dates: Gemini JSON when present, else mock
+python ai_factor.py --mode auto --rebuild
 
-# 3. Merge with 4 style factors, z-score, WLS
-FACTOR_NAMES = ["Size", "Value", "Momentum", "Volatility", "AI"]
+# Panel used by barra_panel.py / ml_predict.py
+ai_panel = build_ai_panel(dates=returns.index, mode="mock")
+x_panel = zscore_cross_section(build_factor_panel(returns, close, ai_panel=ai_panel))
 ```
 
-See [`barra_panel.py`](barra_panel.py): once `X_panel` has 5 columns, WLS automatically reports `AI_Return` as the 5th β.
+**Next:** [`barra_monthly.py`](barra_monthly.py) — month-start subsample, `AI_orth`, next-month **Y**, rolling WLS → β_AI series (see [Research Roadmap](#research-roadmap-current-plan)).
 
 ---
 
@@ -258,24 +356,23 @@ Baseline (predict 0)          NaN           NaN   -1.86
 | `news/ingest.py` | Fetch yfinance news per theme |
 | `news/rag.py` | Local embedding RAG index + retrieval |
 | `theme_agent.py` | **Signal** — Gemini + RAG theme scores |
-| `barra_panel.py` | Factor panel + WLS (4 factors today) |
+| `barra_panel.py` | Daily factor panel + WLS |
+| `barra_monthly.py` | **Planned** — monthly WLS, AI orth, β time series |
 | `ml_predict.py` | ML comparison + Rank IC + backtest |
-| `barra.py` | Static WLS demo |
+| `barra.py` | Single-day static WLS demo (unchanged) |
 | `backtest.py` | Long-short portfolio simulation |
 
 ---
 
 ## How We Measure AI Theme Factor Impact
 
-Once `ai_factor.py` is integrated:
-
-| Test | Metric |
-|------|--------|
-| H1 Factor premium | Mean **β_AI** from daily 5-factor WLS |
-| H2 Orthogonality | `corr(AI_Exposure, Momentum)` |
-| H3 Incremental R² | `R²(5-factor) − R²(4-factor)` per date |
-| H4 Predictive power | Rank IC: Ridge(5) vs Ridge(4) on test set |
-| H5 LLM value-add | Gemini+RAG vs `--mock` on sample dates |
+| Test | Metric | Module |
+|------|--------|--------|
+| H1 Factor premium | Mean **β_AI** from **monthly** 5-factor WLS (long mock sample) | `barra_monthly.py` |
+| H2 Orthogonality | `corr(AI, Momentum)` before orth; **`corr(AI_orth, Momentum) ≈ 0`** after | `barra_monthly.py` |
+| H3 Incremental R² | `R²(5-factor) − R²(4-factor)` per month | `barra_monthly.py` |
+| H4 Predictive power | Test **Rank IC**: Ridge(5) vs Ridge(4); optional **AI_orth** | `ml_predict.py` |
+| H5 LLM value-add | Gemini+RAG vs `--mock` on dates with `theme_scores/*.json` | `theme_agent.py` + `ml_predict.py` |
 
 ---
 
@@ -306,6 +403,7 @@ ai_factor_barra/
 │
 ├── barra.py                  # Single-day 5-factor WLS demo (static X from yfinance info)
 ├── barra_panel.py            # Rolling daily factor panel + 5-factor WLS
+├── barra_monthly.py          # (planned) Monthly WLS, AI orth, β_AI time series
 ├── ml_predict.py             # Ridge/RF models, Rank IC, long-short backtest
 ├── backtest.py               # Long-short portfolio simulation (used by ml_predict)
 │
@@ -329,8 +427,9 @@ ai_factor_barra/
 | `news/rag.py` | Local embedding index + top-k retrieval per theme |
 | `ai_factor.py` | Map theme scores → per-stock `Raw_AI`; cache parquet panel |
 | `features.py` | Build 4 style factors; merge AI panel; z-score cross-section |
-| `barra.py` | Quick single-date WLS including `AI_Return` |
-| `barra_panel.py` | Full-history factor panel + WLS factor returns |
+| `barra.py` | Quick single-date WLS including `AI_Return` (demo only) |
+| `barra_panel.py` | Daily factor panel + single-date WLS |
+| `barra_monthly.py` | **Planned** — monthly WLS loop, AI_orth, factor return time series |
 | `ml_predict.py` | ML alpha test: Ridge(4) vs Ridge(5), Rank IC, backtest |
 | `backtest.py` | Monthly long-short simulation helpers |
 | `config.py` | `FACTOR_NAMES`, dates, `AI_SCORE_MODE`, RAG params |
@@ -348,9 +447,10 @@ python ai_factor.py --mode auto --rebuild    # Gemini JSON where available, else
 # python ai_factor.py --mode mock --rebuild  # full-history mock baseline
 
 # 3. Factor research (any order)
-python barra.py          # single-day WLS snapshot
-python barra_panel.py    # rolling panel + WLS
-python ml_predict.py     # ML comparison + Rank IC
+python barra.py              # single-day WLS snapshot (demo)
+python barra_panel.py          # daily panel + WLS
+python barra_monthly.py        # (planned) monthly WLS + AI orth + β series
+python ml_predict.py           # ML comparison + Rank IC
 ```
 
 ---
@@ -369,9 +469,10 @@ python news/rag.py                 # build local RAG index (optional standalone 
 python theme_agent.py              # Gemini + RAG + ETF → theme_scores/
 python theme_agent.py --mock       # reproducible baseline, no API key
 
-# --- Baseline factor research ---
-python barra_panel.py              # 4-factor WLS
-python ml_predict.py               # 4-factor ML + Rank IC
+# --- Factor research ---
+python barra_panel.py              # daily panel + WLS
+python barra_monthly.py            # (planned) monthly WLS + AI orth
+python ml_predict.py                 # ML + Rank IC (Ridge 4 vs 5)
 ```
 
 First run downloads `all-MiniLM-L6-v2` (~80 MB) for local embedding. `ml_predict.py` first run is slow (50 tickers × yfinance info for Value factor).
@@ -390,7 +491,9 @@ First run downloads `all-MiniLM-L6-v2` (~80 MB) for local embedding. `ml_predict
 | `NEWS_RAG_TOP_K` | 5 | Headlines per theme in prompt |
 | `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | Local RAG embedding (free) |
 | `NEWS_INDEX_DIR` | `data/news_index` | RAG cache |
-| `FACTOR_NAMES` | 4 style factors | Will add `"AI"` after `ai_factor.py` |
+| `FACTOR_NAMES` | 5 factors incl. `"AI"` | Style + AI exposure |
+| `REBALANCE_FREQ` | `monthly` | Aligns with `barra_monthly.py` and `backtest.py` |
+| `AI_SCORE_MODE` | `auto` | `mock` for long history; `auto` uses Gemini JSON when present |
 | `FORWARD_DAYS` | 5 | ML label horizon |
 
 ---
@@ -402,9 +505,9 @@ First run downloads `all-MiniLM-L6-v2` (~80 MB) for local embedding. `ml_predict
 | Static `themes.csv` | Business models don't evolve in data | Point-in-time tags in production |
 | yfinance news not historical | RAG only for recent/live dates | `--mock` for backtest panel |
 | Generic headlines in RAG | "Stocks rally" hits many themes | Theme-specific tickers + semantic query |
-| Theme ↔ Momentum overlap | AI factor may duplicate Mom | Report correlation; residualize |
-| `ai_factor.py` not built | Cannot run 5-factor WLS yet | Next implementation step |
-| 50-stock universe | Noisy β_AI | Focus on methodology in interviews |
+| Theme ↔ Momentum overlap | AI factor may duplicate Mom | Orthogonalize → `AI_orth` before monthly WLS |
+| No 10y Gemini history | Cannot backtest LLM views over full sample | Long sample: `--mock`; short sample: Gemini JSON dates |
+| 50-stock universe | Noisy β_AI | Focus on methodology; monthly aggregation helps |
 | Single ML train/test split | One-regime OOS | Walk-forward as extension |
 
 ---
@@ -413,15 +516,15 @@ First run downloads `all-MiniLM-L6-v2` (~80 MB) for local embedding. `ml_predict
 
 **Elevator pitch (30 sec):**
 
-> I built a Barra-style research pipeline to test whether LLM thematic views add incremental alpha. A free local RAG layer retrieves theme-relevant news; Gemini scores 10 themes using news + ETF context; stock AI exposure is a weighted sum from `themes.csv`. I measure impact via β_AI, orthogonality to Momentum, ΔR², and incremental Rank IC over a 4-factor baseline.
+> I built a Barra-style research pipeline to test whether LLM thematic views add incremental alpha. A free local RAG layer retrieves theme-relevant news; Gemini scores 10 themes using news + ETF context; stock AI exposure is a weighted sum from `themes.csv`. Because LLM scores lack a 10-year archive, I run **monthly Barra WLS** on a long **mock** sample and **orthogonalize AI against style factors** so β_AI is not just momentum in disguise. I measure impact via β_AI time series, orthogonality, ΔR², and incremental Rank IC over a 4-factor baseline; Gemini value-add is tested on recent scored dates.
 
 **Expected questions:**
 
 - **What is the AI Theme Factor?** `Σ weight(i,theme) × ThemeScore(theme)`, z-scored, embedded as a 5th Barra factor — not a black-box stock picker.
 - **How does RAG work here?** yfinance headlines → local MiniLM embedding → cosine retrieval per theme → top headlines in Gemini prompt. No paid embedding API.
-- **How do you backtest LLM signals?** Live: Gemini+RAG daily snapshots in `theme_scores/`. History: `--mock` ETF proxy batch for reproducible panels.
-- **What if AI correlates with Momentum?** Report factor correlation matrix; residualize AI against Momentum if needed.
-- **What's next?** `ai_factor.py` to map scores → stock panel, then 5-factor WLS and Ridge(5) vs Ridge(4) Rank IC.
+- **How do you backtest LLM signals?** Live: Gemini+RAG in `theme_scores/`. Long history: `--mock` ETF proxy — not claimed as LLM alpha. Two-sample design: mock for β_AI stability, Gemini for H5.
+- **What if AI correlates with Momentum?** Cross-sectional regression → `AI_orth`, then monthly WLS; report corr before and after.
+- **What's next?** Implement `barra_monthly.py` (month-start X, next-month Y, WLS loop); optionally feed `AI_orth` into Ridge(5) in `ml_predict.py`.
 
 ---
 
