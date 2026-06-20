@@ -4,9 +4,62 @@
 
 This repo is a **research sandbox** for studying the **AI Theme Factor** — a 5th factor derived from Gemini theme scores (grounded in ETF momentum and RAG-retrieved news) and stock-theme mappings, embedded into a Barra-style multi-factor framework alongside Size, Value, Momentum, and Volatility.
 
-The classical factor pipeline (WLS → ML → IC → long-short backtest) provides the **measurement infrastructure**. The research contribution is testing whether **AI-driven thematic signals** add incremental explanatory and predictive power.
+The classical factor pipeline (WLS → ML → IC → long-short backtest) provides the **measurement infrastructure**. The research contribution is testing whether **AI-driven thematic signals** add incremental explanatory and predictive power. See [Research History](#research-history) for how the project evolved in three stages.
 
 > **Scope**: Educational / portfolio project. Not a production risk model. PnL figures are illustrative; research design and limitations are documented explicitly.
+
+---
+
+## Research History
+
+This project was built in three stages: establish a **4-factor baseline**, construct the **AI Theme Factor** signal stack, then **test whether AI merits a 5th factor slot**.
+
+```mermaid
+flowchart LR
+    S1[Stage 1<br/>4-factor Barra + ML] --> S2[Stage 2<br/>AI signal stack]
+    S2 --> S3[Stage 3<br/>5th factor validation]
+```
+
+### Stage 1 — Classical Barra + ML (4 factors)
+
+**Goal:** Build the control framework before adding any AI signal.
+
+| What | Detail |
+|------|--------|
+| Factors | **Size, Value, Momentum, Volatility** from prices (`features.py`) |
+| Barra | Cross-sectional WLS factor returns (`barra.py`, `barra_panel.py`) |
+| ML | Ridge / Random Forest on 4-factor panel; **Rank IC** + long-short backtest (`ml_predict.py`) |
+| Baseline | 80/20 time split, 50 large caps, 2016–2026 — Ridge(4) beat Momentum-only OLS on test Rank IC |
+
+This stage answers: *do the four style factors explain and rank returns in this universe?* That pipeline (WLS → ML → IC → backtest) became the **measurement infrastructure** for everything after.
+
+### Stage 2 — AI Theme Factor construction
+
+**Goal:** Turn LLM thematic views into a stock-level exposure series embeddable in Barra / ML.
+
+| Layer | Module | Role |
+|-------|--------|------|
+| Stock–theme mapping | `themes.csv` | Weights: e.g. NVDA → 55% AI + 45% Semiconductors |
+| News retrieval | `news/ingest.py`, `news/rag.py` | yfinance headlines → local MiniLM embedding → top-k per theme |
+| Theme scoring | `theme_agent.py` | Gemini + ETF context + RAG news → `ThemeScore(t, k) ∈ [-1, +1]` |
+| Persistence | `theme_scores/*.json` | Auditable daily scores + news citations |
+| Stock exposure | `ai_factor.py` | `Raw_AI(i) = Σ weight(i,k) × ThemeScore(k)` → cached panel |
+
+The AI Theme Factor is **not** a black-box stock picker — it is a **thematic view layer** mapped to names via `themes.csv`, then z-scored like style factors.
+
+### Stage 3 — Validate AI as the 5th factor (in progress)
+
+**Goal:** Test whether AI adds **incremental** explanatory and predictive power beyond the Stage 1 baseline.
+
+| Question | Approach | Status |
+|----------|----------|--------|
+| Factor premium **β_AI** | 5-factor WLS (4 style + AI) | ✅ daily snapshot in `barra.py` / `barra_panel.py`; 🔲 one-month + `AI_orth` in `barra_monthly.py` |
+| Orthogonality vs style | Exposure corr; residualize → **`AI_orth`** | 🔲 Phase 1 |
+| Incremental **R²** | 4-factor vs 5-factor WLS | 🔲 Phase 1 |
+| Incremental **Rank IC** | Ridge(4) vs Ridge(5) on test set | ✅ wired in `ml_predict.py` |
+| LLM vs ETF proxy (H5) | Gemini+RAG vs `--mock` | 🔲 Phase 2 (needs more scored dates) |
+
+**Constraint discovered in Stage 3:** no multi-year archive of Gemini theme scores → [Phase 1](#phase-1--one-month-current-scope) runs **one month** with real JSON first; long mock panels deferred to Phase 2.
 
 ---
 
@@ -537,7 +590,7 @@ First run downloads `all-MiniLM-L6-v2` (~80 MB) for local embedding. `ml_predict
 
 **Elevator pitch (30 sec):**
 
-> I built a Barra-style research pipeline to test whether LLM thematic views add incremental alpha. A free local RAG layer retrieves theme-relevant news; Gemini scores 10 themes; stock AI exposure comes from `themes.csv`. With no historical LLM scores, **Phase 1** runs **one month** of monthly Barra WLS with real Gemini JSON and **orthogonalizes AI vs. style factors** so β_AI is not just momentum. Phase 2 would extend to a mock long panel for β_AI stability and Gemini-vs-mock comparisons.
+> I built a Barra-style pipeline in three stages: (1) **4-factor Barra + ML baseline** — WLS, Rank IC, long-short backtest on Size/Value/Mom/Vol; (2) **AI Theme Factor** — `themes.csv` + local RAG + Gemini theme agent → stock-level AI exposure; (3) **5th-factor validation** — does AI add incremental β, R², and Rank IC beyond the 4-factor control? Phase 1 runs one month with real Gemini scores and orthogonalizes AI vs. style factors.
 
 **Expected questions:**
 
