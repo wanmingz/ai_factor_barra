@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-06-22",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.3,
+    "Cloud": 0.1,
+    "Consumer": -0.1,
+    "Energy": -0.6,
+    "Financials": 0.5,
+    "Healthcare": 0.2,
+    "Industrials": 0.6,
+    "Media": -0.7,
+    "Semiconductors": 0.8,
+    "Software": 0.4
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0333,
+      "return_3m": 0.1195
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": -0.022,
+      "return_3m": 0.0147
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0317,
+      "return_3m": 0.0438
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0857,
+      "return_3m": -0.0934
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0381,
+      "return_3m": 0.0899
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0129,
+      "return_3m": 0.0365
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0661,
+      "return_3m": 0.115
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0796,
+      "return_3m": -0.0519
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.1779,
+      "return_3m": 0.7092
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.0557,
+      "return_3m": 0.0342
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Stock Market Today: Dow Up, Big Tech Falls Amid Rate Hike Forecasts; These AI Stocks Test Entries (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-talks-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5863547921180725
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Stock Stories, Vol. 12: Time Travel Investing",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-stories-vol-12-time-050433162.html",
+        "published_at": null,
+        "similarity": 0.5595009326934814
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Sector Update: Tech Stocks Advance Monday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-advance-monday-174159633.html",
+        "published_at": null,
+        "similarity": 0.5317080020904541
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "3 Cheap Artificial Intelligence Stocks to Buy Right Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-cheap-artificial-intelligence-stocks-153500979.html",
+        "published_at": null,
+        "similarity": 0.5043544769287109
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Update: US Equity Indexes Mixed Amid Steep Decline in Communication Services",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-amid-165202719.html",
+        "published_at": null,
+        "similarity": 0.49825865030288696
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Micron, SpaceX, Super Micro, Moderna, Fervo, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-f45db408?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5890628695487976
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Stock Stories, Vol. 12: Time Travel Investing",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-stories-vol-12-time-050433162.html",
+        "published_at": null,
+        "similarity": 0.5743504166603088
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Price Prediction: ServiceNow Stock Will Be Worth This Much In 2027",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/price-prediction-servicenow-stock-worth-174857426.html",
+        "published_at": null,
+        "similarity": 0.5427002906799316
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "Stock Market Today: Dow Up, Big Tech Falls Amid Rate Hike Forecasts; These AI Stocks Test Entries (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-talks-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5399802923202515
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Advance Monday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-advance-monday-174159633.html",
+        "published_at": null,
+        "similarity": 0.5338200330734253
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "If You Think The Market Will Ever Fall, Buy This",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/think-market-ever-fall-buy-140108656.html",
+        "published_at": null,
+        "similarity": 0.5278282165527344
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Advance Monday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-advance-monday-174159633.html",
+        "published_at": null,
+        "similarity": 0.48857104778289795
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "Stock Market Today: Dow Up, Big Tech Falls Amid Rate Hike Forecasts; These AI Stocks Test Entries (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-talks-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.43325555324554443
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Update: US Equity Indexes Mixed Amid Steep Decline in Communication Services",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-amid-165202719.html",
+        "published_at": null,
+        "similarity": 0.4294678568840027
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "2 S&P 500 Stocks for Long-Term Investors and 1 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-p-500-stocks-long-185704924.html",
+        "published_at": null,
+        "similarity": 0.41865861415863037
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Company News for Jun 22, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/company-news-jun-22-2026-132700754.html",
+        "published_at": null,
+        "similarity": 0.49025171995162964
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "While Oil Prices Have Fallen From Their Peak, Here's Why They Could Rise Again in the Future.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/energy/articles/while-oil-prices-fallen-peak-183500385.html",
+        "published_at": null,
+        "similarity": 0.4794600009918213
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Energy\u2019s Hottest Trade: 6 High-Yielding Integrateds and Midstream Giants Are All Strong Buys",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/energy/articles/energy-hottest-trade-6-high-114726988.html",
+        "published_at": null,
+        "similarity": 0.4712172746658325
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Mobil Corporation (XOM) Is a Trending Stock: Facts to Know Before Betting on It",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-corporation-xom-trending-130005671.html",
+        "published_at": null,
+        "similarity": 0.46689724922180176
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "Oil\u2019s 5.7% Weekly Drop Opens the Door for Jets, Materials, and Infrastructure ETFs",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/oil-5-7-weekly-drop-014347407.html",
+        "published_at": null,
+        "similarity": 0.45448410511016846
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Forget AI Stocks: The New Berkshire Hathaway Nearly Tripled Its Stake in a 175-Year-Old Newspaper",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/forget-ai-stocks-berkshire-hathaway-161856919.html",
+        "published_at": null,
+        "similarity": 0.5696170330047607
+      },
+      {
+        "theme": "Financials",
+        "ticker": "V",
+        "title": "Market Crash: The Financial Stocks I'd Buy Without Losing Sleep",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-crash-financial-stocks-id-163500354.html",
+        "published_at": null,
+        "similarity": 0.48233750462532043
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "The Quiet Revolution at the Fed: The U.S. Banking Sector Received a Catalyst More Potent than Rate Cuts",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/economy/policy/articles/quiet-revolution-fed-u-banking-201714249.html",
+        "published_at": null,
+        "similarity": 0.4614458978176117
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Here is What to Know Beyond Why Wells Fargo & Company (WFC) is a Trending Stock",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/know-beyond-why-wells-fargo-130003935.html",
+        "published_at": null,
+        "similarity": 0.4591887593269348
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Jefferies Financial Group (JEF): One of the Premier Financial Stocks to Buy According to Warren Buffett",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/jefferies-financial-group-jef-one-140852880.html",
+        "published_at": null,
+        "similarity": 0.45712918043136597
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "Stock Market Today: Dow Up, Big Tech Falls Amid Rate Hike Forecasts; These AI Stocks Test Entries (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-talks-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5213959217071533
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Stock Market Today, June 18: Pfizer Falls as CFO Transition Tests Confidence in 2026 Outlook",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-june-18-232909999.html",
+        "published_at": null,
+        "similarity": 0.5193523168563843
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Beyond the AI Trade: 3 Defensive Stocks Built for Stability",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/beyond-ai-trade-3-defensive-121000313.html",
+        "published_at": null,
+        "similarity": 0.510745644569397
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Could Pfizer Stock Be Your Ticket to Generational Wealth?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/could-pfizer-stock-ticket-generational-013500760.html",
+        "published_at": null,
+        "similarity": 0.49759775400161743
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Merck (MRK) Stock Falls Amid Market Uptick: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/merck-mrk-stock-falls-amid-215004327.html",
+        "published_at": null,
+        "similarity": 0.4922960698604584
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market Today: Dow Up, Big Tech Falls Amid Rate Hike Forecasts; These AI Stocks Test Entries (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-talks-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5532982349395752
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "1 Mooning  Stock with Impressive Fundamentals and 2 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-mooning-stock-impressive-fundamentals-120458858.html",
+        "published_at": null,
+        "similarity": 0.48658251762390137
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "1 Surging  Stock on Our Watchlist and 2 Facing Headwinds",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-surging-stock-watchlist-2-083519983.html",
+        "published_at": null,
+        "similarity": 0.4831441640853882
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "General Electric (GE) Stock Looks 2% Above Its Fair Value Narrative After Recent Run",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/general-electric-ge-stock-looks-221447166.html",
+        "published_at": null,
+        "similarity": 0.4246618151664734
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Applied Materials Stock Looks Pricey\u2014Can AI Demand Justify the Rally?",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-stock-looks-pricey-134500995.html",
+        "published_at": null,
+        "similarity": 0.419312447309494
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "1 Cash-Producing Stock Worth Your Attention and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-worth-075519109.html",
+        "published_at": null,
+        "similarity": 0.5639806389808655
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Update: US Equity Indexes Mixed Amid Steep Decline in Communication Services",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-amid-165202719.html",
+        "published_at": null,
+        "similarity": 0.5117345452308655
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Stock market today: Dow rises, S&P 500 and Nasdaq fall as SpaceX stock declines and US-Iran peace talks remain in focus",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-dow-rises-sp-500-and-nasdaq-fall-as-spacex-stock-declines-and-us-iran-peace-talks-remain-in-focus-225817825.html",
+        "published_at": null,
+        "similarity": 0.49831196665763855
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "1 Consumer Stock with Solid Fundamentals and 2 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-consumer-stock-solid-fundamentals-160458335.html",
+        "published_at": null,
+        "similarity": 0.4875434637069702
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Google Stock: The Price Of A Juggernaut",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/google-stock-price-juggernaut-151131944.html",
+        "published_at": null,
+        "similarity": 0.48732924461364746
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "3 Semiconductor Stocks We\u2019re Skeptical Of",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-semiconductor-stocks-skeptical-130858651.html",
+        "published_at": null,
+        "similarity": 0.6197043657302856
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Company News for Jun 22, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/company-news-jun-22-2026-132700754.html",
+        "published_at": null,
+        "similarity": 0.6151800155639648
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "3 Semiconductor Stocks We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-semiconductor-stocks-risky-150858497.html",
+        "published_at": null,
+        "similarity": 0.6081825494766235
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "MarketBeat Week in Review \u2013 06/15 - 06/19",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marketbeat-week-review-06-15-110000206.html",
+        "published_at": null,
+        "similarity": 0.5901482701301575
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "3 Hyped Up  Stocks We Think Twice About",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-hyped-stocks-think-twice-082719459.html",
+        "published_at": null,
+        "similarity": 0.5848914384841919
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Micron, SpaceX, Super Micro, Moderna, Fervo, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-f45db408?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5651484727859497
+      },
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "This Software Stock Could Soar 74% Over the Next Year, According to an Analyst -- and Patient Investors Could Get Even Better Returns",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/software-stock-could-soar-74-093900915.html",
+        "published_at": null,
+        "similarity": 0.5581193566322327
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "Stock Market Today: Dow Up, Big Tech Falls Amid Rate Hike Forecasts; These AI Stocks Test Entries (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-talks-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5434277653694153
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Stock Stories, Vol. 12: Time Travel Investing",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-stories-vol-12-time-050433162.html",
+        "published_at": null,
+        "similarity": 0.5399212837219238
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Is ServiceNow (NOW) One of the Best AI Software Stocks to Buy According to Hedge Funds?",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/technology/ai/articles/servicenow-now-one-best-ai-120906201.html",
+        "published_at": null,
+        "similarity": 0.5129266381263733
+      }
+    ]
+  }
+}
