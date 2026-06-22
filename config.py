@@ -33,7 +33,7 @@ BENCHMARK = "SPY"
 # START_DATE / END_DATE: Historical data download window (Yahoo Finance)
 # Used in: yf.download(..., start=START_DATE, end=END_DATE)
 START_DATE = "2016-01-01"
-END_DATE = "2026-06-16"
+END_DATE = "2026-06-22"
 
 # -----------------------------------------------------------------------------
 # 3. Factor Engineering
@@ -61,6 +61,11 @@ AI_FACTOR_CACHE = "data/ai_exposure_panel.parquet"
 
 # AI_SCORE_MODE: "auto" = use theme_scores JSON if present else mock; "mock" = ETF proxy only
 AI_SCORE_MODE = "auto"
+
+# AI_LAG_DAYS: Lag AI exposure N trading days per ticker (score from t-1 on date t).
+# Assumes theme scores are available after close; tradable from the next session.
+# Used in: ai_factor.lag_ai_exposure(), build_ai_panel()
+AI_LAG_DAYS = 1
 
 # -----------------------------------------------------------------------------
 # 4. Machine Learning

@@ -25,6 +25,7 @@ from config import (
     LOOKBACK_MOM,
     AI_FACTOR_CACHE,
     AI_SCORE_MODE,
+    AI_LAG_DAYS,
 )
 from theme_agent import (
     load_theme_map,
@@ -191,6 +192,23 @@ def build_ai_exposure_panel(
     return df.set_index(["date", "ticker"]).sort_index()
 
 
+def lag_ai_exposure(panel: pd.DataFrame, days: int = AI_LAG_DAYS) -> pd.DataFrame:
+    """
+    Lag AI exposure by N trading days per ticker.
+
+    On date t, AI reflects the score from t-N (point-in-time: score after close at t-N
+    is tradable from t-N+1; with N=1, date t uses score from t-1).
+    """
+    if days <= 0 or panel.empty or "AI" not in panel.columns:
+        return panel
+
+    wide = panel["AI"].unstack("ticker")
+    lagged = wide.shift(days)
+    out = lagged.stack(future_stack=True).to_frame("AI")
+    out.index = out.index.set_names(["date", "ticker"])
+    return out.sort_index()
+
+
 def load_ai_panel(cache_path: str | Path = AI_FACTOR_CACHE) -> pd.DataFrame:
     path = Path(cache_path)
     if not path.is_file():
@@ -211,12 +229,19 @@ def build_ai_panel(
     mode: str = AI_SCORE_MODE,
     use_cache: bool = True,
     cache_path: str | Path = AI_FACTOR_CACHE,
+    lag_days: int | None = None,
 ) -> pd.DataFrame:
     """
     Load cached AI exposure panel or build from theme scores.
 
     If dates is None, uses START_DATE..END_DATE trading window aligned with momentum panel.
+    Applies AI_LAG_DAYS shift on return (cache stores unlagged scores).
     """
+    lag = AI_LAG_DAYS if lag_days is None else lag_days
+
+    def _with_lag(df: pd.DataFrame) -> pd.DataFrame:
+        return lag_ai_exposure(df, days=lag)
+
     path = Path(cache_path)
     req_dates = (
         pd.DatetimeIndex(pd.to_datetime(dates)).sort_values().unique()
@@ -227,11 +252,11 @@ def build_ai_panel(
     if use_cache and path.is_file():
         panel = load_ai_panel(path)
         if req_dates is None:
-            return panel
+            return _with_lag(panel)
         cached_dates = pd.DatetimeIndex(panel.index.get_level_values("date").unique())
         if cached_dates.isin(req_dates).all() and req_dates.isin(cached_dates).all():
             mask = panel.index.get_level_values("date").isin(req_dates)
-            return panel[mask].sort_index()
+            return _with_lag(panel[mask].sort_index())
 
     if req_dates is None:
         tickers_data = yf.download(
@@ -247,7 +272,7 @@ def build_ai_panel(
     panel = build_ai_exposure_panel(req_dates, mode=mode)
     if use_cache:
         save_ai_panel(panel, path)
-    return panel
+    return _with_lag(panel)
 
 
 def snapshot_exposure(as_of: str, mode: str = AI_SCORE_MODE) -> pd.Series:
