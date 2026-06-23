@@ -149,3 +149,22 @@ NEWS_INDEX_DIR = "data/news_index"
 
 # EMBEDDING_MODEL: Local sentence-transformers model (free, runs offline after download)
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+
+# -----------------------------------------------------------------------------
+# 8. Multi-Asset Agent
+# -----------------------------------------------------------------------------
+
+# ASSET_CLASSES_FILE: Universe of asset classes with ETF/FX proxies and RAG queries
+ASSET_CLASSES_FILE = "multi_asset/asset_classes.csv"
+
+# MULTI_ASSET_SCORES_DIR: Daily cross-sectional asset-class scores
+MULTI_ASSET_SCORES_DIR = "multi_asset/scores"
+
+# MULTI_ASSET_CONTEXT_LOOKBACK: Trading days of return history fed to the agent
+MULTI_ASSET_CONTEXT_LOOKBACK = 63
+
+# MULTI_ASSET_NEWS_INDEX_DIR: Cached macro news embeddings per as-of date
+MULTI_ASSET_NEWS_INDEX_DIR = "multi_asset/data/news_index"
+
+# MULTI_ASSET_NEWS_MAX_PER_PROXY: Max headlines fetched per ETF/FX proxy
+MULTI_ASSET_NEWS_MAX_PER_PROXY = 10

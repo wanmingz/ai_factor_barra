@@ -1,0 +1,20 @@
+asset_class,category,proxy_symbol,proxy_type,rag_query
+Global_Equities,Broad,VEA,etf,global equities stock market outlook developed emerging
+Global_Sovereign,Broad,BNDW,etf,global sovereign government bonds rates outlook
+Commodities,Broad,DBC,etf,broad commodities oil metals agriculture outlook
+Currencies_USD,Broad,UUP,etf,US dollar currency USD strength DXY outlook
+US_Equities,Equities,SPY,etf,US equities S&P 500 stock market outlook
+Eurozone_Equities,Equities,EZU,etf,Eurozone Europe equities stocks outlook
+Japanese_Equities,Equities,EWJ,etf,Japanese equities Nikkei Japan stocks BoJ outlook
+Emerging_Markets,Equities,EEM,etf,emerging markets equities MSCI EM outlook
+US_Treasuries,Fixed_Income,IEI,etf,US Treasury bonds yields Fed rates outlook
+UK_Gilts,Fixed_Income,FLGB,etf,UK gilts British government bonds BoE outlook
+Eurozone_Sovereign,Fixed_Income,IGOV,etf,Eurozone sovereign government bonds Bunds OATs yields
+US_High_Yield,Fixed_Income,HYG,etf,US high yield corporate bonds junk credit spreads
+EM_Fixed_Income_USD,Fixed_Income,EMB,etf,emerging market fixed income USD hard currency debt
+Oil,Commodities_FX,USO,etf,crude oil WTI Brent energy commodity outlook
+Copper,Commodities_FX,CPER,etf,copper metal commodity industrial demand outlook
+Gold,Commodities_FX,GLD,etf,gold precious metal safe haven inflation outlook
+USD_vs_EUR,Commodities_FX,EURUSD=X,fx,USD versus EUR dollar euro currency FX ECB Fed
+GBP_vs_EUR,Commodities_FX,GBPEUR=X,fx,GBP versus EUR sterling euro currency FX Brexit BoE
+USD_vs_JPY,Commodities_FX,USDJPY=X,fx,USD versus JPY dollar yen currency FX BoJ Japan

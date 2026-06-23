@@ -1,0 +1,1321 @@
+{
+  "as_of": "2026-06-23",
+  "source": "gemini_rag",
+  "scores": {
+    "Liquid_Alts": 0.2,
+    "Private_Equity_VC": -0.3,
+    "Private_Credit": 0.4,
+    "USD": 0.8,
+    "EUR": -0.2,
+    "JPY": -0.4,
+    "GBP": -0.1,
+    "EMFX": 0.3,
+    "Global_DM": 0.3,
+    "US_Equities": -0.2,
+    "Eurozone_Equities": 0.4,
+    "Japan_Equities": 0.5,
+    "APAC_ex_Japan": -0.3,
+    "EM": 0.7,
+    "EM_Asia": 0.8,
+    "EM_LatAm": -0.5,
+    "Global_Sovereign": 0.2,
+    "US_Treasuries": -0.3,
+    "Eurozone_Gov_Bonds": -0.4,
+    "US_TIPS": 0.1,
+    "US_Corp_IG": 0.3,
+    "US_Corp_HY": 0.5,
+    "Euro_Corp_IG": -0.2,
+    "Hard_Currency_EMD": 0.8,
+    "Local_Currency_EMD": 0.6,
+    "US_REITs": 0.4,
+    "European_REITs": -0.2,
+    "APAC_REITs": -0.3,
+    "Global_Infrastructure": 0.1,
+    "Global_Commodities": -0.5
+  },
+  "scores_by_category": {
+    "Alternatives": {
+      "Liquid_Alts": 0.2,
+      "Private_Equity_VC": -0.3,
+      "Private_Credit": 0.4
+    },
+    "Cash_FX": {
+      "USD": 0.8,
+      "EUR": -0.2,
+      "JPY": -0.4,
+      "GBP": -0.1,
+      "EMFX": 0.3
+    },
+    "Equities": {
+      "Global_DM": 0.3,
+      "US_Equities": -0.2,
+      "Eurozone_Equities": 0.4,
+      "Japan_Equities": 0.5,
+      "APAC_ex_Japan": -0.3,
+      "EM": 0.7,
+      "EM_Asia": 0.8,
+      "EM_LatAm": -0.5
+    },
+    "Fixed_Income": {
+      "Global_Sovereign": 0.2,
+      "US_Treasuries": -0.3,
+      "Eurozone_Gov_Bonds": -0.4,
+      "US_TIPS": 0.1,
+      "US_Corp_IG": 0.3,
+      "US_Corp_HY": 0.5,
+      "Euro_Corp_IG": -0.2,
+      "Hard_Currency_EMD": 0.8,
+      "Local_Currency_EMD": 0.6
+    },
+    "Real_Assets": {
+      "US_REITs": 0.4,
+      "European_REITs": -0.2,
+      "APAC_REITs": -0.3,
+      "Global_Infrastructure": 0.1,
+      "Global_Commodities": -0.5
+    }
+  },
+  "context": {
+    "Global_DM": {
+      "category": "Equities",
+      "proxy": "VEA",
+      "proxy_type": "etf",
+      "return_1m": 0.001,
+      "return_3m": 0.1169
+    },
+    "US_Equities": {
+      "category": "Equities",
+      "proxy": "SPY",
+      "proxy_type": "etf",
+      "return_1m": -0.0134,
+      "return_3m": 0.1262
+    },
+    "Eurozone_Equities": {
+      "category": "Equities",
+      "proxy": "EZU",
+      "proxy_type": "etf",
+      "return_1m": 0.0172,
+      "return_3m": 0.1243
+    },
+    "Japan_Equities": {
+      "category": "Equities",
+      "proxy": "EWJ",
+      "proxy_type": "etf",
+      "return_1m": 0.0178,
+      "return_3m": 0.1196
+    },
+    "APAC_ex_Japan": {
+      "category": "Equities",
+      "proxy": "EPP",
+      "proxy_type": "etf",
+      "return_1m": -0.0192,
+      "return_3m": 0.0287
+    },
+    "EM": {
+      "category": "Equities",
+      "proxy": "EEM",
+      "proxy_type": "etf",
+      "return_1m": 0.024,
+      "return_3m": 0.1935
+    },
+    "EM_Asia": {
+      "category": "Equities",
+      "proxy": "EEMA",
+      "proxy_type": "etf",
+      "return_1m": 0.0238,
+      "return_3m": 0.2062
+    },
+    "EM_LatAm": {
+      "category": "Equities",
+      "proxy": "ILF",
+      "proxy_type": "etf",
+      "return_1m": -0.0281,
+      "return_3m": -0.0004
+    },
+    "Global_Sovereign": {
+      "category": "Fixed_Income",
+      "proxy": "BNDW",
+      "proxy_type": "etf",
+      "return_1m": 0.0076,
+      "return_3m": 0.014
+    },
+    "US_Treasuries": {
+      "category": "Fixed_Income",
+      "proxy": "IEI",
+      "proxy_type": "etf",
+      "return_1m": 0.0025,
+      "return_3m": 0.0012
+    },
+    "Eurozone_Gov_Bonds": {
+      "category": "Fixed_Income",
+      "proxy": "IGOV",
+      "proxy_type": "etf",
+      "return_1m": -0.0123,
+      "return_3m": -0.0037
+    },
+    "US_TIPS": {
+      "category": "Fixed_Income",
+      "proxy": "TIP",
+      "proxy_type": "etf",
+      "return_1m": -0.0021,
+      "return_3m": 0.008
+    },
+    "US_Corp_IG": {
+      "category": "Fixed_Income",
+      "proxy": "LQD",
+      "proxy_type": "etf",
+      "return_1m": 0.0089,
+      "return_3m": 0.0173
+    },
+    "US_Corp_HY": {
+      "category": "Fixed_Income",
+      "proxy": "HYG",
+      "proxy_type": "etf",
+      "return_1m": 0.0046,
+      "return_3m": 0.0243
+    },
+    "Euro_Corp_IG": {
+      "category": "Fixed_Income",
+      "proxy": "IBND",
+      "proxy_type": "etf",
+      "return_1m": -0.0107,
+      "return_3m": 0.0064
+    },
+    "Hard_Currency_EMD": {
+      "category": "Fixed_Income",
+      "proxy": "EMB",
+      "proxy_type": "etf",
+      "return_1m": 0.0157,
+      "return_3m": 0.0425
+    },
+    "Local_Currency_EMD": {
+      "category": "Fixed_Income",
+      "proxy": "EMLC",
+      "proxy_type": "etf",
+      "return_1m": 0.0074,
+      "return_3m": 0.0304
+    },
+    "US_REITs": {
+      "category": "Real_Assets",
+      "proxy": "VNQ",
+      "proxy_type": "etf",
+      "return_1m": 0.0116,
+      "return_3m": 0.1135
+    },
+    "European_REITs": {
+      "category": "Real_Assets",
+      "proxy": "RWX",
+      "proxy_type": "etf",
+      "return_1m": -0.03,
+      "return_3m": -0.0083
+    },
+    "APAC_REITs": {
+      "category": "Real_Assets",
+      "proxy": "VNQI",
+      "proxy_type": "etf",
+      "return_1m": -0.0296,
+      "return_3m": -0.0009
+    },
+    "Global_Infrastructure": {
+      "category": "Real_Assets",
+      "proxy": "IGF",
+      "proxy_type": "etf",
+      "return_1m": -0.0016,
+      "return_3m": 0.0142
+    },
+    "Global_Commodities": {
+      "category": "Real_Assets",
+      "proxy": "DBC",
+      "proxy_type": "etf",
+      "return_1m": -0.1123,
+      "return_3m": -0.04
+    },
+    "Liquid_Alts": {
+      "category": "Alternatives",
+      "proxy": "QAI",
+      "proxy_type": "etf",
+      "return_1m": 0.0065,
+      "return_3m": 0.0692
+    },
+    "Private_Equity_VC": {
+      "category": "Alternatives",
+      "proxy": "PSP",
+      "proxy_type": "etf",
+      "return_1m": -0.0757,
+      "return_3m": 0.0125
+    },
+    "Private_Credit": {
+      "category": "Alternatives",
+      "proxy": "BIZD",
+      "proxy_type": "etf",
+      "return_1m": -0.0077,
+      "return_3m": 0.006
+    },
+    "USD": {
+      "category": "Cash_FX",
+      "proxy": "UUP",
+      "proxy_type": "etf",
+      "return_1m": 0.025,
+      "return_3m": 0.0295
+    },
+    "EUR": {
+      "category": "Cash_FX",
+      "proxy": "FXE",
+      "proxy_type": "etf",
+      "return_1m": -0.0188,
+      "return_3m": -0.0163
+    },
+    "JPY": {
+      "category": "Cash_FX",
+      "proxy": "FXY",
+      "proxy_type": "etf",
+      "return_1m": -0.0157,
+      "return_3m": -0.017
+    },
+    "GBP": {
+      "category": "Cash_FX",
+      "proxy": "FXB",
+      "proxy_type": "etf",
+      "return_1m": -0.0163,
+      "return_3m": -0.0089
+    },
+    "EMFX": {
+      "category": "Cash_FX",
+      "proxy": "CEW",
+      "proxy_type": "etf",
+      "return_1m": -0.0041,
+      "return_3m": 0.0137
+    }
+  },
+  "news_sources": {
+    "Global_DM": [
+      {
+        "asset_class": "Global_DM",
+        "proxy": "VEA",
+        "title": "Managing Exposure to International Equity ETFs Amid UK Political Shifts",
+        "publisher": "ETF Trends",
+        "link": "https://finance.yahoo.com/markets/world-indices/articles/managing-exposure-international-equity-etfs-174424130.html",
+        "published_at": null,
+        "similarity": 0.5357472896575928
+      },
+      {
+        "asset_class": "Global_DM",
+        "proxy": "VEA",
+        "title": "International Stocks Keep Crushing the S&P. This Cheap ETF Is How You Get In",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/world-indices/articles/international-stocks-keep-crushing-p-170841463.html",
+        "published_at": null,
+        "similarity": 0.5152665376663208
+      },
+      {
+        "asset_class": "Global_DM",
+        "proxy": "VEA",
+        "title": "Stock Funds Shake Off War Shock To Post Best Month Since 2020",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/etfs-and-funds/personal-finance/stock-market-funds-shake-off-war-shock-to-post-best-month-since-2020/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4942234754562378
+      },
+      {
+        "asset_class": "Global_DM",
+        "proxy": "VEA",
+        "title": "Is VEA the Smartest Investment You Can Make Right Now?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/world-indices/articles/vea-smartest-investment-now-184300045.html",
+        "published_at": null,
+        "similarity": 0.4433096945285797
+      },
+      {
+        "asset_class": "Global_DM",
+        "proxy": "VEA",
+        "title": "This Cheap International ETF Does One Job Very Well",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/news/cheap-international-etf-does-one-130007993.html",
+        "published_at": null,
+        "similarity": 0.42735350131988525
+      }
+    ],
+    "US_Equities": [
+      {
+        "asset_class": "US_Equities",
+        "proxy": "SPY",
+        "title": "Nasdaq, S&P 500 Futures Dip After Megacap Tech Selloff: Why SPCX, INFQ, PLTR, QBTS, HIMS Are In Focus",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-futures-dip-020902746.html",
+        "published_at": null,
+        "similarity": 0.5012600421905518
+      },
+      {
+        "asset_class": "US_Equities",
+        "proxy": "SPY",
+        "title": "JPMorgan: 2026 rally entirely earnings-driven, bull case targets 8900 by year-end",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-2026-rally-entirely-earnings-180524352.html",
+        "published_at": null,
+        "similarity": 0.41172951459884644
+      },
+      {
+        "asset_class": "US_Equities",
+        "proxy": "SPY",
+        "title": "S&P 500, Nasdaq Drop As SpaceX, Broader Tech Weakness Outweighs US-Iran Hopes \u2014 SPCX, GOOGL, NFLX, COIN, MU In Focus",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/p-500-nasdaq-drop-spacex-213756226.html",
+        "published_at": null,
+        "similarity": 0.4004738926887512
+      },
+      {
+        "asset_class": "US_Equities",
+        "proxy": "SPY",
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as AI Spending Concerns Weigh on Technology Shares",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-131921257.html",
+        "published_at": null,
+        "similarity": 0.3372519016265869
+      },
+      {
+        "asset_class": "US_Equities",
+        "proxy": "SPY",
+        "title": "Index Options Are Now Cheap; Here's How To Buy Insurance Using The S&P 500 Tracking Fund SPY",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/research/options/spy-etf-index-options-cheap-insurance-using-spy/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.32745787501335144
+      }
+    ],
+    "Eurozone_Equities": [
+      {
+        "asset_class": "Eurozone_Equities",
+        "proxy": "EZU",
+        "title": "What to expect from the European Central Bank amid oil crisis?",
+        "publisher": "Investing.com",
+        "link": "https://finance.yahoo.com/economy/policy/articles/expect-european-central-bank-amid-012546148.html",
+        "published_at": null,
+        "similarity": 0.5069229006767273
+      },
+      {
+        "asset_class": "Eurozone_Equities",
+        "proxy": "EZU",
+        "title": "EWP Is Beating the Eurozone by a Mile With a 50% One-Year Return",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/news/ewp-beating-eurozone-mile-50-091550157.html",
+        "published_at": null,
+        "similarity": 0.47922050952911377
+      },
+      {
+        "asset_class": "Eurozone_Equities",
+        "proxy": "EZU",
+        "title": "European ETP Market Surpasses $3 Trillion",
+        "publisher": "etf.com",
+        "link": "https://finance.yahoo.com/news/european-etp-market-surpasses-3-233102068.html",
+        "published_at": null,
+        "similarity": 0.4766256809234619
+      }
+    ],
+    "Japan_Equities": [
+      {
+        "asset_class": "Japan_Equities",
+        "proxy": "EWJ",
+        "title": "Japanese Stocks Are Bargains, Even After Big Gains",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/japan-value-stocks-bargains-fd7069bb?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6202837228775024
+      },
+      {
+        "asset_class": "Japan_Equities",
+        "proxy": "EWJ",
+        "title": "The Zacks Analyst Blog  EWJ,BBJP and DXJ",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-ewj-bbjp-130500219.html",
+        "published_at": null,
+        "similarity": 0.48707741498947144
+      },
+      {
+        "asset_class": "Japan_Equities",
+        "proxy": "EWJ",
+        "title": "Japan ETFs Are Up 41%. Here\u2019s How to Play the Takaichi Boom",
+        "publisher": "etf.com",
+        "link": "https://finance.yahoo.com/markets/world-indices/articles/japan-etfs-41-play-takaichi-203223186.html",
+        "published_at": null,
+        "similarity": 0.4768119752407074
+      },
+      {
+        "asset_class": "Japan_Equities",
+        "proxy": "EWJ",
+        "title": "Japan and South Korea set a critical summit amid market volatility",
+        "publisher": "Investing.com",
+        "link": "https://www.yahoo.com/news/articles/japan-south-korea-set-critical-043933798.html",
+        "published_at": null,
+        "similarity": 0.45554661750793457
+      },
+      {
+        "asset_class": "Japan_Equities",
+        "proxy": "EWJ",
+        "title": "After Reviewing Every International Developed Market ETF These 3 Cover Japan and Europe Better Than Anything Else",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/world-indices/articles/reviewing-every-international-developed-market-025932808.html",
+        "published_at": null,
+        "similarity": 0.44163721799850464
+      }
+    ],
+    "APAC_ex_Japan": [
+      {
+        "asset_class": "APAC_ex_Japan",
+        "proxy": "EPP",
+        "title": "Should Singapore ETFs Be Your Next Asia Allocation?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/singapore-etfs-next-asia-allocation-173900455.html",
+        "published_at": null,
+        "similarity": 0.5671681761741638
+      },
+      {
+        "asset_class": "APAC_ex_Japan",
+        "proxy": "EPP",
+        "title": "Retirees Are Using EPP to Capture Asia-Pacific\u2019s Surging Bank and Mining Dividends",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/news/retirees-using-epp-capture-asia-165441669.html",
+        "published_at": null,
+        "similarity": 0.4176056981086731
+      }
+    ],
+    "EM": [
+      {
+        "asset_class": "EM",
+        "proxy": "EEM",
+        "title": "South Korea\u2019s stock rally shifts focus to potential MSCI market upgrade",
+        "publisher": "Investing.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/south-korea-stock-rally-shifts-014947207.html",
+        "published_at": null,
+        "similarity": 0.5513018369674683
+      },
+      {
+        "asset_class": "EM",
+        "proxy": "EEM",
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday as Interim US-Iran Deal Lifts Risk Sentiment",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-125723601.html",
+        "published_at": null,
+        "similarity": 0.49878185987472534
+      },
+      {
+        "asset_class": "EM",
+        "proxy": "EEM",
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday Amid US-Iran Ceasefire",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-125654489.html",
+        "published_at": null,
+        "similarity": 0.49327799677848816
+      },
+      {
+        "asset_class": "EM",
+        "proxy": "EEM",
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Amid Continued US-Iran Talks",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-125854095.html",
+        "published_at": null,
+        "similarity": 0.49130067229270935
+      },
+      {
+        "asset_class": "EM",
+        "proxy": "EEM",
+        "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Friday Ahead of SpaceX Debut",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-131503816.html",
+        "published_at": null,
+        "similarity": 0.4761280417442322
+      }
+    ],
+    "EM_Asia": [
+      {
+        "asset_class": "EM_Asia",
+        "proxy": "EEMA",
+        "title": "The Likely Winners of a U.S.-China Trade Thaw: Asia Pacific Emerging ETFs",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/likely-winners-u-china-trade-153000728.html",
+        "published_at": null,
+        "similarity": 0.5863640904426575
+      },
+      {
+        "asset_class": "EM_Asia",
+        "proxy": "EEMA",
+        "title": "Are Asian ETFs in Jeopardy Amid the War & Tariff Double Whammy?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/asian-etfs-jeopardy-amid-war-184900023.html",
+        "published_at": null,
+        "similarity": 0.5119035840034485
+      },
+      {
+        "asset_class": "EM_Asia",
+        "proxy": "EEMA",
+        "title": "Should Retirees Buy This Asia Focused ETF in 2026?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/news/retirees-buy-asia-focused-etf-193712094.html",
+        "published_at": null,
+        "similarity": 0.489495187997818
+      },
+      {
+        "asset_class": "EM_Asia",
+        "proxy": "EEMA",
+        "title": "Strengthening Dollar Signals Risk for Silver Prices, Emerging Market Stocks: Technicals",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/strengthening-dollar-silver-prices-emerging-market-stocks-technicals-41d8a4e5?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.46446916460990906
+      },
+      {
+        "asset_class": "EM_Asia",
+        "proxy": "EEMA",
+        "title": "Emerging Markets ETFs Soar in May: Here's Why",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/emerging-markets-etfs-soar-may-120000529.html",
+        "published_at": null,
+        "similarity": 0.44641584157943726
+      }
+    ],
+    "EM_LatAm": [
+      {
+        "asset_class": "EM_LatAm",
+        "proxy": "ILF",
+        "title": "3 Thematic ETFs Making New Highs Ahead of the Market",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-thematic-etfs-making-highs-155100955.html",
+        "published_at": null,
+        "similarity": 0.16499832272529602
+      },
+      {
+        "asset_class": "EM_LatAm",
+        "proxy": "ILF",
+        "title": "Market Minute 11-14-25- So Long \"Shutdown Rally.\"",
+        "publisher": "MoneyShow",
+        "link": "https://finance.yahoo.com/news/market-minute-11-14-25-142000344.html",
+        "published_at": null,
+        "similarity": 0.14089585840702057
+      },
+      {
+        "asset_class": "EM_LatAm",
+        "proxy": "ILF",
+        "title": "Zacks Investment Ideas feature highlights: SMH, LIT and ILF",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-090300287.html",
+        "published_at": null,
+        "similarity": 0.1408129334449768
+      }
+    ],
+    "Global_Sovereign": [
+      {
+        "asset_class": "Global_Sovereign",
+        "proxy": "BNDW",
+        "title": "BNDW Offers 4.1% Yield and 50-Country Bond Coverage for Almost Nothing",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bndw-offers-4-1-yield-183227621.html",
+        "published_at": null,
+        "similarity": 0.4994816184043884
+      },
+      {
+        "asset_class": "Global_Sovereign",
+        "proxy": "BNDW",
+        "title": "Baby Boomers Won the Retirement Lottery \u2014 Everyone Else Is Playing Catch-Up",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/news/baby-boomers-won-retirement-lottery-162027371.html",
+        "published_at": null,
+        "similarity": 0.25716733932495117
+      }
+    ],
+    "US_Treasuries": [
+      {
+        "asset_class": "US_Treasuries",
+        "proxy": "IEI",
+        "title": "If You Hold This 20 Year Treasury ETF You Are Losing Money Even With Yields Up",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/options/articles/hold-20-treasury-etf-losing-142141990.html",
+        "published_at": null,
+        "similarity": 0.41004377603530884
+      },
+      {
+        "asset_class": "US_Treasuries",
+        "proxy": "IEI",
+        "title": "Vanguard Real Estate ETF or Treasuries? You\u2019re Losing Hefty Sums if You Make the Wrong Choice",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/vanguard-real-estate-etf-treasuries-150008116.html",
+        "published_at": null,
+        "similarity": 0.1879078894853592
+      }
+    ],
+    "Eurozone_Gov_Bonds": [],
+    "US_TIPS": [
+      {
+        "asset_class": "US_TIPS",
+        "proxy": "TIP",
+        "title": "Worried About Inflation? These 3 ETFs Offer Real Protection",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/news/worried-inflation-3-etfs-offer-161000745.html",
+        "published_at": null,
+        "similarity": 0.6263831853866577
+      },
+      {
+        "asset_class": "US_TIPS",
+        "proxy": "TIP",
+        "title": "A Risk-Free Way to Get a 3% Inflation-Proof Yield Now",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/inflation-bonds-tips-dbec0330?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6263824105262756
+      },
+      {
+        "asset_class": "US_TIPS",
+        "proxy": "TIP",
+        "title": "Best ETFs for Inflation in 2026: TIPS, Commodities, and Beyond",
+        "publisher": "etf.com",
+        "link": "https://finance.yahoo.com/markets/options/articles/best-etfs-inflation-2026-tips-001341000.html",
+        "published_at": null,
+        "similarity": 0.5550998449325562
+      },
+      {
+        "asset_class": "US_TIPS",
+        "proxy": "TIP",
+        "title": "The Inflation-Proof ETF You Need in Your Portfolio",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/options/articles/inflation-proof-etf-portfolio-124553659.html",
+        "published_at": null,
+        "similarity": 0.5540950298309326
+      },
+      {
+        "asset_class": "US_TIPS",
+        "proxy": "TIP",
+        "title": "Don\u2019t Ignore Basic Bond Math and Jump Into TIPS: The \u2018Inflation Hedge\u2019 Story Isn\u2019t Everything",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/options/articles/don-t-ignore-basic-bond-155959746.html",
+        "published_at": null,
+        "similarity": 0.5468804836273193
+      }
+    ],
+    "US_Corp_IG": [
+      {
+        "asset_class": "US_Corp_IG",
+        "proxy": "LQD",
+        "title": "Corporate Bond Spreads Are Tightening Fast. What It Means for LQD in 2026",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/options/articles/corporate-bond-spreads-tightening-fast-143348082.html",
+        "published_at": null,
+        "similarity": 0.5322878360748291
+      },
+      {
+        "asset_class": "US_Corp_IG",
+        "proxy": "LQD",
+        "title": "The Future of Core Bonds with BlackRock\u2019s Steve Laipply",
+        "publisher": "etf.com",
+        "link": "https://finance.yahoo.com/markets/options/articles/future-core-bonds-blackrock-steve-175521281.html",
+        "published_at": null,
+        "similarity": 0.4787481427192688
+      },
+      {
+        "asset_class": "US_Corp_IG",
+        "proxy": "LQD",
+        "title": "LQD\u2019s 4.5% Yield Looks Safe, But The Real Risk Hiding in BBB Bonds",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/options/articles/lqd-4-5-yield-looks-155647078.html",
+        "published_at": null,
+        "similarity": 0.42369401454925537
+      },
+      {
+        "asset_class": "US_Corp_IG",
+        "proxy": "LQD",
+        "title": "LQD vs. SCHQ: Why the \"Safer\" Bond Fund Has Not Always Been the Better Choice",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/options/articles/lqd-vs-schq-why-safer-155410386.html",
+        "published_at": null,
+        "similarity": 0.36942964792251587
+      },
+      {
+        "asset_class": "US_Corp_IG",
+        "proxy": "LQD",
+        "title": "VGLT vs. LQD: How Much Are You Willing to Pay for Safety in Today's Bond Market?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/options/articles/vglt-vs-lqd-much-willing-134709994.html",
+        "published_at": null,
+        "similarity": 0.32490837574005127
+      }
+    ],
+    "US_Corp_HY": [
+      {
+        "asset_class": "US_Corp_HY",
+        "proxy": "HYG",
+        "title": "EMB\u2019s 6 Percent Emerging Market Bond Yield Hides Hard Currency Sovereign Default Risk Most Income Investors Have Never Modeled",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/commodities/articles/emb-6-percent-emerging-market-203435800.html",
+        "published_at": null,
+        "similarity": 0.4865199029445648
+      },
+      {
+        "asset_class": "US_Corp_HY",
+        "proxy": "HYG",
+        "title": "This Corporate Bond ETF Is Yielding Above 6% Without The Drama",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/options/articles/corporate-bond-etf-yielding-above-130535544.html",
+        "published_at": null,
+        "similarity": 0.4028744101524353
+      },
+      {
+        "asset_class": "US_Corp_HY",
+        "proxy": "HYG",
+        "title": "The Spill: A 5% Long Bond Yield Has Traders Circling TLT",
+        "publisher": "IPO-Edge.com",
+        "link": "https://finance.yahoo.com/markets/options/articles/spill-5-long-bond-yield-203810157.html",
+        "published_at": null,
+        "similarity": 0.3744019865989685
+      },
+      {
+        "asset_class": "US_Corp_HY",
+        "proxy": "HYG",
+        "title": "USHY Investors: Watch This 350 Basis Point Trigger Over the Next 12 Months",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/options/articles/ushy-investors-watch-350-basis-090043170.html",
+        "published_at": null,
+        "similarity": 0.3116832375526428
+      },
+      {
+        "asset_class": "US_Corp_HY",
+        "proxy": "HYG",
+        "title": "A $2.2 Million Dividend Portfolio That Quietly Pays $13,200 a Month Without a Single MLP Tax Headache",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-2-million-dividend-portfolio-095258695.html",
+        "published_at": null,
+        "similarity": 0.25130677223205566
+      }
+    ],
+    "Euro_Corp_IG": [],
+    "Hard_Currency_EMD": [
+      {
+        "asset_class": "Hard_Currency_EMD",
+        "proxy": "EMB",
+        "title": "EMB\u2019s 6 Percent Emerging Market Bond Yield Hides Hard Currency Sovereign Default Risk Most Income Investors Have Never Modeled",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/commodities/articles/emb-6-percent-emerging-market-203435800.html",
+        "published_at": null,
+        "similarity": 0.7079946994781494
+      },
+      {
+        "asset_class": "Hard_Currency_EMD",
+        "proxy": "EMB",
+        "title": "An Emerging Market Bond ETF Pays 5.43% and Retirees Are Taking Notice",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/news/emerging-market-bond-etf-pays-130448448.html",
+        "published_at": null,
+        "similarity": 0.6559749841690063
+      },
+      {
+        "asset_class": "Hard_Currency_EMD",
+        "proxy": "EMB",
+        "title": "Retirees, Don\u2019t Panic About Bonds\u2014Protect Your Portfolio Instead",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/retirement-bonds-portfolio-80c980af?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.581998884677887
+      },
+      {
+        "asset_class": "Hard_Currency_EMD",
+        "proxy": "EMB",
+        "title": "China Is Down Sharply in 2026. These 3 ETFs Let You Buy the Dip on Emerging Markets",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/china-down-sharply-2026-3-124513329.html",
+        "published_at": null,
+        "similarity": 0.5683014988899231
+      },
+      {
+        "asset_class": "Hard_Currency_EMD",
+        "proxy": "EMB",
+        "title": "China Banks to Pare U.S. Treasuries? ETFs to Play",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/china-banks-pare-u-treasuries-130000726.html",
+        "published_at": null,
+        "similarity": 0.55409836769104
+      }
+    ],
+    "Local_Currency_EMD": [
+      {
+        "asset_class": "Local_Currency_EMD",
+        "proxy": "EMLC",
+        "title": "Beyond the Transatlantic Rift: Emerging Market Bond ETFs to Buy",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/beyond-transatlantic-rift-emerging-market-164300363.html",
+        "published_at": null,
+        "similarity": 0.7292234301567078
+      },
+      {
+        "asset_class": "Local_Currency_EMD",
+        "proxy": "EMLC",
+        "title": "This High-Yield ETF Combines Bond Investing With Emerging Market Currencies",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/currencies/articles/high-yield-etf-combines-bond-020533970.html",
+        "published_at": null,
+        "similarity": 0.7133738994598389
+      },
+      {
+        "asset_class": "Local_Currency_EMD",
+        "proxy": "EMLC",
+        "title": "EMB\u2019s 6 Percent Emerging Market Bond Yield Hides Hard Currency Sovereign Default Risk Most Income Investors Have Never Modeled",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/commodities/articles/emb-6-percent-emerging-market-203435800.html",
+        "published_at": null,
+        "similarity": 0.6885693073272705
+      },
+      {
+        "asset_class": "Local_Currency_EMD",
+        "proxy": "EMLC",
+        "title": "A Surprising Way to Get More Yield (And Less Volatility) Than Treasury Bonds",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/surprising-way-more-yield-less-182510494.html",
+        "published_at": null,
+        "similarity": 0.591720700263977
+      },
+      {
+        "asset_class": "Local_Currency_EMD",
+        "proxy": "EMLC",
+        "title": "EMLC Paid Dividends for 16 Years, but Short Interest Surged 73%",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/currencies/articles/emlc-paid-dividends-16-years-154523020.html",
+        "published_at": null,
+        "similarity": 0.5003736615180969
+      }
+    ],
+    "US_REITs": [
+      {
+        "asset_class": "US_REITs",
+        "proxy": "VNQ",
+        "title": "A $325,000 REIT Portfolio That Pays You Rent Without Owning a Single Property",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/325-000-reit-portfolio-pays-095038110.html",
+        "published_at": null,
+        "similarity": 0.5699372291564941
+      },
+      {
+        "asset_class": "US_REITs",
+        "proxy": "VNQ",
+        "title": "Four REITs Fund 45% of This Income ETF\u2019s Distributions Right Now",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/four-reits-fund-45-income-111337293.html",
+        "published_at": null,
+        "similarity": 0.5320067405700684
+      },
+      {
+        "asset_class": "US_REITs",
+        "proxy": "VNQ",
+        "title": "If You\u2019re 45 and Want Real Estate Income, Skip the Landlord Duties and Buy VNQ",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/real-estate/articles/45-want-real-estate-income-215724263.html",
+        "published_at": null,
+        "similarity": 0.514976441860199
+      },
+      {
+        "asset_class": "US_REITs",
+        "proxy": "VNQ",
+        "title": "Vanguard Real Estate ETF or Treasuries? You\u2019re Losing Hefty Sums if You Make the Wrong Choice",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/vanguard-real-estate-etf-treasuries-150008116.html",
+        "published_at": null,
+        "similarity": 0.4295964539051056
+      },
+      {
+        "asset_class": "US_REITs",
+        "proxy": "VNQ",
+        "title": "How a 56-Year-Old Built a $1.4 Million Bridge Portfolio That Pays $7,200 a Month Through Year 10 of Retirement",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/options/articles/56-old-built-1-4-152751326.html",
+        "published_at": null,
+        "similarity": 0.3946746289730072
+      }
+    ],
+    "European_REITs": [],
+    "APAC_REITs": [
+      {
+        "asset_class": "APAC_REITs",
+        "proxy": "VNQI",
+        "title": "3 Smart Investments If Interest Rates Stay Higher for Longer",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-smart-investments-interest-rates-210900997.html",
+        "published_at": null,
+        "similarity": 0.32775381207466125
+      }
+    ],
+    "Global_Infrastructure": [
+      {
+        "asset_class": "Global_Infrastructure",
+        "proxy": "IGF",
+        "title": "Should You Invest in the Global X U.S. Infrastructure Development ETF (PAVE)?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/invest-global-x-u-infrastructure-102004735.html",
+        "published_at": null,
+        "similarity": 0.4219709634780884
+      },
+      {
+        "asset_class": "Global_Infrastructure",
+        "proxy": "IGF",
+        "title": "Should You Invest in the First Trust NASDAQ Clean Edge Smart Grid Infrastructure ETF (GRID)?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/invest-first-trust-nasdaq-clean-102005413.html",
+        "published_at": null,
+        "similarity": 0.385503888130188
+      },
+      {
+        "asset_class": "Global_Infrastructure",
+        "proxy": "IGF",
+        "title": "The Zacks Analyst Blog Highlights IGF, GRID, PAVE and IFRA",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-igf-091600294.html",
+        "published_at": null,
+        "similarity": 0.359195351600647
+      },
+      {
+        "asset_class": "Global_Infrastructure",
+        "proxy": "IGF",
+        "title": "Beyond Cloud: 4 Infrastructure ETFs for the Tech-Wary Investor",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/sectors/technology/articles/beyond-cloud-4-infrastructure-etfs-135300960.html",
+        "published_at": null,
+        "similarity": 0.34673210978507996
+      },
+      {
+        "asset_class": "Global_Infrastructure",
+        "proxy": "IGF",
+        "title": "The 5 Thematic ETFs Beating the S 500 \u2014 and 388 That Aren't",
+        "publisher": "etf.com",
+        "link": "https://finance.yahoo.com/news/5-thematic-etfs-beating-500-233042848.html",
+        "published_at": null,
+        "similarity": 0.32497626543045044
+      }
+    ],
+    "Global_Commodities": [
+      {
+        "asset_class": "Global_Commodities",
+        "proxy": "DBC",
+        "title": "After Watching Commodities Move Quietly Higher These 3 ETFs Are Up Over 32 Percent and Belong in Every Inflation Hedged Portfolio",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/commodities/articles/watching-commodities-move-quietly-higher-121318510.html",
+        "published_at": null,
+        "similarity": 0.38262826204299927
+      },
+      {
+        "asset_class": "Global_Commodities",
+        "proxy": "DBC",
+        "title": "Will Equal Asset ETF Mix Beat Hype in Uncertain Markets?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equal-asset-etf-mix-beat-120000176.html",
+        "published_at": null,
+        "similarity": 0.3324867784976959
+      },
+      {
+        "asset_class": "Global_Commodities",
+        "proxy": "DBC",
+        "title": "Why to Bet on Broad Commodity Strategy ETFs?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/commodities/articles/why-bet-broad-commodity-strategy-120000667.html",
+        "published_at": null,
+        "similarity": 0.3203638792037964
+      },
+      {
+        "asset_class": "Global_Commodities",
+        "proxy": "DBC",
+        "title": "Is the 2026 Soybean Rally Over?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/commodities/articles/2026-soybean-rally-over-190002780.html",
+        "published_at": null,
+        "similarity": 0.30891484022140503
+      },
+      {
+        "asset_class": "Global_Commodities",
+        "proxy": "DBC",
+        "title": "\"Sell in May\" Is Losing Its Edge: 5 ETFs to Buy",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sell-may-losing-edge-5-130000393.html",
+        "published_at": null,
+        "similarity": 0.2998849153518677
+      }
+    ],
+    "Liquid_Alts": [
+      {
+        "asset_class": "Liquid_Alts",
+        "proxy": "QAI",
+        "title": "There\u2019s a Tax-Efficient Revolution Happening in Alts ETFs",
+        "publisher": "etf.com",
+        "link": "https://finance.yahoo.com/news/tax-efficient-revolution-happening-alts-210126610.html",
+        "published_at": null,
+        "similarity": 0.4164084792137146
+      }
+    ],
+    "Private_Equity_VC": [
+      {
+        "asset_class": "Private_Equity_VC",
+        "proxy": "PSP",
+        "title": "From SpaceX to xAI: How ETFs Are Packaging Private Assets",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/spacex-xai-etfs-packaging-private-140300301.html",
+        "published_at": null,
+        "similarity": 0.35008564591407776
+      },
+      {
+        "asset_class": "Private_Equity_VC",
+        "proxy": "PSP",
+        "title": "Are Wall Street Analysts Bullish on KKR & Co. Stock?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-bullish-kkr-133021678.html",
+        "published_at": null,
+        "similarity": 0.33249494433403015
+      }
+    ],
+    "Private_Credit": [
+      {
+        "asset_class": "Private_Credit",
+        "proxy": "BIZD",
+        "title": "KBWD\u2019s 12 Percent BDC Yield Comes From Loaning to Companies the Big Banks Refuse to Touch",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/kbwd-12-percent-bdc-yield-103434749.html",
+        "published_at": null,
+        "similarity": 0.5984827876091003
+      },
+      {
+        "asset_class": "Private_Credit",
+        "proxy": "BIZD",
+        "title": "Forget private credit \u2013 earn yields of ~10% with this BDC ETF",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/forget-private-credit-earn-yields-153344053.html",
+        "published_at": null,
+        "similarity": 0.5623070001602173
+      },
+      {
+        "asset_class": "Private_Credit",
+        "proxy": "BIZD",
+        "title": "Forget JEPI: Three Business Development Company ETFs Yielding Over 12% From Private Credit Loans",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/forget-jepi-three-business-development-153752536.html",
+        "published_at": null,
+        "similarity": 0.5334745645523071
+      },
+      {
+        "asset_class": "Private_Credit",
+        "proxy": "BIZD",
+        "title": "Most Retirees Skip Over This $13 Billion BDC Income ETF That Pays 13 Percent Quarterly",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/most-retirees-skip-over-13-181555636.html",
+        "published_at": null,
+        "similarity": 0.4588705599308014
+      },
+      {
+        "asset_class": "Private_Credit",
+        "proxy": "BIZD",
+        "title": "Inside the $17 income play paying 5.7% yield after its biggest earnings disappointment",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/inside-17-income-play-paying-154428652.html",
+        "published_at": null,
+        "similarity": 0.3846132159233093
+      }
+    ],
+    "USD": [
+      {
+        "asset_class": "USD",
+        "proxy": "UUP",
+        "title": "Is Invesco DB US Dollar Index Bullish ETF (UUP) a Strong ETF Right Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/currencies/articles/invesco-db-us-dollar-index-102002081.html",
+        "published_at": null,
+        "similarity": 0.4852755665779114
+      },
+      {
+        "asset_class": "USD",
+        "proxy": "UUP",
+        "title": "Dollar Holds Firm Amid Iran Deal Uncertainty: ETFs to Win/ Lose",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/currencies/articles/dollar-holds-firm-amid-iran-121300168.html",
+        "published_at": null,
+        "similarity": 0.4699389934539795
+      },
+      {
+        "asset_class": "USD",
+        "proxy": "UUP",
+        "title": "The Dollar Just Hit A 13-Month High On Warsh's Hawkish Debut: History Says Don't Fade It",
+        "publisher": "Benzinga",
+        "link": "https://finance.yahoo.com/markets/currencies/articles/dollar-just-hit-13-month-173114394.html",
+        "published_at": null,
+        "similarity": 0.4675752818584442
+      },
+      {
+        "asset_class": "USD",
+        "proxy": "UUP",
+        "title": "Is the Dollar Index Preparing for a Significant Break?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/currencies/articles/dollar-index-preparing-significant-break-190003951.html",
+        "published_at": null,
+        "similarity": 0.4625733196735382
+      },
+      {
+        "asset_class": "USD",
+        "proxy": "UUP",
+        "title": "Fed Stays Put, Hints at Hawkish Path Ahead: ETF Areas Likely to Gain",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/economy/policy/articles/fed-stays-put-hints-hawkish-130000643.html",
+        "published_at": null,
+        "similarity": 0.42024511098861694
+      }
+    ],
+    "EUR": [
+      {
+        "asset_class": "EUR",
+        "proxy": "FXE",
+        "title": "Inside Euro's Strength in 2025: What's Ahead for ETF FXE?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/inside-euros-strength-2025-whats-100000074.html",
+        "published_at": null,
+        "similarity": 0.6351804733276367
+      },
+      {
+        "asset_class": "EUR",
+        "proxy": "FXE",
+        "title": "Currency ETFs to Watch as the Dollar Struggles",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/currency-etfs-watch-dollar-struggles-220000809.html",
+        "published_at": null,
+        "similarity": 0.6332542896270752
+      },
+      {
+        "asset_class": "EUR",
+        "proxy": "FXE",
+        "title": "Dollar at a 4-Year Low? ETFs That You Could Play",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/dollar-4-low-etfs-could-155500514.html",
+        "published_at": null,
+        "similarity": 0.543441116809845
+      },
+      {
+        "asset_class": "EUR",
+        "proxy": "FXE",
+        "title": "Ukraine Peace Hopes Shake Up European Markets",
+        "publisher": "Moby",
+        "link": "https://finance.yahoo.com/news/ukraine-peace-hopes-shake-european-204000331.html",
+        "published_at": null,
+        "similarity": 0.4277687966823578
+      }
+    ],
+    "JPY": [
+      {
+        "asset_class": "JPY",
+        "proxy": "FXY",
+        "title": "Time for Japan ETFs?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/time-japan-etfs-112800641.html",
+        "published_at": null,
+        "similarity": 0.5776773691177368
+      },
+      {
+        "asset_class": "JPY",
+        "proxy": "FXY",
+        "title": "Japanese Stocks Surge on \"Takaichi Trade\": ETFs in Focus",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/japanese-stocks-surge-takaichi-trade-100000466.html",
+        "published_at": null,
+        "similarity": 0.5155913829803467
+      },
+      {
+        "asset_class": "JPY",
+        "proxy": "FXY",
+        "title": "Japan\u2019s Katayama mum on suspected FX intervention amid Golden Week",
+        "publisher": "Investing.com",
+        "link": "https://finance.yahoo.com/markets/currencies/articles/japan-katayama-mum-suspected-fx-021733255.html",
+        "published_at": null,
+        "similarity": 0.5088505744934082
+      },
+      {
+        "asset_class": "JPY",
+        "proxy": "FXY",
+        "title": "Why Japan\u2019s next rate decision could be bigger than the hike itself?",
+        "publisher": "Investing.com",
+        "link": "https://finance.yahoo.com/economy/policy/articles/why-japan-next-rate-decision-154549038.html",
+        "published_at": null,
+        "similarity": 0.4981165826320648
+      },
+      {
+        "asset_class": "JPY",
+        "proxy": "FXY",
+        "title": "ETFs in Focus as BOJ Holds Rates Steady Amid Rising Inflation Risks",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/economy/policy/articles/etfs-focus-boj-holds-rates-160000484.html",
+        "published_at": null,
+        "similarity": 0.4830290973186493
+      }
+    ],
+    "GBP": [
+      {
+        "asset_class": "GBP",
+        "proxy": "FXB",
+        "title": "Britain's GDP Makes a Surprising Jump: Should You Buy UK ETFs Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/economy/articles/britains-gdp-makes-surprising-jump-173500228.html",
+        "published_at": null,
+        "similarity": 0.5939638018608093
+      },
+      {
+        "asset_class": "GBP",
+        "proxy": "FXB",
+        "title": "Currency ETFs to Watch as the Dollar Struggles",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/currency-etfs-watch-dollar-struggles-220000809.html",
+        "published_at": null,
+        "similarity": 0.591148853302002
+      },
+      {
+        "asset_class": "GBP",
+        "proxy": "FXB",
+        "title": "Dollar at a 4-Year Low? ETFs That You Could Play",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/dollar-4-low-etfs-could-155500514.html",
+        "published_at": null,
+        "similarity": 0.49723953008651733
+      }
+    ],
+    "EMFX": [
+      {
+        "asset_class": "EMFX",
+        "proxy": "CEW",
+        "title": "Currency ETFs to Watch as the Dollar Struggles",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/currency-etfs-watch-dollar-struggles-220000809.html",
+        "published_at": null,
+        "similarity": 0.620904803276062
+      },
+      {
+        "asset_class": "EMFX",
+        "proxy": "CEW",
+        "title": "Dollar at a 4-Year Low? ETFs That You Could Play",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/dollar-4-low-etfs-could-155500514.html",
+        "published_at": null,
+        "similarity": 0.521169126033783
+      },
+      {
+        "asset_class": "EMFX",
+        "proxy": "CEW",
+        "title": "ETFs to Play as Dollar Faces Steep Weekly Drop",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/etfs-play-dollar-faces-steep-140000518.html",
+        "published_at": null,
+        "similarity": 0.46953171491622925
+      },
+      {
+        "asset_class": "EMFX",
+        "proxy": "CEW",
+        "title": "Betting on a Weaker Dollar? ETFs to Consider",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/betting-weaker-dollar-etfs-consider-155800891.html",
+        "published_at": null,
+        "similarity": 0.46808141469955444
+      },
+      {
+        "asset_class": "EMFX",
+        "proxy": "CEW",
+        "title": "ETFs That Investors May Consider Amid a Dollar Drag",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/etfs-investors-may-consider-amid-153700166.html",
+        "published_at": null,
+        "similarity": 0.45885077118873596
+      }
+    ]
+  }
+}

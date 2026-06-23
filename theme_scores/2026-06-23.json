@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-06-23",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.4,
+    "Cloud": -0.2,
+    "Consumer": -0.3,
+    "Energy": -0.7,
+    "Financials": 0.6,
+    "Healthcare": 0.4,
+    "Industrials": 0.3,
+    "Media": -0.5,
+    "Semiconductors": 0.7,
+    "Software": -0.1
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0897,
+      "return_3m": 0.0844
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": -0.0295,
+      "return_3m": 0.0819
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0423,
+      "return_3m": 0.0406
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0767,
+      "return_3m": -0.0972
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0422,
+      "return_3m": 0.0985
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0212,
+      "return_3m": 0.0572
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0414,
+      "return_3m": 0.0907
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0671,
+      "return_3m": -0.0308
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.0784,
+      "return_3m": 0.5751
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.0691,
+      "return_3m": 0.0829
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Update: Equity Markets Mostly Fall Intraday Amid Tech Sell-Off",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-mostly-fall-intraday-182507396.html",
+        "published_at": null,
+        "similarity": 0.5670124292373657
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-194133550.html",
+        "published_at": null,
+        "similarity": 0.566777229309082
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "The AI Trade Is Wobbling. Berkshire Hathaway Was Built for a Market Like This.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ai-trade-wobbling-berkshire-hathaway-185127746.html",
+        "published_at": null,
+        "similarity": 0.5476652383804321
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "AI stock slump raises the question if investors are just taking profits or getting very nervous",
+        "publisher": "Associated Press",
+        "link": "https://finance.yahoo.com/technology/ai/articles/ai-stock-slump-raises-investors-181830257.html",
+        "published_at": null,
+        "similarity": 0.5172120332717896
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Stock market today: S&P 500, Nasdaq slide as Big Tech, SpaceX hammered",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-slide-as-big-tech-spacex-hammered-225817825.html",
+        "published_at": null,
+        "similarity": 0.502389669418335
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Update: Equity Markets Mostly Fall Intraday Amid Tech Sell-Off",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-mostly-fall-intraday-182507396.html",
+        "published_at": null,
+        "similarity": 0.6165681481361389
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Wall Street Analysts Think ServiceNow (NOW) Is a Good Investment: Is It?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-think-servicenow-133007594.html",
+        "published_at": null,
+        "similarity": 0.5771821737289429
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Salesforce, Inc. (CRM) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-inc-crm-attracting-investor-130004496.html",
+        "published_at": null,
+        "similarity": 0.5661740303039551
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-194133550.html",
+        "published_at": null,
+        "similarity": 0.5643413066864014
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "The AI Trade Is Wobbling. Berkshire Hathaway Was Built for a Market Like This.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ai-trade-wobbling-berkshire-hathaway-185127746.html",
+        "published_at": null,
+        "similarity": 0.5291213393211365
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Sector Update: Consumer Stocks Mixed Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-afternoon-192925896.html",
+        "published_at": null,
+        "similarity": 0.5012360215187073
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Stock market today: S&P 500, Nasdaq slide as Big Tech, SpaceX hammered",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-slide-as-big-tech-spacex-hammered-225817825.html",
+        "published_at": null,
+        "similarity": 0.4542451500892639
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "3 Stocks to Buy for Decades of Passive Income While They're Down",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-buy-decades-passive-193100821.html",
+        "published_at": null,
+        "similarity": 0.4274652898311615
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "The AI Trade Is Wobbling. Berkshire Hathaway Was Built for a Market Like This.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ai-trade-wobbling-berkshire-hathaway-185127746.html",
+        "published_at": null,
+        "similarity": 0.42147117853164673
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "What's Wrong With McDonald's Stock?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/whats-wrong-mcdonalds-stock-174555053.html",
+        "published_at": null,
+        "similarity": 0.4098435044288635
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Higher Tuesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-higher-tuesday-175621296.html",
+        "published_at": null,
+        "similarity": 0.6058700084686279
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-rise-afternoon-195304673.html",
+        "published_at": null,
+        "similarity": 0.5776653289794922
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Energy Stocks Could Be a Slick Trade",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/finance/stocks/energy-stocks-could-be-a-slick-trade-838b66b7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5470978617668152
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla Stock\u2019s Good News on Sales Overwhelmed by the Bad",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/tesla-stock-price-sales-crash-spacex-1ac25924?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5130615234375
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "\ud83d\udcc9 These Tech Stocks Are Falling the Most Today",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-23-2026/card/-these-tech-stocks-are-falling-the-most-this-morning-Oo14F89dDEicUznHFUQK?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.48944270610809326
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway Inc. (BRK.B) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-inc-brk-b-130006441.html",
+        "published_at": null,
+        "similarity": 0.5303447246551514
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway (BRK.A) Stock After 1% Weekly Dip Is The Valuation Still Attractive",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-stock-1-111227833.html",
+        "published_at": null,
+        "similarity": 0.4895886778831482
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Citigroup Inc. (C): One of The Elite Financial Stocks to Buy?",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/citigroup-inc-c-one-elite-190847186.html",
+        "published_at": null,
+        "similarity": 0.487544447183609
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "The AI Trade Is Wobbling. Berkshire Hathaway Was Built for a Market Like This.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ai-trade-wobbling-berkshire-hathaway-185127746.html",
+        "published_at": null,
+        "similarity": 0.4813729226589203
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Capital One Financial Corporation (COF): One of the Elite Financial Stocks According to Berkshire Hathaway",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/capital-one-financial-corporation-cof-190947545.html",
+        "published_at": null,
+        "similarity": 0.4568973779678345
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Advance in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-advance-afternoon-173843227.html",
+        "published_at": null,
+        "similarity": 0.6654714345932007
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Sector Update: Healthcare Stocks Higher Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-higher-afternoon-194604311.html",
+        "published_at": null,
+        "similarity": 0.6143602728843689
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Is UnitedHealth (UNH) a Buy as Wall Street Analysts Look Optimistic?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-unh-buy-wall-street-133008284.html",
+        "published_at": null,
+        "similarity": 0.5090553760528564
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Why AbbVie Stock Jumped Today",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-abbvie-stock-jumped-today-031812824.html",
+        "published_at": null,
+        "similarity": 0.46560433506965637
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Merck Stock\u2019s New Drugs Were Already Answering The Big Question",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/healthcare/articles/merck-stock-drugs-were-already-144624662.html",
+        "published_at": null,
+        "similarity": 0.46441957354545593
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Industrial Production Rises Amid Inflation Woes: 4 Stocks to Grab",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/industrial-production-rises-amid-inflation-131200566.html",
+        "published_at": null,
+        "similarity": 0.5307348966598511
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "\ud83d\udcc9 These Tech Stocks Are Falling the Most Today",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-23-2026/card/-these-tech-stocks-are-falling-the-most-this-morning-Oo14F89dDEicUznHFUQK?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5096709728240967
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "1 Surging  Stock on Our Watchlist and 2 Facing Headwinds",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-surging-stock-watchlist-2-083519983.html",
+        "published_at": null,
+        "similarity": 0.4831441640853882
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Micron Earnings Have Never Looked Better. Start Worrying.",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/micron-earnings-never-looked-better-150416774.html",
+        "published_at": null,
+        "similarity": 0.46960049867630005
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "1 Mega-Cap Stock to Target This Week and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-mega-cap-stock-target-112846793.html",
+        "published_at": null,
+        "similarity": 0.4667266011238098
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Stock market today: S&P 500, Nasdaq slide as Big Tech, SpaceX hammered",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-slide-as-big-tech-spacex-hammered-225817825.html",
+        "published_at": null,
+        "similarity": 0.5390926003456116
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-194133550.html",
+        "published_at": null,
+        "similarity": 0.5372190475463867
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Sector Update: Consumer Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-decline-afternoon-193744045.html",
+        "published_at": null,
+        "similarity": 0.5047374367713928
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "1 Consumer Stock with Solid Fundamentals and 2 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-consumer-stock-solid-fundamentals-160458335.html",
+        "published_at": null,
+        "similarity": 0.4875434637069702
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Here is What to Know Beyond Why Comcast Corporation (CMCSA) is a Trending Stock",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/know-beyond-why-comcast-corporation-130003612.html",
+        "published_at": null,
+        "similarity": 0.48410797119140625
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "Update: Equity Markets Mostly Fall Intraday Amid Tech Sell-Off",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-mostly-fall-intraday-182507396.html",
+        "published_at": null,
+        "similarity": 0.663942813873291
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "3 Semiconductor Stocks We\u2019re Skeptical Of",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-semiconductor-stocks-skeptical-130858651.html",
+        "published_at": null,
+        "similarity": 0.6197043657302856
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Company News for Jun 22, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/company-news-jun-22-2026-132700754.html",
+        "published_at": null,
+        "similarity": 0.6151800155639648
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Stock market today: S&P 500, Nasdaq slide as Big Tech, SpaceX hammered",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-slide-as-big-tech-spacex-hammered-225817825.html",
+        "published_at": null,
+        "similarity": 0.6104931235313416
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "\ud83d\udcc9 These Tech Stocks Are Falling the Most Today",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-23-2026/card/-these-tech-stocks-are-falling-the-most-this-morning-Oo14F89dDEicUznHFUQK?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5900284051895142
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Update: Equity Markets Mostly Fall Intraday Amid Tech Sell-Off",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-mostly-fall-intraday-182507396.html",
+        "published_at": null,
+        "similarity": 0.5827206373214722
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Salesforce, Inc. (CRM) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-inc-crm-attracting-investor-130004496.html",
+        "published_at": null,
+        "similarity": 0.5610954761505127
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Wall Street Analysts Think ServiceNow (NOW) Is a Good Investment: Is It?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-think-servicenow-133007594.html",
+        "published_at": null,
+        "similarity": 0.5545612573623657
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-194133550.html",
+        "published_at": null,
+        "similarity": 0.5484771728515625
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "The AI Trade Is Wobbling. Berkshire Hathaway Was Built for a Market Like This.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ai-trade-wobbling-berkshire-hathaway-185127746.html",
+        "published_at": null,
+        "similarity": 0.5073816776275635
+      }
+    ]
+  }
+}
