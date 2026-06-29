@@ -2,16 +2,16 @@
   "as_of": "2026-06-29",
   "source": "gemini_rag",
   "scores": {
-    "AI": 0.4,
+    "AI": 0.6,
     "Cloud": 0.5,
     "Consumer": 0.1,
-    "Energy": -0.7,
-    "Financials": 0.6,
-    "Healthcare": 0.7,
-    "Industrials": 0.8,
+    "Energy": -0.8,
+    "Financials": 0.7,
+    "Healthcare": 0.8,
+    "Industrials": 0.75,
     "Media": -0.2,
     "Semiconductors": 0.9,
-    "Software": 0.3
+    "Software": 0.4
   },
   "context": {
     "AI": {
