@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-06-30",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.6,
+    "Cloud": 0.5,
+    "Consumer": 0.1,
+    "Energy": -0.7,
+    "Financials": 0.3,
+    "Healthcare": 0.2,
+    "Industrials": 0.7,
+    "Media": -0.2,
+    "Semiconductors": 0.9,
+    "Software": 0.0
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.065,
+      "return_3m": 0.1427
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": -0.1083,
+      "return_3m": 0.1733
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0057,
+      "return_3m": 0.0783
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0664,
+      "return_3m": -0.1268
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.046,
+      "return_3m": 0.0897
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0779,
+      "return_3m": 0.087
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0771,
+      "return_3m": 0.1481
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0709,
+      "return_3m": -0.0311
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.0791,
+      "return_3m": 0.7107
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.1586,
+      "return_3m": 0.132
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Marvell Stock And The High-Stakes Forecast Behind The AI Story",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marvell-stock-high-stakes-forecast-224042789.html",
+        "published_at": null,
+        "similarity": 0.5836878418922424
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Update: Dow Hits Fresh High as Wall Street Posts Solid Quarterly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-hits-fresh-high-wall-204049573.html",
+        "published_at": null,
+        "similarity": 0.5582035183906555
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "AMD, Sandisk, AeroVironment, Air Products, Strategy, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-a05e009e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5394819974899292
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Where Arista Networks Stock Is Most Exposed",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/where-arista-networks-stock-most-210224649.html",
+        "published_at": null,
+        "similarity": 0.511560320854187
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "The GenAI Metric Accenture Stock Quietly Dropped Reveals A Much Bigger Bet",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/technology/ai/articles/genai-metric-accenture-stock-quietly-222404686.html",
+        "published_at": null,
+        "similarity": 0.5068719387054443
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Update: Dow Hits Fresh High as Wall Street Posts Solid Quarterly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-hits-fresh-high-wall-204049573.html",
+        "published_at": null,
+        "similarity": 0.5697569847106934
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ADBE",
+        "title": "Is The Market Ignoring The Real Growth Story In Salesforce Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-ignoring-real-growth-story-195723454.html",
+        "published_at": null,
+        "similarity": 0.5619297027587891
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Software Stocks Have Gotten Crushed. These 2 Have Defied the Selloff.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/software-stocks-jfrog-qualsys-technical-analysis-c594c368?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5105270147323608
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Is The Microsoft Stock Pullback A Buying Opportunity?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-pullback-buying-opportunity-182247476.html",
+        "published_at": null,
+        "similarity": 0.507320761680603
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Top Stock Reports for Microsoft, Exxon Mobil & Dell",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-microsoft-exxon-203400628.html",
+        "published_at": null,
+        "similarity": 0.5037771463394165
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "HD",
+        "title": "Dow Holds Gains as Markets Price the AI Boom: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-holds-gains-markets-price-201132390.html",
+        "published_at": null,
+        "similarity": 0.5109075903892517
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "Update: Dow Hits Fresh High as Wall Street Posts Solid Quarterly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-hits-fresh-high-wall-204049573.html",
+        "published_at": null,
+        "similarity": 0.4938430190086365
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "COST",
+        "title": "Why the Stock Market\u2019s Staggering Quarterly Gains Will Be Tough to Match",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-quarter-things-to-know-today-fa999173?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49355655908584595
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-194823514.html",
+        "published_at": null,
+        "similarity": 0.43271687626838684
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "Walmart Inc. (WMT) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-inc-wmt-attracting-investor-130008678.html",
+        "published_at": null,
+        "similarity": 0.4216287136077881
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "3 Integrated Energy Stocks to Gain From Promising Industry Trend",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/energy/articles/3-integrated-energy-stocks-gain-134600537.html",
+        "published_at": null,
+        "similarity": 0.5920823812484741
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The 'Time To Power' Signal The Market Missed In Bloom Energy Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/time-power-signal-market-missed-161851514.html",
+        "published_at": null,
+        "similarity": 0.5530301928520203
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla's Stock Just Bounced Back in a Big Way. Here's Where Traders See It Going Next",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/teslas-stock-just-bounced-back-183655313.html",
+        "published_at": null,
+        "similarity": 0.5261722803115845
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla (TSLA) Exceeds Market Returns: Some Facts to Consider",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-exceeds-market-returns-214504496.html",
+        "published_at": null,
+        "similarity": 0.5065109729766846
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Top Stock Reports for Microsoft, Exxon Mobil & Dell",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-microsoft-exxon-203400628.html",
+        "published_at": null,
+        "similarity": 0.4904004633426666
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Update: Dow Hits Fresh High as Wall Street Posts Solid Quarterly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-hits-fresh-high-wall-204049573.html",
+        "published_at": null,
+        "similarity": 0.5569922924041748
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Why These Stock-Market Bears See This Year's Bullish Tailwinds 'Reversing'",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-stock-market-bears-see-173501148.html",
+        "published_at": null,
+        "similarity": 0.4705294966697693
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Major Banks Poised for Strong Quarterly Results, Outlook, Deutsche Bank Says",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/major-banks-poised-strong-quarterly-165242500.html",
+        "published_at": null,
+        "similarity": 0.465040922164917
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Manager Weschler May Be Having A Good Year Due to DaVita, Sirius Holdings",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/berkshire-weschler-stock-davita-sirius-e9ee54aa?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4332934021949768
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Top Midday Decliners",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/top-midday-decliners-184155063.html",
+        "published_at": null,
+        "similarity": 0.43216270208358765
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Sector Update: Healthcare Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-softer-afternoon-194140967.html",
+        "published_at": null,
+        "similarity": 0.5970124006271362
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "If a Stock Market Crash Is Coming, History Shows This Stock Will Be a Brilliant Buy",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-crash-coming-history-192000928.html",
+        "published_at": null,
+        "similarity": 0.5293859243392944
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Pfizer (PFE) Stock Declines While Market Improves: Some Information for Investors",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pfizer-pfe-stock-declines-while-214506892.html",
+        "published_at": null,
+        "similarity": 0.507875382900238
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "These Are The Best-Performing Dow Stocks Of Q2 And First Half Of 2026",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/best-dow-stocks-q2-h1-caterpillar-cisco-united-health/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4941186010837555
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Stock Market Today: Dow Rises To Record; Cathie Wood Buys This Software Stock Amid 46% Dive",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-spacex-spcx-stock-nasdaq-100/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49144431948661804
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "AMD, Sandisk, AeroVironment, Air Products, Strategy, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-a05e009e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5674540400505066
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "The Whisper That Moved A Half-Trillion Dollar Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/whisper-moved-half-trillion-dollar-193628661.html",
+        "published_at": null,
+        "similarity": 0.5529059171676636
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market Today: Dow Rises To Record; Cathie Wood Buys This Software Stock Amid 46% Dive",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-spacex-spcx-stock-nasdaq-100/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.508463978767395
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Stocks to Watch: Strategy, Super Micro, Nike",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-30-2026/card/stocks-to-watch-strategy-super-micro-constellation-brands-n5mWXpGWDuIhKWqZgnDL?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4849090874195099
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Dow Builds on 52,000 Breakthrough as Markets Rise to Close a Strong First Half",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-063026/card/dow-builds-on-52000-breakthrough-as-stock-futures-rise-to-close-a-strong-first-half-syFcw16rc530kwEoEi5v?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47935378551483154
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Where Arista Networks Stock Is Most Exposed",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/where-arista-networks-stock-most-210224649.html",
+        "published_at": null,
+        "similarity": 0.5249038338661194
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "It\u2019s Time to Buy CMCSA Stock on Comcast\u2019s Split News",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/time-buy-cmcsa-stock-comcast-160832376.html",
+        "published_at": null,
+        "similarity": 0.5126674175262451
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Netflix (NFLX) Stock Slides as Market Rises: Facts to Know Before You Trade",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-stock-slides-market-214506041.html",
+        "published_at": null,
+        "similarity": 0.5046430230140686
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "The Comcast-NBCUniversal Spinoff News Could Mean More 'Supersized' Media M&A in 2026",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/media-advertising/articles/comcast-nbcuniversal-spinoff-news-could-180649391.html",
+        "published_at": null,
+        "similarity": 0.4965068995952606
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Alphabet (GOOGL) Outperforms Broader Market: What You Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-outperforms-broader-market-214505678.html",
+        "published_at": null,
+        "similarity": 0.48658227920532227
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "AMD, Sandisk, AeroVironment, Air Products, Strategy, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-a05e009e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6394551992416382
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "After A Large Run, Is Applied Materials Stock A Bet On AI's Future or Yesterday's News?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/large-run-applied-materials-stock-023532728.html",
+        "published_at": null,
+        "similarity": 0.6346060037612915
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Update: Dow Hits Fresh High as Wall Street Posts Solid Quarterly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-hits-fresh-high-wall-204049573.html",
+        "published_at": null,
+        "similarity": 0.6255077123641968
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-194823514.html",
+        "published_at": null,
+        "similarity": 0.6027114987373352
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "Micron Stock Redefined Its Future, But the Market Isn't Convinced Yet",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-redefined-future-market-153027979.html",
+        "published_at": null,
+        "similarity": 0.6022619009017944
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Software Stocks Have Gotten Crushed. These 2 Have Defied the Selloff.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/software-stocks-jfrog-qualsys-technical-analysis-c594c368?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5878812670707703
+      },
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Is The Market Ignoring The Real Growth Story In Salesforce Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-ignoring-real-growth-story-195723454.html",
+        "published_at": null,
+        "similarity": 0.5778429508209229
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "NOW, WDAY, ADBE, CRM: Software Stocks On The Rebound As OpenAI Threat Weakens",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/now-wday-adbe-crm-software-031903426.html",
+        "published_at": null,
+        "similarity": 0.5560656785964966
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "Update: Dow Hits Fresh High as Wall Street Posts Solid Quarterly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-hits-fresh-high-wall-204049573.html",
+        "published_at": null,
+        "similarity": 0.5204607248306274
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Is The Microsoft Stock Pullback A Buying Opportunity?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-pullback-buying-opportunity-182247476.html",
+        "published_at": null,
+        "similarity": 0.5029066801071167
+      }
+    ]
+  }
+}
