@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-01",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.4,
+    "Cloud": 0.5,
+    "Consumer": 0.1,
+    "Energy": -0.6,
+    "Financials": 0.3,
+    "Healthcare": 0.2,
+    "Industrials": 0.3,
+    "Media": -0.2,
+    "Semiconductors": 0.7,
+    "Software": 0.0
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.063,
+      "return_3m": 0.1233
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": -0.0454,
+      "return_3m": 0.2084
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0063,
+      "return_3m": 0.0776
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0823,
+      "return_3m": -0.098
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0682,
+      "return_3m": 0.1119
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0946,
+      "return_3m": 0.0847
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0552,
+      "return_3m": 0.1179
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0312,
+      "return_3m": -0.0109
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0186,
+      "return_3m": 0.5829
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.1086,
+      "return_3m": 0.1703
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "QCOM",
+        "title": "Marvell Stock And The High-Stakes Forecast Behind The AI Story",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marvell-stock-high-stakes-forecast-224042789.html",
+        "published_at": null,
+        "similarity": 0.6021733283996582
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Stock Market Today, July 1: Meta Shakes Up Cloud Sector and Tech Stocks Weigh on Markets",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-1-213252093.html",
+        "published_at": null,
+        "similarity": 0.5517711043357849
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Stock Market Today, July 1: Meta Surges on Reported Plan for AI Cloud Business",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-1-213616042.html",
+        "published_at": null,
+        "similarity": 0.5252550840377808
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Meta, CoreWeave, Salesforce, Corning, Bending Spoons, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-9acee5d7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5244995355606079
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Why Is Reddit (RDDT) Stock Soaring Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-reddit-rddt-stock-soaring-210500876.html",
+        "published_at": null,
+        "similarity": 0.5185151100158691
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Stock Market Today, July 1: Meta Surges on Reported Plan for AI Cloud Business",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-1-213616042.html",
+        "published_at": null,
+        "similarity": 0.6171116828918457
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ADBE",
+        "title": "Is The Market Ignoring The Real Growth Story In Salesforce Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-ignoring-real-growth-story-195723454.html",
+        "published_at": null,
+        "similarity": 0.5619297027587891
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Bentley Systems, Qualys, and SoundHound AI Stocks Trade Up, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bentley-systems-qualys-soundhound-ai-215300076.html",
+        "published_at": null,
+        "similarity": 0.5585069060325623
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "Meta stock pops on news it will reportedly start a cloud computing business",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/article/meta-stock-pops-on-news-it-will-reportedly-start-a-cloud-computing-business-134412120.html",
+        "published_at": null,
+        "similarity": 0.5389152765274048
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "PagerDuty, Paychex, and Commerce Shares Are Soaring, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pagerduty-paychex-commerce-shares-soaring-220900179.html",
+        "published_at": null,
+        "similarity": 0.5039328336715698
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "1 Unpopular Stock That Should Get More Attention and 2 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-more-attention-093700229.html",
+        "published_at": null,
+        "similarity": 0.4556044340133667
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "What\u2019s Ahead for Tech and Other Sectors In the Second Half of 2026",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/tech-energy-stocks-2026-342e3d2b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.44651105999946594
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Amazon (AMZN) Gains As Market Dips: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-gains-market-dips-214503827.html",
+        "published_at": null,
+        "similarity": 0.43168187141418457
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Update: US Equity Indexes Fall as Technology Slides, Warsh's Inflation Focus Lifts Treasury Yields",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-fall-technology-210459444.html",
+        "published_at": null,
+        "similarity": 0.4250384569168091
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "Alphabet Is Now Part of the Dow. That's a Big Validation of Greg Abel's Boldest Berkshire Bet Yet.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-now-part-dow-thats-160500495.html",
+        "published_at": null,
+        "similarity": 0.42178797721862793
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Decline Wednesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-decline-wednesday-175419445.html",
+        "published_at": null,
+        "similarity": 0.6083962917327881
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The 'Time To Power' Signal The Market Missed In Bloom Energy Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/time-power-signal-market-missed-161851514.html",
+        "published_at": null,
+        "similarity": 0.5530301928520203
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "This 3% Yielding Energy Stock Has Hiked Its Dividend for 43 Straight Years. Here's Why I'd Buy It Without Hesitation Right Now.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/energy/articles/3-yielding-energy-stock-hiked-182859317.html",
+        "published_at": null,
+        "similarity": 0.5190341472625732
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "Bloom Energy Stock Is Priced For A Perfect Future, But Is Its AI Power Play Just Beginning?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-priced-perfect-225727238.html",
+        "published_at": null,
+        "similarity": 0.46473240852355957
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "The Zacks Analyst Blog Highlights Microsoft, Exxon Mobil, Dell and BK Technologies",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-microsoft-131500815.html",
+        "published_at": null,
+        "similarity": 0.45582103729248047
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Advance Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-afternoon-195401650.html",
+        "published_at": null,
+        "similarity": 0.6006727814674377
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Higher Wednesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-wednesday-174958239.html",
+        "published_at": null,
+        "similarity": 0.5943639278411865
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Wall Street Worries Less Fed Talk Will Spur Market Volatility",
+        "publisher": "Bloomberg",
+        "link": "https://finance.yahoo.com/economy/policy/articles/wall-street-worries-less-fed-183454998.html",
+        "published_at": null,
+        "similarity": 0.49444225430488586
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Alphabet Is Now Part of the Dow. That's a Big Validation of Greg Abel's Boldest Berkshire Bet Yet.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-now-part-dow-thats-160500495.html",
+        "published_at": null,
+        "similarity": 0.4884360432624817
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "The Analyst Who Loved Bank Stocks for 15 Years Just Flipped. Here\u2019s What He\u2019s Buying Instead",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/analyst-loved-bank-stocks-15-224507757.html",
+        "published_at": null,
+        "similarity": 0.4695771336555481
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Sector Update: Healthcare Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-softer-afternoon-194140967.html",
+        "published_at": null,
+        "similarity": 0.5970124006271362
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "If a Stock Market Crash Is Coming, History Shows This Stock Will Be a Brilliant Buy",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-crash-coming-history-192000928.html",
+        "published_at": null,
+        "similarity": 0.5293859243392944
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Pfizer (PFE) Stock Declines While Market Improves: Some Information for Investors",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pfizer-pfe-stock-declines-while-214506892.html",
+        "published_at": null,
+        "similarity": 0.507875382900238
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "GH Stock At Over 5-Year Highs \u2013 What\u2019s The UnitedHealth Connection?",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/healthcare/articles/gh-stock-over-5-highs-171012494.html",
+        "published_at": null,
+        "similarity": 0.4943495988845825
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "These Are The Best-Performing Dow Stocks Of Q2 And First Half Of 2026",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/best-dow-stocks-q2-h1-caterpillar-cisco-united-health/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4941186010837555
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "The Dow\u2019s Biggest Stock Is Today\u2019s Biggest Drag",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-070126/card/the-dow-s-biggest-stock-is-today-s-biggest-drag-OJNj0kk8gY5ndHlLV5WS?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5527699589729309
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Company News for July 1, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/company-news-july-1-2026-134000799.html",
+        "published_at": null,
+        "similarity": 0.5234808921813965
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "This Hidden Aerospace Stock Is Up 470% in the Last 5 Years and Just Hit a New All-Time High",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/hidden-aerospace-stock-470-last-210100140.html",
+        "published_at": null,
+        "similarity": 0.4827209711074829
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market Today: Nasdaq Ends Lower As Chip Names Dive; Meta Soars On This News",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-jobs-report-fed-warsh-spacex-bloom-energy-nike/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.44954708218574524
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Michael Burry Is Shorting the Dow\u2019s Hottest AI Stock",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/michael-burry-short-caterpillar-stock-5799f124?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4365869164466858
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Why Is Reddit (RDDT) Stock Soaring Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-reddit-rddt-stock-soaring-210500876.html",
+        "published_at": null,
+        "similarity": 0.5455824136734009
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Stock Market Today, July 1: Meta Shakes Up Cloud Sector and Tech Stocks Weigh on Markets",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-1-213252093.html",
+        "published_at": null,
+        "similarity": 0.5349208116531372
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Netflix (NFLX) Stock Slides as Market Rises: Facts to Know Before You Trade",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-stock-slides-market-214506041.html",
+        "published_at": null,
+        "similarity": 0.5046430230140686
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Meta stock pops on news it will reportedly start a cloud computing business",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/article/meta-stock-pops-on-news-it-will-reportedly-start-a-cloud-computing-business-134412120.html",
+        "published_at": null,
+        "similarity": 0.48276469111442566
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Is Charter (CHTR) Trading Index Status for Deeper Streaming Integration to Reinforce Its Moat?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charter-chtr-trading-index-status-031428138.html",
+        "published_at": null,
+        "similarity": 0.4771912097930908
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "After A Large Run, Is Applied Materials Stock A Bet On AI's Future or Yesterday's News?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/large-run-applied-materials-stock-023532728.html",
+        "published_at": null,
+        "similarity": 0.634605884552002
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "Marvell Stock And The High-Stakes Forecast Behind The AI Story",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marvell-stock-high-stakes-forecast-224042789.html",
+        "published_at": null,
+        "similarity": 0.6299570798873901
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Stock Market Today, July 1: Meta Shakes Up Cloud Sector and Tech Stocks Weigh on Markets",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-1-213252093.html",
+        "published_at": null,
+        "similarity": 0.6241024136543274
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Meta, CoreWeave, Salesforce, Corning, Bending Spoons, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-9acee5d7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6193041205406189
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "What\u2019s Ahead for Tech and Other Sectors In the Second Half of 2026",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/tech-energy-stocks-2026-342e3d2b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6101877689361572
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Is The Market Ignoring The Real Growth Story In Salesforce Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-ignoring-real-growth-story-195723454.html",
+        "published_at": null,
+        "similarity": 0.5778429508209229
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Software Stocks Face an \u2018AI Death Knell.\u2019 Why Guggenheim Says It\u2019s Time to Buy.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/software-stocks-buy-servicenow-check-point-salesforce-cc850b76?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5579733848571777
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "NOW, WDAY, ADBE, CRM: Software Stocks On The Rebound As OpenAI Threat Weakens",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/now-wday-adbe-crm-software-031903426.html",
+        "published_at": null,
+        "similarity": 0.5560656785964966
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "What\u2019s Ahead for Tech and Other Sectors In the Second Half of 2026",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/tech-energy-stocks-2026-342e3d2b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5049921870231628
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Meta stock pops on news it will reportedly start a cloud computing business",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/article/meta-stock-pops-on-news-it-will-reportedly-start-a-cloud-computing-business-134412120.html",
+        "published_at": null,
+        "similarity": 0.499639093875885
+      }
+    ]
+  }
+}
