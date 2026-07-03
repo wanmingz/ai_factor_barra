@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-03",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.5,
+    "Cloud": 0.6,
+    "Consumer": 0.2,
+    "Energy": -0.3,
+    "Financials": 0.7,
+    "Healthcare": 0.8,
+    "Industrials": 0.4,
+    "Media": -0.1,
+    "Semiconductors": 0.7,
+    "Software": 0.3
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0711,
+      "return_3m": 0.12
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.0133,
+      "return_3m": 0.2062
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0053,
+      "return_3m": 0.0851
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.087,
+      "return_3m": -0.0953
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0972,
+      "return_3m": 0.1269
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.1146,
+      "return_3m": 0.1202
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0593,
+      "return_3m": 0.1257
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0196,
+      "return_3m": -0.0162
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0715,
+      "return_3m": 0.5097
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.066,
+      "return_3m": 0.1649
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "TSLA",
+        "title": "Dow Jones Futures: Techs' Rise Signal AI Trend Isn't Over; Apple, Robinhood Flash Buy Signals",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-ai-tumbles-apple-robinhood-buy-signals-tesla-sandisk-dive/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5254102945327759
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "NOW Benefits From Enterprise AI Adoption: Buy, Sell, or Hold the Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/ai/articles/now-benefits-enterprise-ai-adoption-163400560.html",
+        "published_at": null,
+        "similarity": 0.5161368250846863
+      },
+      {
+        "theme": "AI",
+        "ticker": "NVDA",
+        "title": "Forget AI Stocks: This Defense Giant Has Raised Its Dividend Each of the Last 10 Years and Currently Pays a 2.75% Yield",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/forget-ai-stocks-defense-giant-223500473.html",
+        "published_at": null,
+        "similarity": 0.5005570650100708
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "IBM Stock Lags Industry in the Past 3 Months: An Opportunity to Buy?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-stock-lags-industry-past-144100307.html",
+        "published_at": null,
+        "similarity": 0.49351584911346436
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "3 Core Artificial Intelligence (AI) Market Leaders to Buy with $1,000 Right Now and Hold for the Next 20 Years",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/technology/ai/articles/3-core-artificial-intelligence-ai-170600235.html",
+        "published_at": null,
+        "similarity": 0.4920867085456848
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "GWRE Stock Outlook Built on Cloud Growth, Margin Gains and AI Risks",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/articles/gwre-stock-outlook-built-cloud-132400098.html",
+        "published_at": null,
+        "similarity": 0.647823691368103
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Update: Dow Rises to Record as Wall Street Logs Weekly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-rises-record-wall-street-205758332.html",
+        "published_at": null,
+        "similarity": 0.573908805847168
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "IQM Begins Trading: What to Know About the Newly Listed Quantum Stock",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/iqm-stock-begins-trading-quantum-413ca655?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5363451838493347
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Stock Market Today, July 2: UiPath Gains as Agentic Automation Strategy Faces Earnings Test",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-2-215421921.html",
+        "published_at": null,
+        "similarity": 0.5249806642532349
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Here\u2019s Why ServiceNow (NOW) Isn\u2019t A Good Investment According to This Fund",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-brown-advisory-large-cap-120900058.html",
+        "published_at": null,
+        "similarity": 0.5176019668579102
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Coca-Cola (KO) Is Considered a Good Investment by Brokers: Is That True?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-considered-good-133003201.html",
+        "published_at": null,
+        "similarity": 0.46380147337913513
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Why Restaurant Brands (QSR) Stock Is Up Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-restaurant-brands-qsr-stock-235624773.html",
+        "published_at": null,
+        "similarity": 0.4534166157245636
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "The UK Playbook That Telegraphed The eBay Stock Surge",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/uk-playbook-telegraphed-ebay-stock-122619642.html",
+        "published_at": null,
+        "similarity": 0.43189266324043274
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Why McDonald's (MCD) Stock Is Up Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-mcdonalds-mcd-stock-today-002024737.html",
+        "published_at": null,
+        "similarity": 0.425035297870636
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Earnings Preview: What To Expect From Coca-Cola Company\u2019s Report",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-coca-cola-104939103.html",
+        "published_at": null,
+        "similarity": 0.42320331931114197
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The 'Time To Power' Signal The Market Missed In Bloom Energy Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/time-power-signal-market-missed-161851514.html",
+        "published_at": null,
+        "similarity": 0.5530301928520203
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Mobil Corporation (XOM) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-corporation-xom-attracting-130006219.html",
+        "published_at": null,
+        "similarity": 0.5384858846664429
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Prediction: This Oil Stock Will Beat the S&P 500 in the Second Half of 2026",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-oil-stock-beat-p-192500016.html",
+        "published_at": null,
+        "similarity": 0.4841112494468689
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Dow Jones Futures: Techs' Rise Signal AI Trend Isn't Over; Apple, Robinhood Flash Buy Signals",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-ai-tumbles-apple-robinhood-buy-signals-tesla-sandisk-dive/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.46554702520370483
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "Bloom Energy Stock Is Priced For A Perfect Future, But Is Its AI Power Play Just Beginning?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-priced-perfect-225727238.html",
+        "published_at": null,
+        "similarity": 0.46473240852355957
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Alphabet Joined the Dow and Became a Top Holding in Berkshire Hathaway's Portfolio. But This Stock Could Be an Even Better Buy.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-joined-dow-became-top-052500001.html",
+        "published_at": null,
+        "similarity": 0.49668362736701965
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Stock Gets a Lift as Mag 7 Trading Cools",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/berkshire-hathaway-stock-warren-buffett-magnificent-seven-ec26be5f?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47496864199638367
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Q2 Earnings Season Nears Kickoff: Bank Earnings in Focus",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/q2-earnings-season-nears-kickoff-231000245.html",
+        "published_at": null,
+        "similarity": 0.47192972898483276
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Is the Stock Market Open Today? Here Are the Trading Hours Ahead of the Fourth of July.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-open-closed-today-hours-fourth-of-july-banks-post-office-ac9d5a28?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.46809133887290955
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway B (BRK.B) Stock Moves 1.61%: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-b-brk-b-214504491.html",
+        "published_at": null,
+        "similarity": 0.46757805347442627
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Sector Update: Healthcare Stocks Gain Thursday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-gain-thursday-174247649.html",
+        "published_at": null,
+        "similarity": 0.6352652311325073
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Sector Update: Healthcare Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-gain-afternoon-193434044.html",
+        "published_at": null,
+        "similarity": 0.6219235062599182
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Q1 Earnings Highs And Lows: UnitedHealth (NYSE:UNH) Vs The Rest Of The Health Insurance Providers Stocks",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/healthcare/articles/q1-earnings-highs-lows-unitedhealth-181224009.html",
+        "published_at": null,
+        "similarity": 0.5647498965263367
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "The Unpopular Move That Telegraphed the Elevance Health Stock Surge",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unpopular-move-telegraphed-elevance-health-122053398.html",
+        "published_at": null,
+        "similarity": 0.5637516975402832
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Healthcare Stocks Rise To The Heart Of IBD's Elite List Of Growth Names",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/stock-lists/ibd-50/healthcare-stocks-sector-investing-markets-ibd-50-list-eli-lilly/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.526840329170227
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Dow Jones Futures: Techs' Rise Signal AI Trend Isn't Over; Apple, Robinhood Flash Buy Signals",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-ai-tumbles-apple-robinhood-buy-signals-tesla-sandisk-dive/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5137151479721069
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Burry Called a Bubble Days Ago and Now AI & EV Stocks Are Already Cracking",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/burry-called-bubble-days-ago-035038199.html",
+        "published_at": null,
+        "similarity": 0.49362343549728394
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "This Hidden Aerospace Stock Is Up 470% in the Last 5 Years and Just Hit a New All-Time High",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/hidden-aerospace-stock-470-last-210100140.html",
+        "published_at": null,
+        "similarity": 0.4827209711074829
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Is GE\u2019s Tightened Governance And Dividend Policy Quietly Reframing The Investment Case For General Electric (GE)?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ge-tightened-governance-dividend-policy-001918557.html",
+        "published_at": null,
+        "similarity": 0.4797388017177582
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Get Paid 8.1% A Year To Hold RTX Stock You Already Own",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/options/articles/paid-8-1-hold-rtx-205228476.html",
+        "published_at": null,
+        "similarity": 0.45211514830589294
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "1 of Wall Street\u2019s Favorite Stocks for Long-Term Investors and 2 We Avoid",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-wall-street-favorite-stocks-143406703.html",
+        "published_at": null,
+        "similarity": 0.5453261137008667
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Netflix Gears Up to Report Q2 Earnings: Buy, Sell or Hold the Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-gears-report-q2-earnings-145700087.html",
+        "published_at": null,
+        "similarity": 0.5082750916481018
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "1 Nasdaq 100 Stock to Consider Right Now and 2 We Avoid",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-nasdaq-100-stock-consider-101224048.html",
+        "published_at": null,
+        "similarity": 0.4636858403682709
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast Spinoff Could Rejuvenate Its Depressed Stock",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/comcast-spinoff-rejuvenate-depressed-stock-75907303?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4625382423400879
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Why Netflix (NFLX) Stock Is Up Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-netflix-nflx-stock-today-010824515.html",
+        "published_at": null,
+        "similarity": 0.45413148403167725
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Update: Dow Rises to Record as Wall Street Logs Weekly Gains",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-rises-record-wall-street-205758332.html",
+        "published_at": null,
+        "similarity": 0.6375248432159424
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "ANET Rises 56% in a Year: Should Investors Buy, Sell or Hold?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/anet-rises-56-investors-buy-133900943.html",
+        "published_at": null,
+        "similarity": 0.5903199911117554
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Q1 Earnings Outperformers: Applied Materials (NASDAQ:AMAT) And The Rest Of The Semiconductor Manufacturing Stocks",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/q1-earnings-outperformers-applied-materials-225006964.html",
+        "published_at": null,
+        "similarity": 0.5891605615615845
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "3 Growth Stocks We Steer Clear Of",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-growth-stocks-steer-clear-161006872.html",
+        "published_at": null,
+        "similarity": 0.5840482711791992
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "TXN Stock Soars 52% in Three Months: Is There More Upside Ahead?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/txn-stock-soars-52-three-133500206.html",
+        "published_at": null,
+        "similarity": 0.5766691565513611
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "NOW, WDAY, ADBE, CRM: Software Stocks On The Rebound As OpenAI Threat Weakens",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/now-wday-adbe-crm-software-031903426.html",
+        "published_at": null,
+        "similarity": 0.5560656785964966
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "GWRE Stock Outlook Built on Cloud Growth, Margin Gains and AI Risks",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/articles/gwre-stock-outlook-built-cloud-132400098.html",
+        "published_at": null,
+        "similarity": 0.5472270250320435
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Stock Market Today, July 2: UiPath Gains as Agentic Automation Strategy Faces Earnings Test",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-2-215421921.html",
+        "published_at": null,
+        "similarity": 0.5107681751251221
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Microsoft Had Its Worst Month in More Than 25 Years. Should Investors Buy the Crash?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-had-worst-month-more-210100983.html",
+        "published_at": null,
+        "similarity": 0.5105834007263184
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Here\u2019s Why ServiceNow (NOW) Isn\u2019t A Good Investment According to This Fund",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-brown-advisory-large-cap-120900058.html",
+        "published_at": null,
+        "similarity": 0.4903642237186432
+      }
+    ]
+  }
+}
