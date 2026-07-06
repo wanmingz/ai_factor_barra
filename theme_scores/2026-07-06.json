@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-06",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.6,
+    "Cloud": 0.7,
+    "Consumer": 0.2,
+    "Energy": -0.8,
+    "Financials": 0.5,
+    "Healthcare": 0.4,
+    "Industrials": 0.3,
+    "Media": -0.1,
+    "Semiconductors": 0.8,
+    "Software": 0.1
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0452,
+      "return_3m": 0.1393
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.0296,
+      "return_3m": 0.2294
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0084,
+      "return_3m": 0.0844
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0891,
+      "return_3m": -0.1033
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0795,
+      "return_3m": 0.1294
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0697,
+      "return_3m": 0.1121
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.056,
+      "return_3m": 0.13
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0231,
+      "return_3m": -0.0113
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.037,
+      "return_3m": 0.5261
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.0525,
+      "return_3m": 0.1783
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Update: Equity Markets Rise Intraday as Tech Advances",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-rise-intraday-tech-181053180.html",
+        "published_at": null,
+        "similarity": 0.6180689334869385
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Stock market today: Dow posts record, S&P 500 and Nasdaq rally on revived AI optimism",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-july-6-nasdaq-sp-rise-225645420.html",
+        "published_at": null,
+        "similarity": 0.6024966239929199
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Update: US Equity Indexes Rise as Growth Areas Top Sector Charts",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-rise-growth-195308598.html",
+        "published_at": null,
+        "similarity": 0.5890928506851196
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Sector Update: Tech Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-afternoon-195350371.html",
+        "published_at": null,
+        "similarity": 0.588081955909729
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Update: US Equity Indexes Advance as Communication Services, Technology Top Sector Charts While Crude Oil Trades Steady",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-advance-communication-211809818.html",
+        "published_at": null,
+        "similarity": 0.5723009705543518
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Update: Equity Markets Rise Intraday as Tech Advances",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-rise-intraday-tech-181053180.html",
+        "published_at": null,
+        "similarity": 0.65709388256073
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "GWRE Stock Outlook Built on Cloud Growth, Margin Gains and AI Risks",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/articles/gwre-stock-outlook-built-cloud-132400098.html",
+        "published_at": null,
+        "similarity": 0.647823691368103
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Stock market today: Dow posts record, S&P 500 and Nasdaq rally on revived AI optimism",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-july-6-nasdaq-sp-rise-225645420.html",
+        "published_at": null,
+        "similarity": 0.6038553714752197
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Update: US Equity Indexes Advance as Communication Services, Technology Top Sector Charts While Crude Oil Trades Steady",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-advance-communication-211809818.html",
+        "published_at": null,
+        "similarity": 0.598132848739624
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Sector Update: Tech Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-afternoon-195350371.html",
+        "published_at": null,
+        "similarity": 0.5879078507423401
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Update: Equity Markets Rise Intraday as Tech Advances",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-rise-intraday-tech-181053180.html",
+        "published_at": null,
+        "similarity": 0.5929891467094421
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "5 Things to Know Before the Stock Market Opens on Monday",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/5-things-know-stock-market-122523659.html",
+        "published_at": null,
+        "similarity": 0.5020351409912109
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "COST",
+        "title": "The Best Stock to Invest $1,000 in Right Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/best-stock-invest-1-000-152800139.html",
+        "published_at": null,
+        "similarity": 0.4736193120479584
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Update: Dow Crosses 53,000, Nasdaq Rebounds as Tech Advances",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-crosses-53-000-nasdaq-205723642.html",
+        "published_at": null,
+        "similarity": 0.4582011103630066
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "WEN Stock Up 28% in a Month: Should Investors Chase the Rally or Wait?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wen-stock-28-month-investors-142500784.html",
+        "published_at": null,
+        "similarity": 0.43943673372268677
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Stock market today: Dow posts record, S&P 500 and Nasdaq rally on revived AI optimism",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-july-6-nasdaq-sp-rise-225645420.html",
+        "published_at": null,
+        "similarity": 0.5599635243415833
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The 'Time To Power' Signal The Market Missed In Bloom Energy Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/time-power-signal-market-missed-161851514.html",
+        "published_at": null,
+        "similarity": 0.5530301928520203
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla Just Delivered Fantastic News for Investors, but Don't Rush Out and Buy the Stock",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-just-delivered-fantastic-news-190500782.html",
+        "published_at": null,
+        "similarity": 0.5487508773803711
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Update: US Equity Indexes Advance as Communication Services, Technology Top Sector Charts While Crude Oil Trades Steady",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-advance-communication-211809818.html",
+        "published_at": null,
+        "similarity": 0.539521336555481
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Stock Market Today: Dow Up, AI Stock Tests Entry; SpaceX Tumbles As Elon Musk Makes This Boast (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-micron-mu-stock-sandisk-sndk-stock/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5188178420066833
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Prediction: This Magnificent Artificial Intelligence (AI) Stock Will Become Berkshire's Next Forever Holding",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-magnificent-artificial-intelligence-ai-063500911.html",
+        "published_at": null,
+        "similarity": 0.5141730904579163
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Q2 Earnings Season Nears Kickoff: Bank Earnings in Focus",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/q2-earnings-season-nears-kickoff-231000245.html",
+        "published_at": null,
+        "similarity": 0.4882466793060303
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Warren Buffett unveils 11-word stock market warning",
+        "publisher": "TheStreet",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-unveils-11-word-194700997.html",
+        "published_at": null,
+        "similarity": 0.4793861210346222
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Bank Stocks Rally Ahead Of Earnings. Why Bullishness Is Growing.",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/bank-stocks-pop-citigroup-bullishness-grows-ahead-of-earnings-next-week/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47559282183647156
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Is the Stock Market Open Today? Here Are the Trading Hours Ahead of the Fourth of July.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-open-closed-today-hours-fourth-of-july-banks-post-office-ac9d5a28?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47480082511901855
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Sector Update: Healthcare Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-gain-afternoon-193434044.html",
+        "published_at": null,
+        "similarity": 0.659575343132019
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "3 Stocks to Buy and Hold: The Long-Term Play for Your Portfolio",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/healthcare/articles/3-stocks-buy-hold-long-125000296.html",
+        "published_at": null,
+        "similarity": 0.5375785827636719
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Merck (MRK) Stock Slides as Market Rises: Facts to Know Before You Trade",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/merck-mrk-stock-slides-market-215005767.html",
+        "published_at": null,
+        "similarity": 0.5246201157569885
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Stock Market Today: Dow Up, AI Stock Tests Entry; SpaceX Tumbles As Elon Musk Makes This Boast (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-micron-mu-stock-sandisk-sndk-stock/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.519010603427887
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Group (UNH) Stock Declines While Market Improves: Some Information for Investors",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-group-unh-stock-declines-215003449.html",
+        "published_at": null,
+        "similarity": 0.5124421715736389
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Stock market today: Dow posts record, S&P 500 and Nasdaq rally on revived AI optimism",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-july-6-nasdaq-sp-rise-225645420.html",
+        "published_at": null,
+        "similarity": 0.5893413424491882
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Semiconductor Sector Seeing Rising Wafer Fab Equipment Market 2028 Growth Projections, Morgan Stanley Says",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/technology/articles/semiconductor-sector-seeing-rising-wafer-152649707.html",
+        "published_at": null,
+        "similarity": 0.5437334775924683
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Stock Market Today: Dow Up, AI Stock Tests Entry; SpaceX Tumbles As Elon Musk Makes This Boast (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-micron-mu-stock-sandisk-sndk-stock/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5117613673210144
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Update: US Equity Indexes Advance as Communication Services, Technology Top Sector Charts While Crude Oil Trades Steady",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-advance-communication-211809818.html",
+        "published_at": null,
+        "similarity": 0.5021815299987793
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "AMD Feels Goldman\u2019s Love, and the Stock Jumps",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/amd-stock-goldmans-sachs-price-target-8ae8b2f6?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49537768959999084
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Stock market today: Dow posts record, S&P 500 and Nasdaq rally on revived AI optimism",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-july-6-nasdaq-sp-rise-225645420.html",
+        "published_at": null,
+        "similarity": 0.5280795693397522
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast (CMCSA) Stock Sinks As Market Gains: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-cmcsa-stock-sinks-market-220004058.html",
+        "published_at": null,
+        "similarity": 0.5240249633789062
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "The New Business That Flagged AppLovin Stock\u2019s Next Move",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/business-flagged-applovin-stock-next-183641024.html",
+        "published_at": null,
+        "similarity": 0.5151746273040771
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Why Reddit (RDDT) Stock Is Trading Up Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-reddit-rddt-stock-trading-212401316.html",
+        "published_at": null,
+        "similarity": 0.5112589597702026
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Stock Market Today: Dow Up, AI Stock Tests Entry; SpaceX Tumbles As Elon Musk Makes This Boast (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-micron-mu-stock-sandisk-sndk-stock/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5084547996520996
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Update: Equity Markets Rise Intraday as Tech Advances",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-rise-intraday-tech-181053180.html",
+        "published_at": null,
+        "similarity": 0.6964667439460754
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Semiconductor Sector Seeing Rising Wafer Fab Equipment Market 2028 Growth Projections, Morgan Stanley Says",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/technology/articles/semiconductor-sector-seeing-rising-wafer-152649707.html",
+        "published_at": null,
+        "similarity": 0.6429638862609863
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "AMD, Nvidia, Micron, Intel, Dell, O\u2019Reilly, Rivian, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-a817c1db?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6268572807312012
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Update: US Equity Indexes Advance as Communication Services, Technology Top Sector Charts While Crude Oil Trades Steady",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-advance-communication-211809818.html",
+        "published_at": null,
+        "similarity": 0.5936940908432007
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "AMD Feels Goldman\u2019s Love, and the Stock Jumps",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/amd-stock-goldmans-sachs-price-target-8ae8b2f6?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5787640810012817
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Update: Equity Markets Rise Intraday as Tech Advances",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-rise-intraday-tech-181053180.html",
+        "published_at": null,
+        "similarity": 0.6122238636016846
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Sector Update: Tech Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-afternoon-195350371.html",
+        "published_at": null,
+        "similarity": 0.5705305337905884
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "The 1 Big Risk Every ServiceNow Investor Should Understand",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/technology/ai/articles/1-big-risk-every-servicenow-182000045.html",
+        "published_at": null,
+        "similarity": 0.5681120157241821
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Update: US Equity Indexes Advance as Communication Services, Technology Top Sector Charts While Crude Oil Trades Steady",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-advance-communication-211809818.html",
+        "published_at": null,
+        "similarity": 0.5606783628463745
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "GWRE Stock Outlook Built on Cloud Growth, Margin Gains and AI Risks",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/articles/gwre-stock-outlook-built-cloud-132400098.html",
+        "published_at": null,
+        "similarity": 0.5472270250320435
+      }
+    ]
+  }
+}
