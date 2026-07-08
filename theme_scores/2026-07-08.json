@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-08",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.7,
+    "Consumer": 0.1,
+    "Energy": -0.6,
+    "Financials": 0.3,
+    "Healthcare": 0.2,
+    "Industrials": 0.0,
+    "Media": 0.0,
+    "Semiconductors": 0.5,
+    "Software": -0.1
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0603,
+      "return_3m": 0.0253
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.0608,
+      "return_3m": 0.256
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0012,
+      "return_3m": 0.0425
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0399,
+      "return_3m": -0.0353
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0614,
+      "return_3m": 0.0774
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0679,
+      "return_3m": 0.0892
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0417,
+      "return_3m": 0.0612
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0121,
+      "return_3m": -0.0357
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0086,
+      "return_3m": 0.4022
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.033,
+      "return_3m": 0.1598
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Does This News Make Meta Platforms Stock a Buy?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/does-news-meta-platforms-stock-202000804.html",
+        "published_at": null,
+        "similarity": 0.5679911375045776
+      },
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Sector Update: Tech Stocks Rise Wednesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/technology/articles/sector-tech-stocks-rise-wednesday-173927838.html",
+        "published_at": null,
+        "similarity": 0.5526087284088135
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "AI spending is becoming more capital market 'sensitive': Portfolio mgr.",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/ai-spending-becoming-more-capital-120000916.html",
+        "published_at": null,
+        "similarity": 0.5341976881027222
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Why the Market Dipped But IBM (IBM) Gained Today",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-market-dipped-ibm-ibm-214503104.html",
+        "published_at": null,
+        "similarity": 0.5134944915771484
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Why is the US Stock Market Down Today?",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-us-stock-market-down-193723673.html",
+        "published_at": null,
+        "similarity": 0.5054545402526855
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "ServiceNow, Inc. (NOW) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-inc-now-attracting-investor-130002698.html",
+        "published_at": null,
+        "similarity": 0.582889199256897
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Sector Update: Tech Stocks Rise Wednesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/technology/articles/sector-tech-stocks-rise-wednesday-173927838.html",
+        "published_at": null,
+        "similarity": 0.5548691749572754
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-193936783.html",
+        "published_at": null,
+        "similarity": 0.5277220010757446
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "The Stock Market Just Flashed a Warning Sign Only Seen Once Before in 155 Years -- and History is Very Clear About What Happens Next.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-just-flashed-warning-222500508.html",
+        "published_at": null,
+        "similarity": 0.5190094709396362
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Microsoft's Quantum Security Push: 1 Stock With 111% Upside to Buy Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsofts-quantum-security-push-1-190000381.html",
+        "published_at": null,
+        "similarity": 0.5098754167556763
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-193936783.html",
+        "published_at": null,
+        "similarity": 0.47673577070236206
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Chips Slip Again as Caterpillar Bites the Dow: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/chips-slip-again-caterpillar-bites-200634336.html",
+        "published_at": null,
+        "similarity": 0.4427803158760071
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Company News for July 8, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/company-news-july-8-2026-095600591.html",
+        "published_at": null,
+        "similarity": 0.43527230620384216
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Starbucks Near Its 52-Week High: Can the Stock Sustain the Rally?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/starbucks-near-52-week-high-144600537.html",
+        "published_at": null,
+        "similarity": 0.43143588304519653
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "PepsiCo earnings, mortgage rates, jobless claims: What to Watch",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/pepsico-earnings-mortgage-rates-jobless-230000143.html",
+        "published_at": null,
+        "similarity": 0.42762529850006104
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The 'Time To Power' Signal The Market Missed In Bloom Energy Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/time-power-signal-market-missed-161851514.html",
+        "published_at": null,
+        "similarity": 0.5530301928520203
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Micron, Broadcom, Palantir, Delta, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-f03ec33d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5441952347755432
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Sector Update: Consumer Stocks Lower in Late Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-lower-afternoon-194748862.html",
+        "published_at": null,
+        "similarity": 0.5320671796798706
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Stock Market Today, July 8: Stocks Slide and Dow Drops 1.5% as Middle East Tensions Spike",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-july-8-164235564.html",
+        "published_at": null,
+        "similarity": 0.48774921894073486
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Mobil updates Q2 earnings considerations, cites impacts across key businesses",
+        "publisher": "Proactive",
+        "link": "https://finance.yahoo.com/energy/articles/exxon-mobil-updates-q2-earnings-193000626.html",
+        "published_at": null,
+        "similarity": 0.4839479923248291
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Reflecting On Diversified Financial Services Stocks\u2019 Q2 Earnings: Berkshire Hathaway (NYSE:BRK.A)",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/reflecting-diversified-financial-services-stocks-165044493.html",
+        "published_at": null,
+        "similarity": 0.5773277878761292
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Warren Buffett Warns Investors as the Stock Market Sounds an Alarm. History Says This Will Happen Next.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-warns-investors-stock-090800583.html",
+        "published_at": null,
+        "similarity": 0.5456370711326599
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "US Financials Slump: Is This a Massive Buy-the-Dip Opportunity for Bank Stocks?",
+        "publisher": "FX Empire",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/us-financials-slump-massive-buy-132037507.html",
+        "published_at": null,
+        "similarity": 0.5117615461349487
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway B (BRK.B) Declines More Than Market: Some Information for Investors",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-b-brk-b-214505502.html",
+        "published_at": null,
+        "similarity": 0.47126060724258423
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "JPMorgan (JPM) Ranks Among the Most Profitable Stocks",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-jpm-ranks-among-most-204117416.html",
+        "published_at": null,
+        "similarity": 0.4453301429748535
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-194112083.html",
+        "published_at": null,
+        "similarity": 0.6276545524597168
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Lower Wednesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-lower-wednesday-174815162.html",
+        "published_at": null,
+        "similarity": 0.606016993522644
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "This Stock Stumbled Last Year. Now It's the First Half's Best Performing Mega-Cap Healthcare Stock. Is It Too Late to Buy?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/healthcare/articles/stock-stumbled-last-now-first-223000498.html",
+        "published_at": null,
+        "similarity": 0.5474677085876465
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Merck (MRK) Stock Slides as Market Rises: Facts to Know Before You Trade",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/merck-mrk-stock-slides-market-215005767.html",
+        "published_at": null,
+        "similarity": 0.5246201157569885
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Stock Market Today: Dow Up, AI Stock Tests Entry; SpaceX Tumbles As Elon Musk Makes This Boast (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-micron-mu-stock-sandisk-sndk-stock/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.519010603427887
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Intel, Micron, SpaceX, GE Vernova, Caterpillar, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-movers-intel-corning-super-micro-5c6ee417?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5663439035415649
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Update: Dow Snaps Record Run Amid Tech Sell-Off, Oil Price Jump",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-snaps-record-run-amid-202322498.html",
+        "published_at": null,
+        "similarity": 0.5309907793998718
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "\ud83d\udcc9 Which Tech Stocks Fell the Most Today?",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-07-2026/card/-which-tech-stocks-are-falling-the-most-today--ZJ8L41EcRW26zRtVSy9v?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5251979827880859
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Sector Update: Consumer Stocks Lower in Late Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-lower-afternoon-194748862.html",
+        "published_at": null,
+        "similarity": 0.5030297040939331
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Will Strength in Defense Aerospace Market Continue to Drive Howmet's Growth?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/strength-defense-aerospace-market-continue-150100280.html",
+        "published_at": null,
+        "similarity": 0.46684297919273376
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Does This News Make Meta Platforms Stock a Buy?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/does-news-meta-platforms-stock-202000804.html",
+        "published_at": null,
+        "similarity": 0.5993117094039917
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "T-Mobile or Netflix: Which Punished Stock Actually Belongs in a Retiree\u2019s Portfolio?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/t-mobile-netflix-punished-stock-161533847.html",
+        "published_at": null,
+        "similarity": 0.4681832194328308
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "A New Bombshell Has Entered Prediction Markets: Love Island",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/love-island-kalshi-prediction-markets-7e74ff1c?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.46257221698760986
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "DIS or PSO: Which Is the Better Value Stock Right Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dis-pso-better-value-stock-154005663.html",
+        "published_at": null,
+        "similarity": 0.4606664180755615
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Is Netflix (NFLX) a Buy as Wall Street Analysts Look Optimistic?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-buy-wall-street-133002084.html",
+        "published_at": null,
+        "similarity": 0.4603961408138275
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Intel, Micron, SpaceX, GE Vernova, Caterpillar, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-movers-intel-corning-super-micro-5c6ee417?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6477682590484619
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "\ud83d\udcc9 Which Tech Stocks Fell the Most Today?",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-07-2026/card/-which-tech-stocks-are-falling-the-most-today--ZJ8L41EcRW26zRtVSy9v?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6117609739303589
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Why is the US Stock Market Down Today?",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-us-stock-market-down-193723673.html",
+        "published_at": null,
+        "similarity": 0.606634795665741
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "AI Powering Semiconductor Sales: 4 Stocks to Boost Your Portfolio",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/articles/ai-powering-semiconductor-sales-4-141900608.html",
+        "published_at": null,
+        "similarity": 0.5911117196083069
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Micron, Broadcom, Palantir, Delta, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-f03ec33d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5849066972732544
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "The Done-For-You Silence That Reshapes The Intuit Stock Growth Story",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/done-silence-reshapes-intuit-stock-131638725.html",
+        "published_at": null,
+        "similarity": 0.559622585773468
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Sector Update: Tech Stocks Rise Wednesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/technology/articles/sector-tech-stocks-rise-wednesday-173927838.html",
+        "published_at": null,
+        "similarity": 0.5383101105690002
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "Micron, Broadcom, Palantir, Delta, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-f03ec33d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5219991207122803
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "ServiceNow, Inc. (NOW) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-inc-now-attracting-investor-130002698.html",
+        "published_at": null,
+        "similarity": 0.5204602479934692
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Why the Market Dipped But IBM (IBM) Gained Today",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-market-dipped-ibm-ibm-214503104.html",
+        "published_at": null,
+        "similarity": 0.5119115114212036
+      }
+    ]
+  }
+}
