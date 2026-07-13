@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-13",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.2,
+    "Cloud": 0.6,
+    "Consumer": 0.1,
+    "Energy": 0.2,
+    "Financials": 0.5,
+    "Healthcare": 0.4,
+    "Industrials": 0.3,
+    "Media": -0.3,
+    "Semiconductors": 0.3,
+    "Software": 0.4
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0368,
+      "return_3m": -0.0023
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1278,
+      "return_3m": 0.3618
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0002,
+      "return_3m": 0.0206
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0005,
+      "return_3m": 0.0007
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0693,
+      "return_3m": 0.0892
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0521,
+      "return_3m": 0.0956
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0323,
+      "return_3m": 0.0468
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0021,
+      "return_3m": -0.0256
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0391,
+      "return_3m": 0.3209
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0198,
+      "return_3m": 0.1781
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-195540793.html",
+        "published_at": null,
+        "similarity": 0.592376708984375
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "What investors can expect this earnings season",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/what-investors-can-expect-this-earnings-season-205336498.html",
+        "published_at": null,
+        "similarity": 0.5493375062942505
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "SK Hynix, Sandisk, AppLovin, Intuit, Meta, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-8959cfe7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5262651443481445
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Tech Sell-Off: How investors should navigate the market",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/tech-sell-off-how-investors-should-navigate-the-market-145638154.html",
+        "published_at": null,
+        "similarity": 0.4937695860862732
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Why TSMC\u2019s Record Revenue Isn\u2019t Reviving the AI Trade",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/tsmc-stock-taiwan-semiconductor-record-revenue-ai-9d5ffe6c?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47615140676498413
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "ServiceNow (NOW) Stock Sinks As Market Gains: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-stock-sinks-market-214502394.html",
+        "published_at": null,
+        "similarity": 0.6194729804992676
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "The Quiet Surge In Arista Networks Stock Masks A Volatile Outlook",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/options/articles/quiet-surge-arista-networks-stock-213520088.html",
+        "published_at": null,
+        "similarity": 0.5588064193725586
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "3 Profitable Stocks for Long-Term Investors",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-profitable-stocks-long-term-160639882.html",
+        "published_at": null,
+        "similarity": 0.5534526109695435
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Tech Sell-Off: How investors should navigate the market",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/tech-sell-off-how-investors-should-navigate-the-market-145638154.html",
+        "published_at": null,
+        "similarity": 0.5329592823982239
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Tech Stocks Slide. South Korea\u2019s Market Nosedive Weighs.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-071326/card/tech-stocks-slide-south-korea-s-market-nosedive-weighs--WmhhqlVPN6r7bK1mJEmp?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4845609664916992
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-f34a49f0?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.45389947295188904
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "How To Invest In Stocks Using History \u2014 And Unique Analysis From Bill O'Neil",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/how-to-invest/how-to-invest-in-stocks-bill-oneil-analysis/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4517959654331207
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Procter & Gamble vs PepsiCo: The Better Stock For Passive Income Investors",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/procter-gamble-vs-pepsico-better-170048233.html",
+        "published_at": null,
+        "similarity": 0.45009028911590576
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "PepsiCo\u2019s $200 Billion Stability Play Is Attracting Dividend Investors",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-200-billion-stability-play-202348265.html",
+        "published_at": null,
+        "similarity": 0.427590548992157
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "The Market Could Crack This Summer: 5 Defensive High-Yielding Dividend Stocks to Buy Now",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-could-crack-summer-5-124014512.html",
+        "published_at": null,
+        "similarity": 0.4263409674167633
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The 'Time To Power' Signal The Market Missed In Bloom Energy Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/time-power-signal-market-missed-161851514.html",
+        "published_at": null,
+        "similarity": 0.5530301928520203
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "ExxonMobil\u2019s $100 Billion Cash Flow Story Isn\u2019t Over Yet",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/energy/articles/exxonmobil-100-billion-cash-flow-162405156.html",
+        "published_at": null,
+        "similarity": 0.5000951886177063
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Why ExxonMobil (XOM) Stock Is Up Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/energy/articles/why-exxonmobil-xom-stock-today-225439934.html",
+        "published_at": null,
+        "similarity": 0.4945160448551178
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla (TSLA) Registers a Bigger Fall Than the Market: Important Facts to Note",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-registers-bigger-fall-214505727.html",
+        "published_at": null,
+        "similarity": 0.4852442145347595
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "The Burst Phenomenon: Why Tesla's Stock Stagnation Will Soon End",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/burst-phenomenon-why-teslas-stock-211500257.html",
+        "published_at": null,
+        "similarity": 0.4791730046272278
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "MA",
+        "title": "Sector Update: Financial Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-rise-afternoon-195143711.html",
+        "published_at": null,
+        "similarity": 0.5731462240219116
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Bank earnings, CPI: What investors need to watch uesday",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/bank-earnings-cpi-investors-watch-220000042.html",
+        "published_at": null,
+        "similarity": 0.5497452020645142
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Warren Buffett Is Piling Up Cash as the Stock Market Wobbles. Here's What That Tells Investors.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-piling-cash-stock-123400978.html",
+        "published_at": null,
+        "similarity": 0.5029059052467346
+      },
+      {
+        "theme": "Financials",
+        "ticker": "MA",
+        "title": "MarketBeat Week in Review \u2013 07/06 - 07/10",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marketbeat-week-review-07-06-110000519.html",
+        "published_at": null,
+        "similarity": 0.4994862377643585
+      },
+      {
+        "theme": "Financials",
+        "ticker": "V",
+        "title": "Crypto Bear Market? These Reports Say the Industry Has Never Been Stronger",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/crypto/articles/crypto-bear-market-reports-industry-200000504.html",
+        "published_at": null,
+        "similarity": 0.4805191457271576
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "5 Things to Know Before the Stock Market Opens on Monday",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/5-things-know-stock-market-120203129.html",
+        "published_at": null,
+        "similarity": 0.544155478477478
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "2 Value Stocks Worth Your Attention and 1 Facing Headwinds",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-value-stocks-worth-attention-155839645.html",
+        "published_at": null,
+        "similarity": 0.5163506269454956
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Pfizer (PFE) Advances While Market Declines: Some Information for Investors",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pfizer-pfe-advances-while-market-214504362.html",
+        "published_at": null,
+        "similarity": 0.509271502494812
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "2 Profitable Stocks with Solid Fundamentals and 1 We Turn Down",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-profitable-stocks-solid-fundamentals-175839863.html",
+        "published_at": null,
+        "similarity": 0.5083955526351929
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth (UNH) Q2 Earnings on the Horizon: Analysts' Insights on Key Performance Measures",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/unitedhealth-unh-q2-earnings-horizon-131505070.html",
+        "published_at": null,
+        "similarity": 0.5038044452667236
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Boeing Stock And The Number Behind The Worry",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/boeing-stock-number-behind-worry-183144949.html",
+        "published_at": null,
+        "similarity": 0.49461159110069275
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "These Are 5 Of The Best Stocks To Buy Or Watch Now",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/research/best-stocks-to-buy-now/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4858764410018921
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Wall Street Is Finding New Winners Beyond Pure-Play AI: 2 Stocks to Watch Now",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-finding-winners-beyond-113002241.html",
+        "published_at": null,
+        "similarity": 0.4839891195297241
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Caterpillar vs. Oshkosh: Which Industrials Stock Is a Better Buy in 2026?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-vs-oshkosh-industrials-stock-151334925.html",
+        "published_at": null,
+        "similarity": 0.4622954726219177
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Here's What Investors Must Know Ahead of Fastenal's Q2 Earnings",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/heres-investors-must-know-ahead-133100542.html",
+        "published_at": null,
+        "similarity": 0.44881218671798706
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "4 Media Stocks to Buy From a Prospering Industry",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/media-advertising/articles/4-media-stocks-buy-prospering-144800988.html",
+        "published_at": null,
+        "similarity": 0.6326790452003479
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-f34a49f0?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5543057918548584
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast (CMCSA) Gains As Market Dips: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-cmcsa-gains-market-dips-220003302.html",
+        "published_at": null,
+        "similarity": 0.5448086857795715
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-195540793.html",
+        "published_at": null,
+        "similarity": 0.5372192859649658
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Tech Sell-Off: How investors should navigate the market",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/tech-sell-off-how-investors-should-navigate-the-market-145638154.html",
+        "published_at": null,
+        "similarity": 0.5275636911392212
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "What investors can expect this earnings season",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/what-investors-can-expect-this-earnings-season-205336498.html",
+        "published_at": null,
+        "similarity": 0.6723887324333191
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "SK Hynix, Sandisk, AppLovin, Intuit, Meta, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-8959cfe7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5870373249053955
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "NVDA",
+        "title": "Oneok Has Delivered More Than 30 Years of Dividend Stability and Growth. With a 4.7% Yield, Is It the Best Income Stock in the Sector to Buy Right Now?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/oneok-delivered-more-30-years-230500899.html",
+        "published_at": null,
+        "similarity": 0.5803128480911255
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "What Is The Market Really Expecting From AVGO Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-really-expecting-avgo-stock-145919344.html",
+        "published_at": null,
+        "similarity": 0.5739078521728516
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "The Quiet Surge In Arista Networks Stock Masks A Volatile Outlook",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/options/articles/quiet-surge-arista-networks-stock-213520088.html",
+        "published_at": null,
+        "similarity": 0.5556731820106506
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Tech Sell-Off: How investors should navigate the market",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/tech-sell-off-how-investors-should-navigate-the-market-145638154.html",
+        "published_at": null,
+        "similarity": 0.5756031274795532
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "3 Profitable Stocks for Long-Term Investors",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-profitable-stocks-long-term-160639882.html",
+        "published_at": null,
+        "similarity": 0.5573262572288513
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "ServiceNow (NOW) Stock Sinks As Market Gains: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-stock-sinks-market-214502394.html",
+        "published_at": null,
+        "similarity": 0.5565893054008484
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "SK Hynix, Sandisk, AppLovin, Intuit, Meta, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-8959cfe7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5323435664176941
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Intuit Steps Up Capital Returns: Can Growth Follow Through?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/intuit-steps-capital-returns-growth-162700243.html",
+        "published_at": null,
+        "similarity": 0.5128776431083679
+      }
+    ]
+  }
+}
