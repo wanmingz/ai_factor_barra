@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-21",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.3,
+    "Cloud": 0.7,
+    "Consumer": -0.2,
+    "Energy": 0.4,
+    "Financials": 0.5,
+    "Healthcare": 0.6,
+    "Industrials": 0.1,
+    "Media": -0.1,
+    "Semiconductors": 0.2,
+    "Software": 0.3
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0893,
+      "return_3m": -0.0499
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1649,
+      "return_3m": 0.2104
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0006,
+      "return_3m": -0.0325
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0821,
+      "return_3m": 0.0546
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0449,
+      "return_3m": 0.0766
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0679,
+      "return_3m": 0.103
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0173,
+      "return_3m": 0.0447
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0297,
+      "return_3m": -0.0584
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.1268,
+      "return_3m": 0.257
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0517,
+      "return_3m": 0.0595
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Update: Wall Street Falls as Traders Await Earnings, Track Middle East Developments",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-falls-traders-await-204320723.html",
+        "published_at": null,
+        "similarity": 0.5796517133712769
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "SpaceX, Micron, Western Digital, Sandisk, Danaher, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-84ab056e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5525235533714294
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "GM, Alphabet, IBM Earnings: What to Watch This Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-21-2026/card/gm-alphabet-ibm-earnings-what-to-watch-this-week-AlXcHUU7CBVH72XZB4KI?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5390554666519165
+      },
+      {
+        "theme": "AI",
+        "ticker": "QCOM",
+        "title": "Intel Stock's AI-Fueled Rally Meets Its Turnaround Reality",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-ai-fueled-rally-153950604.html",
+        "published_at": null,
+        "similarity": 0.5159715414047241
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "IBM (IBM) To Report Earnings Tomorrow: Here Is What To Expect",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-report-earnings-tomorrow-043826822.html",
+        "published_at": null,
+        "similarity": 0.4841122031211853
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Update: Wall Street Falls as Traders Await Earnings, Track Middle East Developments",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-falls-traders-await-204320723.html",
+        "published_at": null,
+        "similarity": 0.6047146320343018
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "SpaceX, Micron, Western Digital, Sandisk, Danaher, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-84ab056e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.600661039352417
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "GM, Alphabet, IBM Earnings: What to Watch This Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-21-2026/card/gm-alphabet-ibm-earnings-what-to-watch-this-week-AlXcHUU7CBVH72XZB4KI?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5527738332748413
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-afternoon-193632667.html",
+        "published_at": null,
+        "similarity": 0.540824294090271
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Google & Tesla kick off Big Tech earnings: What to Watch",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/google--tesla-kick-off-big-tech-earnings-what-to-watch-210020832.html",
+        "published_at": null,
+        "similarity": 0.5188688635826111
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Sector Update: Consumer Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-softer-afternoon-192046455.html",
+        "published_at": null,
+        "similarity": 0.5652748942375183
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "Update: Wall Street Falls as Traders Await Earnings, Track Middle East Developments",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-falls-traders-await-204320723.html",
+        "published_at": null,
+        "similarity": 0.48852822184562683
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-afternoon-193632667.html",
+        "published_at": null,
+        "similarity": 0.4856971800327301
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Is McDonald's (MCD) a Buy as Wall Street Analysts Look Optimistic?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/mcdonalds-mcd-buy-wall-street-133004560.html",
+        "published_at": null,
+        "similarity": 0.4627998173236847
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "PepsiCo, Inc. (PEP) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-inc-pep-attracting-investor-130021453.html",
+        "published_at": null,
+        "similarity": 0.42824381589889526
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "SpaceX, Micron, Western Digital, Sandisk, Danaher, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-84ab056e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5601850748062134
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "These 3 Energy Stocks Could Outpace the Market in the Next 12 Months",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/energy/articles/3-energy-stocks-could-outpace-145000860.html",
+        "published_at": null,
+        "similarity": 0.5425635576248169
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "GM earnings & outlook impressed, thanks to lower tariffs. But don't get too comfortable.",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/gm-earnings--outlook-impressed-thanks-to-lower-tariffs-but-dont-get-too-comfortable-134716891.html",
+        "published_at": null,
+        "similarity": 0.5025272369384766
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Chevron vs. ExxonMobil: Only One Deserves a Spot in Your Portfolio Today.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/chevron-vs-exxonmobil-only-one-144800419.html",
+        "published_at": null,
+        "similarity": 0.4924336373806
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Google & Tesla kick off Big Tech earnings: What to Watch",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/google--tesla-kick-off-big-tech-earnings-what-to-watch-210020832.html",
+        "published_at": null,
+        "similarity": 0.485647976398468
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Rise in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-rise-afternoon-174051634.html",
+        "published_at": null,
+        "similarity": 0.6322049498558044
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Advance Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-afternoon-194226663.html",
+        "published_at": null,
+        "similarity": 0.6006727814674377
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Diversified Financial Services Stocks Q2 Teardown: Berkshire Hathaway (NYSE:BRK.A) Vs The Rest",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/diversified-financial-services-stocks-q2-163026493.html",
+        "published_at": null,
+        "similarity": 0.49490463733673096
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway Just Made a Massive Bet on Alphabet Stock. Should You Follow?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-just-made-massive-155000239.html",
+        "published_at": null,
+        "similarity": 0.46733856201171875
+      },
+      {
+        "theme": "Financials",
+        "ticker": "MA",
+        "title": "Capital One Financial Q2 Earnings Call Highlights",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/capital-one-financial-q2-earnings-230208506.html",
+        "published_at": null,
+        "similarity": 0.4664129316806793
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-rise-afternoon-194059672.html",
+        "published_at": null,
+        "similarity": 0.6253023147583008
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Stock: Is It Headed for $500?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-stock-headed-500-121226625.html",
+        "published_at": null,
+        "similarity": 0.5585341453552246
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "The Real Risk Inside UnitedHealth Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/real-risk-inside-unitedhealth-stock-144302878.html",
+        "published_at": null,
+        "similarity": 0.5365126132965088
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "A $5 Billion Reason to Buy UnitedHealth Stock Here",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/healthcare/articles/5-billion-reason-buy-unitedhealth-180459988.html",
+        "published_at": null,
+        "similarity": 0.5312455892562866
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Merck (MRK) Declines More Than Market: Some Information for Investors",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/merck-mrk-declines-more-market-215003301.html",
+        "published_at": null,
+        "similarity": 0.5038430094718933
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market News for July 21, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-july-21-132600250.html",
+        "published_at": null,
+        "similarity": 0.5890005826950073
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "SpaceX, Micron, Western Digital, Sandisk, Danaher, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-84ab056e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5219967365264893
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Should You Buy This Sneaky AI Dividend Stock Up 330% In The Last 5 Years?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/buy-sneaky-ai-dividend-stock-163500145.html",
+        "published_at": null,
+        "similarity": 0.505817174911499
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Stocks to Watch: GM, BAE Systems, Novartis, Swatch",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-21-2026/card/stocks-to-watch-gm-novartis-swatch-micron-TDbyzf46n3fovkKH4Nxc?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49861446022987366
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Should You Invest in Applied Materials (AMAT) Based on Bullish Wall Street Views?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/invest-applied-materials-amat-based-133004102.html",
+        "published_at": null,
+        "similarity": 0.49801135063171387
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Week ahead: Wall Street gears up for volatility as Big Tech earnings kick into high gear",
+        "publisher": "Proactive",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/week-ahead-wall-street-gears-144600273.html",
+        "published_at": null,
+        "similarity": 0.5313525199890137
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Modern Media Companies: What's The Right Channel Mix?",
+        "publisher": "MediaPost",
+        "link": "https://finance.yahoo.com/media-advertising/articles/modern-media-companies-whats-channel-130000055.html",
+        "published_at": null,
+        "similarity": 0.5145201683044434
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "GM, Alphabet, IBM Earnings: What to Watch This Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-21-2026/card/gm-alphabet-ibm-earnings-what-to-watch-this-week-AlXcHUU7CBVH72XZB4KI?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5141034126281738
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "Update: Wall Street Falls as Traders Await Earnings, Track Middle East Developments",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-falls-traders-await-204320723.html",
+        "published_at": null,
+        "similarity": 0.512931227684021
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Stay Ahead of the Game With Comcast (CMCSA) Q2 Earnings: Wall Street's Insights on Key Metrics",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stay-ahead-game-comcast-cmcsa-131507966.html",
+        "published_at": null,
+        "similarity": 0.5052111744880676
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Semiconductor Stock Builds on Key Technical Support",
+        "publisher": "Schaeffer's Investment Research",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/semiconductor-stock-builds-key-technical-190929567.html",
+        "published_at": null,
+        "similarity": 0.620827317237854
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Tech Faces a Moment of Truth as Earnings Test the Rally",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/tech-earnings-week-qqq-stock-market-outlook-47c5a64d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6118819117546082
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Week ahead: Wall Street gears up for volatility as Big Tech earnings kick into high gear",
+        "publisher": "Proactive",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/week-ahead-wall-street-gears-144600273.html",
+        "published_at": null,
+        "similarity": 0.5874923467636108
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Stocks to Watch: GM, BAE Systems, Novartis, Swatch",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-21-2026/card/stocks-to-watch-gm-novartis-swatch-micron-TDbyzf46n3fovkKH4Nxc?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5833135843276978
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Why Applied Materials (AMAT) Stock Is Up Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-applied-materials-amat-stock-191026429.html",
+        "published_at": null,
+        "similarity": 0.5792706608772278
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "SpaceX, Micron, Western Digital, Sandisk, Danaher, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-84ab056e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5839370489120483
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Update: Wall Street Falls as Traders Await Earnings, Track Middle East Developments",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-falls-traders-await-204320723.html",
+        "published_at": null,
+        "similarity": 0.5765408873558044
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "GM, Alphabet, IBM Earnings: What to Watch This Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-21-2026/card/gm-alphabet-ibm-earnings-what-to-watch-this-week-AlXcHUU7CBVH72XZB4KI?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5628081560134888
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "5 Must See Earnings Charts This Week",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/5-must-see-earnings-charts-203200290.html",
+        "published_at": null,
+        "similarity": 0.5246872901916504
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "CRM vs. ADYEY: Which Stock Should Value Investors Buy Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/crm-vs-adyey-stock-value-154003250.html",
+        "published_at": null,
+        "similarity": 0.49025845527648926
+      }
+    ]
+  }
+}
