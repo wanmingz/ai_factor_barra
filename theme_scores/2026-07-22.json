@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-22",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.2,
+    "Cloud": 0.6,
+    "Consumer": -0.1,
+    "Energy": 0.3,
+    "Financials": 0.4,
+    "Healthcare": 0.5,
+    "Industrials": 0.2,
+    "Media": -0.3,
+    "Semiconductors": 0.1,
+    "Software": 0.3
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0473,
+      "return_3m": -0.0659
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1011,
+      "return_3m": 0.144
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0023,
+      "return_3m": -0.0394
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.087,
+      "return_3m": 0.0546
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0403,
+      "return_3m": 0.0773
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0476,
+      "return_3m": 0.094
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0039,
+      "return_3m": 0.0482
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.018,
+      "return_3m": -0.0712
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0565,
+      "return_3m": 0.2309
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0195,
+      "return_3m": 0.0033
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "NVDA",
+        "title": "A violent AI unwind is hiding beneath a resilient stock market: Chart of the Day",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/a-violent-ai-unwind-is-hiding-beneath-a-resilient-stock-market-chart-of-the-day-100000350.html",
+        "published_at": null,
+        "similarity": 0.5710885524749756
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Meta Platforms (META): \u2018Dead Money\u2019 or Best Cheap AI Stock?  \u2013 Retail Investors Debate",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-dead-money-212214488.html",
+        "published_at": null,
+        "similarity": 0.5467749834060669
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Super Micro, ServiceNow, GE Vernova, Pegasystems, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c14bcf85?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5368623733520508
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "A new group of stocks is transforming global equities markets. Meet \u2018Memi,\u2019 the $3 trillion sector fueled by AI\u2019s insatiable hunger for memory chips",
+        "publisher": "Fortune",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/group-stocks-transforming-global-equities-195039352.html",
+        "published_at": null,
+        "similarity": 0.520472526550293
+      },
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Alphabet earnings offer a moment of truth in this tech stock battle",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/article/alphabet-earnings-offer-a-moment-of-truth-in-this-tech-stock-battle-121514421.html",
+        "published_at": null,
+        "similarity": 0.5090906620025635
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Super Micro, ServiceNow, GE Vernova, Pegasystems, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c14bcf85?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6029859781265259
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "ServiceNow Earnings Top Views, Revenue Outlook Light. But Software Stock Climbs.",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/technology/servicenow-stock-servicenow-earnings-software-q2-2026/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5867820382118225
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "NOW Stock Surges 7% After-Hours As ServiceNow Beats Q2 Estimates, Lifts Full-Year Outlook",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/now-stock-surges-7-hours-213934079.html",
+        "published_at": null,
+        "similarity": 0.548050045967102
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Stocks to Watch Recap: Super Micro Computer, AT&T, Tesla, Alphabet",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-22-2026/card/stocks-to-watch-alphabet-tesla-airbus-super-micro-computer-neAk1G2uB22t9rrm5dYe?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5428717136383057
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Microsoft Stock Rides a Familiar Current",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-rides-familiar-current-164616837.html",
+        "published_at": null,
+        "similarity": 0.5246391892433167
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Sector Update: Consumer Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-softer-afternoon-192046455.html",
+        "published_at": null,
+        "similarity": 0.5652748942375183
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Vita Coco Stock Outlook Hinges on Demand, Expansion and Margins",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/vita-coco-stock-outlook-hinges-132600144.html",
+        "published_at": null,
+        "similarity": 0.4692320227622986
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "AMZN, WMT, and TGT Forecasts \u2013 Retail Stocks Mixed as Interest Rates Rise",
+        "publisher": "FX Empire",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/amzn-wmt-tgt-forecasts-retail-130807299.html",
+        "published_at": null,
+        "similarity": 0.43965548276901245
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "A new group of stocks is transforming global equities markets. Meet \u2018Memi,\u2019 the $3 trillion sector fueled by AI\u2019s insatiable hunger for memory chips",
+        "publisher": "Fortune",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/group-stocks-transforming-global-equities-195039352.html",
+        "published_at": null,
+        "similarity": 0.43564900755882263
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "2 Surging  Stocks for Long-Term Investors and 1 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-surging-stocks-long-term-083827956.html",
+        "published_at": null,
+        "similarity": 0.4340965151786804
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Here's What to Expect From ExxonMobil's Next Earnings Report",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/heres-expect-exxonmobils-next-earnings-142823298.html",
+        "published_at": null,
+        "similarity": 0.5166460871696472
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Earnings Season Totally Hinges On Great Results From 5 Stocks",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/etfs-and-funds/sectors/sp500-earnings-season-hinges-on-good-results-from-5-stocks/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4847138524055481
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Alphabet earnings offer a moment of truth in this tech stock battle",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/article/alphabet-earnings-offer-a-moment-of-truth-in-this-tech-stock-battle-121514421.html",
+        "published_at": null,
+        "similarity": 0.4840903878211975
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Dow Jones Futures: Google, Tesla Fall On Earnings, Capex",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-google-tesla-earnings/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47131243348121643
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Stocks Slip as Alphabet Gets Ready to Report: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-slip-alphabet-gets-ready-201419124.html",
+        "published_at": null,
+        "similarity": 0.45897796750068665
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "The Boldest Bets on Wall Street Right Now Are in the Same Handful of Stocks",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/boldest-bets-wall-street-now-130007747.html",
+        "published_at": null,
+        "similarity": 0.5286948084831238
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "SoFi Investors Just Got Great News From JPMorgan Chase and Goldman Sachs",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sofi-investors-just-got-great-185000265.html",
+        "published_at": null,
+        "similarity": 0.5085982084274292
+      },
+      {
+        "theme": "Financials",
+        "ticker": "V",
+        "title": "Capital One Financial Q2 Earnings Call Highlights",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/capital-one-financial-q2-earnings-230208506.html",
+        "published_at": null,
+        "similarity": 0.46291613578796387
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway Inc. (BRK.B) Is a Trending Stock: Facts to Know Before Betting on It",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-inc-brk-b-130005427.html",
+        "published_at": null,
+        "similarity": 0.4625815451145172
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Stumbling Stock Rally Looks to Earnings for Second Half Boost",
+        "publisher": "Bloomberg",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stumbling-stock-rally-looks-earnings-101028237.html",
+        "published_at": null,
+        "similarity": 0.462117075920105
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "Sector Update: Healthcare Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-softer-afternoon-194811449.html",
+        "published_at": null,
+        "similarity": 0.6144317388534546
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Stock: Is It Headed for $500?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-stock-headed-500-121226625.html",
+        "published_at": null,
+        "similarity": 0.5585341453552246
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "A $5 Billion Reason to Buy UnitedHealth Stock Here",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/healthcare/articles/5-billion-reason-buy-unitedhealth-180459988.html",
+        "published_at": null,
+        "similarity": 0.5312455892562866
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "Are You Looking for a High-Growth Dividend Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/looking-high-growth-dividend-stock-154503478.html",
+        "published_at": null,
+        "similarity": 0.5103613138198853
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Dow Rises 500 Points. It\u2019s Not a Broad Rally.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-072126/card/dow-rises-500-points-it-s-not-a-broad-rally--lMXtalZorJkumCvdTlUB?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49931856989860535
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market News for July 21, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-july-21-132600250.html",
+        "published_at": null,
+        "similarity": 0.5890005826950073
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "How Will RTX Stock React To Its Upcoming Earnings?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/rtx-stock-react-upcoming-earnings-132613216.html",
+        "published_at": null,
+        "similarity": 0.5674081444740295
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Super Micro, ServiceNow, GE Vernova, Pegasystems, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c14bcf85?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5599706172943115
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "IBD Stock Of The Day, Already Up 71% in 2026, Flashes New Buy Signal",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/research/ibd-stock-of-the-day/high-temperature-metals-ati-stock-of-the-day/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5517319440841675
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "ICHR Stock Outlook Hinges on AI Demand and Margin Expansion Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ichr-stock-outlook-hinges-ai-145200534.html",
+        "published_at": null,
+        "similarity": 0.5289015769958496
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Fantastic News for Netflix Stock Investors!",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/fantastic-news-netflix-stock-investors-235000996.html",
+        "published_at": null,
+        "similarity": 0.5568037629127502
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Alphabet, IBM, Tesla Earnings: What to Watch the Rest of the Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-22-2026/card/alphabet-ibm-tesla-earnings-what-to-watch-the-rest-of-the-week-xd7uCUFrT6Mek1PYQKci?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5328406095504761
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "1 S&P 500 Stock with Solid Fundamentals and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-p-500-stock-solid-111827134.html",
+        "published_at": null,
+        "similarity": 0.5160611867904663
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Meta Platforms vs. Reddit: Which Social Media Stock Is the Better Buy",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-vs-reddit-social-191900069.html",
+        "published_at": null,
+        "similarity": 0.47060319781303406
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Meta Platforms (META) Registers a Bigger Fall Than the Market: Important Facts to Note",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-registers-bigger-214503473.html",
+        "published_at": null,
+        "similarity": 0.4672349989414215
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Super Micro, ServiceNow, GE Vernova, Pegasystems, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c14bcf85?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.631007730960846
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Wall Street indexes dip with technology earnings, rising oil in focus",
+        "publisher": "Reuters",
+        "link": "https://finance.yahoo.com/news/wall-st-futures-edge-lower-095915371.html",
+        "published_at": null,
+        "similarity": 0.6042159795761108
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "The \u2018Pattern Day Trader Rule\u2019 Is Dead. The Result Is a Massive Surge in Risky Leverage.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/volatility-margin-stocks-pattern-day-trading-micron-d39cb249?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.596325159072876
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Stocks Slip as Alphabet Gets Ready to Report: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-slip-alphabet-gets-ready-201419124.html",
+        "published_at": null,
+        "similarity": 0.5937017202377319
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Stocks to Watch: GM, BAE Systems, Novartis, Swatch",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-21-2026/card/stocks-to-watch-gm-novartis-swatch-micron-TDbyzf46n3fovkKH4Nxc?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5833135843276978
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "ServiceNow Earnings Top Views, Revenue Outlook Light. But Software Stock Climbs.",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/technology/servicenow-stock-servicenow-earnings-software-q2-2026/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6374678015708923
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Super Micro, ServiceNow, GE Vernova, Pegasystems, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c14bcf85?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5669812560081482
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Chip Stocks Surge but Software Sector Feels the Pain Again",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-072126/card/chip-stocks-surge-but-software-sector-feels-the-pain-again-CJRALnrgM1TkJQBZi9NJ?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5273234248161316
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Here\u2019s Why Retail Investors Are Buying Microsoft (MSFT) on the Dip",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-retail-investors-buying-microsoft-210328043.html",
+        "published_at": null,
+        "similarity": 0.5061371922492981
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Microsoft Stock Rides a Familiar Current",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-rides-familiar-current-164616837.html",
+        "published_at": null,
+        "similarity": 0.4999051094055176
+      }
+    ]
+  }
+}
