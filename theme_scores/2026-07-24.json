@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-24",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.3,
+    "Cloud": 0.7,
+    "Consumer": 0.1,
+    "Energy": 0.6,
+    "Financials": 0.4,
+    "Healthcare": 0.3,
+    "Industrials": 0.0,
+    "Media": -0.2,
+    "Semiconductors": -0.4,
+    "Software": 0.2
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0755,
+      "return_3m": -0.094
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1197,
+      "return_3m": 0.1961
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0348,
+      "return_3m": -0.0764
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.1022,
+      "return_3m": 0.0559
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0535,
+      "return_3m": 0.0989
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0446,
+      "return_3m": 0.1325
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0079,
+      "return_3m": 0.0617
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0068,
+      "return_3m": -0.0776
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.1188,
+      "return_3m": 0.1081
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.038,
+      "return_3m": 0.0328
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-193136738.html",
+        "published_at": null,
+        "similarity": 0.5923766493797302
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Earnings Are Crushing It. Stocks Are Getting Crushed.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/earnings-stocks-selloff-48b7c79e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5243279933929443
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "SpaceX, Micron, SAP, Verizon, Amex, Tenet, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-cb742eac?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5211573839187622
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "AMD Stock Scores Price-Target Hikes On AI Computer News",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/technology/amd-stock-advancing-ai-2026-price-target-hikes/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5136888027191162
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Micron, onsemi, Seagate, Western Digital, and Vishay Intertechnology Shares Are Falling, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/micron-onsemi-seagate-western-digital-220908037.html",
+        "published_at": null,
+        "similarity": 0.5101975202560425
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Earnings Are Crushing It. Stocks Are Getting Crushed.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/earnings-stocks-selloff-48b7c79e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5467972159385681
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "What to watch next week: Big Tech earnings, the Fed, and Consumer Confidence",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/watch-next-week-big-tech-220000158.html",
+        "published_at": null,
+        "similarity": 0.5421881079673767
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Stocks to Watch: Bank of America, Intel, SAP, Oracle",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-24-2026/card/stocks-to-watch-intel-sap-oracle-volkswagen-QAXyap0AAf1RLcGzwJYI?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5410893559455872
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Prediction: ServiceNow\u2019s AI Business Just Crossed $1 Billion. Here\u2019s What It Means For the Stock",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-servicenow-ai-business-just-133047555.html",
+        "published_at": null,
+        "similarity": 0.527538001537323
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-193136738.html",
+        "published_at": null,
+        "similarity": 0.516517162322998
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "Sector Update: Consumer Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-rise-afternoon-194109858.html",
+        "published_at": null,
+        "similarity": 0.5217403173446655
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "1 Consumer Stock Worth Your Attention and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-consumer-stock-worth-attention-153708363.html",
+        "published_at": null,
+        "similarity": 0.4818117618560791
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "1 S&P 500 Stock for Long-Term Investors and 2 We Turn Down",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-p-500-stock-long-110508402.html",
+        "published_at": null,
+        "similarity": 0.4477306008338928
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "SpaceX, Micron, SAP, Verizon, Amex, Tenet, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-cb742eac?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.44605639576911926
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "Instacart's AI and Advertising Push Could Reshape Its Growth Outlook",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/ai/articles/instacarts-ai-advertising-push-could-140400325.html",
+        "published_at": null,
+        "similarity": 0.44364821910858154
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Earnings Are Crushing It. Stocks Are Getting Crushed.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/earnings-stocks-selloff-48b7c79e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5551194548606873
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "What to watch next week: Big Tech earnings, the Fed, and Consumer Confidence",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/watch-next-week-big-tech-220000158.html",
+        "published_at": null,
+        "similarity": 0.5412172675132751
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Why Big Tech barnings could define the market next week",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/why-big-tech-barnings-could-define-the-market-next-week-142459959.html",
+        "published_at": null,
+        "similarity": 0.4932034909725189
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "At $100 Per Barrel, Which Oil Stock Has Dominated in 2026: ExxonMobil, Chevron, or BP?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/energy/articles/100-per-barrel-oil-stock-172732672.html",
+        "published_at": null,
+        "similarity": 0.4851280450820923
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "How Investors May Respond To Linde (LIN) Sustainability Recognition And Rising Earnings Expectations",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-linde-lin-200930607.html",
+        "published_at": null,
+        "similarity": 0.4842768907546997
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "59% of Berkshire Hathaway's Portfolio Sits in 5 Dow Stocks. This Is My Top Pick to Buy Now.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/59-berkshire-hathaways-portfolio-sits-195000204.html",
+        "published_at": null,
+        "similarity": 0.4969106912612915
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Wall Street Analysts Think JPMorgan Chase & Co. (JPM) Is a Good Investment: Is It?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-think-jpmorgan-133002943.html",
+        "published_at": null,
+        "similarity": 0.48949718475341797
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Warren Buffett Just Said This About Berkshire Hathaway's Massive Google Investment",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-just-said-berkshire-012000062.html",
+        "published_at": null,
+        "similarity": 0.4778764843940735
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Stocks Struggle as Iran, Inflation Worries Persist: Stock Market Today",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-struggle-iran-inflation-worries-200804253.html",
+        "published_at": null,
+        "similarity": 0.4577884376049042
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Intel beats and raises, but Wall Street isn't buying the rally",
+        "publisher": "Proactive",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/intel-beats-raises-wall-street-165800879.html",
+        "published_at": null,
+        "similarity": 0.4558786153793335
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Higher Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-higher-afternoon-193513200.html",
+        "published_at": null,
+        "similarity": 0.6259913444519043
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "Sector Update: Healthcare Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-softer-afternoon-194811449.html",
+        "published_at": null,
+        "similarity": 0.6144317388534546
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "TMO Q2 Deep Dive: Broad-Based End Market Growth and Strategic Portfolio Moves",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tmo-q2-deep-dive-broad-140908659.html",
+        "published_at": null,
+        "similarity": 0.5503453016281128
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "1 Healthcare Stock to Research Further and 2 We Avoid",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/healthcare/articles/1-healthcare-stock-research-further-124908454.html",
+        "published_at": null,
+        "similarity": 0.5466578006744385
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "1 Dow Jones Stock with Exciting Potential and 2 Facing Headwinds",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-dow-jones-stock-exciting-081249153.html",
+        "published_at": null,
+        "similarity": 0.5328453779220581
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Earnings Are Crushing It. Stocks Are Getting Crushed.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/earnings-stocks-selloff-48b7c79e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5507166385650635
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Industrial Stocks And This ETF Claw Gains From A Falling Market",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/industrial-stocks-xli-etf-claws-gains-from-falling-market/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.526565670967102
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "What to watch next week: Big Tech earnings, the Fed, and Consumer Confidence",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/watch-next-week-big-tech-220000158.html",
+        "published_at": null,
+        "similarity": 0.5227268934249878
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Dow Jones Futures: Apple Earnings, Iran News, Fed Meeting Loom As AI Stocks Sell Off",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-apple-earnings-iran-news-fed-meeting-ai-stocks/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49440422654151917
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Is Westinghouse Air Brake Technologies Stock A Smart Buy Right Now?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/westinghouse-air-brake-technologies-stock-144938510.html",
+        "published_at": null,
+        "similarity": 0.49046969413757324
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Earnings Are Crushing It. Stocks Are Getting Crushed.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/earnings-stocks-selloff-48b7c79e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5381882786750793
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-193136738.html",
+        "published_at": null,
+        "similarity": 0.5372194051742554
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "SpaceX, Micron, SAP, Verizon, Amex, Tenet, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-cb742eac?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5204410552978516
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "The Big Question Hanging Over Netflix Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/big-hanging-over-netflix-stock-132321734.html",
+        "published_at": null,
+        "similarity": 0.4836203455924988
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "What to watch next week: Big Tech earnings, the Fed, and Consumer Confidence",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/watch-next-week-big-tech-220000158.html",
+        "published_at": null,
+        "similarity": 0.4808688461780548
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "Sector Update: Tech Stocks Decline Friday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-decline-friday-174926827.html",
+        "published_at": null,
+        "similarity": 0.6463052034378052
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "SpaceX, Micron, SAP, Verizon, Amex, Tenet, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-cb742eac?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6293061375617981
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Profits Are Beating a High Bar and Traders Still Aren\u2019t Enthused",
+        "publisher": "Bloomberg",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/profits-beating-high-bar-traders-123025274.html",
+        "published_at": null,
+        "similarity": 0.6030236482620239
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-193136738.html",
+        "published_at": null,
+        "similarity": 0.5991445183753967
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "3 Growth Stocks with Explosive Upside",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-growth-stocks-explosive-upside-180108430.html",
+        "published_at": null,
+        "similarity": 0.5923669338226318
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "What to watch next week: Big Tech earnings, the Fed, and Consumer Confidence",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/watch-next-week-big-tech-220000158.html",
+        "published_at": null,
+        "similarity": 0.5606445670127869
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Prediction: ServiceNow\u2019s AI Business Just Crossed $1 Billion. Here\u2019s What It Means For the Stock",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-servicenow-ai-business-just-133047555.html",
+        "published_at": null,
+        "similarity": 0.5156305432319641
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "NOW Stock Has Tumbled 33% This Year: Will Q2 Report Today Inject Fresh Life?",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/now-stock-tumbled-33-q2-101242106.html",
+        "published_at": null,
+        "similarity": 0.498150497674942
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "Big Tech Earnings Week is Over. Who Won and Lost?",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/big-tech-earnings-week-over-210754123.html",
+        "published_at": null,
+        "similarity": 0.4957565665245056
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-193136738.html",
+        "published_at": null,
+        "similarity": 0.4948800504207611
+      }
+    ]
+  }
+}
