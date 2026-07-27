@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-27",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.2,
+    "Cloud": 0.7,
+    "Consumer": -0.1,
+    "Energy": 0.1,
+    "Financials": 0.4,
+    "Healthcare": 0.6,
+    "Industrials": 0.0,
+    "Media": -0.3,
+    "Semiconductors": -0.4,
+    "Software": 0.3
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0459,
+      "return_3m": -0.1074
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1039,
+      "return_3m": 0.245
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0309,
+      "return_3m": -0.0575
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.084,
+      "return_3m": 0.0354
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0618,
+      "return_3m": 0.1017
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0191,
+      "return_3m": 0.144
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.011,
+      "return_3m": 0.0646
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0139,
+      "return_3m": -0.068
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.1031,
+      "return_3m": 0.0835
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0307,
+      "return_3m": 0.0643
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Update: Wall Street Wavers as Oil Slides; Fed Decision, Major Earnings in Focus",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-wavers-oil-slides-204759546.html",
+        "published_at": null,
+        "similarity": 0.5457596778869629
+      },
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-9bfbc0f3?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5411940217018127
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.5315793752670288
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Meta Reports Earnings Wednesday. Here\u2019s How Much Traders Expect Its Stock to Move",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/meta-reports-earnings-wednesday-much-210525240.html",
+        "published_at": null,
+        "similarity": 0.5090151429176331
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Wall Street ends mixed as investors focus on tech earnings",
+        "publisher": "Reuters Videos",
+        "link": "https://finance.yahoo.com/video/wall-street-ends-mixed-investors-225434749.html",
+        "published_at": null,
+        "similarity": 0.49239495396614075
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "ServiceNow's Revenue Growth Is Accelerating: Is the Stock a Buy Now?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenows-revenue-growth-accelerating-stock-132500989.html",
+        "published_at": null,
+        "similarity": 0.5628551244735718
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Brokers Suggest Investing in ServiceNow (NOW): Read This Before Placing a Bet",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/brokers-suggest-investing-servicenow-now-133002145.html",
+        "published_at": null,
+        "similarity": 0.553011417388916
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-9bfbc0f3?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5378544330596924
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.5351403951644897
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Stock Market Today: Dow Up As These Stocks Test Entries; This AI Play Fights Back Before Key Event (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-oil-prices-plunge/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5313898921012878
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Update: Wall Street Wavers as Oil Slides; Fed Decision, Major Earnings in Focus",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-wavers-oil-slides-204759546.html",
+        "published_at": null,
+        "similarity": 0.5001258254051208
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Update: Equities Mixed Intraday as Markets Await Fed Decision, More Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-mixed-intraday-markets-await-175438247.html",
+        "published_at": null,
+        "similarity": 0.4909469187259674
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "McDonald's (MCD) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/mcdonalds-mcd-beats-stock-market-214502312.html",
+        "published_at": null,
+        "similarity": 0.46098414063453674
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.45986658334732056
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "Walmart (WMT) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-wmt-beats-stock-market-214503523.html",
+        "published_at": null,
+        "similarity": 0.45797908306121826
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.5871610641479492
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Update: Wall Street Wavers as Oil Slides; Fed Decision, Major Earnings in Focus",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-wavers-oil-slides-204759546.html",
+        "published_at": null,
+        "similarity": 0.5791632533073425
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Update: Equities Mixed Intraday as Markets Await Fed Decision, More Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-mixed-intraday-markets-await-175438247.html",
+        "published_at": null,
+        "similarity": 0.5224517583847046
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Geopolitics, AI Concerns, & Tech's Summer Slump",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/ai/articles/geopolitics-ai-concerns-techs-summer-204200050.html",
+        "published_at": null,
+        "similarity": 0.48515865206718445
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Mobil Holdings (XOM) Stock Sinks As Market Gains: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-holdings-xom-stock-214502233.html",
+        "published_at": null,
+        "similarity": 0.48481285572052
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "MA",
+        "title": "Update: Equities Mixed Intraday as Markets Await Fed Decision, More Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-mixed-intraday-markets-await-175438247.html",
+        "published_at": null,
+        "similarity": 0.5100054740905762
+      },
+      {
+        "theme": "Financials",
+        "ticker": "MA",
+        "title": "Update: Wall Street Wavers as Oil Slides; Fed Decision, Major Earnings in Focus",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-wavers-oil-slides-204759546.html",
+        "published_at": null,
+        "similarity": 0.5049266815185547
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Warren Buffett's \"Playing With Fire\" Warning Is Back: Here's What History Says Happens Next for Stocks, and What Investors Can Do About It",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffetts-playing-fire-warning-155000486.html",
+        "published_at": null,
+        "similarity": 0.4667365849018097
+      },
+      {
+        "theme": "Financials",
+        "ticker": "V",
+        "title": "TT Gears Up to Report Q2 Earnings: What's in the Cards?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tt-gears-report-q2-earnings-152900174.html",
+        "published_at": null,
+        "similarity": 0.45167291164398193
+      },
+      {
+        "theme": "Financials",
+        "ticker": "V",
+        "title": "Week ahead: Wall Street's biggest summer test is here with Big Tech, Fed on deck",
+        "publisher": "Proactive",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/week-ahead-wall-streets-biggest-143000202.html",
+        "published_at": null,
+        "similarity": 0.4394713342189789
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "TMO Q2 Deep Dive: Broad-Based End Market Growth and Strategic Portfolio Moves",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tmo-q2-deep-dive-broad-140908659.html",
+        "published_at": null,
+        "similarity": 0.5503453016281128
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "1 Healthcare Stock to Research Further and 2 We Avoid",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/healthcare/articles/1-healthcare-stock-research-further-124908454.html",
+        "published_at": null,
+        "similarity": 0.5466578006744385
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth\u2019s earnings comeback hides a risk Wall Street can\u2019t price",
+        "publisher": "TheStreet",
+        "link": "https://finance.yahoo.com/healthcare/articles/unitedhealth-earnings-comeback-hides-risk-221700452.html",
+        "published_at": null,
+        "similarity": 0.5272844433784485
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "This Stock Of The Day Rides Big Pharma Royalties; It's Up 56% In 2026",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/research/ibd-stock-of-the-day/lgnd-stock-price-q2-earnings-time-big-pharma-royalties/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.522363543510437
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "Johnson & Johnson (JNJ) Raised Its Outlook. Is It the Better Healthcare Stock to Own After Earnings?",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-jnj-raised-outlook-205741396.html",
+        "published_at": null,
+        "similarity": 0.5128332376480103
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.5565304160118103
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "CXMT, Sandisk, ASML, SpaceX, D-Wave Quantum, Workday, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-ed57540c?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5301743149757385
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market Today: Dow Up As These Stocks Test Entries; This AI Play Fights Back Before Key Event (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-oil-prices-plunge/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4962763786315918
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "The Dow Had a Good Day. 2 Stealth AI Stocks Kept It From Being Great.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-072726/card/the-dow-had-a-good-day-2-stealth-ai-stocks-kept-it-from-being-great--ClMUjx4tINeAz8PEgos5?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4947202801704407
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Caterpillar (CAT) Stock Sinks As Market Gains: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-stock-sinks-market-214504886.html",
+        "published_at": null,
+        "similarity": 0.4863075017929077
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Consumer Discretionary - Media Stocks Q1 Results: Benchmarking Disney (NYSE:DIS)",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/media-advertising/articles/consumer-discretionary-media-stocks-q1-183702239.html",
+        "published_at": null,
+        "similarity": 0.5888913869857788
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.5281792879104614
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Update: Wall Street Wavers as Oil Slides; Fed Decision, Major Earnings in Focus",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-wavers-oil-slides-204759546.html",
+        "published_at": null,
+        "similarity": 0.5256227850914001
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Wall Street ends mixed as investors focus on tech earnings",
+        "publisher": "Reuters Videos",
+        "link": "https://finance.yahoo.com/video/wall-street-ends-mixed-investors-225434749.html",
+        "published_at": null,
+        "similarity": 0.49886929988861084
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "MarketBeat Week in Review \u2013 07/20- 07/24",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marketbeat-week-review-07-20-110000628.html",
+        "published_at": null,
+        "similarity": 0.4749206304550171
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "CXMT, Sandisk, ASML, SpaceX, D-Wave Quantum, Workday, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-ed57540c?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6297053098678589
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "Update: Equities Mixed Intraday as Markets Await Fed Decision, More Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-mixed-intraday-markets-await-175438247.html",
+        "published_at": null,
+        "similarity": 0.6161847114562988
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "3 Semiconductor Stocks Likely to Outpace Q2 Earnings Estimates",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-semiconductor-stocks-likely-outpace-145200239.html",
+        "published_at": null,
+        "similarity": 0.6103042960166931
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "1 Cash-Producing Stock for Long-Term Investors and 2 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-long-132502724.html",
+        "published_at": null,
+        "similarity": 0.6061583757400513
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.6059941649436951
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-9bfbc0f3?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5422664284706116
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "ServiceNow's Revenue Growth Is Accelerating: Is the Stock a Buy Now?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenows-revenue-growth-accelerating-stock-132500989.html",
+        "published_at": null,
+        "similarity": 0.5226404666900635
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "What the Charts Are Saying About the Market Right Now",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/charts-saying-market-now-212100228.html",
+        "published_at": null,
+        "similarity": 0.5179765820503235
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "What to Expect From Intuit's Next Quarterly Earnings Report",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/expect-intuits-next-quarterly-earnings-124320557.html",
+        "published_at": null,
+        "similarity": 0.49344292283058167
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Brokers Suggest Investing in ServiceNow (NOW): Read This Before Placing a Bet",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/brokers-suggest-investing-servicenow-now-133002145.html",
+        "published_at": null,
+        "similarity": 0.49072521924972534
+      }
+    ]
+  }
+}
