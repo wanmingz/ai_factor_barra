@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-07-28",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.2,
+    "Cloud": 0.7,
+    "Consumer": -0.3,
+    "Energy": 0.2,
+    "Financials": 0.5,
+    "Healthcare": 0.6,
+    "Industrials": 0.0,
+    "Media": 0.1,
+    "Semiconductors": -0.4,
+    "Software": 0.4
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0781,
+      "return_3m": -0.0973
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1024,
+      "return_3m": 0.2768
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0396,
+      "return_3m": -0.0368
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0745,
+      "return_3m": 0.0048
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0722,
+      "return_3m": 0.1148
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0406,
+      "return_3m": 0.1679
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0015,
+      "return_3m": 0.0699
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0166,
+      "return_3m": -0.0501
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.162,
+      "return_3m": 0.0782
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.021,
+      "return_3m": 0.08
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Markets brace for Fed decision and Big Tech earnings",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/markets-brace-fed-decision-big-220000833.html",
+        "published_at": null,
+        "similarity": 0.5793707966804504
+      },
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Microsoft to report Q4 earnings as investors look for return on AI investments",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/article/microsoft-to-report-q4-earnings-as-investors-look-for-return-on-ai-investments-120144134.html",
+        "published_at": null,
+        "similarity": 0.5220933556556702
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Tech stocks today: Big Tech earnings this week mark a pivotal moment for the AI trade",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-big-tech-earnings-134611080.html",
+        "published_at": null,
+        "similarity": 0.5218625068664551
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Update: Dow Extends Advance Following Strong Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-extends-advance-following-strong-203202788.html",
+        "published_at": null,
+        "similarity": 0.5202475786209106
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "\u2018A lot of panic around the AI investment\u2019: How a chip slump is driving the Nasdaq toward correction",
+        "publisher": "Fortune",
+        "link": "https://finance.yahoo.com/technology/ai/articles/lot-panic-around-ai-investment-194529750.html",
+        "published_at": null,
+        "similarity": 0.508733332157135
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Markets brace for Fed decision and Big Tech earnings",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/markets-brace-fed-decision-big-220000833.html",
+        "published_at": null,
+        "similarity": 0.5686401724815369
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "ServiceNow's Revenue Growth Is Accelerating: Is the Stock a Buy Now?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenows-revenue-growth-accelerating-stock-132500989.html",
+        "published_at": null,
+        "similarity": 0.5628551244735718
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Brokers Suggest Investing in ServiceNow (NOW): Read This Before Placing a Bet",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/brokers-suggest-investing-servicenow-now-133002145.html",
+        "published_at": null,
+        "similarity": 0.553011417388916
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Is Trending Stock ServiceNow, Inc. (NOW) a Buy Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/trending-stock-servicenow-inc-now-130002427.html",
+        "published_at": null,
+        "similarity": 0.547904908657074
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Tech stocks today: Big Tech earnings this week mark a pivotal moment for the AI trade",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-big-tech-earnings-134611080.html",
+        "published_at": null,
+        "similarity": 0.5425385236740112
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Tech Earnings, Fed Rate Decision: What to Watch This Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-28-2026/card/tech-earnings-fed-rate-decision-what-to-watch-this-week-vAmRtjs9MVjLnKiNblP5?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5162315964698792
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Update: Equities Mixed Intraday as Markets Await Fed Decision, More Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-mixed-intraday-markets-await-175438247.html",
+        "published_at": null,
+        "similarity": 0.4918469190597534
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Update: Dow Extends Advance Following Strong Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-extends-advance-following-strong-203202788.html",
+        "published_at": null,
+        "similarity": 0.49003535509109497
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Update: Wall Street Wavers as Oil Slides; Fed Decision, Major Earnings in Focus",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-wavers-oil-slides-204759546.html",
+        "published_at": null,
+        "similarity": 0.4861956238746643
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "Walmart (WMT) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-wmt-beats-stock-market-214503523.html",
+        "published_at": null,
+        "similarity": 0.45797908306121826
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Decline Tuesday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-decline-tuesday-175100852.html",
+        "published_at": null,
+        "similarity": 0.5969268083572388
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-decline-afternoon-195630025.html",
+        "published_at": null,
+        "similarity": 0.5886892080307007
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Where Will Tesla Stock Be in 5 Years?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/where-tesla-stock-5-years-222000542.html",
+        "published_at": null,
+        "similarity": 0.5283193588256836
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Mobil's Next Earnings Report on July 31 Could Send the Stock Soaring. Here's Why.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobils-next-earnings-report-213501229.html",
+        "published_at": null,
+        "similarity": 0.4978677034378052
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "How Investors May Respond To Linde (LIN) Sustainability Recognition And Rising Earnings Expectations",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-linde-lin-200930607.html",
+        "published_at": null,
+        "similarity": 0.4842768907546997
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "MA",
+        "title": "Tech Earnings, Fed Rate Decision: What to Watch This Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-28-2026/card/tech-earnings-fed-rate-decision-what-to-watch-this-week-vAmRtjs9MVjLnKiNblP5?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5134843587875366
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "The Berkshire Hathaway Stock Pick Flying Under the Radar in 2026",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-stock-pick-flying-153500629.html",
+        "published_at": null,
+        "similarity": 0.4835934340953827
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Isn\u2019t the Only Big Name Loading Up on Alphabet. This Investor Bet Even Bigger",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-isn-t-only-big-185210626.html",
+        "published_at": null,
+        "similarity": 0.46293383836746216
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Whitney Warns of Economic Reckoning This Year, Sees Fed on Hold",
+        "publisher": "Bloomberg",
+        "link": "https://finance.yahoo.com/economy/policy/articles/whitney-warns-economic-reckoning-sees-193218596.html",
+        "published_at": null,
+        "similarity": 0.45760273933410645
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Stock Rally Has Room to Run. Apple and Coke Are Driving Portfolio Gains.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/berkshire-hathway-stock-apple-coca-cola-7a0cc741?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4493941366672516
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "TMO Q2 Deep Dive: Broad-Based End Market Growth and Strategic Portfolio Moves",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tmo-q2-deep-dive-broad-140908659.html",
+        "published_at": null,
+        "similarity": 0.5503453016281128
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "3 Dividend Stocks That Are Crushing the Market in 2026",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-dividend-stocks-crushing-market-161120667.html",
+        "published_at": null,
+        "similarity": 0.5158513784408569
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "The Real Price of UnitedHealth Stock Is Two Years Away",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/real-price-unitedhealth-stock-two-205624983.html",
+        "published_at": null,
+        "similarity": 0.5079655051231384
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "This Industrial Stock Is Up 533% in 2 Years. I Predict It Will Join the Dow if Caterpillar Issues a Stock Split.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/industrial-stock-533-2-years-003500094.html",
+        "published_at": null,
+        "similarity": 0.5073486566543579
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Tenet Healthcare Tops Q2 Earnings Estimates, Raises 2026 Outlook",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/tenet-healthcare-tops-q2-earnings-191100509.html",
+        "published_at": null,
+        "similarity": 0.4871985614299774
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market Today: Dow Up As These Stocks Test Entries; This AI Play Fights Back Before Key Event (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-oil-prices-plunge/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4962763786315918
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "The Dow Had a Good Day. 2 Stealth AI Stocks Kept It From Being Great.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-072726/card/the-dow-had-a-good-day-2-stealth-ai-stocks-kept-it-from-being-great--ClMUjx4tINeAz8PEgos5?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4947202801704407
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Is Amkor Technology Stock A Smart Buy Right Now",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/amkor-technology-stock-smart-buy-210803628.html",
+        "published_at": null,
+        "similarity": 0.4899897575378418
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Caterpillar (CAT) Stock Sinks As Market Gains: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-stock-sinks-market-214504886.html",
+        "published_at": null,
+        "similarity": 0.4863075017929077
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Where Will Tesla Stock Be in 5 Years?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/where-tesla-stock-5-years-222000542.html",
+        "published_at": null,
+        "similarity": 0.46845218539237976
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Markets brace for Fed decision and Big Tech earnings",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/markets-brace-fed-decision-big-220000833.html",
+        "published_at": null,
+        "similarity": 0.5895456075668335
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Consumer Discretionary - Media Stocks Q1 Results: Benchmarking Disney (NYSE:DIS)",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/media-advertising/articles/consumer-discretionary-media-stocks-q1-183702239.html",
+        "published_at": null,
+        "similarity": 0.5888913869857788
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast Corporation (CMCSA) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-corporation-cmcsa-attracting-investor-130002435.html",
+        "published_at": null,
+        "similarity": 0.5414829254150391
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "The Profit Engine That Could Power Netflix Stock's Next Rally",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/profit-engine-could-power-netflix-190737554.html",
+        "published_at": null,
+        "similarity": 0.48270827531814575
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "VZ Stock Is Up 22% This Year: How Much More Upside Does Wall Street See?",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/vz-stock-22-much-more-022901896.html",
+        "published_at": null,
+        "similarity": 0.4526800811290741
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Corning, ASML, SK Hynix, PayPal, UPS, Dell, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c1b8b940?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6390275955200195
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Update: Dow Extends Advance Following Strong Earnings Reports",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dow-extends-advance-following-strong-203202788.html",
+        "published_at": null,
+        "similarity": 0.6105345487594604
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "3 Dividend Stocks That Are Crushing the Market in 2026",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-dividend-stocks-crushing-market-161120667.html",
+        "published_at": null,
+        "similarity": 0.5707924962043762
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Investors Rotate Out of Chip Stocks",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/finance/stocks/investors-rotate-out-of-chip-stocks-365d8bc6?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.568169891834259
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Is Amkor Technology Stock A Smart Buy Right Now",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/amkor-technology-stock-smart-buy-210803628.html",
+        "published_at": null,
+        "similarity": 0.5670942068099976
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Markets brace for Fed decision and Big Tech earnings",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/markets-brace-fed-decision-big-220000833.html",
+        "published_at": null,
+        "similarity": 0.6014784574508667
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Microsoft to report Q4 earnings as investors look for return on AI investments",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/article/microsoft-to-report-q4-earnings-as-investors-look-for-return-on-ai-investments-120144134.html",
+        "published_at": null,
+        "similarity": 0.5327680110931396
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "ServiceNow's Revenue Growth Is Accelerating: Is the Stock a Buy Now?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenows-revenue-growth-accelerating-stock-132500989.html",
+        "published_at": null,
+        "similarity": 0.5226404666900635
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Is Trending Stock ServiceNow, Inc. (NOW) a Buy Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/news/trending-stock-servicenow-inc-now-130002427.html",
+        "published_at": null,
+        "similarity": 0.5030530691146851
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Brokers Suggest Investing in ServiceNow (NOW): Read This Before Placing a Bet",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/brokers-suggest-investing-servicenow-now-133002145.html",
+        "published_at": null,
+        "similarity": 0.49072521924972534
+      }
+    ]
+  }
+}
