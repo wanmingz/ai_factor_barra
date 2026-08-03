@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-08-03",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": -0.2,
+    "Cloud": 0.7,
+    "Consumer": 0.1,
+    "Energy": 0.3,
+    "Financials": 0.5,
+    "Healthcare": 0.4,
+    "Industrials": 0.0,
+    "Media": -0.1,
+    "Semiconductors": -0.3,
+    "Software": 0.6
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0607,
+      "return_3m": -0.0634
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.0721,
+      "return_3m": 0.2396
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0017,
+      "return_3m": 0.0062
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.1065,
+      "return_3m": -0.003
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0221,
+      "return_3m": 0.1163
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0017,
+      "return_3m": 0.1259
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0129,
+      "return_3m": 0.0739
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0103,
+      "return_3m": -0.0385
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0974,
+      "return_3m": 0.0763
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0277,
+      "return_3m": 0.1017
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "This valuation signal shows how investors are rethinking tech stocks",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/this-valuation-signal-shows-how-investors-are-rethinking-tech-stocks-144411798.html",
+        "published_at": null,
+        "similarity": 0.5474004745483398
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "Goldman Sachs Has Stark Message for AI Stock Investors",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/technology/ai/articles/goldman-sachs-stark-message-ai-120644936.html",
+        "published_at": null,
+        "similarity": 0.540534257888794
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "1 Thing Every Micron Stock Investor Needs To Understand Right Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-thing-every-micron-stock-190500732.html",
+        "published_at": null,
+        "similarity": 0.5198535919189453
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Amazon, Apple, Boeing, Micron, Bristol Myers, GameStop, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-6c620aae?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5105504989624023
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "AMD Price Prediction: Analysts Eye AI-Driven Upside Ahead of Earnings",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/amd-price-prediction-analysts-eye-180058487.html",
+        "published_at": null,
+        "similarity": 0.500961422920227
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "This valuation signal shows how investors are rethinking tech stocks",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/this-valuation-signal-shows-how-investors-are-rethinking-tech-stocks-144411798.html",
+        "published_at": null,
+        "similarity": 0.551947295665741
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Why Microsoft, Amazon, & other Big Tech stocks are soaring post-earnings",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/why-microsoft-amazon-other-big-195257279.html",
+        "published_at": null,
+        "similarity": 0.5484628677368164
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Amazon, Meta, and Microsoft stocks surge as AI hyperscalers post strong earnings results",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/article/amazon-meta-and-microsoft-stocks-surge-as-ai-hyperscalers-post-strong-earnings-results-163729332.html",
+        "published_at": null,
+        "similarity": 0.5238518118858337
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "1 Software Stock with Exciting Potential and 2 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-software-stock-exciting-potential-081957128.html",
+        "published_at": null,
+        "similarity": 0.5129207372665405
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ACN",
+        "title": "Accenture vs. Microsoft: What Diverging Revenue Growth Paths Tell Investors",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/accenture-vs-microsoft-diverging-revenue-191001551.html",
+        "published_at": null,
+        "similarity": 0.5075031518936157
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Update: Equities Rise Intraday, Oil Slides Amid Middle East Deal Optimism",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-oil-slides-173112682.html",
+        "published_at": null,
+        "similarity": 0.4797174334526062
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Procter & Gamble's Fiscal 2027 Guidance Reflects Prudent View of Market Realities, RBC Says",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/procter-gamble-apos-fiscal-2027-164923586.html",
+        "published_at": null,
+        "similarity": 0.4685819745063782
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "The tech stock dumpster fire should remind you of this important investing lesson",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/the-tech-stock-dumpster-fire-should-remind-you-of-this-important-investing-lesson-123000193.html",
+        "published_at": null,
+        "similarity": 0.4666314125061035
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "The AI spending boom is hitting a key Wall Street metric: Chart of the Day",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/technology/article/the-ai-spending-boom-is-hitting-a-key-wall-street-metric-chart-of-the-day-181157588.html",
+        "published_at": null,
+        "similarity": 0.44389304518699646
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "HD",
+        "title": "1 Profitable Stock on Our Buy List and 2 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-buy-list-134749745.html",
+        "published_at": null,
+        "similarity": 0.44033610820770264
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-fall-afternoon-194250228.html",
+        "published_at": null,
+        "similarity": 0.5646638870239258
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Chevron Stock Is Priced For Growth A Single Quarter Hasn't Proven",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/chevron-stock-priced-growth-single-213722994.html",
+        "published_at": null,
+        "similarity": 0.48623019456863403
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Several Oil Stocks Tee Up For Earnings, As One Breaks Out Bullishly",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/oil-stocks-buy-points-break-out-hefty-earnings-week/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47762468457221985
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "XOM, CVX Stocks In Focus: Trump Criticizes Exxon And Chevron For Profiting From Iran-Driven Oil Price Surge \u2014 \u2018They\u2019re Making Too Much Money\u2019",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/energy/articles/xom-cvx-stocks-focus-trump-201618172.html",
+        "published_at": null,
+        "similarity": 0.46844029426574707
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "Top Research Reports for Linde, Booking Holdings & General Dynamics",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-linde-booking-230200022.html",
+        "published_at": null,
+        "similarity": 0.4416850507259369
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Advance Monday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-monday-174425791.html",
+        "published_at": null,
+        "similarity": 0.6108089685440063
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Advance Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-afternoon-195524260.html",
+        "published_at": null,
+        "similarity": 0.6006727814674377
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Spotting Winners: Wells Fargo (NYSE:WFC) And Diversified Banks Stocks In Q2",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/spotting-winners-wells-fargo-nyse-121957342.html",
+        "published_at": null,
+        "similarity": 0.5169596672058105
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Greg Abel's Berkshire Hathaway: What the Next Decade Could Look Like",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/greg-abels-berkshire-hathaway-next-013500121.html",
+        "published_at": null,
+        "similarity": 0.5030067563056946
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Are You Looking for a High-Growth Dividend Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/looking-high-growth-dividend-stock-154503470.html",
+        "published_at": null,
+        "similarity": 0.49115264415740967
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Earnings, PMI and Other Key Things to Watch this Week",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/earnings-pmi-other-key-things-170002166.html",
+        "published_at": null,
+        "similarity": 0.544155478477478
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Wall Street Analysts Think UnitedHealth (UNH) Is a Good Investment: Is It?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-think-unitedhealth-133002611.html",
+        "published_at": null,
+        "similarity": 0.5158168077468872
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "Are These 5 Pharma Stocks Set to Surpass Q2 Earnings Forecasts?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/5-pharma-stocks-set-surpass-173000188.html",
+        "published_at": null,
+        "similarity": 0.5074584484100342
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "MarketBeat Week in Review \u2013 07/27- 07/31",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marketbeat-week-review-07-27-110000206.html",
+        "published_at": null,
+        "similarity": 0.5035077333450317
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "CVS Health's Q2 Earnings on Deck: How Should You Play the Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/cvs-healths-q2-earnings-deck-135500291.html",
+        "published_at": null,
+        "similarity": 0.4959060847759247
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Update: Equities Rise Intraday, Oil Slides Amid Middle East Deal Optimism",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-oil-slides-173112682.html",
+        "published_at": null,
+        "similarity": 0.5325692892074585
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "MKSI Gears Up to Report Q2 Earnings: What's in Store for the Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/mksi-gears-report-q2-earnings-171200698.html",
+        "published_at": null,
+        "similarity": 0.51283860206604
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "SITM Gears Up to Report Q2 Earnings: What's in Store for the Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sitm-gears-report-q2-earnings-170200777.html",
+        "published_at": null,
+        "similarity": 0.5015602707862854
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "IBD Stock Of The Day: GE Aerospace Rises In Buy Zone After Earnings Letdown",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/research/ibd-stock-of-the-day/ge-aerospace-earnings-ibd-stock-of-the-day-iran-war/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5011388063430786
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "CGNX Gears Up to Report Q2 Earnings: What's in Store for the Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/cgnx-gears-report-q2-earnings-165200111.html",
+        "published_at": null,
+        "similarity": 0.4792356789112091
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Busy Q2 Earnings & Jobs Week",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/busy-q2-earnings-jobs-week-142800731.html",
+        "published_at": null,
+        "similarity": 0.4782477021217346
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Why Microsoft, Amazon, & other Big Tech stocks are soaring post-earnings",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/why-microsoft-amazon-other-big-195257279.html",
+        "published_at": null,
+        "similarity": 0.468188613653183
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Update: Equities Rise Intraday, Oil Slides Amid Middle East Deal Optimism",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-oil-slides-173112682.html",
+        "published_at": null,
+        "similarity": 0.46773460507392883
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "While similar, Meta a better bet than SpaceX, says portfolio manager",
+        "publisher": "Reuters Videos",
+        "link": "https://finance.yahoo.com/video/while-similar-meta-better-bet-201332819.html",
+        "published_at": null,
+        "similarity": 0.46334415674209595
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "3 Value Stocks with Questionable Fundamentals",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-value-stocks-questionable-fundamentals-125535894.html",
+        "published_at": null,
+        "similarity": 0.45458853244781494
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "MKSI Gears Up to Report Q2 Earnings: What's in Store for the Stock?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/mksi-gears-report-q2-earnings-171200698.html",
+        "published_at": null,
+        "similarity": 0.605752170085907
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "This valuation signal shows how investors are rethinking tech stocks",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/this-valuation-signal-shows-how-investors-are-rethinking-tech-stocks-144411798.html",
+        "published_at": null,
+        "similarity": 0.6049028635025024
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "3 Top Tech Stocks for Long-Term Growth and Income",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-top-tech-stocks-long-095800008.html",
+        "published_at": null,
+        "similarity": 0.6002805233001709
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "1 Thing Every Micron Stock Investor Needs To Understand Right Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-thing-every-micron-stock-190500732.html",
+        "published_at": null,
+        "similarity": 0.599196195602417
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Citi Has a Bullish Message for AMD Stock Investors",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/citi-bullish-message-amd-stock-203924815.html",
+        "published_at": null,
+        "similarity": 0.5979889631271362
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "1 Software Stock with Exciting Potential and 2 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-software-stock-exciting-potential-081957128.html",
+        "published_at": null,
+        "similarity": 0.6067613363265991
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Software catches a bid as investors rotate ahead of Palantir earnings",
+        "publisher": "Investing.com",
+        "link": "https://finance.yahoo.com/technology/articles/software-catches-bid-investors-rotate-123937611.html",
+        "published_at": null,
+        "similarity": 0.5643289089202881
+      },
+      {
+        "theme": "Software",
+        "ticker": "ACN",
+        "title": "Accenture vs. Microsoft: What Diverging Revenue Growth Paths Tell Investors",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/accenture-vs-microsoft-diverging-revenue-191001551.html",
+        "published_at": null,
+        "similarity": 0.5414845943450928
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "This valuation signal shows how investors are rethinking tech stocks",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/this-valuation-signal-shows-how-investors-are-rethinking-tech-stocks-144411798.html",
+        "published_at": null,
+        "similarity": 0.5253835916519165
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "Amazon, Apple, Boeing, Micron, Bristol Myers, GameStop, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-6c620aae?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5246676206588745
+      }
+    ]
+  }
+}
