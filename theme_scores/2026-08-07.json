@@ -3,66 +3,66 @@
   "source": "gemini_rag",
   "scores": {
     "AI": 0.1,
-    "Cloud": 0.6,
-    "Consumer": 0.0,
+    "Cloud": 0.7,
+    "Consumer": 0.2,
     "Energy": 0.3,
     "Financials": 0.4,
-    "Healthcare": 0.2,
-    "Industrials": 0.2,
-    "Media": 0.1,
-    "Semiconductors": -0.2,
-    "Software": 0.5
+    "Healthcare": 0.5,
+    "Industrials": 0.1,
+    "Media": -0.2,
+    "Semiconductors": -0.1,
+    "Software": 0.6
   },
   "context": {
     "AI": {
       "etf": "BOTZ",
-      "return_1m": 0.0085,
-      "return_3m": -0.0721
+      "return_1m": 0.019,
+      "return_3m": -0.0922
     },
     "Cloud": {
       "etf": "WCLD",
-      "return_1m": 0.0855,
-      "return_3m": 0.2603
+      "return_1m": 0.1521,
+      "return_3m": 0.3108
     },
     "Consumer": {
       "etf": "XLY",
-      "return_1m": 0.0107,
-      "return_3m": -0.0129
+      "return_1m": 0.0223,
+      "return_3m": -0.0008
     },
     "Energy": {
       "etf": "XLE",
-      "return_1m": 0.0609,
-      "return_3m": 0.047
+      "return_1m": 0.0439,
+      "return_3m": 0.0398
     },
     "Financials": {
       "etf": "XLF",
-      "return_1m": 0.0409,
-      "return_3m": 0.1254
+      "return_1m": 0.0339,
+      "return_3m": 0.1281
     },
     "Healthcare": {
       "etf": "XLV",
-      "return_1m": 0.0141,
-      "return_3m": 0.1413
+      "return_1m": 0.0301,
+      "return_3m": 0.1597
     },
     "Industrials": {
       "etf": "XLI",
-      "return_1m": 0.0202,
-      "return_3m": 0.0645
+      "return_1m": 0.0179,
+      "return_3m": 0.0718
     },
     "Media": {
       "etf": "XLC",
-      "return_1m": 0.0061,
-      "return_3m": -0.0504
+      "return_1m": -0.0035,
+      "return_3m": -0.0462
     },
     "Semiconductors": {
       "etf": "SMH",
-      "return_1m": -0.0596,
-      "return_3m": 0.0581
+      "return_1m": -0.0464,
+      "return_3m": 0.0285
     },
     "Software": {
       "etf": "IGV",
-      "return_1m": 0.059,
-      "return_3m": 0.0945
+      "return_1m": 0.1112,
+      "return_3m": 0.1268
     }
   },
   "news_sources": {
