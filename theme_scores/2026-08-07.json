@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-08-07",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.6,
+    "Consumer": 0.0,
+    "Energy": 0.3,
+    "Financials": 0.4,
+    "Healthcare": 0.2,
+    "Industrials": 0.2,
+    "Media": 0.1,
+    "Semiconductors": -0.2,
+    "Software": 0.5
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": 0.0085,
+      "return_3m": -0.0721
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.0855,
+      "return_3m": 0.2603
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0107,
+      "return_3m": -0.0129
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0609,
+      "return_3m": 0.047
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0409,
+      "return_3m": 0.1254
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0141,
+      "return_3m": 0.1413
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0202,
+      "return_3m": 0.0645
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0061,
+      "return_3m": -0.0504
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0596,
+      "return_3m": 0.0581
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.059,
+      "return_3m": 0.0945
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "SpaceX, Honeywell Aerospace, Sandisk, D-Wave, Datadog, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-58e0a18d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5642181634902954
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Four of Google's Top AI Researchers Just Left to Start One Company. Alphabet Is Investing in It.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/technology/ai/articles/four-googles-top-ai-researchers-000200653.html",
+        "published_at": null,
+        "similarity": 0.49012571573257446
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Stock Market Leadership Just Flipped. Now the Nasdaq Is on Top.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-080626/card/stock-market-leadership-just-flipped-now-the-nasdaq-is-leading--aLszN7qwD0LGMfk1e8iW?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4798020124435425
+      },
+      {
+        "theme": "AI",
+        "ticker": "TSLA",
+        "title": "Prediction: Tesla's Share Price Dip Will Prove an Excellent Buying Opportunity",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-teslas-share-price-dip-222000653.html",
+        "published_at": null,
+        "similarity": 0.46646416187286377
+      },
+      {
+        "theme": "AI",
+        "ticker": "TSLA",
+        "title": "Huge News For Tesla Stock Fans",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/technology/ai/articles/huge-news-tesla-stock-fans-210128900.html",
+        "published_at": null,
+        "similarity": 0.46237078309059143
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "What's in Store for These 3 Networking Stocks This Earnings Season?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/whats-store-3-networking-stocks-151300866.html",
+        "published_at": null,
+        "similarity": 0.5121025443077087
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Stock Market Leadership Just Flipped. Now the Nasdaq Is on Top.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-080626/card/stock-market-leadership-just-flipped-now-the-nasdaq-is-leading--aLszN7qwD0LGMfk1e8iW?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5012046098709106
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ADBE",
+        "title": "What Is The Market Really Expecting From SHOP Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-really-expecting-shop-stock-194842025.html",
+        "published_at": null,
+        "similarity": 0.495972216129303
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Dan Ives Says Software Stocks Just Saw Their Most Disconnected Sell-Off Since the Late 1990s. Here's Why He's Still Bullish.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dan-ives-says-software-stocks-165000277.html",
+        "published_at": null,
+        "similarity": 0.48537856340408325
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Stock Market Today: Dow Sinks 464 Points, But Chip Firm Surges; Microsoft Surpasses Buy Zone (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-ai-stocks-sandisk-western-digital/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4760707914829254
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "HD",
+        "title": "Do Wall Street Analysts Like Home Depot Stock?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-home-depot-134724688.html",
+        "published_at": null,
+        "similarity": 0.4470476508140564
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "VZ",
+        "title": "SpaceX, Alphabet, Nvidia, Micron, AMD, Uber, CVS, Lilly, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c5965517?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.44332271814346313
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "A $3.8 Billion Reason Why Procter & Gamble Stock Is in Focus Today",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-8-billion-reason-why-151442464.html",
+        "published_at": null,
+        "similarity": 0.44204992055892944
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Is FEMSA Stock Worth Buying Now as Growth Meets a Premium Valuation?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/femsa-stock-worth-buying-now-153800108.html",
+        "published_at": null,
+        "similarity": 0.4384833872318268
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "What Are Wall Street Analysts' Target Price for Coca-Cola Stock?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-target-price-102956087.html",
+        "published_at": null,
+        "similarity": 0.4205094873905182
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Wall Street Is Bullish on Chevron Stock. Here\u2019s Our Price Target",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-bullish-chevron-stock-140009734.html",
+        "published_at": null,
+        "similarity": 0.5258163213729858
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Huge News For Tesla Stock Fans",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/technology/ai/articles/huge-news-tesla-stock-fans-210128900.html",
+        "published_at": null,
+        "similarity": 0.5241712331771851
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Prediction: Tesla's Share Price Dip Will Prove an Excellent Buying Opportunity",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-teslas-share-price-dip-222000653.html",
+        "published_at": null,
+        "similarity": 0.5116688013076782
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "The Debates That Matter For TSLA Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/debates-matter-tsla-stock-205508025.html",
+        "published_at": null,
+        "similarity": 0.5094259977340698
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Why this portfolio manager's top 3 energy stock picks don't include Chevron",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/why-portfolio-managers-top-3-120000021.html",
+        "published_at": null,
+        "similarity": 0.44326895475387573
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-softer-afternoon-194249756.html",
+        "published_at": null,
+        "similarity": 0.5679964423179626
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Softer in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-softer-afternoon-175826416.html",
+        "published_at": null,
+        "similarity": 0.5602663159370422
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Howard Hughes Holdings Inc. Q2 2026 Earnings Call Summary",
+        "publisher": "Moby",
+        "link": "https://finance.yahoo.com/real-estate/articles/howard-hughes-holdings-inc-q2-123000969.html",
+        "published_at": null,
+        "similarity": 0.47461599111557007
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Stock Markets May Be Tired of Iran but a Hormuz Deal Is Vital",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-things-to-know-today-fb8bccec?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4497096538543701
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Warsh\u2019s Faith in Markets Sidelines More Nuanced Fed Policy Tools",
+        "publisher": "Bloomberg",
+        "link": "https://finance.yahoo.com/economy/policy/articles/warsh-faith-markets-sidelines-more-141034140.html",
+        "published_at": null,
+        "similarity": 0.44865682721138
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Sector Update: Healthcare Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-softer-afternoon-194408227.html",
+        "published_at": null,
+        "similarity": 0.5970124006271362
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "The Case For UnitedHealth Stock Is Margin, Not Growth",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/healthcare/articles/case-unitedhealth-stock-margin-not-155015893.html",
+        "published_at": null,
+        "similarity": 0.5398812890052795
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Merck & Co\u2019s Stock: Analyst Estimates & Ratings",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/merck-co-stock-analyst-estimates-143052453.html",
+        "published_at": null,
+        "similarity": 0.5245327949523926
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Stock Market Leadership Just Flipped. Now the Nasdaq Is on Top.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-080626/card/stock-market-leadership-just-flipped-now-the-nasdaq-is-leading--aLszN7qwD0LGMfk1e8iW?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5121305584907532
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "CVS Stock Slides On 2027 Outlook Despite Hearty Earnings Beat",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/cvs-stock-q2-earnings/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5072747468948364
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Do Wall Street Analysts Like GE Vernova Stock?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-ge-vernova-062150002.html",
+        "published_at": null,
+        "similarity": 0.5215761661529541
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Why the Dow Is Outperforming Today",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-080526/card/why-the-dow-is-outperforming-today-o26nSWbUM6tJ5R8aXooF?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5121057033538818
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "ACM Research Gears Up to Report Q2 Earnings: How to Play the Stock",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/acm-research-gears-report-q2-135100120.html",
+        "published_at": null,
+        "similarity": 0.4892679452896118
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Prediction: Tesla's Share Price Dip Will Prove an Excellent Buying Opportunity",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-teslas-share-price-dip-222000653.html",
+        "published_at": null,
+        "similarity": 0.4846157729625702
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "The Debates That Matter For TSLA Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/debates-matter-tsla-stock-205508025.html",
+        "published_at": null,
+        "similarity": 0.48288968205451965
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Versant Media Shares Jump After Raising Outlook on Strong Viewership",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/earnings/versant-media-shares-jump-after-raising-outlook-on-strong-viewership-18f091a0?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5147489905357361
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "3 Stocks to Watch From a Prospering Cable Television Industry",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-watch-prospering-cable-145300111.html",
+        "published_at": null,
+        "similarity": 0.510857343673706
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "SpaceX, Alphabet, Nvidia, Micron, AMD, Uber, CVS, Lilly, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-c5965517?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.48120492696762085
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Versant Stock Jumps 12% On Upbeat Outlook",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-06-2026/card/versant-stock-jumps-12-on-upbeat-outlook-Fqia8LfbI4K6tHw1MW97?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47733715176582336
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Correction: S&P 500 Posts Weekly Gain Amid AI Monetization Optimism",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/correction-p-500-posts-weekly-135622152.html",
+        "published_at": null,
+        "similarity": 0.4755811095237732
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Price Prediction: ON Semiconductor Stock Looks Ready for Its Next Move",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/price-prediction-semiconductor-stock-looks-153013498.html",
+        "published_at": null,
+        "similarity": 0.6582472324371338
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "SpaceX, Honeywell Aerospace, Sandisk, D-Wave, Datadog, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-58e0a18d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6533280611038208
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Dear Cisco Stock Fans, Earnings Are Just Around the Corner",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dear-cisco-stock-fans-earnings-195723250.html",
+        "published_at": null,
+        "similarity": 0.6057801246643066
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "NVDA",
+        "title": "Why Occidental Stock Is Up Today",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-occidental-stock-today-234837591.html",
+        "published_at": null,
+        "similarity": 0.5960707664489746
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Sector Update: Tech Stocks Mixed Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-mixed-afternoon-195925324.html",
+        "published_at": null,
+        "similarity": 0.5863862037658691
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Dan Ives Says Software Stocks Just Saw Their Most Disconnected Sell-Off Since the Late 1990s. Here's Why He's Still Bullish.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dan-ives-says-software-stocks-165000277.html",
+        "published_at": null,
+        "similarity": 0.5797880291938782
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Software stocks sink, led by declines from Figma, Datadog",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/software-stocks-sink-led-by-declines-from-figma-datadog-144104020.html",
+        "published_at": null,
+        "similarity": 0.5580224990844727
+      },
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "What Is The Market Really Expecting From SHOP Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-really-expecting-shop-stock-194842025.html",
+        "published_at": null,
+        "similarity": 0.5320490598678589
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Software Stocks Fall As Datadog, HubSpot Earnings Raise Questions Over AI Pricing",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/technology/software-stocks-fall-as-datadog-hubspot-earnings-raise-questions-over-ai-pricing/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5233455896377563
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "WDAY, ADBE, INTU, ADSK, CRM: Software Stocks Stage Sharp Rebound In July",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wday-adbe-intu-adsk-crm-081302484.html",
+        "published_at": null,
+        "similarity": 0.5121582746505737
+      }
+    ]
+  }
+}
