@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-08-10",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.2,
+    "Cloud": 0.7,
+    "Consumer": 0.1,
+    "Energy": 0.6,
+    "Financials": 0.5,
+    "Healthcare": 0.7,
+    "Industrials": 0.2,
+    "Media": -0.1,
+    "Semiconductors": -0.3,
+    "Software": 0.4
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": 0.0432,
+      "return_3m": -0.0937
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1578,
+      "return_3m": 0.382
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0313,
+      "return_3m": 0.0045
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0606,
+      "return_3m": 0.0602
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.031,
+      "return_3m": 0.1335
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0436,
+      "return_3m": 0.1828
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0235,
+      "return_3m": 0.0572
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0022,
+      "return_3m": -0.0299
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0277,
+      "return_3m": -0.012
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.1328,
+      "return_3m": 0.1581
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Stock Market Today, Aug. 10: Markets Slip as Oil Gains Fuel Inflation Fears",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-10-213709411.html",
+        "published_at": null,
+        "similarity": 0.5515528917312622
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Meta Stock Rises as $1 Billion AI Strategy Unfolds",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/technology/ai/articles/meta-stock-rises-1-billion-193427495.html",
+        "published_at": null,
+        "similarity": 0.5247231125831604
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Sector Update: Tech Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-decline-afternoon-195134626.html",
+        "published_at": null,
+        "similarity": 0.5176464915275574
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "These Stocks Could Be Ready for Their Next Big Move",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-could-ready-next-big-163051895.html",
+        "published_at": null,
+        "similarity": 0.516092836856842
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Apple, Sionna, AbCellera, Sandisk, SpaceX, Berkshire,  and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-e2d99041?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5014050602912903
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Stock Market News for Aug 10, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-10-085400959.html",
+        "published_at": null,
+        "similarity": 0.709022045135498
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Sector Update: Tech Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-decline-afternoon-195134626.html",
+        "published_at": null,
+        "similarity": 0.5526586771011353
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "BRKB Stock: Investors Are Starting To Look Past Warren Buffett",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/brkb-stock-rises-berkshire-hathaway-investors-looking-past-warren-buffett/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5293720960617065
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Stock Market Today: Dow Dips, Nvidia Falls On This; Warren Buffett's Berkshire In Buy Zone (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-us-iran-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5267993211746216
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Turbulent Month Leaves Stock Funds Up 10.6% So Far in 2026",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/finance/investing/stock-funds-increase-year-to-date-4085a35d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49509066343307495
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Berkshire Earnings Were Good\u2014Not Great. A Real Bright Spot Was This.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/berkshire-hathaway-earnings-stock-buybacks-d5a6ac50?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47787314653396606
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "Apple, Sionna, AbCellera, Sandisk, SpaceX, Berkshire,  and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-e2d99041?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.45780181884765625
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Wall Street Is Betting P&G\u2019s Dividend Growth Ends. The Cash Flow Suggests That\u2019s Not Happening",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-betting-p-g-130033064.html",
+        "published_at": null,
+        "similarity": 0.44803518056869507
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Is McDonald's Still a Good Stock to Buy in 2026?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/mcdonalds-still-good-stock-buy-160152782.html",
+        "published_at": null,
+        "similarity": 0.4354701042175293
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Airbnb vs. McDonald's: Which Consumer Stock Is a Better Buy in 2026?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/airbnb-vs-mcdonalds-consumer-stock-001501203.html",
+        "published_at": null,
+        "similarity": 0.43159574270248413
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Stock Market Today, Aug. 10: Markets Slip as Oil Gains Fuel Inflation Fears",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-10-213709411.html",
+        "published_at": null,
+        "similarity": 0.5651184916496277
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Will ExxonMobil\u2019s (XOM) Q2 Profit Surge and Massive Buybacks Reshape Its Capital Allocation Narrative?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-xom-q2-profit-surge-200901329.html",
+        "published_at": null,
+        "similarity": 0.5218895673751831
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "1 Cash-Producing Stock with Impressive Fundamentals and 2 We Turn Down",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-impressive-152522894.html",
+        "published_at": null,
+        "similarity": 0.46751880645751953
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Stock Jumps 3.3% as Oil Supply Fears Return",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/energy/articles/exxon-stock-jumps-3-3-193339640.html",
+        "published_at": null,
+        "similarity": 0.4669676423072815
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Handed Shareholders $9.4 Billion in One Quarter. Here's What It Earned to Cover It.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-handed-shareholders-9-4-010700472.html",
+        "published_at": null,
+        "similarity": 0.4242360591888428
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Apple, Sionna, AbCellera, Sandisk, SpaceX, Berkshire,  and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-e2d99041?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5590449571609497
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Stocks to Watch: Berkshire Hathaway, Applied Materials, Sunrise Energy",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-10-2026/card/stocks-to-watch-berkshire-hathaway-super-micro-computer-sunrise-energy-lRwcXvs1cYkQcD4lv59a?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5356454253196716
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Stock Market Today: Dow Dips, Nvidia Falls On This; Warren Buffett's Berkshire In Buy Zone (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-us-iran-spacex-stock-spcx/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5286591053009033
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "BRKB Stock: Investors Are Starting To Look Past Warren Buffett",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/brkb-stock-rises-berkshire-hathaway-investors-looking-past-warren-buffett/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5051746964454651
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "1 Mega-Cap Stock with Impressive Fundamentals and 2 We Brush Off",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-mega-cap-stock-impressive-185322801.html",
+        "published_at": null,
+        "similarity": 0.49007272720336914
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Rise in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-rise-afternoon-174031450.html",
+        "published_at": null,
+        "similarity": 0.6625524759292603
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-gain-afternoon-195804577.html",
+        "published_at": null,
+        "similarity": 0.6399555802345276
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "4 Healthcare Stocks to Watch as Defensive Demand Strengthens",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/4-healthcare-stocks-watch-defensive-125900116.html",
+        "published_at": null,
+        "similarity": 0.5488355159759521
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Stock Market Leadership Just Flipped. Now the Nasdaq Is on Top.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-080626/card/stock-market-leadership-just-flipped-now-the-nasdaq-is-leading--aLszN7qwD0LGMfk1e8iW?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5121304988861084
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "Johnson & Johnson vs. Medtronic: Which Healthcare Stock Is Better Positioned After Earnings?",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-vs-medtronic-healthcare-223657921.html",
+        "published_at": null,
+        "similarity": 0.5008363723754883
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Stocks to Watch: Berkshire Hathaway, Applied Materials, Sunrise Energy",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-10-2026/card/stocks-to-watch-berkshire-hathaway-super-micro-computer-sunrise-energy-lRwcXvs1cYkQcD4lv59a?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5339690446853638
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Earnings live updates: Plug Power stock jumps on improving margins, raised revenue guidance",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/live/earnings-live-updates-plug-power-stock-jumps-on-improving-margins-raised-revenue-guidance-202302733.html",
+        "published_at": null,
+        "similarity": 0.4997729957103729
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Update: Equities Fall, Oil Rises Intraday Amid Hormuz Reopening Uncertainty",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-fall-oil-rises-intraday-175056532.html",
+        "published_at": null,
+        "similarity": 0.48163527250289917
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "ASML Dropped 5% Over a Month But a Prominent Wall Street Wealth Manager Sees 50% Returns Coming",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/asml-dropped-5-over-month-154141326.html",
+        "published_at": null,
+        "similarity": 0.4772304892539978
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "1 Large-Cap Stock with Solid Fundamentals and 2 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-large-cap-stock-solid-171722855.html",
+        "published_at": null,
+        "similarity": 0.4739144444465637
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "3 Stocks to Watch From a Prospering Cable Television Industry",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-watch-prospering-cable-145300111.html",
+        "published_at": null,
+        "similarity": 0.5108572840690613
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Stock Market Today, Aug. 10: Markets Slip as Oil Gains Fuel Inflation Fears",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-10-213709411.html",
+        "published_at": null,
+        "similarity": 0.507684051990509
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Versant Stock Jumps 12% On Upbeat Outlook",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-06-2026/card/versant-stock-jumps-12-on-upbeat-outlook-Fqia8LfbI4K6tHw1MW97?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4773370921611786
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Sector Update: Tech Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-decline-afternoon-195134626.html",
+        "published_at": null,
+        "similarity": 0.46454429626464844
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Arlo Technologies Q2 Earnings Call Highlights",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/arlo-technologies-q2-earnings-call-220417586.html",
+        "published_at": null,
+        "similarity": 0.4487772583961487
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Price Prediction: ON Semiconductor Stock Looks Ready for Its Next Move",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/price-prediction-semiconductor-stock-looks-153013498.html",
+        "published_at": null,
+        "similarity": 0.6582473516464233
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Stocks to Watch: Berkshire Hathaway, Applied Materials, Sunrise Energy",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-10-2026/card/stocks-to-watch-berkshire-hathaway-super-micro-computer-sunrise-energy-lRwcXvs1cYkQcD4lv59a?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6437194347381592
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "These Stocks Could Be Ready for Their Next Big Move",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-could-ready-next-big-163051895.html",
+        "published_at": null,
+        "similarity": 0.631709098815918
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Apple, Sionna, AbCellera, Sandisk, SpaceX, Berkshire,  and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-e2d99041?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.600721001625061
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Earnings Season, Persian Gulf Lull, Lift Wall Street Pre-Bell; Asia, Europe Up",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/earnings-season-persian-gulf-lull-111543856.html",
+        "published_at": null,
+        "similarity": 0.5895752906799316
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Stock Market News for Aug 10, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-10-085400959.html",
+        "published_at": null,
+        "similarity": 0.6688864231109619
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Software stocks sink, led by declines from Figma, Datadog",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/software-stocks-sink-led-by-declines-from-figma-datadog-144104020.html",
+        "published_at": null,
+        "similarity": 0.5526621341705322
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Sector Update: Tech Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-decline-afternoon-195134626.html",
+        "published_at": null,
+        "similarity": 0.546515941619873
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "Apple, Sionna, AbCellera, Sandisk, SpaceX, Berkshire,  and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-e2d99041?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5396385788917542
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Software Stocks Fall As Datadog, HubSpot Earnings Raise Questions Over AI Pricing",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/technology/software-stocks-fall-as-datadog-hubspot-earnings-raise-questions-over-ai-pricing/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5209020972251892
+      }
+    ]
+  }
+}
