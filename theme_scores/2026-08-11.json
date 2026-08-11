@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-08-11",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.7,
+    "Consumer": 0.2,
+    "Energy": 0.4,
+    "Financials": 0.6,
+    "Healthcare": 0.5,
+    "Industrials": 0.3,
+    "Media": -0.2,
+    "Semiconductors": -0.1,
+    "Software": 0.4
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": 0.0446,
+      "return_3m": -0.0791
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1437,
+      "return_3m": 0.4188
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0288,
+      "return_3m": 0.01
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0699,
+      "return_3m": 0.066
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0288,
+      "return_3m": 0.1245
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0614,
+      "return_3m": 0.157
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0291,
+      "return_3m": 0.0677
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0016,
+      "return_3m": -0.0371
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0456,
+      "return_3m": 0.0208
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.1099,
+      "return_3m": 0.1621
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Micron, SpaceX, Rocket Lab, Fermi, AppLovin, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-86153631?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5212793350219727
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Michael Burry Has a Stark Warning for Investors Betting on Today's Market",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-stark-warning-investors-155418654.html",
+        "published_at": null,
+        "similarity": 0.4833764433860779
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Why this week's CoreWeave earnings are so important for markets",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/why-weeks-coreweave-earnings-important-142211249.html",
+        "published_at": null,
+        "similarity": 0.4794301986694336
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "What Is The Market Really Expecting From AVGO Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-really-expecting-avgo-stock-210822837.html",
+        "published_at": null,
+        "similarity": 0.471550315618515
+      },
+      {
+        "theme": "AI",
+        "ticker": "NVDA",
+        "title": "The Data Doesn't Lie: Trumpflation Is Becoming More Entrenched, Which Is Bad News for the Fed and Wall Street",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/economy/articles/data-doesnt-lie-trumpflation-becoming-222600312.html",
+        "published_at": null,
+        "similarity": 0.4684269428253174
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "CPI, Cisco earnings, and more: What investors need to watch Wednesday",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/cpi-cisco-earnings-more-investors-230500912.html",
+        "published_at": null,
+        "similarity": 0.5317176580429077
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Inflation Figures, Earnings: What to Watch the Rest of the Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-11-2026/card/inflation-figures-earnings-what-to-watch-the-rest-of-the-week-R63wYloRcFPC1mzP3n3A?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5174791216850281
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "RXO, BrightView, SiteOne, ServiceNow, and Rocket Lab Shares Are Soaring, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/rxo-brightview-siteone-servicenow-rocket-005322420.html",
+        "published_at": null,
+        "similarity": 0.5027368068695068
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ACN",
+        "title": "Accenture (ACN) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/accenture-acn-beats-stock-market-215001274.html",
+        "published_at": null,
+        "similarity": 0.4895263910293579
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ACN",
+        "title": "Are Wall Street Analysts Bullish on Accenture Stock?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-bullish-accenture-094302678.html",
+        "published_at": null,
+        "similarity": 0.48546022176742554
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "3 Stocks That Have Made Long-Term Investors Rich (and Could Do It Again)",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-made-long-term-120046968.html",
+        "published_at": null,
+        "similarity": 0.4662376642227173
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Inflation Data Will Be the Real Test for This AI Stock Rally",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-things-to-know-today-40709717?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4391110837459564
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Looking to Generate Passive Income From Stocks? 3 Unstoppable Dividend Stocks to Buy Now.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/looking-generate-passive-income-stocks-115000445.html",
+        "published_at": null,
+        "similarity": 0.4291269779205322
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "3 Boring but Brilliant Stocks to Buy in August",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-boring-brilliant-stocks-buy-130051629.html",
+        "published_at": null,
+        "similarity": 0.42529401183128357
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "This 5.3% Monthly Payer Only Buys Stocks That Raised Dividends 10 Straight Years, It\u2019s Up 18.5% in 2026",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/5-3-monthly-payer-only-204817747.html",
+        "published_at": null,
+        "similarity": 0.4231112599372864
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Stock Market Today, Aug. 10: Markets Slip as Oil Gains Fuel Inflation Fears",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-10-213709411.html",
+        "published_at": null,
+        "similarity": 0.565118670463562
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Will ExxonMobil\u2019s (XOM) Q2 Profit Surge and Massive Buybacks Reshape Its Capital Allocation Narrative?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-xom-q2-profit-surge-200901329.html",
+        "published_at": null,
+        "similarity": 0.5218896269798279
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "Linde Stock: Is Wall Street Bullish or Bearish?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/linde-stock-wall-street-bullish-115110960.html",
+        "published_at": null,
+        "similarity": 0.45236819982528687
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla Stock Rises as China EV Sales Slide for Seventh Straight Month",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-rises-china-ev-192430040.html",
+        "published_at": null,
+        "similarity": 0.44783514738082886
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Robotics Stocks Rally as Unitree\u2019s 8000X Oversubscribed IPO Draws Frenzied Demand: Ouster, Symbotic, and Teradyne in Focus",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/robotics-stocks-rally-unitree-8000x-183206760.html",
+        "published_at": null,
+        "similarity": 0.4384509027004242
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Earnings Are Beating Wall Street\u2019s Boldest Expectations. What Comes Next.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-market-sp-500-earnings-forecast-4f0b51c1?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5483628511428833
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Warren Buffett Has Always Said This 1 Thing About Long-Term Investing. History Has Never Once Proved Him Wrong.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-always-said-1-163500459.html",
+        "published_at": null,
+        "similarity": 0.4719105660915375
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "BAC or MS: Which Financial Powerhouse Deserves Your Investment Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bac-ms-financial-powerhouse-deserves-140600824.html",
+        "published_at": null,
+        "similarity": 0.45983511209487915
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Prediction: Greg Abel Will Buy a Stock That Warren Buffett Spent Decades Passing on for This Simple Reason",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-greg-abel-buy-stock-124000116.html",
+        "published_at": null,
+        "similarity": 0.4543888568878174
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Goldman's M&A Leadership Bodes Well: Should You Buy GS Stock Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/goldmans-m-leadership-bodes-well-140500187.html",
+        "published_at": null,
+        "similarity": 0.4515831470489502
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "Sector Update: Healthcare Stocks Rise in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-rise-afternoon-174031450.html",
+        "published_at": null,
+        "similarity": 0.6887456774711609
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "Sector Update: Healthcare Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-gain-afternoon-195804577.html",
+        "published_at": null,
+        "similarity": 0.6449106335639954
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Group Stock Outlook: Is Wall Street Bullish or Bearish?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-group-stock-outlook-wall-095424590.html",
+        "published_at": null,
+        "similarity": 0.5696965456008911
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Healthcare Investing Is Now an AI Short in Disguise",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/finance/stocks/healthcare-investing-is-now-an-ai-short-in-disguise-104cb020?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5651988387107849
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "4 Healthcare Stocks to Watch as Defensive Demand Strengthens",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/4-healthcare-stocks-watch-defensive-125900116.html",
+        "published_at": null,
+        "similarity": 0.5488356351852417
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Inflation Figures, Earnings: What to Watch the Rest of the Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-11-2026/card/inflation-figures-earnings-what-to-watch-the-rest-of-the-week-R63wYloRcFPC1mzP3n3A?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5424008369445801
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Move Over, GE Aerospace: This Aerospace Stock Deserves Your Attention Instead",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/move-over-ge-aerospace-aerospace-172500151.html",
+        "published_at": null,
+        "similarity": 0.48399603366851807
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "1 Large-Cap Stock with Solid Fundamentals and 2 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-large-cap-stock-solid-171722855.html",
+        "published_at": null,
+        "similarity": 0.47391432523727417
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Caterpillar (CAT) Stock Could Be 6% Overvalued As AI Demand Lifts Outlook",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-stock-could-6-171008346.html",
+        "published_at": null,
+        "similarity": 0.47090330719947815
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Update: S&P 500 Retreats From Record, Oil Jumps as Hormuz Reopening Hopes Fade",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/p-500-retreats-record-oil-205708697.html",
+        "published_at": null,
+        "similarity": 0.464205265045166
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "3 Stocks to Watch From a Prospering Cable Television Industry",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-watch-prospering-cable-145300111.html",
+        "published_at": null,
+        "similarity": 0.510857343673706
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Why this week's CoreWeave earnings are so important for markets",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/why-weeks-coreweave-earnings-important-142211249.html",
+        "published_at": null,
+        "similarity": 0.5094437599182129
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Amazon Stock And The Profit Signal Everyone Is Chasing",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-stock-profit-signal-everyone-224757308.html",
+        "published_at": null,
+        "similarity": 0.4717191457748413
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Arlo Technologies Q2 Earnings Call Highlights",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/arlo-technologies-q2-earnings-call-220417586.html",
+        "published_at": null,
+        "similarity": 0.4487772285938263
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "What Is The Market Really Expecting From AVGO Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-really-expecting-avgo-stock-210822837.html",
+        "published_at": null,
+        "similarity": 0.44823312759399414
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "CPI, Cisco earnings, and more: What investors need to watch Wednesday",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/cpi-cisco-earnings-more-investors-230500912.html",
+        "published_at": null,
+        "similarity": 0.6237493753433228
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Micron, SpaceX, Rocket Lab, Fermi, AppLovin, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-86153631?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6157456636428833
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Inflation Figures, Earnings: What to Watch the Rest of the Week",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-11-2026/card/inflation-figures-earnings-what-to-watch-the-rest-of-the-week-R63wYloRcFPC1mzP3n3A?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6017633676528931
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Here\u2019s How Much Applied Materials Stock Is Expected to Move After Earnings",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/much-applied-materials-stock-expected-211339809.html",
+        "published_at": null,
+        "similarity": 0.5976085662841797
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "This Wall Street Pro Makes a Compelling Argument for 70% Gains on NXP Semiconductors Which Cratered Last Month",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-pro-makes-compelling-113637315.html",
+        "published_at": null,
+        "similarity": 0.5864275097846985
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "CRM, NOW, INTU, ADBE: Software Stocks Slide After Figma Flags Surging AI Costs",
+        "publisher": "Stocktwits",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/crm-now-intu-adbe-software-020402578.html",
+        "published_at": null,
+        "similarity": 0.49741074442863464
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Prediction: Oracle\u2019s Growth Story Has Entered a New Era, Eyes 40% Upside",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-oracle-growth-story-entered-160035534.html",
+        "published_at": null,
+        "similarity": 0.4970517158508301
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Intuit cut to Hold at Truist on softening growth outlook; shares dip",
+        "publisher": "Investing.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/intuit-cut-hold-truist-softening-132526441.html",
+        "published_at": null,
+        "similarity": 0.48663413524627686
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "C3.ai vs. Salesforce: Which Software Stock Pursuing Artificial Intelligence Is a Better Buy in 2026?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/technology/ai/articles/c3-ai-vs-salesforce-software-185042842.html",
+        "published_at": null,
+        "similarity": 0.47923752665519714
+      },
+      {
+        "theme": "Software",
+        "ticker": "ACN",
+        "title": "Accenture (ACN) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/accenture-acn-beats-stock-market-215001274.html",
+        "published_at": null,
+        "similarity": 0.4674474000930786
+      }
+    ]
+  }
+}
