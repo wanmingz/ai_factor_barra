@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-08-14",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.4,
+    "Cloud": 0.8,
+    "Consumer": 0.2,
+    "Energy": 0.3,
+    "Financials": 0.4,
+    "Healthcare": 0.3,
+    "Industrials": 0.3,
+    "Media": -0.1,
+    "Semiconductors": 0.5,
+    "Software": 0.6
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": 0.0971,
+      "return_3m": -0.0614
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1695,
+      "return_3m": 0.4608
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0239,
+      "return_3m": 0.0164
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0733,
+      "return_3m": 0.0491
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0338,
+      "return_3m": 0.1421
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.039,
+      "return_3m": 0.1586
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": 0.0396,
+      "return_3m": 0.0908
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0027,
+      "return_3m": -0.033
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.0562,
+      "return_3m": 0.0566
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.1216,
+      "return_3m": 0.1342
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "SpaceX, Sandisk, Micron, Workday, Applied Materials, Reddit, Unusual Machines, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-0ed39f6f?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5210846066474915
+      },
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Institutional investors reveal cautious approach to tech favorites in US quarterly 13F filings",
+        "publisher": "Reuters",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/institutional-investors-reveal-cautious-approach-215416925.html",
+        "published_at": null,
+        "similarity": 0.5081616640090942
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Why Cloudflare and these 3 AI sub-sectors are 'the place to be' for tech investors",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/why-cloudflare-3-ai-sub-120000708.html",
+        "published_at": null,
+        "similarity": 0.5021655559539795
+      },
+      {
+        "theme": "AI",
+        "ticker": "NVDA",
+        "title": "Why REalloys Stock Soared Today",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-realloys-stock-soared-today-215759657.html",
+        "published_at": null,
+        "similarity": 0.48147720098495483
+      },
+      {
+        "theme": "AI",
+        "ticker": "QCOM",
+        "title": "The Bull Market Is Almost Back for Chip Stocks",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bull-market-almost-back-chip-205554469.html",
+        "published_at": null,
+        "similarity": 0.4803251624107361
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Wall Street May Be Sleeping on This AI Growth Story, The Stock Has 97% Upside",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-may-sleeping-ai-153048065.html",
+        "published_at": null,
+        "similarity": 0.5555095076560974
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "UiPath Stock Carries A Market Multiple On Earnings And A Premium On Sales",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/uipath-stock-carries-market-multiple-231716839.html",
+        "published_at": null,
+        "similarity": 0.509019136428833
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Tech Stocks Forecast \u2013 SMCI, SpaceX, and Cisco Eye Post-Earnings Levels",
+        "publisher": "FX Empire",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tech-stocks-forecast-smci-spacex-133332117.html",
+        "published_at": null,
+        "similarity": 0.5063472986221313
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Stock Market Hits Highs; Cisco, Lumentum, Super Micro, Sandisk Key Movers: Weekly Review",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/stock-market-hits-highs-cisco-lumentum-super-micro-sandisk-key-movers-weekly-review/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5054635405540466
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Quantum Computing Earnings Offered a Reality Check. What Comes Next.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/quantum-computing-earnings-stocks-b4e8ce2d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.49417251348495483
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "The Debates That Matter For KO Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/debates-matter-ko-stock-222150709.html",
+        "published_at": null,
+        "similarity": 0.5061602592468262
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Coca-Cola\u2019s Raised Guidance And Margin Gains Might Change The Case For Investing In Coca-Cola (KO)",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-raised-guidance-margin-231511209.html",
+        "published_at": null,
+        "similarity": 0.45216798782348633
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "PepsiCo Stock Has Stalled. Here Is Why the Second Half of 2026 Could Be Its Turning Point.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-stock-stalled-why-second-083000294.html",
+        "published_at": null,
+        "similarity": 0.43502479791641235
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "54 Straight Years: Why PepsiCo Remains a Dividend Investor\u2019s Anchor",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/54-straight-years-why-pepsico-130531075.html",
+        "published_at": null,
+        "similarity": 0.43019330501556396
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "HD",
+        "title": "Stock Market Week Ahead: Walmart, Target Lead Retail Earnings; Nvidia Among Stocks In Buy Areas",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/research/investing-action-plan/stock-market-week-ahead-walmart-target-lead-retail-earnings-nvidia-among-stocks-in-buy-areas/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.42376595735549927
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Sector Update: Consumer Stocks Mixed Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-afternoon-194726434.html",
+        "published_at": null,
+        "similarity": 0.5304059982299805
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Korea\u2019s Stock Market Surges Another 3.5% Overnight. Intel, Coherent, and Micron Among Most Active Premarket Stocks in US Trading.",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/korea-stock-market-surges-another-111758592.html",
+        "published_at": null,
+        "similarity": 0.47374287247657776
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Stock Rises While Iran Threat Lifts Oil",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/energy/articles/exxon-stock-rises-while-iran-182050758.html",
+        "published_at": null,
+        "similarity": 0.4597811996936798
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Wall Street's riskiest trades are suddenly back on top: Chart of the Day",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/wall-streets-riskiest-trades-are-suddenly-back-on-top-chart-of-the-day-100100027.html",
+        "published_at": null,
+        "similarity": 0.45838502049446106
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Stock Market Today, Aug. 14: Tesla Gains on TD Cowen Buy Reiteration and $460 Target",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-14-211647533.html",
+        "published_at": null,
+        "similarity": 0.45784813165664673
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Softer Friday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-softer-friday-175349047.html",
+        "published_at": null,
+        "similarity": 0.5825772285461426
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Edge Lower Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-edge-lower-195659801.html",
+        "published_at": null,
+        "similarity": 0.5327180624008179
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Is Citigroup a Solid Investment Option After a 51.2% Jump in a Year?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/citigroup-solid-investment-option-51-142900308.html",
+        "published_at": null,
+        "similarity": 0.4459969997406006
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway vs. Progressive: Which Insurance Powerhouse Leads?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-vs-progressive-insurance-172700830.html",
+        "published_at": null,
+        "similarity": 0.426098108291626
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Why Is Wells Fargo (WFC) Up 1.6% Since Last Earnings Report?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-wells-fargo-wfc-1-153003589.html",
+        "published_at": null,
+        "similarity": 0.4135129451751709
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "Sector Update: Healthcare Stocks Rise in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-rise-afternoon-174031450.html",
+        "published_at": null,
+        "similarity": 0.6887456774711609
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Sector Update: Healthcare Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-195128452.html",
+        "published_at": null,
+        "similarity": 0.6503065824508667
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "Sector Update: Healthcare Stocks Gain Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-gain-afternoon-195804577.html",
+        "published_at": null,
+        "similarity": 0.6449106335639954
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "This Healthcare Services Stock Has 37% Upside",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/buy-medpace-stock-price-pick-11c1cc7b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5868633985519409
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Is Dividend Hike And Medicare Exit Strategy Altering The Investment Case For UnitedHealth Group (UNH)?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/healthcare/articles/dividend-hike-medicare-exit-strategy-171143024.html",
+        "published_at": null,
+        "similarity": 0.5170201659202576
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "SpaceX, Sandisk, Micron, Workday, Applied Materials, Reddit, Unusual Machines, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-0ed39f6f?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.511820912361145
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Sector Update: Consumer Stocks Mixed Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-afternoon-194726434.html",
+        "published_at": null,
+        "similarity": 0.5047256946563721
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Do Wall Street Analysts Like Caterpillar Stock?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-caterpillar-stock-180311658.html",
+        "published_at": null,
+        "similarity": 0.4988046884536743
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Wall Street's riskiest trades are suddenly back on top: Chart of the Day",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/wall-streets-riskiest-trades-are-suddenly-back-on-top-chart-of-the-day-100100027.html",
+        "published_at": null,
+        "similarity": 0.4922482967376709
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Stock Market Today: Nasdaq Slips On Retail Sales Gloom; Nvidia Eyes Robotics Wave",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-retail-sales-applied-materials-stock-amat/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4833630323410034
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-67aed4d8?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6155503988265991
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Institutional investors reveal cautious approach to tech favorites in US quarterly 13F filings",
+        "publisher": "Reuters",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/institutional-investors-reveal-cautious-approach-215416925.html",
+        "published_at": null,
+        "similarity": 0.4755619168281555
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Netflix Stock Has Been Beaten Down Lately. Some Big Investors Are Buying In",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-stock-beaten-down-lately-110000405.html",
+        "published_at": null,
+        "similarity": 0.4720016121864319
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "AT&T Barely Moves With The Market It Belongs To",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/t-barely-moves-market-belongs-143504992.html",
+        "published_at": null,
+        "similarity": 0.4412398338317871
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Reddit Is Still Down 24% This Year. What Will It Take to Get RDDT Stock Back Up to $200?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/reddit-still-down-24-rddt-190231874.html",
+        "published_at": null,
+        "similarity": 0.43582189083099365
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "QCOM",
+        "title": "The Bull Market Is Almost Back for Chip Stocks",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bull-market-almost-back-chip-205554469.html",
+        "published_at": null,
+        "similarity": 0.6316170692443848
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "SpaceX, Sandisk, Micron, Workday, Applied Materials, Reddit, Unusual Machines, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-0ed39f6f?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6023749113082886
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Earnings Prove AI Hardware Demand Is Strong. That\u2019s Good News for Dell Stock.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/dell-technologies-stock-upgrade-ai-earnings-300dee64?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6023640036582947
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Tech Stocks Forecast \u2013 SMCI, SpaceX, and Cisco Eye Post-Earnings Levels",
+        "publisher": "FX Empire",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tech-stocks-forecast-smci-spacex-133332117.html",
+        "published_at": null,
+        "similarity": 0.5963175296783447
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "Stock Market Hits Highs; Cisco, Lumentum, Super Micro, Sandisk Key Movers: Weekly Review",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/stock-market-hits-highs-cisco-lumentum-super-micro-sandisk-key-movers-weekly-review/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5822308659553528
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Wall Street May Be Sleeping on This AI Growth Story, The Stock Has 97% Upside",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-may-sleeping-ai-153048065.html",
+        "published_at": null,
+        "similarity": 0.5723799467086792
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Institutional investors reveal cautious approach to tech favorites in US quarterly 13F filings",
+        "publisher": "Reuters",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/institutional-investors-reveal-cautious-approach-215416925.html",
+        "published_at": null,
+        "similarity": 0.530789852142334
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Intuit's AI and Mid-Market Push: Can Growth Follow Through?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/ai/articles/intuits-ai-mid-market-push-183000293.html",
+        "published_at": null,
+        "similarity": 0.5232846140861511
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Palantir and Microsoft Drop. Why the AI Revival Is Hitting Software Stocks.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/palantir-stock-microsoft-ai-software-81e21d89?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5161021947860718
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Cybersecurity Stock Sets Sights On Buy Point With Bolstered Outlook",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/stock-lists/stock-spotlight/cybersecurity-stock-mitek-mtk-ai-tech-software-earnings-markets-trading-investing/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4947616159915924
+      }
+    ]
+  }
+}
