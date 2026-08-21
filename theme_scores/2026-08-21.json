@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-08-21",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.7,
+    "Consumer": 0.3,
+    "Energy": 0.2,
+    "Financials": 0.4,
+    "Healthcare": 0.6,
+    "Industrials": 0.0,
+    "Media": -0.1,
+    "Semiconductors": -0.3,
+    "Software": 0.8
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": 0.0653,
+      "return_3m": -0.105
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.2539,
+      "return_3m": 0.3469
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0787,
+      "return_3m": -0.0078
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0674,
+      "return_3m": 0.0775
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0208,
+      "return_3m": 0.1105
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0741,
+      "return_3m": 0.1701
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0132,
+      "return_3m": 0.052
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.048,
+      "return_3m": -0.0327
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0014,
+      "return_3m": -0.0276
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.1749,
+      "return_3m": 0.0998
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-194245037.html",
+        "published_at": null,
+        "similarity": 0.5390443801879883
+      },
+      {
+        "theme": "AI",
+        "ticker": "TSLA",
+        "title": "Moderna, Robinhood, Marvell, Tesla, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-b87ea8d7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5383952856063843
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "Sector Update: Tech Stocks Mixed Friday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-mixed-friday-172901231.html",
+        "published_at": null,
+        "similarity": 0.49769383668899536
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "2 New Under-the-Radar Quantum Stocks Catching Analysts\u2019 Attention",
+        "publisher": "TipRanks",
+        "link": "https://finance.yahoo.com/technology/articles/2-under-radar-quantum-stocks-175500251.html",
+        "published_at": null,
+        "similarity": 0.4726163446903229
+      },
+      {
+        "theme": "AI",
+        "ticker": "NVDA",
+        "title": "Stock market today: Dow, S&P 500, Nasdaq post weekly losses as bond volatility remains in focus, bitcoin soars",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/live/stock-market-today-friday-august-21-dow-sp-500-nasdaq-bitcoin-080533702.html",
+        "published_at": null,
+        "similarity": 0.460746169090271
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Here\u2019s How Much Salesforce Stock Is Expected to Move After Earnings",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/much-salesforce-stock-expected-move-123000037.html",
+        "published_at": null,
+        "similarity": 0.5266897678375244
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "2 New Under-the-Radar Quantum Stocks Catching Analysts\u2019 Attention",
+        "publisher": "TipRanks",
+        "link": "https://finance.yahoo.com/technology/articles/2-under-radar-quantum-stocks-175500251.html",
+        "published_at": null,
+        "similarity": 0.513286292552948
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Why ServiceNow Stock Topped the Market on Thursday",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-servicenow-stock-topped-market-000102594.html",
+        "published_at": null,
+        "similarity": 0.4916800856590271
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Q2 Earnings Roundup: Expedia (NASDAQ:EXPE) And The Rest Of The Consumer Internet Segment",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/q2-earnings-roundup-expedia-nasdaq-221947445.html",
+        "published_at": null,
+        "similarity": 0.4900732636451721
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "ServiceNow (NOW) Up 41.1% Since Last Earnings Report: Can It Continue?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-41-1-since-153007090.html",
+        "published_at": null,
+        "similarity": 0.4886940121650696
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "Sector Update: Consumer Stocks Higher Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-higher-afternoon-194659617.html",
+        "published_at": null,
+        "similarity": 0.548926591873169
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "Update: Equities Rebound Intraday as Yields Rise",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-rebound-intraday-yields-rise-174955554.html",
+        "published_at": null,
+        "similarity": 0.4562409520149231
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Looking to Generate Passive Income From Stocks? 3 Magnificent High-Yield Dividend Stocks to Buy Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/looking-generate-passive-income-stocks-143500552.html",
+        "published_at": null,
+        "similarity": 0.45200416445732117
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Which Restaurant Stock Is Dominating in 2026: McDonald\u2019s, Chipotle, or Starbucks?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/restaurant-stock-dominated-2026-mcdonald-190703177.html",
+        "published_at": null,
+        "similarity": 0.44889575242996216
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Brokers Suggest Investing in Coca-Cola (KO): Read This Before Placing a Bet",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/brokers-suggest-investing-coca-cola-133002939.html",
+        "published_at": null,
+        "similarity": 0.4359380602836609
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Moderna, Robinhood, Marvell, Tesla, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-b87ea8d7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6288756132125854
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Mixed Friday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-mixed-friday-173644811.html",
+        "published_at": null,
+        "similarity": 0.5889096260070801
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Mixed Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-mixed-afternoon-195700798.html",
+        "published_at": null,
+        "similarity": 0.5783084630966187
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Why Is Tesla Stock Up Today?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-tesla-stock-today-214633416.html",
+        "published_at": null,
+        "similarity": 0.5319247245788574
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Cost Savings and Production Growth Strengthen ExxonMobil's Outlook",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/energy/articles/cost-savings-production-growth-strengthen-164000346.html",
+        "published_at": null,
+        "similarity": 0.47641438245773315
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Sector Update: Financial Stocks Advance Pre-Bell Friday",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-pre-131949582.html",
+        "published_at": null,
+        "similarity": 0.6015475392341614
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Sector Update: Financial Stocks Climb Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-climb-afternoon-195755759.html",
+        "published_at": null,
+        "similarity": 0.5689188241958618
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "JPMorgan Rises as Wall Street Bets on Record Trading Strength",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-rises-wall-street-bets-195319479.html",
+        "published_at": null,
+        "similarity": 0.47537150979042053
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Wells Fargo (WFC) Stock Declines While Market Improves: Some Information for Investors",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-stock-declines-214503211.html",
+        "published_at": null,
+        "similarity": 0.46676957607269287
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Which Big Bank Stock Has Dominated in 2026: Bank of America, Wells Fargo, or Bank of New York Mellon Corp.?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/big-bank-stock-dominated-2026-192333031.html",
+        "published_at": null,
+        "similarity": 0.4592408239841461
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "Sector Update: Healthcare Stocks Advance in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-advance-afternoon-174323348.html",
+        "published_at": null,
+        "similarity": 0.7019864320755005
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Moderna, Robinhood, Marvell, Tesla, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-b87ea8d7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6212608814239502
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "3 Profitable Stocks We\u2019re Skeptical Of",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-profitable-stocks-skeptical-224500725.html",
+        "published_at": null,
+        "similarity": 0.5245643854141235
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Most Of What Moves AbbVie Stock Has Nothing To Do With The Market",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/most-moves-abbvie-stock-nothing-174849693.html",
+        "published_at": null,
+        "similarity": 0.4977675676345825
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Thank Moderna for the Healthcare Sector\u2019s Standout Week",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-082126/card/thank-moderna-for-the-healthcare-sector-s-standout-week-K7SH8itZ6eDPCPM3Z08n?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4966484606266022
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Moderna, Robinhood, Marvell, Tesla, SpaceX, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-b87ea8d7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5606122016906738
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Which Industrial Machinery Stock Has Dominated in 2026: GE Vernova, Cummins, or Eaton?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/industrial-machinery-stock-dominated-2026-191634136.html",
+        "published_at": null,
+        "similarity": 0.49666109681129456
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Why Is Tesla Stock Up Today?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-tesla-stock-today-214633416.html",
+        "published_at": null,
+        "similarity": 0.47786328196525574
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "7 Growth Stocks Holding Up in a Tough Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/7-growth-stocks-tough-market-0e4832bf?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.459896445274353
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "5 Incredible Dividend Aristocrats Are Quietly Crushing the S&P 500 in 2026",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/5-incredible-dividend-aristocrats-quietly-123031794.html",
+        "published_at": null,
+        "similarity": 0.45747876167297363
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "3 Value Stocks We Keep Off Our Radar",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-value-stocks-keep-off-153147720.html",
+        "published_at": null,
+        "similarity": 0.5630121231079102
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "2 Mega-Cap Stocks Worth Your Attention and 1 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-mega-cap-stocks-worth-152347236.html",
+        "published_at": null,
+        "similarity": 0.47903066873550415
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "2 Large-Cap Stocks with Solid Fundamentals and 1 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-large-cap-stocks-solid-150747460.html",
+        "published_at": null,
+        "similarity": 0.46512359380722046
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "The Peer-Group Mispricing Sitting On T Stock",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/peer-group-mispricing-sitting-t-211528300.html",
+        "published_at": null,
+        "similarity": 0.46112245321273804
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Could Netflix Stock Double From Here? The Numbers Are Getting Interesting.",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/could-netflix-stock-double-numbers-173007892.html",
+        "published_at": null,
+        "similarity": 0.4593086838722229
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AVGO",
+        "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-194245037.html",
+        "published_at": null,
+        "similarity": 0.6251059174537659
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Q3 Earnings Preview: High Expectations, Positive Revisions, and Broad-Based Growth",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/q3-earnings-preview-high-expectations-203800936.html",
+        "published_at": null,
+        "similarity": 0.624873161315918
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AVGO",
+        "title": "Sector Update: Tech Stocks Mixed Friday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-mixed-friday-172901231.html",
+        "published_at": null,
+        "similarity": 0.5877246856689453
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "NVDA",
+        "title": "Stock market today: Dow, S&P 500, Nasdaq post weekly losses as bond volatility remains in focus, bitcoin soars",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/live/stock-market-today-friday-august-21-dow-sp-500-nasdaq-bitcoin-080533702.html",
+        "published_at": null,
+        "similarity": 0.5755963921546936
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "1 S&P 500 Stock to Research Further and 2 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-p-500-stock-research-122715909.html",
+        "published_at": null,
+        "similarity": 0.5585399866104126
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Software Stocks Are Bouncing Back From AI Fears. BofA Sees More Gains Ahead.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/software-stocks-workday-figma-gitlab-6db115f6?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5291845202445984
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Here\u2019s How Much Salesforce Stock Is Expected to Move After Earnings",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/much-salesforce-stock-expected-move-123000037.html",
+        "published_at": null,
+        "similarity": 0.5175224542617798
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Salesforce Rallies Into Earnings as Agentforce Tops $1 Billion",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-rallies-earnings-agentforce-tops-162243189.html",
+        "published_at": null,
+        "similarity": 0.49019983410835266
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Intuit Stock: Analyst Estimates & Ratings",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/intuit-stock-analyst-estimates-ratings-143953552.html",
+        "published_at": null,
+        "similarity": 0.48580068349838257
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Microsoft Stock Gets Cheaper Only If The Forecast Arrives",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-gets-cheaper-only-183028917.html",
+        "published_at": null,
+        "similarity": 0.4617920517921448
+      }
+    ]
+  }
+}
