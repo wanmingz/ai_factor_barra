@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-08-24",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.7,
+    "Consumer": 0.4,
+    "Energy": -0.2,
+    "Financials": 0.5,
+    "Healthcare": 0.6,
+    "Industrials": -0.1,
+    "Media": -0.3,
+    "Semiconductors": -0.4,
+    "Software": 0.8
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": 0.0265,
+      "return_3m": -0.1377
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.192,
+      "return_3m": 0.3403
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": 0.0673,
+      "return_3m": -0.0077
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0814,
+      "return_3m": 0.0988
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0236,
+      "return_3m": 0.1268
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0692,
+      "return_3m": 0.1815
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0229,
+      "return_3m": 0.0295
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0433,
+      "return_3m": -0.0254
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.0032,
+      "return_3m": -0.0919
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.1269,
+      "return_3m": 0.0895
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "TSLA",
+        "title": "Marvell, Micron, SpaceX, XPeng, Tesla, Moderna, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-a25cb190?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5241303443908691
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-72f73701?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.519642174243927
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "1 Profitable Stock with Promising Prospects and 2 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-promising-prospects-120936996.html",
+        "published_at": null,
+        "similarity": 0.4926975965499878
+      },
+      {
+        "theme": "AI",
+        "ticker": "TSLA",
+        "title": "How to Find the Market's Long-Term Winners",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/markets-long-term-winners-204300721.html",
+        "published_at": null,
+        "similarity": 0.48373085260391235
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "33 Stocks That Could Rally 33% or More",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/25-stocks-could-rally-45-134832776.html",
+        "published_at": null,
+        "similarity": 0.46809229254722595
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Microsoft Stock's Upside Now Runs Through Its Data Center Build",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-upside-now-runs-153133597.html",
+        "published_at": null,
+        "similarity": 0.5180397629737854
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-195052781.html",
+        "published_at": null,
+        "similarity": 0.516517162322998
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "This Stock Is Quietly Becoming an AI Powerhouse in 2026",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/technology/ai/articles/stock-quietly-becoming-ai-powerhouse-140051503.html",
+        "published_at": null,
+        "similarity": 0.5088855028152466
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "1 Profitable Stock with Promising Prospects and 2 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-promising-prospects-120936996.html",
+        "published_at": null,
+        "similarity": 0.49181485176086426
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "ServiceNow (NOW) Up 41.1% Since Last Earnings Report: Can It Continue?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-41-1-since-153007090.html",
+        "published_at": null,
+        "similarity": 0.48869404196739197
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "WMT",
+        "title": "Sector Update: Consumer Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-rise-afternoon-194430140.html",
+        "published_at": null,
+        "similarity": 0.559464156627655
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-195052781.html",
+        "published_at": null,
+        "similarity": 0.4741306006908417
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "COST",
+        "title": "The Ultimate Growth Stock to Buy With $10,000 Right Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ultimate-growth-stock-buy-10-094000522.html",
+        "published_at": null,
+        "similarity": 0.43862074613571167
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Is PepsiCo's Growth Story Becoming More Internationally Focused?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pepsicos-growth-story-becoming-more-144000936.html",
+        "published_at": null,
+        "similarity": 0.4312230944633484
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "How to Find the Market's Long-Term Winners",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/markets-long-term-winners-204300721.html",
+        "published_at": null,
+        "similarity": 0.42431050539016724
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Decline Monday",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-decline-monday-200503263.html",
+        "published_at": null,
+        "similarity": 0.5972778797149658
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Marvell, Micron, SpaceX, XPeng, Tesla, Moderna, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-a25cb190?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5935056805610657
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Decline Monday Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-decline-monday-174439620.html",
+        "published_at": null,
+        "similarity": 0.5866898894309998
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "How to Find the Market's Long-Term Winners",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/markets-long-term-winners-204300721.html",
+        "published_at": null,
+        "similarity": 0.5436450242996216
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla Stock Fans Just Got Bad News From China",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-fans-just-got-172745132.html",
+        "published_at": null,
+        "similarity": 0.48248234391212463
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "ICYMI: Trump\u2019s Stock Trades",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-24-2026/card/icymi-trump-s-stock-trades-bXP88EK3m9a1zwqPPj7W?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5161721706390381
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "1 Unpopular Stock That Should Get More Attention and 2 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-more-attention-072936524.html",
+        "published_at": null,
+        "similarity": 0.5080632567405701
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Morgan Stanley\u2019s Bobby Singh: Why We Are Exploring an International Wealth Push",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/advisor/articles/morgan-stanley-international-wealth-management-bobby-singh-98f01cd7?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.490380197763443
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway Hasn\u2019t Done This in Over 3 Years",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/news/berkshire-hathaway-hasn-t-done-215606336.html",
+        "published_at": null,
+        "similarity": 0.45720532536506653
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Iconic bank stock pays Buffett's Berkshire $619M in annual dividends",
+        "publisher": "TheStreet",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/iconic-bank-stock-pays-buffetts-160300334.html",
+        "published_at": null,
+        "similarity": 0.4503853917121887
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Decline in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-175001185.html",
+        "published_at": null,
+        "similarity": 0.6555849313735962
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "Stock Market News for Aug 24, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-24-132400716.html",
+        "published_at": null,
+        "similarity": 0.6375705003738403
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-softer-afternoon-194721940.html",
+        "published_at": null,
+        "similarity": 0.6120089292526245
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "What Moderna Must Do to Take Its Stock to the Next Level",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/moderna-stock-cancer-vaccine-8efb9e67?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5343329906463623
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Stock's Biggest Risk Sits In The Commercial Book",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/healthcare/articles/unitedhealth-stocks-biggest-risk-sits-170428828.html",
+        "published_at": null,
+        "similarity": 0.5343188643455505
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Marvell, Micron, SpaceX, XPeng, Tesla, Moderna, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-a25cb190?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5389745235443115
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "MarketBeat Week in Review \u2013 08/17 - 08/21",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marketbeat-week-review-08-17-110000158.html",
+        "published_at": null,
+        "similarity": 0.5299398899078369
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "How to Find the Market's Long-Term Winners",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/markets-long-term-winners-204300721.html",
+        "published_at": null,
+        "similarity": 0.49520227313041687
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Which Aerospace and Defense Stock Has Dominated in 2026: GE Aerospace, Boeing, or RTX?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/aerospace-defense-stock-dominated-2026-193940631.html",
+        "published_at": null,
+        "similarity": 0.4695144295692444
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Are Industrial Products Stocks Lagging  Caterpillar (CAT) This Year?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/industrial-products-stocks-lagging-caterpillar-134003370.html",
+        "published_at": null,
+        "similarity": 0.4635353982448578
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "3 Value Stocks We Keep Off Our Radar",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-value-stocks-keep-off-153147720.html",
+        "published_at": null,
+        "similarity": 0.5630120635032654
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "How Investors May Respond To Netflix (NFLX) Ad Tier, Sports Push, and Pershing Square\u2019s Bigger Bet",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-netflix-nflx-151228775.html",
+        "published_at": null,
+        "similarity": 0.5074203014373779
+      },
+      {
+        "theme": "Media",
+        "ticker": "GOOGL",
+        "title": "Alphabet Gains While Semiconductor Stocks Collapse",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-gains-while-semiconductor-stocks-195645544.html",
+        "published_at": null,
+        "similarity": 0.4836471676826477
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "3 Inflated  Stocks with Warning Signs",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-inflated-stocks-warning-signs-090536447.html",
+        "published_at": null,
+        "similarity": 0.48098045587539673
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "2 Mega-Cap Stocks Worth Your Attention and 1 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-mega-cap-stocks-worth-152347236.html",
+        "published_at": null,
+        "similarity": 0.47903063893318176
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "MarketBeat Week in Review \u2013 08/17 - 08/21",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marketbeat-week-review-08-17-110000158.html",
+        "published_at": null,
+        "similarity": 0.6090978384017944
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "1 Cash-Producing Stock for Long-Term Investors and 2 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-long-083336643.html",
+        "published_at": null,
+        "similarity": 0.602212131023407
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-72f73701?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5922552943229675
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "This Stock Is Quietly Becoming an AI Powerhouse in 2026",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/technology/ai/articles/stock-quietly-becoming-ai-powerhouse-140051503.html",
+        "published_at": null,
+        "similarity": 0.5919980406761169
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AVGO",
+        "title": "33 Stocks That Could Rally 33% or More",
+        "publisher": "Kiplinger",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/25-stocks-could-rally-45-134832776.html",
+        "published_at": null,
+        "similarity": 0.581879734992981
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Adobe Systems (ADBE) Outpaces Stock Market Gains: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-systems-adbe-outpaces-stock-214502597.html",
+        "published_at": null,
+        "similarity": 0.5065364241600037
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "1 Profitable Stock with Promising Prospects and 2 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-promising-prospects-120936996.html",
+        "published_at": null,
+        "similarity": 0.4938867688179016
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Microsoft Stock's Upside Now Runs Through Its Data Center Build",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-upside-now-runs-153133597.html",
+        "published_at": null,
+        "similarity": 0.4902031719684601
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Nvidia, software giants' earnings: What to watch the week of August 24th",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/nvidia-software-giants-earnings-watch-120000803.html",
+        "published_at": null,
+        "similarity": 0.47603315114974976
+      },
+      {
+        "theme": "Software",
+        "ticker": "AAPL",
+        "title": "How to Find the Market's Long-Term Winners",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/markets-long-term-winners-204300721.html",
+        "published_at": null,
+        "similarity": 0.47568848729133606
+      }
+    ]
+  }
+}
