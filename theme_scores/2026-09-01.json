@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-09-01",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.7,
+    "Consumer": -0.3,
+    "Energy": 0.6,
+    "Financials": 0.4,
+    "Healthcare": 0.5,
+    "Industrials": -0.2,
+    "Media": 0.0,
+    "Semiconductors": -0.1,
+    "Software": 0.7
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0011,
+      "return_3m": -0.1164
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1796,
+      "return_3m": 0.241
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0137,
+      "return_3m": -0.0065
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0879,
+      "return_3m": 0.1115
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.0058,
+      "return_3m": 0.1254
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0512,
+      "return_3m": 0.17
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0438,
+      "return_3m": 0.0079
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0011,
+      "return_3m": -0.016
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.0205,
+      "return_3m": -0.1195
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.1289,
+      "return_3m": 0.0503
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Software Stocks & ETFs: Is the AI Sell-Off Over?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/software-stocks-etfs-ai-sell-205000363.html",
+        "published_at": null,
+        "similarity": 0.5106105804443359
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "Update: Equities Fall as US-Iran Conflict Flares Up; Wall Street Logs Gains for August",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-fall-us-iran-conflict-203640906.html",
+        "published_at": null,
+        "similarity": 0.4968545436859131
+      },
+      {
+        "theme": "AI",
+        "ticker": "GOOGL",
+        "title": "Stock Market Today: Dow Skids As Trump Gives This AI Warning; Tesla Pops Ahead Of Key Event",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-attacks-oil-prices-jump/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47533392906188965
+      },
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Top Analyst Reports for Microsoft, Intel & Bank of America",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-microsoft-intel-201000476.html",
+        "published_at": null,
+        "similarity": 0.4727391302585602
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "Tech, Media & Telecom Roundup: Market Talk",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/business/tech-media-telecom-roundup-market-talk-78769fa5?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4675540328025818
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "3 reasons software stocks are making a comeback",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/3-reasons-software-stocks-making-201242158.html",
+        "published_at": null,
+        "similarity": 0.5346754193305969
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Is now the time to buy software stocks?",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/now-time-buy-software-stocks-160600652.html",
+        "published_at": null,
+        "similarity": 0.5336250066757202
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Software Stocks & ETFs: Is the AI Sell-Off Over?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/software-stocks-etfs-ai-sell-205000363.html",
+        "published_at": null,
+        "similarity": 0.5120655298233032
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ACN",
+        "title": "Accenture Stock: Is ACN Underperforming the Technology Sector?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/accenture-stock-acn-underperforming-technology-144525231.html",
+        "published_at": null,
+        "similarity": 0.506591796875
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Coherent Stock And 2 AI Infrastructure Picks With Strong Cash Flow",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/coherent-stock-2-ai-infrastructure-202336810.html",
+        "published_at": null,
+        "similarity": 0.49649664759635925
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "PepsiCo Stock: Is PEP Underperforming the Consumer Defensive Sector?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-stock-pep-underperforming-consumer-182650291.html",
+        "published_at": null,
+        "similarity": 0.4972028136253357
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "COST",
+        "title": "Peter Lynch Made a Fortune by Investing in Familiar Brands. Here Are 2 Consumer Stocks I Think He'd Love Right Now.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/peter-lynch-made-fortune-investing-205000793.html",
+        "published_at": null,
+        "similarity": 0.48037996888160706
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "P&G Fiscal 2027 Outlook Brings an 8% Core EPS Headwind Into Focus",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/p-g-fiscal-2027-outlook-152300583.html",
+        "published_at": null,
+        "similarity": 0.47303783893585205
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Most Investors Overlook This. I'm Buying PepsiCo for Its Dividend.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/most-investors-overlook-im-buying-093500540.html",
+        "published_at": null,
+        "similarity": 0.4556766152381897
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "The Consumer Staples Sector Is Lagging the S&P 500 in 2026. 1 Value Stock to Buy in August.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/consumer-staples-sector-lagging-p-174800993.html",
+        "published_at": null,
+        "similarity": 0.4538672864437103
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Tesla, PG&E, Nvidia, SLB, Pinterest, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-3aad06c8?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5922850370407104
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Stock Market Today, Aug. 31: Tesla Stock Surges on Cybercab Event Anticipation",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-31-210747182.html",
+        "published_at": null,
+        "similarity": 0.5405108332633972
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Energy stocks lead in subdued final trading day of August, utilities under pressure: AlphaCheck",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/article/energy-stocks-lead-in-subdued-final-trading-day-of-august-utilities-under-pressure-alphacheck-142014111.html",
+        "published_at": null,
+        "similarity": 0.5143333673477173
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Why Tesla (TSLA) Stock Is Up Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-tesla-tsla-stock-today-214840004.html",
+        "published_at": null,
+        "similarity": 0.5103602409362793
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Stock Market Today: Dow Skids As Trump Gives This AI Warning; Tesla Pops Ahead Of Key Event",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-attacks-oil-prices-jump/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5054457783699036
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "1 S&P 500 Stock with Exciting Potential and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-p-500-stock-exciting-222040118.html",
+        "published_at": null,
+        "similarity": 0.5535553693771362
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Wells Fargo Stock: Is WFC Underperforming the Financial Sector?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-stock-wfc-underperforming-103741065.html",
+        "published_at": null,
+        "similarity": 0.5182943344116211
+      },
+      {
+        "theme": "Financials",
+        "ticker": "V",
+        "title": "MarketBeat Week in Review \u2013 08/24 - 08/28",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/marketbeat-week-review-08-24-110000738.html",
+        "published_at": null,
+        "similarity": 0.5092307329177856
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "As the Stock Market Sounds an Alarm, Warren Buffett Just Offered a Blunt Warning for Investors",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-sounds-alarm-warren-102000561.html",
+        "published_at": null,
+        "similarity": 0.5042693018913269
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Wells Fargo (WFC) Gains As Market Dips: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-gains-market-214503146.html",
+        "published_at": null,
+        "similarity": 0.5011951327323914
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Sector Update: Healthcare Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-195617417.html",
+        "published_at": null,
+        "similarity": 0.627654492855072
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "CVS vs. UNH: Which Health Insurance Stock Has More Upside Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/cvs-vs-unh-health-insurance-132400554.html",
+        "published_at": null,
+        "similarity": 0.5338167548179626
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "1 Unpopular Stock That Should Get More Attention and 2 We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-more-attention-130507518.html",
+        "published_at": null,
+        "similarity": 0.5215699672698975
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Market Chatter: Meta, Other Companies Brace for Democratic Scrutiny Over Trump Ties",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-meta-other-companies-123357078.html",
+        "published_at": null,
+        "similarity": 0.5020984411239624
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Aging Population Drives Healthcare Growth: Stocks to Watch",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/healthcare/articles/aging-population-drives-healthcare-growth-152900394.html",
+        "published_at": null,
+        "similarity": 0.5015825033187866
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "1 S&P 500 Stock with Exciting Potential and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-p-500-stock-exciting-222040118.html",
+        "published_at": null,
+        "similarity": 0.5194929242134094
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Forget the Industry Labels: Chevron and Caterpillar Are Both Betting on the AI Power Boom. Which 30+ Year Dividend Grower Wins?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/forget-industry-labels-chevron-caterpillar-213500446.html",
+        "published_at": null,
+        "similarity": 0.5051741003990173
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Stock Market Today, Aug. 31: Tesla Stock Surges on Cybercab Event Anticipation",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-31-210747182.html",
+        "published_at": null,
+        "similarity": 0.4890550971031189
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Is Caterpillar Stock Outperforming the Dow?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-stock-outperforming-dow-134934196.html",
+        "published_at": null,
+        "similarity": 0.48150718212127686
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Is GE (GE) a Buy as Wall Street Analysts Look Optimistic?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ge-ge-buy-wall-street-133003046.html",
+        "published_at": null,
+        "similarity": 0.47574561834335327
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Sector Update: Consumer Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-rise-afternoon-195435621.html",
+        "published_at": null,
+        "similarity": 0.542364239692688
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Meta Stock Gives You More Of The Market, Not Less Of It",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/meta-stock-gives-more-market-191243222.html",
+        "published_at": null,
+        "similarity": 0.5389049053192139
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Netflix vs. Meta: The Better Media Stock May Surprise You",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/media-advertising/articles/netflix-vs-meta-better-media-170052949.html",
+        "published_at": null,
+        "similarity": 0.533446192741394
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast (CMCSA), What Is Behind The Latest Attention On The Stock?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-cmcsa-behind-latest-attention-070807047.html",
+        "published_at": null,
+        "similarity": 0.5121597647666931
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "The Bull Case for Netflix Stock Is Stronger Than You Think",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bull-case-netflix-stock-stronger-143015650.html",
+        "published_at": null,
+        "similarity": 0.5095643997192383
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AVGO",
+        "title": "Update: Equities Fall as US-Iran Conflict Flares Up; Wall Street Logs Gains for August",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/equities-fall-us-iran-conflict-203640906.html",
+        "published_at": null,
+        "similarity": 0.6032600402832031
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Is Applied Materials Stock Outperforming the Dow?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-stock-outperforming-dow-181308795.html",
+        "published_at": null,
+        "similarity": 0.591346025466919
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "WDAY Q2 Earnings Beat Estimates on Subscription Growth, Margin Gains",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wday-q2-earnings-beat-estimates-143300884.html",
+        "published_at": null,
+        "similarity": 0.5821957588195801
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "How Investors Are Reacting To Applied Materials (AMAT) AI-Fueled Backlog, New Fabs And EPIC Center Bet",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-applied-materials-amat-231303414.html",
+        "published_at": null,
+        "similarity": 0.578216552734375
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Here's What September Has Done to AMD Stock Over the Past 10 Years",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/heres-september-done-amd-stock-235801654.html",
+        "published_at": null,
+        "similarity": 0.5578081011772156
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "3 reasons software stocks are making a comeback",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/3-reasons-software-stocks-making-201242158.html",
+        "published_at": null,
+        "similarity": 0.614569902420044
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Is now the time to buy software stocks?",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/now-time-buy-software-stocks-160600652.html",
+        "published_at": null,
+        "similarity": 0.6144258975982666
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "C3.ai vs. Intuit: Which Software Stock Is a Better Investment in 2026 as Both Hover Near 52-Week Lows?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/c3-ai-vs-intuit-software-225917889.html",
+        "published_at": null,
+        "similarity": 0.5473650693893433
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Software Stocks & ETFs: Is the AI Sell-Off Over?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/software-stocks-etfs-ai-sell-205000363.html",
+        "published_at": null,
+        "similarity": 0.5413165092468262
+      },
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Adobe Stock and Two AI Software Names Investors May Want to Watch",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/technology/ai/articles/adobe-stock-two-ai-software-221421493.html",
+        "published_at": null,
+        "similarity": 0.5315071940422058
+      }
+    ]
+  }
+}
