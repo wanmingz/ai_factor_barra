@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-09-05",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.2,
+    "Cloud": 0.7,
+    "Consumer": -0.4,
+    "Energy": 0.5,
+    "Financials": 0.4,
+    "Healthcare": 0.6,
+    "Industrials": -0.2,
+    "Media": 0.3,
+    "Semiconductors": -0.3,
+    "Software": 0.6
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0306,
+      "return_3m": -0.0567
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.1201,
+      "return_3m": 0.3034
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0139,
+      "return_3m": 0.016
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.1111,
+      "return_3m": 0.1286
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": 0.013,
+      "return_3m": 0.1236
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0536,
+      "return_3m": 0.1373
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0552,
+      "return_3m": 0.0046
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0198,
+      "return_3m": 0.018
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": -0.033,
+      "return_3m": -0.03
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0757,
+      "return_3m": 0.116
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Energy stocks could be the biggest winners of the AI boom",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/energy-stocks-could-biggest-winners-193225814.html",
+        "published_at": null,
+        "similarity": 0.5475829839706421
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Tesla, Fair Isaac, Micron, Sandisk, AMC, Trade Desk, UiPath, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-3ea909fc?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5356394648551941
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "IBM (IBM) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-beats-stock-market-214504988.html",
+        "published_at": null,
+        "similarity": 0.5185020565986633
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "Top 3 AI Stocks To Watch In September 2026",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/technology/ai/articles/top-3-ai-stocks-watch-181832139.html",
+        "published_at": null,
+        "similarity": 0.5029603838920593
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Analyst Has Strong Take on Micron, SanDisk Stocks",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/analyst-strong-micron-sandisk-stocks-194827213.html",
+        "published_at": null,
+        "similarity": 0.4942411780357361
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Stock Market Today, Sept. 3: HPE Jumps 5%, Raises Fiscal Outlook on Record AI Server Demand",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-3-211513167.html",
+        "published_at": null,
+        "similarity": 0.554259717464447
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "IBM (IBM) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-beats-stock-market-214504988.html",
+        "published_at": null,
+        "similarity": 0.5461540818214417
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Software Stocks Are Back. 2 Winners, 2 Losers\u2014and Salesforce.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/salesforce-stock-software-ai-winners-losers-ed4679cb?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5342272520065308
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ADBE",
+        "title": "Stocks to Watch Recap: Tesla, Lululemon, AMC, Volkswagen",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/august-jobs-report-stock-market-09-04-2026/card/stocks-to-watch-volkswagen-lululemon-amc-hckSUh7fSpTgHLWgPDdS?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5219340324401855
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "2 Profitable Stocks for Long-Term Investors and 1 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-profitable-stocks-long-term-083010160.html",
+        "published_at": null,
+        "similarity": 0.4906949996948242
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "3 Consumer Stocks That Concern Us",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-consumer-stocks-concern-us-120718805.html",
+        "published_at": null,
+        "similarity": 0.4806910753250122
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Prediction: Pepsi Stock Could Surprise Wall Street in 2027",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-pepsi-stock-could-surprise-173000090.html",
+        "published_at": null,
+        "similarity": 0.44964614510536194
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "There's no end in sight for Campbell's quarterly sales declines: AlphaSpace",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/theres-no-end-sight-campbells-154222189.html",
+        "published_at": null,
+        "similarity": 0.4273250102996826
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "PepsiCo (PEP) Falls More Steeply Than Broader Market: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-pep-falls-more-steeply-214502181.html",
+        "published_at": null,
+        "similarity": 0.41737693548202515
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Campbell\u2019s and Other Staples Stocks Have Hit a Rough Patch",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/campbells-staples-stocks-5b7ffa41?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4064808487892151
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Stocks to Watch Recap: Tesla, Lululemon, AMC, Volkswagen",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/august-jobs-report-stock-market-09-04-2026/card/stocks-to-watch-volkswagen-lululemon-amc-hckSUh7fSpTgHLWgPDdS?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5360203981399536
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla (TSLA) Falls More Steeply Than Broader Market: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-falls-more-steeply-214503558.html",
+        "published_at": null,
+        "similarity": 0.490451455116272
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Why Did Tesla Stock Fall Today?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-did-tesla-stock-fall-212335068.html",
+        "published_at": null,
+        "similarity": 0.48915791511535645
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Can ExxonMobil Benefit From the Current Energy Market Tightness?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/energy/articles/exxonmobil-benefit-current-energy-market-134600503.html",
+        "published_at": null,
+        "similarity": 0.48102402687072754
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Stock Market Today, Sept. 4: Tesla Falls After Cybercab Launch Disappoints Investors",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-4-211745990.html",
+        "published_at": null,
+        "similarity": 0.47478604316711426
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Can Citigroup Sustain Its Aggressive Capital Return Strategy?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/citigroup-sustain-aggressive-capital-return-145100332.html",
+        "published_at": null,
+        "similarity": 0.48719650506973267
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Northern Trust's NII Rises 11% in Q2: Can Momentum Persist in 2026?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/northern-trusts-nii-rises-11-142700076.html",
+        "published_at": null,
+        "similarity": 0.4823558032512665
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Berkshire Hathaway (BRK.A) Is Getting Fresh Attention, What Is Behind It?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-getting-fresh-201337262.html",
+        "published_at": null,
+        "similarity": 0.4721797704696655
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "The Investing Advantage Warren Buffett Left Behind",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/investing-advantage-warren-buffett-left-174800344.html",
+        "published_at": null,
+        "similarity": 0.46651560068130493
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Warren Buffett\u2019s Berkshire Hathaway Just Did This for the First Time in 15 Quarters. History Offers a Clue About What\u2019s Next, But the Evidence Piling Up Suggests History May Not Repeat Itself.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-berkshire-hathaway-just-113001250.html",
+        "published_at": null,
+        "similarity": 0.453383207321167
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "3 Sector Stocks to Gain From as Oil, Rates and Jobs Shape September",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-sector-stocks-gain-oil-190000500.html",
+        "published_at": null,
+        "similarity": 0.5844663381576538
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "1 Healthcare Stock for Long-Term Investors and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/healthcare/articles/1-healthcare-stock-long-term-100610856.html",
+        "published_at": null,
+        "similarity": 0.5842441320419312
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Stock Rises 39% in 6 Months: Should Investors Still Buy?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-stock-rises-39-6-160400759.html",
+        "published_at": null,
+        "similarity": 0.5717424154281616
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "UnitedHealth Is Trouncing the Market in 2026. Is the Stock Still a Buy?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-trouncing-market-2026-stock-081000257.html",
+        "published_at": null,
+        "similarity": 0.5669568777084351
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "LLY",
+        "title": "Healthcare Stocks Pick Up Steam as Investors Play Offense and Defense",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/healthcare-biotech-pharma-stocks-lilly-7dc36442?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5078369975090027
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Entegris, Penguin Solutions, Teradyne, Applied Materials, and KLA Corporation Stocks Trade Down, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/entegris-penguin-solutions-teradyne-applied-215420890.html",
+        "published_at": null,
+        "similarity": 0.5100838541984558
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "This Aerospace Stock Is Cheap, but Does That Make It a Buy Today?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/aerospace-stock-cheap-does-buy-110500553.html",
+        "published_at": null,
+        "similarity": 0.5084417462348938
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "2 of Wall Street\u2019s Favorite Stocks with Impressive Fundamentals and 1 We Avoid",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-wall-street-favorite-stocks-111118103.html",
+        "published_at": null,
+        "similarity": 0.5024102926254272
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "3 Market-Beating Stocks with Exciting Potential",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-market-beating-stocks-exciting-090210144.html",
+        "published_at": null,
+        "similarity": 0.4906797409057617
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Stocks to Watch Recap: Tesla, Lululemon, AMC, Volkswagen",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/august-jobs-report-stock-market-09-04-2026/card/stocks-to-watch-volkswagen-lululemon-amc-hckSUh7fSpTgHLWgPDdS?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.46926265954971313
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "1 Profitable Stock with Impressive Fundamentals and 2 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-impressive-fundamentals-074409476.html",
+        "published_at": null,
+        "similarity": 0.5540291666984558
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Energy stocks could be the biggest winners of the AI boom",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/energy-stocks-could-biggest-winners-193225814.html",
+        "published_at": null,
+        "similarity": 0.5093035101890564
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "Netflix Stock Rebound Fuels Ad Growth Talk: A Sign of More Upside?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-stock-rebound-fuels-ad-142600064.html",
+        "published_at": null,
+        "similarity": 0.49104785919189453
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Consumer Discretionary - Wireless, Cable and Satellite Stocks Q2 Earnings Review: Comcast (NASDAQ:CMCSA) Shines",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/consumer-discretionary-wireless-cable-satellite-150620743.html",
+        "published_at": null,
+        "similarity": 0.487286239862442
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "How Is Comcast\u2019s Stock Performance Compared to Other Communication Stocks",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-stock-performance-compared-other-055345618.html",
+        "published_at": null,
+        "similarity": 0.48702186346054077
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Tesla, Fair Isaac, Micron, Sandisk, AMC, Trade Desk, UiPath, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-3ea909fc?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6240594387054443
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "What Is The Market Really Expecting From MPWR Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-really-expecting-mpwr-stock-213206230.html",
+        "published_at": null,
+        "similarity": 0.6021071076393127
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Entegris, Penguin Solutions, Teradyne, Applied Materials, and KLA Corporation Stocks Trade Down, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/entegris-penguin-solutions-teradyne-applied-215420890.html",
+        "published_at": null,
+        "similarity": 0.5887759327888489
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "Applied Materials\u2019 stock buybacks: History & investor impact explained",
+        "publisher": "TheStreet",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-stock-buybacks-history-021650341.html",
+        "published_at": null,
+        "similarity": 0.5778826475143433
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Texas Instruments (TXN) Gains As Market Dips: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/texas-instruments-txn-gains-market-215002909.html",
+        "published_at": null,
+        "similarity": 0.5579838752746582
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Software Stocks Are Back. 2 Winners, 2 Losers\u2014and Salesforce.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/salesforce-stock-software-ai-winners-losers-ed4679cb?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6258324384689331
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "IBM (IBM) Beats Stock Market Upswing: What Investors Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-beats-stock-market-214504988.html",
+        "published_at": null,
+        "similarity": 0.5534781813621521
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Forget AI Stocks: Buy This Tech Stock Now for Value and 130% Upside",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/articles/forget-ai-stocks-buy-tech-200000417.html",
+        "published_at": null,
+        "similarity": 0.533117949962616
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Microsoft, Amazon and 8 More Stocks Set to Win in a $26 Trillion AI Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/microsoft-stock-amazon-google-ai-c1f27f95?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5203819274902344
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "2 Profitable Stocks for Long-Term Investors and 1 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-profitable-stocks-long-term-083010160.html",
+        "published_at": null,
+        "similarity": 0.5049871206283569
+      }
+    ]
+  }
+}
