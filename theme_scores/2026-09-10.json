@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-09-10",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.4,
+    "Consumer": -0.2,
+    "Energy": 0.6,
+    "Financials": 0.2,
+    "Healthcare": -0.3,
+    "Industrials": -0.1,
+    "Media": -0.4,
+    "Semiconductors": 0.0,
+    "Software": 0.3
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0484,
+      "return_3m": -0.053
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": -0.0132,
+      "return_3m": 0.2683
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0475,
+      "return_3m": -0.0143
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": 0.0763,
+      "return_3m": 0.1367
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": -0.0088,
+      "return_3m": 0.0961
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": -0.0078,
+      "return_3m": 0.086
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0551,
+      "return_3m": -0.0043
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": -0.0028,
+      "return_3m": 0.003
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.0076,
+      "return_3m": -0.0292
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.0224,
+      "return_3m": 0.1047
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "META",
+        "title": "Meta stock surges with Wall Street bullish on new AI agent",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/article/meta-stock-surges-with-wall-street-bullish-on-new-ai-agent-140959204.html",
+        "published_at": null,
+        "similarity": 0.5211607217788696
+      },
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Micron, Visa, and Other Growth Stocks Look Ready for a Revival\u2014Here Are the Signs",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/micron-visa-and-other-growth-stocks-look-ready-for-a-revivalhere-are-the-signs-f2d9af9b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5208802223205566
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Prediction: Micron's Sept. 30 Earnings Could Be the Most Important Catalyst for AI Memory Stocks This Year",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/technology/ai/articles/prediction-microns-sept-30-earnings-202000782.html",
+        "published_at": null,
+        "similarity": 0.507537305355072
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Apple, ServiceTitan, Meta, Micron, Casey\u2019s, Jersey Mike\u2019s, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-fa21448d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5038363933563232
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Is Accenture's Business Falling As Fast As Its Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/accentures-business-falling-fast-stock-231935298.html",
+        "published_at": null,
+        "similarity": 0.5018875598907471
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "MSFT",
+        "title": "Micron, Visa, and Other Growth Stocks Look Ready for a Revival\u2014Here Are the Signs",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/micron-visa-and-other-growth-stocks-look-ready-for-a-revivalhere-are-the-signs-f2d9af9b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.565671980381012
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "Arista vs. IBM: Which Cloud AI Stock Should Investors Buy Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/ai/articles/arista-vs-ibm-cloud-ai-134600028.html",
+        "published_at": null,
+        "similarity": 0.5336176156997681
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Stock Market Today, Sept. 9: Apple Unveils iPhone Duo Foldable and iPhone 18 Pro with AI Upgrades",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-9-211322704.html",
+        "published_at": null,
+        "similarity": 0.5185464024543762
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "3 Profitable Stocks We Approach with Caution",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-profitable-stocks-approach-caution-193518971.html",
+        "published_at": null,
+        "similarity": 0.5087858438491821
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Stock Market Today, Sept. 9: Meta Surges Over 6.5% on Muse AI Agent Launch",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-9-213529201.html",
+        "published_at": null,
+        "similarity": 0.5081194639205933
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "HD",
+        "title": "1 Consumer Stock for Long-Term Investors and 2 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-consumer-stock-long-term-191118547.html",
+        "published_at": null,
+        "similarity": 0.5378336310386658
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "McDonald\u2019s India Drama Erupts While Wall Street Targets 24% Stock Rally",
+        "publisher": "BeInCrypto",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/mcdonald-india-drama-erupts-while-175220642.html",
+        "published_at": null,
+        "similarity": 0.46874359250068665
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "5 Defensive Stocks to Watch as CPI and the Fed Put the Rally to the Test",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/5-defensive-stocks-watch-cpi-134500548.html",
+        "published_at": null,
+        "similarity": 0.42664599418640137
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Why Franchise Models Are Winning the Restaurant Stock Divide",
+        "publisher": "MarketBeat",
+        "link": "https://finance.yahoo.com/small-business/articles/why-franchise-models-winning-restaurant-131500049.html",
+        "published_at": null,
+        "similarity": 0.4264981150627136
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PG",
+        "title": "Jim Cramer Discusses Procter & Gamble (PG) Valuation and Growth",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-discusses-procter-gamble-203707815.html",
+        "published_at": null,
+        "similarity": 0.4163338541984558
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Micron, Visa, and Other Growth Stocks Look Ready for a Revival\u2014Here Are the Signs",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/micron-visa-and-other-growth-stocks-look-ready-for-a-revivalhere-are-the-signs-f2d9af9b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5567468404769897
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The Bloom Energy Stock Signal Hiding Behind The Demand Story",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-signal-hiding-000906507.html",
+        "published_at": null,
+        "similarity": 0.5284827947616577
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Exxon Mobil Holdings (XOM) Rises As Market Takes a Dip: Key Facts",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-holdings-xom-rises-214502935.html",
+        "published_at": null,
+        "similarity": 0.5064713954925537
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Step Aside, ExxonMobil: 2 Foundational AI Stocks Now Pay Larger Dividends",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/technology/ai/articles/step-aside-exxonmobil-2-foundational-112601978.html",
+        "published_at": null,
+        "similarity": 0.4725567102432251
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "ExxonMobil Is Up 40% in 2026: Can Rising Oil Prices and Strong Earnings Boost XOM Stock to $200?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/energy/articles/exxonmobil-40-2026-rising-oil-190811096.html",
+        "published_at": null,
+        "similarity": 0.4703693985939026
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "V",
+        "title": "Micron, Visa, and Other Growth Stocks Look Ready for a Revival\u2014Here Are the Signs",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/micron-visa-and-other-growth-stocks-look-ready-for-a-revivalhere-are-the-signs-f2d9af9b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5223017930984497
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Stocks to Consider Before the Fed's September Decision: JPM, EOG, BE",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-consider-feds-september-decision-190000988.html",
+        "published_at": null,
+        "similarity": 0.4867495894432068
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Northern Trust's NII Rises 11% in Q2: Can Momentum Persist in 2026?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/northern-trusts-nii-rises-11-142700076.html",
+        "published_at": null,
+        "similarity": 0.4823558032512665
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Investors Heavily Search Berkshire Hathaway Inc. (BRK.B): Here is What You Need to Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-berkshire-hathaway-130006222.html",
+        "published_at": null,
+        "similarity": 0.47326093912124634
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "3 S&P 500 Stocks with Open Questions",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-p-500-stocks-open-151438373.html",
+        "published_at": null,
+        "similarity": 0.4712449312210083
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Sector Update: Healthcare Stocks Decline in Afternoon Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-173425693.html",
+        "published_at": null,
+        "similarity": 0.7084222435951233
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Sector Update: Healthcare Stocks Softer Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-softer-afternoon-194957396.html",
+        "published_at": null,
+        "similarity": 0.6526861190795898
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "Stock Market News for Sep 9, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-sep-9-111100502.html",
+        "published_at": null,
+        "similarity": 0.6503425240516663
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "TMO",
+        "title": "1 Healthcare Stock for Long-Term Investors and 2 We Ignore",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/healthcare/articles/1-healthcare-stock-long-term-100610856.html",
+        "published_at": null,
+        "similarity": 0.589232861995697
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Why UnitedHealth Stock Is Falling Today",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-unitedhealth-stock-falling-today-172834786.html",
+        "published_at": null,
+        "similarity": 0.5593899488449097
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "TSLA",
+        "title": "Micron, Visa, and Other Growth Stocks Look Ready for a Revival\u2014Here Are the Signs",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/micron-visa-and-other-growth-stocks-look-ready-for-a-revivalhere-are-the-signs-f2d9af9b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5389164686203003
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Cramer: GE Aerospace\u2019s $12 Billion Acquisition Is \u2018Going to Send This Stock Up\u2019",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/cramer-ge-aerospace-12-billion-174741620.html",
+        "published_at": null,
+        "similarity": 0.4723045229911804
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "Stock Market Today: Dow Dives, Qualcomm Clears Key Level On Amazon Deal; Fertilizer Leader Rises (Live Coverage)",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-attacks-oil-prices-jump-brent-crude/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47134077548980713
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "Memory, Other AI-Related Stocks Lead the Market\u2019s Top Performers Friday",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/memory-other-ai-related-stocks-170421943.html",
+        "published_at": null,
+        "similarity": 0.4447372257709503
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "LIN",
+        "title": "Linde Stock: Is Wall Street Bullish or Bearish?",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/linde-stock-wall-street-bullish-115110960.html",
+        "published_at": null,
+        "similarity": 0.4386570453643799
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "3 Value Stocks with Questionable Fundamentals",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-value-stocks-questionable-fundamentals-145038098.html",
+        "published_at": null,
+        "similarity": 0.48637330532073975
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "Stock Market Today, Sept. 8: Stocks Slide Amid Surging Oil Prices, Persistent Geopolotical Tenisons",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-8-213626957.html",
+        "published_at": null,
+        "similarity": 0.4740227460861206
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Sector Update: Consumer Stocks Decline Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-decline-afternoon-194609902.html",
+        "published_at": null,
+        "similarity": 0.47106942534446716
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Why Comcast Stock Is One of the Worst Performers in the S&P 500 Today",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/comcast-stock-charter-communications-s-p-500-48ede73b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4608789384365082
+      },
+      {
+        "theme": "Media",
+        "ticker": "META",
+        "title": "Why Are Meta (META) Shares Soaring Today",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-meta-shares-soaring-000238128.html",
+        "published_at": null,
+        "similarity": 0.45227929949760437
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Apple, ServiceTitan, Meta, Micron, Casey\u2019s, Jersey Mike\u2019s, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-fa21448d?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6361794471740723
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Micron, Visa, and Other Growth Stocks Look Ready for a Revival\u2014Here Are the Signs",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/micron-visa-and-other-growth-stocks-look-ready-for-a-revivalhere-are-the-signs-f2d9af9b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.631260871887207
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "What Is The Market Really Expecting From MPWR Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-really-expecting-mpwr-stock-213206230.html",
+        "published_at": null,
+        "similarity": 0.6021071672439575
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "NVDA",
+        "title": "Why Independence Realty Trust Stock Sank Today",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/real-estate/articles/why-independence-realty-trust-stock-225142521.html",
+        "published_at": null,
+        "similarity": 0.5626134872436523
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "3 Value Stocks with Questionable Fundamentals",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-value-stocks-questionable-fundamentals-145038098.html",
+        "published_at": null,
+        "similarity": 0.5620200037956238
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Software Stocks Are Back. 2 Winners, 2 Losers\u2014and Salesforce.",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/salesforce-stock-software-ai-winners-losers-ed4679cb?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6421086192131042
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Micron, Visa, and Other Growth Stocks Look Ready for a Revival\u2014Here Are the Signs",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/micron-visa-and-other-growth-stocks-look-ready-for-a-revivalhere-are-the-signs-f2d9af9b?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.54518723487854
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Forget AI Stocks: Buy This Tech Stock Now for Value and 130% Upside",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/technology/articles/forget-ai-stocks-buy-tech-200000417.html",
+        "published_at": null,
+        "similarity": 0.533117949962616
+      },
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Oracle or Adobe: Which Earnings Report Will Reveal the True Growth Story?",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-adobe-earnings-report-reveal-120515420.html",
+        "published_at": null,
+        "similarity": 0.5323944091796875
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Microsoft, Amazon and 8 More Stocks Set to Win in a $26 Trillion AI Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/microsoft-stock-amazon-google-ai-c1f27f95?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5203819274902344
+      }
+    ]
+  }
+}
