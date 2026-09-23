@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-09-23",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.6,
+    "Consumer": -0.4,
+    "Energy": 0.3,
+    "Financials": -0.2,
+    "Healthcare": 0.4,
+    "Industrials": -0.5,
+    "Media": 0.2,
+    "Semiconductors": 0.0,
+    "Software": 0.7
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0061,
+      "return_3m": -0.0219
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.0145,
+      "return_3m": 0.4094
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.047,
+      "return_3m": -0.0113
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0127,
+      "return_3m": 0.1537
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": -0.024,
+      "return_3m": 0.0412
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": -0.0284,
+      "return_3m": 0.1148
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0544,
+      "return_3m": -0.0433
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0335,
+      "return_3m": 0.0733
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.0635,
+      "return_3m": -0.0418
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0364,
+      "return_3m": 0.2269
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Can Accenture Stock Keep Rising On Growth It Has To Buy?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/accenture-stock-keep-rising-growth-200515668.html",
+        "published_at": null,
+        "similarity": 0.5070270299911499
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "Will This Major Industry Showcase Boost Quantum Computing Stocks?",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/technology/quantum-computing-stocks-world-quantum-conference-2026/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4977414608001709
+      },
+      {
+        "theme": "AI",
+        "ticker": "MSFT",
+        "title": "Reddit And 2 Other Quality Stocks To Own",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/reddit-2-other-quality-stocks-232426002.html",
+        "published_at": null,
+        "similarity": 0.479682981967926
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Sandisk, Lennar, Viking Therapeutics, Shopify, GameStop, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-328a306e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.47662773728370667
+      },
+      {
+        "theme": "AI",
+        "ticker": "AMD",
+        "title": "Should investors play AI bottlenecks over social media stocks?",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/investors-play-ai-bottlenecks-over-173922161.html",
+        "published_at": null,
+        "similarity": 0.474508672952652
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "3 Big Tech Stocks With the Most Upside Right Now",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-big-tech-stocks-most-180047844.html",
+        "published_at": null,
+        "similarity": 0.5284997820854187
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Strategy, CrowdStrike, MongoDB, ServiceNow, and Okta Shares Are Soaring, What You Need To Know",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-crowdstrike-mongodb-servicenow-okta-003025037.html",
+        "published_at": null,
+        "similarity": 0.5173675417900085
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CSCO",
+        "title": "Will This Major Industry Showcase Boost Quantum Computing Stocks?",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/news/technology/quantum-computing-stocks-world-quantum-conference-2026/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5170227289199829
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "GOOGL",
+        "title": "Invest Like Buffett: Lessons From the Oracle of Omaha",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/invest-buffett-lessons-oracle-omaha-182900634.html",
+        "published_at": null,
+        "similarity": 0.5143818855285645
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ADBE",
+        "title": "Sandisk, Lennar, Viking Therapeutics, Shopify, GameStop, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-328a306e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5135124325752258
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "McDonald's investors are hungry for good news. Will Investor Day deliver?",
+        "publisher": "Yahoo Finance Video",
+        "link": "https://finance.yahoo.com/video/mcdonalds-investors-hungry-good-news-153000633.html",
+        "published_at": null,
+        "similarity": 0.4978683888912201
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "3 Consumer Stocks We Think Twice About",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-consumer-stocks-think-twice-115746904.html",
+        "published_at": null,
+        "similarity": 0.49467116594314575
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "KO",
+        "title": "Coca-Cola's \u201c$10 Billion\u201d Investment Announcement Is Smaller Than It Sounds. Here's the Math.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/coca-colas-10-billion-investment-113501126.html",
+        "published_at": null,
+        "similarity": 0.4534339904785156
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "Restaurant Investors Cautious on Headwinds Despite 'Solid' Demand Trends, Outlook, UBS Says",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/restaurant-investors-cautious-headwinds-despite-165728816.html",
+        "published_at": null,
+        "similarity": 0.4526514410972595
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AAPL",
+        "title": "Stocks to Watch Recap: Meta, Schwab, Shopify, Apple",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-22-2026/card/stocks-to-watch-meta-shopify-roche-HZDxyGhxTZidFLyjgExJ?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4503117799758911
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Fall Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-fall-afternoon-195539794.html",
+        "published_at": null,
+        "similarity": 0.5646640062332153
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "4 Integrated Energy Stocks to Benefit From Industry Tailwinds",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/energy/articles/4-integrated-energy-stocks-benefit-160600799.html",
+        "published_at": null,
+        "similarity": 0.5554929971694946
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "The Bloom Energy Stock Signal Hiding Behind The Demand Story",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-signal-hiding-000906507.html",
+        "published_at": null,
+        "similarity": 0.5284826159477234
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "ExxonMobil Nears a Venezuela Return After 19 Years. Here\u2019s Where the Stock Could Go",
+        "publisher": "TIKR",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-nears-venezuela-return-19-232707357.html",
+        "published_at": null,
+        "similarity": 0.48256540298461914
+      },
+      {
+        "theme": "Energy",
+        "ticker": "TSLA",
+        "title": "Tesla, Waymo, and Zoox are driving a nightmarish year for these 2 stocks",
+        "publisher": "Yahoo Finance",
+        "link": "https://finance.yahoo.com/markets/stocks/article/tesla-waymo-and-zoox-are-driving-a-nightmarish-year-for-these-2-stocks-142300670.html",
+        "published_at": null,
+        "similarity": 0.4782010316848755
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Stock Market Midday, Sept. 22: Means Markets Muted Despite Tech Gains as Geopolitics Dominates",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-midday-sept-22-165800512.html",
+        "published_at": null,
+        "similarity": 0.5172805786132812
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "A Bad Day for Bank Stocks Is Killing the Dow",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/livecoverage/stock-market-news-today-092226/card/a-bad-day-for-bank-stocks-is-killing-the-dow-SCU5xXpoqwKssznKRiiI?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5137178897857666
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Meta\u2019s Muse Comes for Financial Stocks",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/finance/investing/metas-muse-comes-for-financial-stocks-17bdf11a?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5074563026428223
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BRK-B",
+        "title": "Invest Like Buffett: Lessons From the Oracle of Omaha",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/invest-buffett-lessons-oracle-omaha-182900634.html",
+        "published_at": null,
+        "similarity": 0.5060640573501587
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Stock Market Today, Sept. 21: Meta Surges on Excitement Over Muse Personal AI Agent",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-21-214356870.html",
+        "published_at": null,
+        "similarity": 0.48483726382255554
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "Sector Update: Healthcare Stocks Rise Late Afternoon",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-rise-afternoon-200355451.html",
+        "published_at": null,
+        "similarity": 0.636078953742981
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "Is UnitedHealth (UNH) a Buy as Wall Street Analysts Look Optimistic?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-unh-buy-wall-street-133002792.html",
+        "published_at": null,
+        "similarity": 0.5090552568435669
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "MRK",
+        "title": "Wall Street Analysts Think Merck (MRK) Is a Good Investment: Is It?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-think-merck-133004378.html",
+        "published_at": null,
+        "similarity": 0.5019702911376953
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "AMGN",
+        "title": "Stock Market Today: Dow Up, Nasdaq Roars To Record As Micron Does This; AMD Hits New High",
+        "publisher": "Investor's Business Daily",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-nvidia-stock-nvda-buy-point/?src=A00220&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4988502264022827
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "Reflecting On Therapeutics Stocks\u2019 Q2 Earnings: AbbVie (NYSE:ABBV)",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/healthcare/articles/reflecting-therapeutics-stocks-q2-earnings-134146017.html",
+        "published_at": null,
+        "similarity": 0.49283891916275024
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "3 of Wall Street\u2019s Favorite Stocks for Long-Term Investors",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-wall-street-favorite-stocks-151825230.html",
+        "published_at": null,
+        "similarity": 0.5205954313278198
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "CAT",
+        "title": "3 Stocks That Pay Dividends and Offer AI Exposure",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-pay-dividends-offer-233800366.html",
+        "published_at": null,
+        "similarity": 0.465363472700119
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "General Electric vs. Joby Aviation: Which Industrials Stock Is a Better Buy in 2026?",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/general-electric-vs-joby-aviation-183653337.html",
+        "published_at": null,
+        "similarity": 0.45668524503707886
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "1 Cash-Producing Stock on Our Buy List and 2 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-buy-130225418.html",
+        "published_at": null,
+        "similarity": 0.4539032578468323
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Should Boeing Stock Investors Worry About Its Money-Losing Jet Business?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/boeing-stock-investors-worry-money-130753310.html",
+        "published_at": null,
+        "similarity": 0.4538140892982483
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "The Case for Buying Netflix Stock",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/case-buying-netflix-stock-151709602.html",
+        "published_at": null,
+        "similarity": 0.4692268669605255
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast (CMCSA) Stock Moves -2.22%: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-cmcsa-stock-moves-2-220003434.html",
+        "published_at": null,
+        "similarity": 0.4523105025291443
+      },
+      {
+        "theme": "Media",
+        "ticker": "VZ",
+        "title": "3 Low-Volatility Stocks We Find Risky",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-low-volatility-stocks-risky-074225128.html",
+        "published_at": null,
+        "similarity": 0.4350219666957855
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "2 Cash-Producing Stocks Worth Investigating and 1 Facing Challenges",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-cash-producing-stocks-worth-102946038.html",
+        "published_at": null,
+        "similarity": 0.43467405438423157
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Could You Have Seen Warner Bros Discovery Stock's Run Coming?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/could-seen-warner-bros-discovery-131840031.html",
+        "published_at": null,
+        "similarity": 0.43292492628097534
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "3 of Wall Street\u2019s Favorite Stocks for Long-Term Investors",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-wall-street-favorite-stocks-151825230.html",
+        "published_at": null,
+        "similarity": 0.6166085600852966
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Invest Like Buffett: Lessons From the Oracle of Omaha",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/invest-buffett-lessons-oracle-omaha-182900634.html",
+        "published_at": null,
+        "similarity": 0.6055015921592712
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AAPL",
+        "title": "Stocks to Watch Recap: Meta, Schwab, Shopify, Apple",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-22-2026/card/stocks-to-watch-meta-shopify-roche-HZDxyGhxTZidFLyjgExJ?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5914002656936646
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "Company News for Sep 21, 2026",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/company-news-sep-21-2026-132200831.html",
+        "published_at": null,
+        "similarity": 0.5881881713867188
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMD",
+        "title": "Sandisk, Lennar, Viking Therapeutics, Shopify, GameStop, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-328a306e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5840920209884644
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Sandisk, Lennar, Viking Therapeutics, Shopify, GameStop, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-328a306e?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5356013774871826
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "3 Big Tech Stocks With the Most Upside Right Now",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-big-tech-stocks-most-180047844.html",
+        "published_at": null,
+        "similarity": 0.5297465920448303
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "Intuit Stock Analysis: Why Street Sees 34% Upside.",
+        "publisher": "TIKR",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/intuit-stock-analysis-why-street-134844647.html",
+        "published_at": null,
+        "similarity": 0.5251103639602661
+      },
+      {
+        "theme": "Software",
+        "ticker": "ADBE",
+        "title": "Tesla, Microsoft and Adobe Forecast: AI Stocks Eye Key Moves",
+        "publisher": "FX Empire",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-microsoft-adobe-forecast-ai-132829225.html",
+        "published_at": null,
+        "similarity": 0.4937184154987335
+      },
+      {
+        "theme": "Software",
+        "ticker": "MSFT",
+        "title": "Reddit And 2 Other Quality Stocks To Own",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/reddit-2-other-quality-stocks-232426002.html",
+        "published_at": null,
+        "similarity": 0.48727840185165405
+      }
+    ]
+  }
+}
