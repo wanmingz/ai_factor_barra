@@ -1,0 +1,540 @@
+{
+  "as_of": "2026-10-01",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.1,
+    "Cloud": 0.3,
+    "Consumer": -0.4,
+    "Energy": 0.2,
+    "Financials": -0.1,
+    "Healthcare": 0.3,
+    "Industrials": -0.2,
+    "Media": 0.0,
+    "Semiconductors": 0.4,
+    "Software": 0.2
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": -0.0181,
+      "return_3m": -0.0741
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": -0.0749,
+      "return_3m": 0.2028
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0618,
+      "return_3m": -0.0737
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0321,
+      "return_3m": 0.1722
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": -0.0608,
+      "return_3m": -0.0106
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0049,
+      "return_3m": 0.0742
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0317,
+      "return_3m": -0.0751
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0034,
+      "return_3m": 0.0191
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.0903,
+      "return_3m": -0.0219
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": -0.0433,
+      "return_3m": 0.1273
+    }
+  },
+  "news_sources": {
+    "AI": [
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Moderna, Cerebras, Jabil, HPE, Cal-Maine, Mattel, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-81984569?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5247625112533569
+      },
+      {
+        "theme": "AI",
+        "ticker": "AVGO",
+        "title": "3 AI Stocks With Revenue Growth Up To 34%",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/technology/ai/articles/3-ai-stocks-revenue-growth-162445641.html",
+        "published_at": null,
+        "similarity": 0.5100076198577881
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "1 Unpopular Stock That Deserves a Second Chance and 2 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-deserves-second-121313281.html",
+        "published_at": null,
+        "similarity": 0.5019351243972778
+      },
+      {
+        "theme": "AI",
+        "ticker": "IBM",
+        "title": "IBM Stocks Gain as Sovereign AI Agents Go Live in India",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-stocks-gain-sovereign-ai-172700785.html",
+        "published_at": null,
+        "similarity": 0.49226778745651245
+      },
+      {
+        "theme": "AI",
+        "ticker": "MU",
+        "title": "Stocks to Watch Recap: Micron, Boeing, Robinhood, Mattel",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-30-2026/card/stocks-to-watch-boeing-robinhood-micron-Zh5aqWdDbnLhaNy9BEHm?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.4871545135974884
+      }
+    ],
+    "Cloud": [
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Stock Market Today, Sept. 29: Oracle's Fusion Claw Helps it Claw Back Losses",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-29-213819662.html",
+        "published_at": null,
+        "similarity": 0.5316342711448669
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "CRM",
+        "title": "Salesforce Stock Fell 8% in a Year. Here\u2019s Where the Street\u2019s Target Sits Now.",
+        "publisher": "TIKR",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-stock-fell-8-where-080610117.html",
+        "published_at": null,
+        "similarity": 0.5281789302825928
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "NOW",
+        "title": "Should You Buy The Dip In UiPath Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-uipath-stock-153455869.html",
+        "published_at": null,
+        "similarity": 0.5182454586029053
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "IBM",
+        "title": "1 Unpopular Stock That Deserves a Second Chance and 2 We Question",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-deserves-second-121313281.html",
+        "published_at": null,
+        "similarity": 0.5007151365280151
+      },
+      {
+        "theme": "Cloud",
+        "ticker": "ACN",
+        "title": "Here\u2019s How Much Traders See Accenture Stock Moving After Earnings",
+        "publisher": "Investopedia",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/much-traders-see-accenture-stock-090000353.html",
+        "published_at": null,
+        "similarity": 0.4982616603374481
+      }
+    ],
+    "Consumer": [
+      {
+        "theme": "Consumer",
+        "ticker": "MCD",
+        "title": "2 of Wall Street\u2019s Favorite Stocks for Long-Term Investors and 1 That Underwhelm",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/2-wall-street-favorite-stocks-101313485.html",
+        "published_at": null,
+        "similarity": 0.49393075704574585
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "HD",
+        "title": "3 of Wall Street\u2019s Favorite Stocks with Warning Signs",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-wall-street-favorite-stocks-130402894.html",
+        "published_at": null,
+        "similarity": 0.4577711224555969
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "Total Return Investors Better Open Their Eyes About Pepsi",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/total-return-investors-better-open-141531938.html",
+        "published_at": null,
+        "similarity": 0.449329137802124
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "AMZN",
+        "title": "Consumer Confidence Fell to Its Lowest Level Since 2014 and Consumer Stocks Are Already Paying for It",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/economy/articles/consumer-confidence-fell-lowest-level-185530538.html",
+        "published_at": null,
+        "similarity": 0.4435741901397705
+      },
+      {
+        "theme": "Consumer",
+        "ticker": "PEP",
+        "title": "5 \u2018Bulletproof\u2019 Dividend Kings Boomers Should Buy Now Before the Market Shifts",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/5-bulletproof-dividend-kings-boomers-125026297.html",
+        "published_at": null,
+        "similarity": 0.4206026494503021
+      }
+    ],
+    "Energy": [
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Sector Update: Energy Stocks Advance Pre-Bell Wednesday",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-advance-pre-132904056.html",
+        "published_at": null,
+        "similarity": 0.6061170101165771
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Is ExxonMobil Stock Increasing Your Market Risk?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-stock-increasing-market-risk-215118428.html",
+        "published_at": null,
+        "similarity": 0.5314568281173706
+      },
+      {
+        "theme": "Energy",
+        "ticker": "LIN",
+        "title": "Should Bloom Energy Stock Investors Worry About Its Record Quarter?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-investors-worry-193850175.html",
+        "published_at": null,
+        "similarity": 0.5264949798583984
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Market Chatter: Shell, TotalEnergies, ExxonMobil Face $5.2 Billion Kazakhstan Fine",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/energy/articles/market-chatter-shell-totalenergies-exxonmobil-090956683.html",
+        "published_at": null,
+        "similarity": 0.5002061724662781
+      },
+      {
+        "theme": "Energy",
+        "ticker": "XOM",
+        "title": "Diesel Prices Are Surging and ExxonMobil Stock Could Benefit",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/energy/articles/diesel-prices-surging-exxonmobil-stock-201130153.html",
+        "published_at": null,
+        "similarity": 0.4784718155860901
+      }
+    ],
+    "Financials": [
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "The Market Just Hit a Risky Milestone. History Says Investors Should Make This 1 Move.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/market-just-hit-risky-milestone-003500372.html",
+        "published_at": null,
+        "similarity": 0.5158705711364746
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "Bank of America Earnings Preview: What to Expect",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-earnings-preview-expect-141938461.html",
+        "published_at": null,
+        "similarity": 0.46783846616744995
+      },
+      {
+        "theme": "Financials",
+        "ticker": "JPM",
+        "title": "Jefferies' Q3 IB, Equities Offset Weak Asset Management & Fixed Income",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/jefferies-q3-ib-equities-offset-142600124.html",
+        "published_at": null,
+        "similarity": 0.4541606307029724
+      },
+      {
+        "theme": "Financials",
+        "ticker": "WFC",
+        "title": "Wells Fargo & Company (WFC) Is a Trending Stock: Facts to Know Before Betting on It",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-company-wfc-trending-120006626.html",
+        "published_at": null,
+        "similarity": 0.44946151971817017
+      },
+      {
+        "theme": "Financials",
+        "ticker": "BAC",
+        "title": "JPM vs. BAC: The Bank Built to Sustain Dividend Growth When Markets Turn",
+        "publisher": "24/7 Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/jpm-vs-bac-bank-built-181543918.html",
+        "published_at": null,
+        "similarity": 0.44577348232269287
+      }
+    ],
+    "Healthcare": [
+      {
+        "theme": "Healthcare",
+        "ticker": "PFE",
+        "title": "Here Are My Top 2 High-Yield Healthcare Stocks to Buy Now",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/healthcare/articles/top-2-high-yield-healthcare-172000917.html",
+        "published_at": null,
+        "similarity": 0.5710326433181763
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "JNJ",
+        "title": "SCHD's Top Sector Bet Is Healthcare at 20.7%. I'm Not Sure What's More Surprising: What It Doesn't Hold, or What It Does.",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/healthcare/articles/schds-top-sector-bet-healthcare-105001213.html",
+        "published_at": null,
+        "similarity": 0.5453399419784546
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "ABBV",
+        "title": "What Is Merck Stock's Biggest Opportunity?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/merck-stocks-biggest-opportunity-144333056.html",
+        "published_at": null,
+        "similarity": 0.5348396301269531
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "What Are UNH Stock Investors Betting On?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/unh-stock-investors-betting-182545008.html",
+        "published_at": null,
+        "similarity": 0.5184555053710938
+      },
+      {
+        "theme": "Healthcare",
+        "ticker": "UNH",
+        "title": "What to Expect From UnitedHealth\u2019s Next Quarterly Earnings Report",
+        "publisher": "Barchart",
+        "link": "https://finance.yahoo.com/healthcare/articles/expect-unitedhealth-next-quarterly-earnings-112155711.html",
+        "published_at": null,
+        "similarity": 0.5114933252334595
+      }
+    ],
+    "Industrials": [
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "GE vs. TXT: Which Aerospace & Defense Stock Should You Invest in Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vs-txt-aerospace-defense-134300389.html",
+        "published_at": null,
+        "similarity": 0.5034248232841492
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "AMAT",
+        "title": "3 AI Stocks With Revenue Growth Up To 34%",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/technology/ai/articles/3-ai-stocks-revenue-growth-162445641.html",
+        "published_at": null,
+        "similarity": 0.48832762241363525
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "GE Vernova (GEV) Gains As Market Dips: What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vernova-gev-gains-market-210003190.html",
+        "published_at": null,
+        "similarity": 0.4638606607913971
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "GE",
+        "title": "Zacks Industry Outlook Highlights GE Aerospace, RTX and Howmet Aerospace",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-industry-outlook-highlights-ge-062400205.html",
+        "published_at": null,
+        "similarity": 0.46345120668411255
+      },
+      {
+        "theme": "Industrials",
+        "ticker": "LIN",
+        "title": "Should Bloom Energy Stock Investors Worry About Its Record Quarter?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-investors-worry-193850175.html",
+        "published_at": null,
+        "similarity": 0.4613085389137268
+      }
+    ],
+    "Media": [
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "4 Media Stocks That Are Worth Watching in a Challenging Industry",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/media-advertising/articles/4-media-stocks-worth-watching-141600539.html",
+        "published_at": null,
+        "similarity": 0.6838396191596985
+      },
+      {
+        "theme": "Media",
+        "ticker": "CMCSA",
+        "title": "Comcast Corporation (CMCSA) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/comcast-corporation-cmcsa-attracting-investor-120002125.html",
+        "published_at": null,
+        "similarity": 0.5414828062057495
+      },
+      {
+        "theme": "Media",
+        "ticker": "DIS",
+        "title": "President Trump and Billionaires Were Selling These 2 Stocks",
+        "publisher": "Insider Monkey",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/president-trump-billionaires-were-selling-115330720.html",
+        "published_at": null,
+        "similarity": 0.4803239703178406
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "Netflix, Inc. (NFLX) is Attracting Investor Attention: Here is What You Should Know",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-inc-nflx-attracting-investor-120004510.html",
+        "published_at": null,
+        "similarity": 0.4759763479232788
+      },
+      {
+        "theme": "Media",
+        "ticker": "NFLX",
+        "title": "What Is The One Risk Every Google Stock Investor Should Know?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/one-risk-every-google-stock-192020925.html",
+        "published_at": null,
+        "similarity": 0.45116591453552246
+      }
+    ],
+    "Semiconductors": [
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Moderna, Cerebras, Jabil, HPE, Cal-Maine, Mattel, and More Stocks That Explain Today\u2019s Market",
+        "publisher": "Barrons.com",
+        "link": "https://www.barrons.com/articles/stock-movers-81984569?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.6644766330718994
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "AMAT",
+        "title": "What Are Applied Materials Stock Investors Overlooking?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-stock-investors-overlooking-193241721.html",
+        "published_at": null,
+        "similarity": 0.6055463552474976
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "CSCO",
+        "title": "What Are Dell Stock Investors Overlooking?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dell-stock-investors-overlooking-115414533.html",
+        "published_at": null,
+        "similarity": 0.6038565635681152
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "TXN",
+        "title": "ON Semiconductor Stock Looks Expensive Until You Price Its Fuller Factories",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/semiconductor-stock-looks-expensive-until-233754854.html",
+        "published_at": null,
+        "similarity": 0.6023226976394653
+      },
+      {
+        "theme": "Semiconductors",
+        "ticker": "MU",
+        "title": "Stocks to Watch Recap: Micron, Boeing, Robinhood, Mattel",
+        "publisher": "The Wall Street Journal",
+        "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-30-2026/card/stocks-to-watch-boeing-robinhood-micron-Zh5aqWdDbnLhaNy9BEHm?siteid=yhoof2&yptr=yahoo",
+        "published_at": null,
+        "similarity": 0.5997554063796997
+      }
+    ],
+    "Software": [
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Salesforce Stock Fell 8% in a Year. Here\u2019s Where the Street\u2019s Target Sits Now.",
+        "publisher": "TIKR",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-stock-fell-8-where-080610117.html",
+        "published_at": null,
+        "similarity": 0.5456014275550842
+      },
+      {
+        "theme": "Software",
+        "ticker": "CRM",
+        "title": "Stock Market Today, Sept. 29: Oracle's Fusion Claw Helps it Claw Back Losses",
+        "publisher": "Motley Fool",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-29-213819662.html",
+        "published_at": null,
+        "similarity": 0.5168650150299072
+      },
+      {
+        "theme": "Software",
+        "ticker": "INTU",
+        "title": "3 of Wall Street\u2019s Favorite Stocks We Think Twice About",
+        "publisher": "StockStory",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-wall-street-favorite-stocks-115202448.html",
+        "published_at": null,
+        "similarity": 0.514553964138031
+      },
+      {
+        "theme": "Software",
+        "ticker": "NOW",
+        "title": "Should You Buy The Dip In UiPath Stock?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-uipath-stock-153455869.html",
+        "published_at": null,
+        "similarity": 0.5027368664741516
+      },
+      {
+        "theme": "Software",
+        "ticker": "IBM",
+        "title": "What Are Dell Stock Investors Overlooking?",
+        "publisher": "Trefis",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/dell-stock-investors-overlooking-115414533.html",
+        "published_at": null,
+        "similarity": 0.49355030059814453
+      }
+    ]
+  }
+}
