@@ -1,0 +1,80 @@
+{
+  "as_of": "2026-10-07",
+  "source": "gemini_rag",
+  "scores": {
+    "AI": 0.0,
+    "Cloud": 0.5,
+    "Consumer": -0.5,
+    "Energy": 0.3,
+    "Financials": -0.7,
+    "Healthcare": 0.1,
+    "Industrials": -0.4,
+    "Media": 0.0,
+    "Semiconductors": 0.7,
+    "Software": 0.6
+  },
+  "context": {
+    "AI": {
+      "etf": "BOTZ",
+      "return_1m": 0.0157,
+      "return_3m": -0.0126
+    },
+    "Cloud": {
+      "etf": "WCLD",
+      "return_1m": 0.0648,
+      "return_3m": 0.219
+    },
+    "Consumer": {
+      "etf": "XLY",
+      "return_1m": -0.0178,
+      "return_3m": -0.0418
+    },
+    "Energy": {
+      "etf": "XLE",
+      "return_1m": -0.0099,
+      "return_3m": 0.1698
+    },
+    "Financials": {
+      "etf": "XLF",
+      "return_1m": -0.0541,
+      "return_3m": -0.0241
+    },
+    "Healthcare": {
+      "etf": "XLV",
+      "return_1m": 0.0036,
+      "return_3m": 0.0343
+    },
+    "Industrials": {
+      "etf": "XLI",
+      "return_1m": -0.0136,
+      "return_3m": -0.0501
+    },
+    "Media": {
+      "etf": "XLC",
+      "return_1m": 0.0045,
+      "return_3m": 0.0136
+    },
+    "Semiconductors": {
+      "etf": "SMH",
+      "return_1m": 0.1024,
+      "return_3m": 0.0408
+    },
+    "Software": {
+      "etf": "IGV",
+      "return_1m": 0.0828,
+      "return_3m": 0.1841
+    }
+  },
+  "news_sources": {
+    "AI": [],
+    "Cloud": [],
+    "Consumer": [],
+    "Energy": [],
+    "Financials": [],
+    "Healthcare": [],
+    "Industrials": [],
+    "Media": [],
+    "Semiconductors": [],
+    "Software": []
+  }
+}
